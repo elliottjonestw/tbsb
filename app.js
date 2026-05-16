@@ -1,0 +1,577 @@
+const STORAGE_KEY = 'startracker_watched';
+
+let catalog = [];
+let watched = {};
+let activeEra = 'all';
+let activeType = 'all';
+let activeFormat = 'all';
+let activeStatus = 'all';
+let activeSort = 'chronological';
+let activeSortDir = 'asc';
+
+async function init() {
+  const res = await fetch('catalog.json');
+  catalog = (await res.json()).content;
+  watched = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+  render();
+  bindEvents();
+  renderFooter();
+}
+
+// ── Watched state helpers ────────────────────────────────────────────────────
+
+function getMovieWatched(id) {
+  return !!watched[id];
+}
+
+function setMovieWatched(id, val) {
+  watched[id] = val;
+  save();
+}
+
+function getEpWatched(seriesId, season, ep) {
+  return !!(watched[seriesId]?.[season]?.[ep]);
+}
+
+function setEpWatched(seriesId, season, ep, val) {
+  if (!watched[seriesId]) watched[seriesId] = {};
+  if (!watched[seriesId][season]) watched[seriesId][season] = {};
+  watched[seriesId][season][ep] = val;
+  save();
+}
+
+function setSeasonWatched(seriesId, seasonNum, episodes, val) {
+  if (!watched[seriesId]) watched[seriesId] = {};
+  if (!watched[seriesId][seasonNum]) watched[seriesId][seasonNum] = {};
+  for (const ep of episodes) {
+    watched[seriesId][seasonNum][ep.episode] = val;
+  }
+  save();
+}
+
+function setSeriesWatched(item, val) {
+  if (!watched[item.id]) watched[item.id] = {};
+  for (const s of item.seasons) {
+    if (!watched[item.id][s.season]) watched[item.id][s.season] = {};
+    for (const ep of s.episodes) {
+      watched[item.id][s.season][ep.episode] = val;
+    }
+  }
+  save();
+}
+
+function save() {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(watched));
+  updateGlobalProgress();
+  updateStats();
+}
+
+// ── Type helpers ─────────────────────────────────────────────────────────────
+
+function isMovie(item)  { return item.type === 'movie'  || item.type === 'short-movie'; }
+function isSeries(item) { return item.type === 'series' || item.type === 'tv-shorts'; }
+
+// ── Progress calculations ────────────────────────────────────────────────────
+
+function movieMinutes(item) { return item.duration; }
+
+function seriesMinutes(item) {
+  return item.seasons.reduce((t, s) => t + s.episodes.reduce((e, ep) => e + ep.duration, 0), 0);
+}
+
+function totalMinutes() {
+  return catalog.reduce((t, item) => {
+    return t + (isMovie(item) ? movieMinutes(item) : seriesMinutes(item));
+  }, 0);
+}
+
+function watchedMinutesMovie(item) {
+  return getMovieWatched(item.id) ? item.duration : 0;
+}
+
+function watchedMinutesSeries(item) {
+  let mins = 0;
+  for (const s of item.seasons) {
+    for (const ep of s.episodes) {
+      if (getEpWatched(item.id, s.season, ep.episode)) mins += ep.duration;
+    }
+  }
+  return mins;
+}
+
+function watchedMinutesItem(item) {
+  return isMovie(item) ? watchedMinutesMovie(item) : watchedMinutesSeries(item);
+}
+
+function totalWatchedMinutes() {
+  return catalog.reduce((t, item) => t + watchedMinutesItem(item), 0);
+}
+
+function itemStatus(item) {
+  if (isMovie(item)) return getMovieWatched(item.id) ? 'watched' : 'unwatched';
+  const total = seriesMinutes(item);
+  const done = watchedMinutesSeries(item);
+  if (done === 0) return 'unwatched';
+  if (done >= total) return 'watched';
+  return 'partial';
+}
+
+function seriesSeasonProgress(item, seasonNum) {
+  const s = item.seasons.find(s => s.season === seasonNum);
+  if (!s) return { watched: 0, total: 0 };
+  const total = s.episodes.length;
+  const done = s.episodes.filter(ep => getEpWatched(item.id, s.season, ep.episode)).length;
+  return { watched: done, total };
+}
+
+function isSeasonAllWatched(item, seasonNum) {
+  const s = item.seasons.find(s => s.season === seasonNum);
+  return s?.episodes.every(ep => getEpWatched(item.id, s.season, ep.episode));
+}
+
+function formatMinutes(mins) {
+  const h = Math.floor(mins / 60);
+  const m = mins % 60;
+  if (h === 0) return `${m}m`;
+  if (m === 0) return `${h}h`;
+  return `${h}h ${m}m`;
+}
+
+// ── Global progress ──────────────────────────────────────────────────────────
+
+function updateGlobalProgress() {
+  const pct = Math.round((totalWatchedMinutes() / totalMinutes()) * 100);
+  document.getElementById('globalProgressBar').style.width = pct + '%';
+  document.getElementById('globalProgressPct').textContent = pct + '%';
+}
+
+// ── Stats ────────────────────────────────────────────────────────────────────
+
+function updateStats() {
+  const fullMovies = catalog.filter(i => i.type === 'movie');
+  const shortFilms = catalog.filter(i => i.type === 'short-movie');
+  const series = catalog.filter(i => isSeries(i));
+  const watchedFullMovies = fullMovies.filter(i => getMovieWatched(i.id)).length;
+  const watchedShortFilms = shortFilms.filter(i => getMovieWatched(i.id)).length;
+  const totalEps = series
+    .reduce((t, i) => t + i.seasons.reduce((s, se) => s + se.episodes.length, 0), 0);
+  const watchedEps = series
+    .reduce((t, i) => t + i.seasons.reduce((s, se) =>
+      s + se.episodes.filter(ep => getEpWatched(i.id, se.season, ep.episode)).length, 0), 0);
+
+  document.getElementById('statsRow').innerHTML = `
+    <div class="stat-card">
+      <div class="stat-value accent">${Math.round((totalWatchedMinutes() / totalMinutes()) * 100)}%</div>
+      <div class="stat-label">Canon Watched</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value watched-color">${Math.round(totalWatchedMinutes() / 60)}h</div>
+      <div class="stat-label">Time Watched</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value">${watchedFullMovies}/${fullMovies.length}</div>
+      <div class="stat-label">Movies</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value">${watchedShortFilms}/${shortFilms.length}</div>
+      <div class="stat-label">Short Films</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value">${watchedEps}/${totalEps}</div>
+      <div class="stat-label">Episodes</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value">${Math.round((totalMinutes() - totalWatchedMinutes()) / 60)}h</div>
+      <div class="stat-label">Time Remaining</div>
+    </div>
+  `;
+}
+
+// ── Render catalog ───────────────────────────────────────────────────────────
+
+function filteredCatalog() {
+  let items = catalog;
+
+  if (activeEra !== 'all')  items = items.filter(i => i.era === activeEra);
+  if (activeType !== 'all') items = items.filter(i => i.type === activeType);
+
+  if (activeFormat === 'live-action') items = items.filter(i => i.format === 'live-action');
+  if (activeFormat === 'animated')    items = items.filter(i => i.format === 'animated');
+
+  if (activeStatus !== 'all') {
+    const statusKey = activeStatus === 'in-progress' ? 'partial' : activeStatus;
+    items = items.filter(i => itemStatus(i) === statusKey);
+  }
+
+  if (activeSort === 'chronological') {
+    return activeSortDir === 'desc' ? [...items].reverse() : items;
+  }
+
+  const sorted = [...items];
+  const dir = activeSortDir === 'asc' ? 1 : -1;
+  if (activeSort === 'release') {
+    sorted.sort((a, b) => (a.year - b.year) * dir);
+  } else if (activeSort === 'duration') {
+    sorted.sort((a, b) => {
+      const da = isMovie(a) ? a.duration : seriesMinutes(a);
+      const db = isMovie(b) ? b.duration : seriesMinutes(b);
+      return (da - db) * dir;
+    });
+  }
+  return sorted;
+}
+
+function updateSortButtons() {
+  document.querySelectorAll('.sort-btn').forEach(btn => {
+    const label = btn.dataset.label;
+    if (btn.dataset.sort === activeSort) {
+      btn.textContent = label + (activeSortDir === 'asc' ? ' ↑' : ' ↓');
+    } else {
+      btn.textContent = label;
+    }
+  });
+}
+
+function render() {
+  updateGlobalProgress();
+  updateStats();
+  updateSortButtons();
+  renderCatalog();
+}
+
+function renderCatalog() {
+  const items = filteredCatalog();
+  const el = document.getElementById('catalog');
+  el.innerHTML = items.map(item => renderCard(item)).join('');
+
+  el.querySelectorAll('.card').forEach(card => {
+    const id = card.dataset.id;
+    const item = catalog.find(i => i.id === id);
+    card.addEventListener('click', e => {
+      if (e.target.closest('.card-watch-btn')) return;
+      openModal(item);
+    });
+    card.querySelector('.card-watch-btn')?.addEventListener('click', e => {
+      e.stopPropagation();
+      quickToggle(item);
+    });
+  });
+}
+
+function renderCard(item) {
+  const status = itemStatus(item);
+  const total = isMovie(item) ? item.duration : seriesMinutes(item);
+  const done = watchedMinutesItem(item);
+  const pct = total > 0 ? Math.round((done / total) * 100) : 0;
+  const typeLabels = { movie: 'Movie', 'short-movie': 'Short Film', series: 'TV Series', 'tv-shorts': 'TV Shorts' };
+  const typeLabel = typeLabels[item.type] || item.type;
+  const durationLabel = isMovie(item)
+    ? formatMinutes(item.duration)
+    : `${item.seasons.length} Season${item.seasons.length > 1 ? 's' : ''}`;
+
+  const badgeClass = status === 'watched' ? 'badge-watched' : status === 'partial' ? 'badge-partial' : 'badge-unwatched';
+  const badgeText = status === 'watched' ? '✓ Watched' : status === 'partial' ? 'In Progress' : 'Unwatched';
+
+  const watchIcon = status === 'watched' ? '✓' : '＋';
+  const posterSrc = `posters/${item.id}.jpg`;
+  const posterHtml = `
+    <div class="card-poster">
+      <div class="card-status-bar"><div class="card-status-bar-fill" style="height:${pct}%"></div></div>
+      <img src="${posterSrc}" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+      <div class="card-poster-missing" style="display:none">✕</div>
+    </div>`;
+
+  return `
+    <div class="card ${status}" data-id="${item.id}">
+      ${posterHtml}
+      <div class="card-content">
+        <div class="card-body">
+          <div class="card-type">${typeLabel} · ${item.year}</div>
+          <div class="card-title">${item.title}</div>
+          <div class="card-meta">
+            <span class="card-duration">${durationLabel}</span>
+            <span class="card-badge ${badgeClass}">${badgeText}</span>
+          </div>
+        </div>
+        <div class="card-footer">
+          <div class="card-progress-wrap">
+            <div class="card-progress-fill" style="width:${pct}%"></div>
+          </div>
+          <button class="card-watch-btn" title="${status === 'watched' ? 'Mark Unwatched' : 'Mark Watched'}">${watchIcon}</button>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function quickToggle(item) {
+  if (isMovie(item)) {
+    setMovieWatched(item.id, !getMovieWatched(item.id));
+  } else {
+    const s = itemStatus(item);
+    setSeriesWatched(item, s !== 'watched');
+  }
+  renderCatalog();
+}
+
+// ── Modal ────────────────────────────────────────────────────────────────────
+
+function openModal(item) {
+  document.getElementById('modalTitle').textContent = item.title;
+  document.getElementById('modalBody').innerHTML = isMovie(item)
+    ? renderMovieModal(item)
+    : renderSeriesModal(item);
+  document.getElementById('modalOverlay').classList.add('open');
+  bindModalEvents(item);
+}
+
+function closeModal() {
+  document.getElementById('modalOverlay').classList.remove('open');
+}
+
+function renderMovieModal(item) {
+  const isWatched = getMovieWatched(item.id);
+  return `
+    <div class="movie-detail">
+      <div class="movie-info-row">
+        <span class="card-badge ${isWatched ? 'badge-watched' : 'badge-unwatched'}">${isWatched ? '✓ Watched' : 'Unwatched'}</span>
+        <span style="color:var(--text-muted);font-size:0.85rem">${item.year}</span>
+        <span style="color:var(--text-muted);font-size:0.85rem">${formatMinutes(item.duration)}</span>
+      </div>
+      ${item.description ? `<p class="modal-description">${item.description}</p>` : ''}
+      ${item.disneyPlusUrl ? `<a class="btn-disney" href="${item.disneyPlusUrl}" target="_blank" rel="noopener noreferrer">▶ ${item.disneyPlusUrl.includes('youtube.com') ? 'Watch on YouTube' : 'Watch on Disney+'}</a>` : ''}
+      <button class="movie-watch-toggle ${isWatched ? 'active' : ''}" id="movieToggle">
+        <div class="toggle-icon">${isWatched ? '✓' : '○'}</div>
+        <div>
+          <div class="toggle-text">${isWatched ? 'Watched' : 'Mark as Watched'}</div>
+          <div class="toggle-sub">${isWatched ? 'Click to mark as unwatched' : 'Click to log this movie'}</div>
+        </div>
+      </button>
+    </div>
+  `;
+}
+
+function renderSeriesModal(item) {
+  const totalMins = seriesMinutes(item);
+  const doneMins = watchedMinutesSeries(item);
+  const pct = Math.round((doneMins / totalMins) * 100);
+
+  const seasonsHtml = item.seasons.map(s => {
+    const prog = seriesSeasonProgress(item, s.season);
+    const allWatched = prog.watched === prog.total;
+
+    const epsHtml = s.episodes.map(ep => {
+      const isWatched = getEpWatched(item.id, s.season, ep.episode);
+      return `
+        <div class="episode-row ${isWatched ? 'watched' : ''}" data-series="${item.id}" data-season="${s.season}" data-ep="${ep.episode}">
+          <div class="ep-check">${isWatched ? '✓' : ''}</div>
+          <span class="ep-num">E${ep.episode}</span>
+          <span class="ep-title">${ep.title}</span>
+          <span class="ep-duration">${ep.duration}m</span>
+        </div>
+      `;
+    }).join('');
+
+    return `
+      <div class="season-block">
+        <div class="season-header">
+          <span class="season-title">Season ${s.season}</span>
+          <span class="season-progress-text">${prog.watched}/${prog.total} episodes</span>
+          <button class="season-btn ${allWatched ? 'all-watched' : ''}" data-series="${item.id}" data-season="${s.season}">
+            ${allWatched ? '✓ All Watched' : 'Mark Season'}
+          </button>
+        </div>
+        <div class="episode-list">${epsHtml}</div>
+      </div>
+    `;
+  }).join('');
+
+  return `
+    ${item.description ? `<p class="modal-description">${item.description}</p>` : ''}
+    <div class="series-header-actions">
+      ${item.disneyPlusUrl ? `<a class="btn-disney" href="${item.disneyPlusUrl}" target="_blank" rel="noopener noreferrer">▶ ${item.disneyPlusUrl.includes('youtube.com') ? 'Watch on YouTube' : 'Watch on Disney+'}</a>` : ''}
+      <button class="btn-primary" id="markAllBtn" data-id="${item.id}">Mark All Watched</button>
+      <button class="btn-outline" id="unmarkAllBtn" data-id="${item.id}">Clear All</button>
+      <span style="margin-left:auto;color:var(--text-muted);font-size:0.85rem;align-self:center">${pct}% · ${formatMinutes(doneMins)} / ${formatMinutes(totalMins)}</span>
+    </div>
+    ${seasonsHtml}
+  `;
+}
+
+function bindModalEvents(item) {
+  if (isMovie(item)) {
+    document.getElementById('movieToggle')?.addEventListener('click', () => {
+      setMovieWatched(item.id, !getMovieWatched(item.id));
+      document.getElementById('modalBody').innerHTML = renderMovieModal(item);
+      bindModalEvents(item);
+      renderCatalog();
+    });
+    return;
+  }
+
+  document.getElementById('markAllBtn')?.addEventListener('click', () => {
+    setSeriesWatched(item, true);
+    document.getElementById('modalBody').innerHTML = renderSeriesModal(item);
+    bindModalEvents(item);
+    renderCatalog();
+  });
+
+  document.getElementById('unmarkAllBtn')?.addEventListener('click', () => {
+    setSeriesWatched(item, false);
+    document.getElementById('modalBody').innerHTML = renderSeriesModal(item);
+    bindModalEvents(item);
+    renderCatalog();
+  });
+
+  document.querySelectorAll('.season-btn').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.stopPropagation();
+      const seriesId = btn.dataset.series;
+      const seasonNum = parseInt(btn.dataset.season);
+      const s = item.seasons.find(s => s.season === seasonNum);
+      const allWatched = isSeasonAllWatched(item, seasonNum);
+      setSeasonWatched(seriesId, seasonNum, s.episodes, !allWatched);
+      document.getElementById('modalBody').innerHTML = renderSeriesModal(item);
+      bindModalEvents(item);
+      renderCatalog();
+    });
+  });
+
+  document.querySelectorAll('.episode-row').forEach(row => {
+    row.addEventListener('click', () => {
+      const seriesId = row.dataset.series;
+      const season = parseInt(row.dataset.season);
+      const ep = parseInt(row.dataset.ep);
+      const cur = getEpWatched(seriesId, season, ep);
+      setEpWatched(seriesId, season, ep, !cur);
+      document.getElementById('modalBody').innerHTML = renderSeriesModal(item);
+      bindModalEvents(item);
+      renderCatalog();
+    });
+  });
+}
+
+// ── Save / load ──────────────────────────────────────────────────────────────
+
+function openSaveModal() {
+  document.getElementById('saveModalOverlay').classList.add('open');
+}
+
+function closeSaveModal() {
+  document.getElementById('saveModalOverlay').classList.remove('open');
+}
+
+function downloadWatchHistory() {
+  const blob = new Blob([JSON.stringify(watched, null, 2)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'tbsb-backup.json';
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+function loadWatchHistory(file) {
+  const reader = new FileReader();
+  reader.onload = e => {
+    try {
+      const data = JSON.parse(e.target.result);
+      if (typeof data !== 'object' || Array.isArray(data)) throw new Error();
+      watched = data;
+      save();
+      renderCatalog();
+    } catch {
+      alert('Invalid file. Please select a The Backlog Strikes Back history backup (.json).');
+    }
+  };
+  reader.readAsText(file);
+}
+
+// ── Event bindings ───────────────────────────────────────────────────────────
+
+function bindEvents() {
+  document.getElementById('modalClose').addEventListener('click', closeModal);
+  document.getElementById('modalOverlay').addEventListener('click', e => {
+    if (e.target === e.currentTarget) closeModal();
+  });
+
+  function applyFilter(filterType, val) {
+    if (filterType === 'era') activeEra = val;
+    else if (filterType === 'type') activeType = val;
+    else if (filterType === 'format') activeFormat = val;
+    else if (filterType === 'status') activeStatus = val;
+    document.querySelectorAll(`.${filterType}-btn`).forEach(b => {
+      b.classList.toggle('active', b.dataset[filterType] === val);
+    });
+    const sel = document.querySelector(`.${filterType}-select`);
+    if (sel) sel.value = val;
+    renderCatalog();
+  }
+
+  ['era', 'type', 'format', 'status'].forEach(filterType => {
+    document.querySelectorAll(`.${filterType}-btn`).forEach(btn => {
+      btn.addEventListener('click', () => applyFilter(filterType, btn.dataset[filterType]));
+    });
+    const sel = document.querySelector(`.${filterType}-select`);
+    if (sel) sel.addEventListener('change', () => applyFilter(filterType, sel.value));
+  });
+
+  document.querySelectorAll('.sort-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (btn.dataset.sort === activeSort) {
+        activeSortDir = activeSortDir === 'asc' ? 'desc' : 'asc';
+      } else {
+        document.querySelectorAll('.sort-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        activeSort = btn.dataset.sort;
+        activeSortDir = 'asc';
+      }
+      updateSortButtons();
+      renderCatalog();
+    });
+  });
+
+  document.getElementById('resetBtn').addEventListener('click', () => {
+    if (confirm('Reset all watch progress? This cannot be undone.')) {
+      watched = {};
+      save();
+      renderCatalog();
+    }
+  });
+
+  document.getElementById('saveBtn').addEventListener('click', openSaveModal);
+  document.getElementById('saveModalClose').addEventListener('click', closeSaveModal);
+  document.getElementById('saveModalCloseBtn').addEventListener('click', closeSaveModal);
+  document.getElementById('downloadBtn').addEventListener('click', downloadWatchHistory);
+  document.getElementById('saveModalOverlay').addEventListener('click', e => {
+    if (e.target === e.currentTarget) closeSaveModal();
+  });
+
+  document.getElementById('loadBtn').addEventListener('click', () => {
+    document.getElementById('loadInput').click();
+  });
+  document.getElementById('loadInput').addEventListener('change', e => {
+    const file = e.target.files[0];
+    if (file) {
+      loadWatchHistory(file);
+      e.target.value = '';
+    }
+  });
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') { closeModal(); closeSaveModal(); }
+  });
+}
+
+const FOOTER_QUOTES = [
+  'The ability to stream does not make you intelligent.',
+  'I watched them. I watched them all. And not just the movies, but the shows and the shorts, too.',
+  'I find your lack of watch progress disturbing.',
+];
+
+function renderFooter() {
+  document.querySelector('footer p').innerHTML =
+    FOOTER_QUOTES[Math.floor(Math.random() * FOOTER_QUOTES.length)];
+}
+
+init();

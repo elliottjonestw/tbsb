@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Backlog Strikes Back</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <div class="logo">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+        </svg>
+        <span>The Backlog Strikes Back</span>
+      </div>
+      <div class="progress-pill">
+        <span class="progress-label">Canon Progress</span>
+        <div class="progress-bar-wrap">
+          <div class="progress-bar-fill" id="globalProgressBar"></div>
+        </div>
+        <span class="progress-pct" id="globalProgressPct">0%</span>
+      </div>
+      <div class="header-actions">
+        <button class="btn-secondary" id="resetBtn">Reset</button>
+        <button class="btn-secondary" id="saveBtn">Save</button>
+        <button class="btn-secondary" id="loadBtn">Load</button>
+        <input type="file" id="loadInput" accept=".json" style="display:none" />
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="stats-row" id="statsRow"></div>
+    <div class="controls-row">
+      <div class="filters-col">
+        <div class="filter-row">
+          <span class="filter-row-label">Era</span>
+          <select class="filter-select era-select">
+            <option value="all">All</option>
+            <option value="lucas">Lucas Era</option>
+            <option value="disney">Disney Era</option>
+          </select>
+          <button class="filter-btn era-btn active" data-era="all">All</button>
+          <button class="filter-btn era-btn" data-era="lucas">Lucas Era</button>
+          <button class="filter-btn era-btn" data-era="disney">Disney Era</button>
+        </div>
+        <div class="filter-row">
+          <span class="filter-row-label">Type</span>
+          <select class="filter-select type-select">
+            <option value="all">All</option>
+            <option value="movie">Movies</option>
+            <option value="short-movie">Short Films</option>
+            <option value="series">TV Shows</option>
+            <option value="tv-shorts">TV Show Shorts</option>
+          </select>
+          <button class="filter-btn type-btn active" data-type="all">All</button>
+          <button class="filter-btn type-btn" data-type="movie">Movies</button>
+          <button class="filter-btn type-btn" data-type="short-movie">Short Films</button>
+          <button class="filter-btn type-btn" data-type="series">TV Shows</button>
+          <button class="filter-btn type-btn" data-type="tv-shorts">TV Show Shorts</button>
+        </div>
+        <div class="filter-row">
+          <span class="filter-row-label">Format</span>
+          <select class="filter-select format-select">
+            <option value="all">All</option>
+            <option value="live-action">Live Action</option>
+            <option value="animated">Animated</option>
+          </select>
+          <button class="filter-btn format-btn active" data-format="all">All</button>
+          <button class="filter-btn format-btn" data-format="live-action">Live Action</button>
+          <button class="filter-btn format-btn" data-format="animated">Animated</button>
+        </div>
+        <div class="filter-row">
+          <span class="filter-row-label">Progress</span>
+          <select class="filter-select status-select">
+            <option value="all">All</option>
+            <option value="unwatched">Unwatched</option>
+            <option value="in-progress">In Progress</option>
+            <option value="watched">Watched</option>
+          </select>
+          <button class="filter-btn status-btn active" data-status="all">All</button>
+          <button class="filter-btn status-btn" data-status="unwatched">Unwatched</button>
+          <button class="filter-btn status-btn" data-status="in-progress">In Progress</button>
+          <button class="filter-btn status-btn" data-status="watched">Watched</button>
+        </div>
+      </div>
+      <div class="sort-bar">
+        <span class="sort-label">Sort</span>
+        <button class="sort-btn active" data-sort="chronological" data-label="Chronological">Chronological</button>
+        <button class="sort-btn" data-sort="release" data-label="Release Date">Release Date</button>
+        <button class="sort-btn" data-sort="duration" data-label="Duration">Duration</button>
+      </div>
+    </div>
+    <div class="catalog" id="catalog"></div>
+  </main>
+
+  <div class="modal-overlay" id="saveModalOverlay">
+    <div class="modal save-modal">
+      <div class="modal-header">
+        <h2>Watch History</h2>
+        <button class="modal-close" id="saveModalClose">&times;</button>
+      </div>
+      <div class="modal-body save-modal-body">
+        <p>Your watch history is automatically saved in your browser's local storage, so it persists between visits. However, it is tied to this browser and device — it will be lost if you clear your browser data or open the site on a different device.</p>
+        <p>Download a backup file to keep your progress safe. You can restore it at any time using the <strong>Load</strong> button.</p>
+        <div class="save-modal-actions">
+          <button class="btn-outline" id="saveModalCloseBtn">Close</button>
+          <button class="btn-primary" id="downloadBtn">Download backup</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal" id="modal">
+      <div class="modal-header">
+        <h2 id="modalTitle"></h2>
+        <button class="modal-close" id="modalClose">&times;</button>
+      </div>
+      <div class="modal-body" id="modalBody"></div>
+    </div>
+  </div>
+
+  <footer>
+    <p></p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

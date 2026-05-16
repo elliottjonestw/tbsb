@@ -1,0 +1,3348 @@
+{
+  "content": [
+    {
+      "id": "young-jedi-adventures-shorts",
+      "title": "Young Jedi Adventures Shorts",
+      "type": "tv-shorts",
+      "year": 2023,
+      "description": "A series of bite-sized animated shorts set in the same High Republic world as Young Jedi Adventures, following Kai, Lys, and Nubs on quick missions and fun encounters around Tenoo.",
+      "seasons": [
+        {
+          "season": 1,
+          "episodes": [
+            {
+              "episode": 1,
+              "title": "Meet the Young Jedi",
+              "duration": 3
+            },
+            {
+              "episode": 2,
+              "title": "Lys' Creature Caper",
+              "duration": 3
+            },
+            {
+              "episode": 3,
+              "title": "Kai's Daring Droid Rescue",
+              "duration": 3
+            },
+            {
+              "episode": 4,
+              "title": "Nubs and the Flower Fiasco",
+              "duration": 3
+            },
+            {
+              "episode": 5,
+              "title": "Nash's Firehawk Frenzy",
+              "duration": 3
+            },
+            {
+              "episode": 6,
+              "title": "Taborr's Pirate Showdown",
+              "duration": 3
+            }
+          ]
+        },
+        {
+          "season": 2,
+          "episodes": [
+            {
+              "episode": 1,
+              "title": "Younglings in the Wild",
+              "duration": 3
+            },
+            {
+              "episode": 2,
+              "title": "Junkyard Joust",
+              "duration": 3
+            },
+            {
+              "episode": 3,
+              "title": "Firehawk Rescue",
+              "duration": 3
+            },
+            {
+              "episode": 4,
+              "title": "Nubs-tacle Course",
+              "duration": 3
+            },
+            {
+              "episode": 5,
+              "title": "A Droid's Mission",
+              "duration": 3
+            },
+            {
+              "episode": 6,
+              "title": "Skyring Soaring",
+              "duration": 3
+            }
+          ]
+        }
+      ],
+      "format": "animated",
+      "era": "disney",
+      "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-ca4bc1e9-6a29-43f7-9866-f9ffc55e1332"
+    },
+    {
+      "id": "young-jedi-adventures",
+      "title": "Young Jedi Adventures",
+      "type": "series",
+      "year": 2023,
+      "seasons": [
+        {
+          "season": 1,
+          "episodes": [
+            {
+              "episode": 1,
+              "title": "The Young Jedi / Yoda's Mission",
+              "duration": 24
+            },
+            {
+              "episode": 2,
+              "title": "Nash's Race Day / The Lost Jedi Ship",
+              "duration": 24
+            },
+            {
+              "episode": 3,
+              "title": "Get Well Nubs / The Junk Giant",
+              "duration": 24
+            },
+            {
+              "episode": 4,
+              "title": "Lys and the Snowy Mountain Rescue / Attack of the Training Droids",
+              "duration": 24
+            },
+            {
+              "episode": 5,
+              "title": "The Jellyfruit Pursuit / Creature Safari",
+              "duration": 24
+            },
+            {
+              "episode": 6,
+              "title": "Squadron / Forest Defenders",
+              "duration": 24
+            },
+            {
+              "episode": 7,
+              "title": "The Jedi and the Thief / The Missing Kibbin",
+              "duration": 24
+            },
+            {
+              "episode": 8,
+              "title": "The Girl and Her Gargantua / The Show Must Go On",
+              "duration": 24
+            },
+            {
+              "episode": 9,
+              "title": "The Princess and the Jedi / Kai's Bad Day",
+              "duration": 24
+            },
+            {
+              "episode": 10,
+              "title": "Visitor's Day / The Growing Green Danger",
+              "duration": 24
+            },
+            {
+              "episode": 11,
+              "title": "The Ganguls / Bad Eggs",
+              "duration": 24
+            },
+            {
+              "episode": 12,
+              "title": "Off the Rails / The Thieves of Tharnaka",
+              "duration": 24
+            },
+            {
+              "episode": 13,
+              "title": "Tree Troubles / Big Brother's Bounty",
+              "duration": 24
+            },
+            {
+              "episode": 14,
+              "title": "Charhound Chase / Creature Comforts",
+              "duration": 24
+            },
+            {
+              "episode": 15,
+              "title": "An Adventure with Yoda / The Talon Takeover",
+              "duration": 24
+            },
+            {
+              "episode": 16,
+              "title": "Mystery of the Opal Cave / Clash",
+              "duration": 24
+            },
+            {
+              "episode": 17,
+              "title": "Stuck in the Muck / Junkyard Sleepover",
+              "duration": 24
+            },
+            {
+              "episode": 18,
+              "title": "The Great Leaf Glide / The Harvest Feast",
+              "duration": 24
+            },
+            {
+              "episode": 19,
+              "title": "Life Day / Raxlo Strikes Back",
+              "duration": 24
+            },
+            {
+              "episode": 20,
+              "title": "Aftershock / Feather Frenzy",
+              "duration": 24
+            },
+            {
+              "episode": 21,
+              "title": "Best Friends / Happy Trails, Nubs",
+              "duration": 24
+            },
+            {
+              "episode": 22,
+              "title": "The Tale of the Short Spire / The Team Up",
+              "duration": 24
+            },
+            {
+              "episode": 23,
+              "title": "The Caves of Batuu / Finders Keepers",
+              "duration": 24
+            },
+            {
+              "episode": 24,
+              "title": "The Starship Show / Nash's Super Busy Day",
+              "duration": 24
+            },
+            {
+              "episode": 25,
+              "title": "The Prince and the Pirate",
+              "duration": 24
+            }
+          ]
+        },
+        {
+          "season": 2,
+          "episodes": [
+            {
+              "episode": 1,
+              "title": "Heroes and Hotshots / A Jedi or a Pirate",
+              "duration": 24
+            },
+            {
+              "episode": 2,
+              "title": "The Rustler Roundup / A New Discovery",
+              "duration": 24
+            },
+            {
+              "episode": 3,
+              "title": "A Pirate's Pet / The Secret Ship",
+              "duration": 24
+            },
+            {
+              "episode": 4,
+              "title": "Nubs' Big Mistake / The Jedi Rescue",
+              "duration": 24
+            },
+            {
+              "episode": 5,
+              "title": "Terror of Tenoo / The Prince of Masks",
+              "duration": 24
+            },
+            {
+              "episode": 6,
+              "title": "Battle for the Band / Uprooted",
+              "duration": 24
+            },
+            {
+              "episode": 7,
+              "title": "Mine and Ours / The Andraven Circuit",
+              "duration": 24
+            },
+            {
+              "episode": 8,
+              "title": "The Great Gomgourd Quest / A Sticky Situation",
+              "duration": 24
+            },
+            {
+              "episode": 9,
+              "title": "The Missing Life Day Feast / The Lost Treasure of Tenoo",
+              "duration": 24
+            },
+            {
+              "episode": 10,
+              "title": "The Wild Aklyrr / Lys' Lost Lightsaber",
+              "duration": 24
+            },
+            {
+              "episode": 11,
+              "title": "Tower Run / The Jumping Jetpack",
+              "duration": 24
+            },
+            {
+              "episode": 12,
+              "title": "Unmasked",
+              "duration": 24
+            },
+            {
+              "episode": 13,
+              "title": "Just Like Wes / Raxlo to the Rescue",
+              "duration": 24
+            },
+            {
+              "episode": 14,
+              "title": "The Helpful Harvester / Lost Little Droid",
+              "duration": 24
+            },
+            {
+              "episode": 15,
+              "title": "Tenoo's Fastest / Home Sweet Temple",
+              "duration": 24
+            },
+            {
+              "episode": 16,
+              "title": "The Firehawk Feud / The Chop Shop Calamity",
+              "duration": 24
+            },
+            {
+              "episode": 17,
+              "title": "Big Pooba Problems / Best Bounty Buddies",
+              "duration": 24
+            },
+            {
+              "episode": 18,
+              "title": "The Rainy Day Beast / Upgraded",
+              "duration": 24
+            },
+            {
+              "episode": 19,
+              "title": "Journey to the Bracca Badlands / The Search for the Missing Dunnels",
+              "duration": 24
+            },
+            {
+              "episode": 20,
+              "title": "The Spaceport Setback / The Mission Mixup",
+              "duration": 24
+            },
+            {
+              "episode": 21,
+              "title": "Yoda Rescue / Fossil Hunt",
+              "duration": 24
+            },
+            {
+              "episode": 22,
+              "title": "A Mission to Remember / The Bounty Hunter and the Thief",
+              "duration": 24
+            },
+            {
+              "episode": 23,
+              "title": "The Battle of Tenoo",
+              "duration": 24
+            }
+          ]
+        },
+        {
+          "season": 3,
+          "episodes": [
+            {
+              "episode": 1,
+              "title": "The New Droid Friends / Batuu Bonanza",
+              "duration": 24
+            },
+            {
+              "episode": 2,
+              "title": "Music Mayhem / The Night Lights of Tenoo",
+              "duration": 24
+            },
+            {
+              "episode": 3,
+              "title": "Journey to the Bottom of Naboo / Speeder Surprise",
+              "duration": 24
+            },
+            {
+              "episode": 4,
+              "title": "Scrapping for a Song / Bell and the Band",
+              "duration": 24
+            },
+            {
+              "episode": 5,
+              "title": "To Do Good / Nubs and the Bumbling Bandits",
+              "duration": 24
+            },
+            {
+              "episode": 6,
+              "title": "Apexx Awakens / Harvester Madness",
+              "duration": 24
+            },
+            {
+              "episode": 7,
+              "title": "Making Friends",
+              "duration": 24
+            }
+          ]
+        }
+      ],
+      "description": "An animated series following a group of young Jedi younglings as they learn the ways of the Force, go on adventures across the galaxy, and discover what it means to be a Jedi.",
+      "format": "animated",
+      "era": "disney",
+      "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-faa35b37-3287-4a7c-9d42-a3a5f9ad9185"
+    },
+    {
+      "id": "fun-with-nubs",
+      "title": "Fun with Nubs",
+      "type": "tv-shorts",
+      "year": 2024,
+      "description": "A series of one-minute animated shorts following the loveable Nubs and his droid companion RJ-83 through small, charming everyday adventures on Tenoo.",
+      "seasons": [
+        {
+          "season": 1,
+          "episodes": [
+            {
+              "episode": 1,
+              "title": "Nubs Loses His Lightsaber",
+              "duration": 1
+            },
+            {
+              "episode": 2,
+              "title": "RJ Repairs the Firehawk",
+              "duration": 1
+            },
+            {
+              "episode": 3,
+              "title": "Nubs Cleans Up",
+              "duration": 1
+            },
+            {
+              "episode": 4,
+              "title": "RJ Needs a Tool",
+              "duration": 1
+            },
+            {
+              "episode": 5,
+              "title": "Nubs Tries to Meditate",
+              "duration": 1
+            },
+            {
+              "episode": 6,
+              "title": "RJ Goes For A Swim",
+              "duration": 1
+            },
+            {
+              "episode": 7,
+              "title": "Nubs Gardens",
+              "duration": 1
+            },
+            {
+              "episode": 8,
+              "title": "RJ Fixes the Speeder",
+              "duration": 1
+            },
+            {
+              "episode": 9,
+              "title": "Nubs and RJ Dance",
+              "duration": 1
+            },
+            {
+              "episode": 10,
+              "title": "Nubs Can't Stop Sneezing",
+              "duration": 1
+            }
+          ]
+        },
+        {
+          "season": 2,
+          "episodes": [
+            {
+              "episode": 1,
+              "title": "Nubs Gets Stuck",
+              "duration": 1
+            },
+            {
+              "episode": 2,
+              "title": "RJ Makes a Friend",
+              "duration": 1
+            },
+            {
+              "episode": 3,
+              "title": "Nubs Learns to Paint",
+              "duration": 1
+            },
+            {
+              "episode": 4,
+              "title": "Nubs and RJ Jam Out",
+              "duration": 1
+            },
+            {
+              "episode": 5,
+              "title": "Nubs Tries to Sleep",
+              "duration": 1
+            },
+            {
+              "episode": 6,
+              "title": "RJ Learns to Fly",
+              "duration": 1
+            },
+            {
+              "episode": 7,
+              "title": "Nubs Gets a Tummy Ache",
+              "duration": 1
+            },
+            {
+              "episode": 8,
+              "title": "RJ Makes a Speedy Delivery",
+              "duration": 1
+            },
+            {
+              "episode": 9,
+              "title": "Nubs Faces a Bug",
+              "duration": 1
+            },
+            {
+              "episode": 10,
+              "title": "RJ Makes Music",
+              "duration": 1
+            }
+          ]
+        }
+      ],
+      "format": "animated",
+      "era": "disney",
+      "disneyPlusUrl": "https://www.youtube.com/playlist?list=PLXsbMnnbPpLXMUzQ0oBMxM0GnUs153EbL"
+    },
+    {
+      "id": "the-acolyte",
+      "title": "The Acolyte",
+      "type": "series",
+      "year": 2024,
+      "seasons": [
+        {
+          "season": 1,
+          "episodes": [
+            {
+              "episode": 1,
+              "title": "Lost/Found",
+              "duration": 41
+            },
+            {
+              "episode": 2,
+              "title": "Revenge/Justice",
+              "duration": 36
+            },
+            {
+              "episode": 3,
+              "title": "Destiny",
+              "duration": 42
+            },
+            {
+              "episode": 4,
+              "title": "Day",
+              "duration": 32
+            },
+            {
+              "episode": 5,
+              "title": "Night",
+              "duration": 41
+            },
+            {
+              "episode": 6,
+              "title": "Teach/Corrupt",
+              "duration": 35
+            },
+            {
+              "episode": 7,
+              "title": "Choice",
+              "duration": 47
+            },
+            {
+              "episode": 8,
+              "title": "The Acolyte",
+              "duration": 49
+            }
+          ]
+        }
+      ],
+      "description": "Set during the twilight of the High Republic era, a former Padawan and her Jedi pursuers are drawn into a web of secrets connecting a series of shocking crimes to a powerful figure from the past.",
+      "format": "live-action",
+      "era": "disney",
+      "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-a5c84b7d-fd4e-42c8-95e3-960e73e1a71e"
+    },
+    {
+      "id": "zen-grogu-and-dust-bunnies",
+      "title": "Zen – Grogu and Dust Bunnies",
+      "type": "short-movie",
+      "format": "animated",
+      "year": 2022,
+      "duration": 2,
+      "description": "A wordless, meditative short produced in collaboration with Studio Ghibli, following Grogu as he encounters playful dust bunny spirits in a moment of quiet wonder.",
+      "era": "disney",
+      "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-cb6dcb0d-4af7-41ef-ae1b-f4bc0fc62167"
+    },
+    {
+      "id": "episode-i-the-phantom-menace",
+      "title": "Episode I – The Phantom Menace",
+      "type": "movie",
+      "year": 1999,
+      "duration": 136,
+      "description": "Two Jedi knights escort a young queen through a political crisis and discover a slave boy with an extraordinary connection to the Force — one that could fulfil an ancient Jedi prophecy.",
+      "format": "live-action",
+      "era": "lucas",
+      "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-e0a9fee4-2959-4077-ad8c-8fab4fd6e4d1"
+    },
+    {
+      "id": "episode-ii-attack-of-the-clones",
+      "title": "Episode II – Attack of the Clones",
+      "type": "movie",
+      "year": 2002,
+      "duration": 142,
+      "description": "A young Jedi is assigned to protect a senator whose life is under threat, while his investigation and a separate mission by his mentor reveal a conspiracy that will drag the Republic into war.",
+      "format": "live-action",
+      "era": "lucas",
+      "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-39cbdf17-1bbe-4de2-b4a4-8e342875c2c6"
+    },
+    {
+      "id": "the-clone-wars-film",
+      "title": "The Clone Wars",
+      "type": "movie",
+      "year": 2008,
+      "duration": 98,
+      "description": "Anakin Skywalker and his newly assigned Padawan embark on a dangerous mission behind enemy lines to rescue a young hostage, testing the new partnership before the full heat of the Clone Wars.",
+      "format": "animated",
+      "era": "lucas",
+      "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-24a03eff-e68a-4743-828d-32ba9ffc0c7f"
+    },
+    {
+      "id": "the-clone-wars",
+      "title": "The Clone Wars",
+      "type": "series",
+      "year": 2008,
+      "seasons": [
+        {
+          "season": 1,
+          "episodes": [
+            {
+              "episode": 1,
+              "title": "Ambush",
+              "duration": 22
+            },
+            {
+              "episode": 2,
+              "title": "Rising Malevolence",
+              "duration": 22
+            },
+            {
+              "episode": 3,
+              "title": "Shadow of Malevolence",
+              "duration": 22
+            },
+            {
+              "episode": 4,
+              "title": "Destroy Malevolence",
+              "duration": 22
+            },
+            {
+              "episode": 5,
+              "title": "Rookies",
+              "duration": 22
+            },
+            {
+              "episode": 6,
+              "title": "Downfall of a Droid",
+              "duration": 22
+            },
+            {
+              "episode": 7,
+              "title": "Duel of the Droids",
+              "duration": 22
+            },
+            {
+              "episode": 8,
+              "title": "Bombad Jedi",
+              "duration": 22
+            },
+            {
+              "episode": 9,
+              "title": "Cloak of Darkness",
+              "duration": 22
+            },
+            {
+              "episode": 10,
+              "title": "Lair of Grievous",
+              "duration": 22
+            },
+            {
+              "episode": 11,
+              "title": "Dooku Captured",
+              "duration": 22
+            },
+            {
+              "episode": 12,
+              "title": "The Gungan General",
+              "duration": 22
+            },
+            {
+              "episode": 13,
+              "title": "Jedi Crash",
+              "duration": 22
+            },
+            {
+              "episode": 14,
+              "title": "Defenders of Peace",
+              "duration": 22
+            },
+            {
+              "episode": 15,
+              "title": "Trespass",
+              "duration": 22
+            },
+            {
+              "episode": 16,
+              "title": "The Hidden Enemy",
+              "duration": 22
+            },
+            {
+              "episode": 17,
+              "title": "Blue Shadow Virus",
+              "duration": 22
+            },
+            {
+              "episode": 18,
+              "title": "Mystery of a Thousand Moons",
+              "duration": 22
+            },
+            {
+              "episode": 19,
+              "title": "Storm Over Ryloth",
+              "duration": 22
+            },
+            {
+              "episode": 20,
+              "title": "Innocents of Ryloth",
+              "duration": 22
+            },
+            {
+              "episode": 21,
+              "title": "Liberty on Ryloth",
+              "duration": 22
+            },
+            {
+              "episode": 22,
+              "title": "Hostage Crisis",
+              "duration": 22
+            }
+          ]
+        },
+        {
+          "season": 2,
+          "episodes": [
+            {
+              "episode": 1,
+              "title": "Holocron Heist",
+              "duration": 22
+            },
+            {
+              "episode": 2,
+              "title": "Cargo of Doom",
+              "duration": 22
+            },
+            {
+              "episode": 3,
+              "title": "Children of the Force",
+              "duration": 22
+            },
+            {
+              "episode": 4,
+              "title": "Senate Spy",
+              "duration": 22
+            },
+            {
+              "episode": 5,
+              "title": "Landing at Point Rain",
+              "duration": 22
+            },
+            {
+              "episode": 6,
+              "title": "Weapons Factory",
+              "duration": 22
+            },
+            {
+              "episode": 7,
+              "title": "Legacy of Terror",
+              "duration": 22
+            },
+            {
+              "episode": 8,
+              "title": "Brain Invaders",
+              "duration": 22
+            },
+            {
+              "episode": 9,
+              "title": "Grievous Intrigue",
+              "duration": 22
+            },
+            {
+              "episode": 10,
+              "title": "The Deserter",
+              "duration": 22
+            },
+            {
+              "episode": 11,
+              "title": "Lightsaber Lost",
+              "duration": 22
+            },
+            {
+              "episode": 12,
+              "title": "The Mandalore Plot",
+              "duration": 22
+            },
+            {
+              "episode": 13,
+              "title": "Voyage of Temptation",
+              "duration": 22
+            },
+            {
+              "episode": 14,
+              "title": "Duchess of Mandalore",
+              "duration": 22
+            },
+            {
+              "episode": 15,
+              "title": "Senate Murders",
+              "duration": 22
+            },
+            {
+              "episode": 16,
+              "title": "Cat and Mouse",
+              "duration": 22
+            },
+            {
+              "episode": 17,
+              "title": "Bounty Hunters",
+              "duration": 22
+            },
+            {
+              "episode": 18,
+              "title": "The Zillo Beast",
+              "duration": 22
+            },
+            {
+              "episode": 19,
+              "title": "The Zillo Beast Strikes Back",
+              "duration": 22
+            },
+            {
+              "episode": 20,
+              "title": "Death Trap",
+              "duration": 22
+            },
+            {
+              "episode": 21,
+              "title": "R2 Come Home",
+              "duration": 22
+            },
+            {
+              "episode": 22,
+              "title": "Lethal Trackdown",
+              "duration": 22
+            }
+          ]
+        },
+        {
+          "season": 3,
+          "episodes": [
+            {
+              "episode": 1,
+              "title": "Clone Cadets",
+              "duration": 22
+            },
+            {
+              "episode": 2,
+              "title": "ARC Troopers",
+              "duration": 22
+            },
+            {
+              "episode": 3,
+              "title": "Supply Lines",
+              "duration": 22
+            },
+            {
+              "episode": 4,
+              "title": "Sphere of Influence",
+              "duration": 22
+            },
+            {
+              "episode": 5,
+              "title": "Corruption",
+              "duration": 22
+            },
+            {
+              "episode": 6,
+              "title": "The Academy",
+              "duration": 22
+            },
+            {
+              "episode": 7,
+              "title": "Assassin",
+              "duration": 22
+            },
+            {
+              "episode": 8,
+              "title": "Evil Plans",
+              "duration": 22
+            },
+            {
+              "episode": 9,
+              "title": "Hunt for Ziro",
+              "duration": 22
+            },
+            {
+              "episode": 10,
+              "title": "Heroes on Both Sides",
+              "duration": 22
+            },
+            {
+              "episode": 11,
+              "title": "Pursuit of Peace",
+              "duration": 22
+            },
+            {
+              "episode": 12,
+              "title": "Nightsisters",
+              "duration": 22
+            },
+            {
+              "episode": 13,
+              "title": "Monster",
+              "duration": 22
+            },
+            {
+              "episode": 14,
+              "title": "Witches of the Mist",
+              "duration": 22
+            },
+            {
+              "episode": 15,
+              "title": "Overlords",
+              "duration": 22
+            },
+            {
+              "episode": 16,
+              "title": "Altar of Mortis",
+              "duration": 22
+            },
+            {
+              "episode": 17,
+              "title": "Ghosts of Mortis",
+              "duration": 22
+            },
+            {
+              "episode": 18,
+              "title": "The Citadel",
+              "duration": 22
+            },
+            {
+              "episode": 19,
+              "title": "Counter Attack",
+              "duration": 22
+            },
+            {
+              "episode": 20,
+              "title": "Citadel Rescue",
+              "duration": 22
+            },
+            {
+              "episode": 21,
+              "title": "Padawan Lost",
+              "duration": 22
+            },
+            {
+              "episode": 22,
+              "title": "Wookiee Hunt",
+              "duration": 22
+            }
+          ]
+        },
+        {
+          "season": 4,
+          "episodes": [
+            {
+              "episode": 1,
+              "title": "Water War",
+              "duration": 22
+            },
+            {
+              "episode": 2,
+              "title": "Gungan Attack",
+              "duration": 22
+            },
+            {
+              "episode": 3,
+              "title": "Prisoners",
+              "duration": 22
+            },
+            {
+              "episode": 4,
+              "title": "Shadow Warrior",
+              "duration": 22
+            },
+            {
+              "episode": 5,
+              "title": "Mercy Mission",
+              "duration": 22
+            },
+            {
+              "episode": 6,
+              "title": "Nomad Droids",
+              "duration": 22
+            },
+            {
+              "episode": 7,
+              "title": "Darkness on Umbara",
+              "duration": 22
+            },
+            {
+              "episode": 8,
+              "title": "The General",
+              "duration": 22
+            },
+            {
+              "episode": 9,
+              "title": "Plan of Dissent",
+              "duration": 22
+            },
+            {
+              "episode": 10,
+              "title": "Carnage of Krell",
+              "duration": 22
+            },
+            {
+              "episode": 11,
+              "title": "Kidnapped",
+              "duration": 22
+            },
+            {
+              "episode": 12,
+              "title": "Slaves of the Republic",
+              "duration": 22
+            },
+            {
+              "episode": 13,
+              "title": "Escape from Kadavo",
+              "duration": 22
+            },
+            {
+              "episode": 14,
+              "title": "A Friend in Need",
+              "duration": 22
+            },
+            {
+              "episode": 15,
+              "title": "Deception",
+              "duration": 22
+            },
+            {
+              "episode": 16,
+              "title": "Friends and Enemies",
+              "duration": 22
+            },
+            {
+              "episode": 17,
+              "title": "The Box",
+              "duration": 22
+            },
+            {
+              "episode": 18,
+              "title": "Crisis on Naboo",
+              "duration": 22
+            },
+            {
+              "episode": 19,
+              "title": "Massacre",
+              "duration": 22
+            },
+            {
+              "episode": 20,
+              "title": "Bounty",
+              "duration": 22
+            },
+            {
+              "episode": 21,
+              "title": "Brothers",
+              "duration": 22
+            },
+            {
+              "episode": 22,
+              "title": "Revenge",
+              "duration": 22
+            }
+          ]
+        },
+        {
+          "season": 5,
+          "episodes": [
+            {
+              "episode": 1,
+              "title": "Revival",
+              "duration": 22
+            },
+            {
+              "episode": 2,
+              "title": "A War on Two Fronts",
+              "duration": 22
+            },
+            {
+              "episode": 3,
+              "title": "Front Runners",
+              "duration": 22
+            },
+            {
+              "episode": 4,
+              "title": "The Soft War",
+              "duration": 22
+            },
+            {
+              "episode": 5,
+              "title": "Tipping Points",
+              "duration": 22
+            },
+            {
+              "episode": 6,
+              "title": "The Gathering",
+              "duration": 22
+            },
+            {
+              "episode": 7,
+              "title": "A Test of Strength",
+              "duration": 22
+            },
+            {
+              "episode": 8,
+              "title": "Bound for Rescue",
+              "duration": 22
+            },
+            {
+              "episode": 9,
+              "title": "A Necessary Bond",
+              "duration": 22
+            },
+            {
+              "episode": 10,
+              "title": "Secret Weapons",
+              "duration": 22
+            },
+            {
+              "episode": 11,
+              "title": "A Sunny Day in the Void",
+              "duration": 22
+            },
+            {
+              "episode": 12,
+              "title": "Missing in Action",
+              "duration": 22
+            },
+            {
+              "episode": 13,
+              "title": "Point of No Return",
+              "duration": 22
+            },
+            {
+              "episode": 14,
+              "title": "Eminence",
+              "duration": 22
+            },
+            {
+              "episode": 15,
+              "title": "Shades of Reason",
+              "duration": 22
+            },
+            {
+              "episode": 16,
+              "title": "The Lawless",
+              "duration": 22
+            },
+            {
+              "episode": 17,
+              "title": "Sabotage",
+              "duration": 22
+            },
+            {
+              "episode": 18,
+              "title": "The Jedi Who Knew Too Much",
+              "duration": 22
+            },
+            {
+              "episode": 19,
+              "title": "To Catch a Jedi",
+              "duration": 22
+            },
+            {
+              "episode": 20,
+              "title": "The Wrong Jedi",
+              "duration": 22
+            }
+          ]
+        },
+        {
+          "season": 6,
+          "episodes": [
+            {
+              "episode": 1,
+              "title": "The Unknown",
+              "duration": 22
+            },
+            {
+              "episode": 2,
+              "title": "Conspiracy",
+              "duration": 22
+            },
+            {
+              "episode": 3,
+              "title": "Fugitive",
+              "duration": 22
+            },
+            {
+              "episode": 4,
+              "title": "Orders",
+              "duration": 22
+            },
+            {
+              "episode": 5,
+              "title": "An Old Friend",
+              "duration": 22
+            },
+            {
+              "episode": 6,
+              "title": "The Rise of Clovis",
+              "duration": 22
+            },
+            {
+              "episode": 7,
+              "title": "Crisis at the Heart",
+              "duration": 22
+            },
+            {
+              "episode": 8,
+              "title": "The Disappeared, Part I",
+              "duration": 22
+            },
+            {
+              "episode": 9,
+              "title": "The Disappeared, Part II",
+              "duration": 22
+            },
+            {
+              "episode": 10,
+              "title": "The Lost One",
+              "duration": 22
+            },
+            {
+              "episode": 11,
+              "title": "Voices",
+              "duration": 22
+            },
+            {
+              "episode": 12,
+              "title": "Destiny",
+              "duration": 22
+            },
+            {
+              "episode": 13,
+              "title": "Sacrifice",
+              "duration": 22
+            }
+          ]
+        },
+        {
+          "season": 7,
+          "episodes": [
+            {
+              "episode": 1,
+              "title": "The Bad Batch",
+              "duration": 26
+            },
+            {
+              "episode": 2,
+              "title": "A Distant Echo",
+              "duration": 26
+            },
+            {
+              "episode": 3,
+              "title": "On the Wings of Keeradaks",
+              "duration": 25
+            },
+            {
+              "episode": 4,
+              "title": "Unfinished Business",
+              "duration": 27
+            },
+            {
+              "episode": 5,
+              "title": "Gone with a Trace",
+              "duration": 24
+            },
+            {
+              "episode": 6,
+              "title": "Deal No Deal",
+              "duration": 24
+            },
+            {
+              "episode": 7,
+              "title": "Dangerous Debt",
+              "duration": 24
+            },
+            {
+              "episode": 8,
+              "title": "Together Again",
+              "duration": 24
+            },
+            {
+              "episode": 9,
+              "title": "Old Friends Not Forgotten",
+              "duration": 28
+            },
+            {
+              "episode": 10,
+              "title": "The Phantom Apprentice",
+              "duration": 30
+            },
+            {
+              "episode": 11,
+              "title": "Shattered",
+              "duration": 26
+            },
+            {
+              "episode": 12,
+              "title": "Victory and Death",
+              "duration": 25
+            }
+          ]
+        }
+      ],
+      "description": "An animated anthology series expanding the Clone Wars across seven seasons, following Anakin, Obi-Wan, Ahsoka, and countless others through the battles, politics, and moral complexities of a galaxy at war.",
+      "format": "animated",
+      "era": "lucas",
+      "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-314f14b4-b70a-4ec6-b634-2559f0b1f77e"
+    },
+    {
+      "id": "tales-of-the-jedi",
+      "title": "Tales of the Jedi",
+      "type": "series",
+      "year": 2022,
+      "seasons": [
+        {
+          "season": 1,
+          "episodes": [
+            {
+              "episode": 1,
+              "title": "Life and Death",
+              "duration": 18
+            },
+            {
+              "episode": 2,
+              "title": "Justice",
+              "duration": 19
+            },
+            {
+              "episode": 3,
+              "title": "Choices",
+              "duration": 16
+            },
+            {
+              "episode": 4,
+              "title": "The Sith Lord",
+              "duration": 16
+            },
+            {
+              "episode": 5,
+              "title": "Practice Makes Perfect",
+              "duration": 18
+            },
+            {
+              "episode": 6,
+              "title": "Resolve",
+              "duration": 12
+            }
+          ]
+        }
+      ],
+      "description": "A collection of animated short stories exploring pivotal and unseen moments in the lives of Ahsoka Tano and Count Dooku, tracing the diverging paths that led each of them to their destiny.",
+      "format": "animated",
+      "era": "disney",
+      "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-da8eb910-7fba-44ae-a37e-edd4b4d6630b"
+    },
+    {
+      "id": "episode-iii-revenge-of-the-sith",
+      "title": "Episode III – Revenge of the Sith",
+      "type": "movie",
+      "year": 2005,
+      "duration": 140,
+      "description": "As the Clone Wars reach their bloody conclusion, a conflicted Jedi hero is pulled toward the dark side by fear of loss, setting in motion a tragedy that will extinguish the Jedi Order and reshape the galaxy.",
+      "format": "live-action",
+      "era": "lucas",
+      "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-eb1e2c5f-69bf-4240-a61f-7ffc4e0311b3"
+    },
+    {
+      "id": "the-bad-batch",
+      "title": "The Bad Batch",
+      "type": "series",
+      "year": 2021,
+      "seasons": [
+        {
+          "season": 1,
+          "episodes": [
+            {
+              "episode": 1,
+              "title": "Aftermath",
+              "duration": 70
+            },
+            {
+              "episode": 2,
+              "title": "Cut and Run",
+              "duration": 28
+            },
+            {
+              "episode": 3,
+              "title": "Replacements",
+              "duration": 27
+            },
+            {
+              "episode": 4,
+              "title": "Cornered",
+              "duration": 27
+            },
+            {
+              "episode": 5,
+              "title": "Rampage",
+              "duration": 28
+            },
+            {
+              "episode": 6,
+              "title": "Decommissioned",
+              "duration": 27
+            },
+            {
+              "episode": 7,
+              "title": "Battle Scars",
+              "duration": 28
+            },
+            {
+              "episode": 8,
+              "title": "Reunion",
+              "duration": 26
+            },
+            {
+              "episode": 9,
+              "title": "Bounty Lost",
+              "duration": 27
+            },
+            {
+              "episode": 10,
+              "title": "Common Ground",
+              "duration": 28
+            },
+            {
+              "episode": 11,
+              "title": "Devil's Deal",
+              "duration": 27
+            },
+            {
+              "episode": 12,
+              "title": "Rescue on Ryloth",
+              "duration": 28
+            },
+            {
+              "episode": 13,
+              "title": "Infested",
+              "duration": 27
+            },
+            {
+              "episode": 14,
+              "title": "War-Mantle",
+              "duration": 27
+            },
+            {
+              "episode": 15,
+              "title": "Return to Kamino",
+              "duration": 28
+            },
+            {
+              "episode": 16,
+              "title": "Kamino Lost",
+              "duration": 30
+            }
+          ]
+        },
+        {
+          "season": 2,
+          "episodes": [
+            {
+              "episode": 1,
+              "title": "Spoils of War",
+              "duration": 24
+            },
+            {
+              "episode": 2,
+              "title": "Ruins of War",
+              "duration": 28
+            },
+            {
+              "episode": 3,
+              "title": "The Solitary Clone",
+              "duration": 30
+            },
+            {
+              "episode": 4,
+              "title": "Faster",
+              "duration": 26
+            },
+            {
+              "episode": 5,
+              "title": "Entombed",
+              "duration": 29
+            },
+            {
+              "episode": 6,
+              "title": "Tribe",
+              "duration": 28
+            },
+            {
+              "episode": 7,
+              "title": "The Clone Conspiracy",
+              "duration": 29
+            },
+            {
+              "episode": 8,
+              "title": "Truth and Consequences",
+              "duration": 31
+            },
+            {
+              "episode": 9,
+              "title": "The Crossing",
+              "duration": 30
+            },
+            {
+              "episode": 10,
+              "title": "Retrieval",
+              "duration": 29
+            },
+            {
+              "episode": 11,
+              "title": "Metamorphosis",
+              "duration": 30
+            },
+            {
+              "episode": 12,
+              "title": "The Outpost",
+              "duration": 30
+            },
+            {
+              "episode": 13,
+              "title": "Pabu",
+              "duration": 28
+            },
+            {
+              "episode": 14,
+              "title": "Tipping Point",
+              "duration": 28
+            },
+            {
+              "episode": 15,
+              "title": "The Summit",
+              "duration": 28
+            },
+            {
+              "episode": 16,
+              "title": "Plan 99",
+              "duration": 29
+            }
+          ]
+        },
+        {
+          "season": 3,
+          "episodes": [
+            {
+              "episode": 1,
+              "title": "Confined",
+              "duration": 33
+            },
+            {
+              "episode": 2,
+              "title": "Paths Unknown",
+              "duration": 27
+            },
+            {
+              "episode": 3,
+              "title": "Shadows of Tantiss",
+              "duration": 27
+            },
+            {
+              "episode": 4,
+              "title": "A Different Approach",
+              "duration": 28
+            },
+            {
+              "episode": 5,
+              "title": "The Return",
+              "duration": 27
+            },
+            {
+              "episode": 6,
+              "title": "Infiltration",
+              "duration": 28
+            },
+            {
+              "episode": 7,
+              "title": "Extraction",
+              "duration": 25
+            },
+            {
+              "episode": 8,
+              "title": "Bad Territory",
+              "duration": 28
+            },
+            {
+              "episode": 9,
+              "title": "The Harbinger",
+              "duration": 27
+            },
+            {
+              "episode": 10,
+              "title": "Identity Crisis",
+              "duration": 25
+            },
+            {
+              "episode": 11,
+              "title": "Point of No Return",
+              "duration": 24
+            },
+            {
+              "episode": 12,
+              "title": "Juggernaut",
+              "duration": 27
+            },
+            {
+              "episode": 13,
+              "title": "Into the Breach",
+              "duration": 28
+            },
+            {
+              "episode": 14,
+              "title": "Flash Strike",
+              "duration": 28
+            },
+            {
+              "episode": 15,
+              "title": "The Cavalry Has Arrived",
+              "duration": 41
+            }
+          ]
+        }
+      ],
+      "description": "A squad of elite clone soldiers with experimental mutations find themselves at odds with the new Empire in the immediate aftermath of the Clone Wars, questioning their identity and searching for a place in a changed galaxy.",
+      "format": "animated",
+      "era": "disney",
+      "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-c93113fb-94ec-43b6-9d38-308825f7cd94"
+    },
+    {
+      "id": "tales-of-the-empire",
+      "title": "Tales of the Empire",
+      "type": "series",
+      "year": 2024,
+      "seasons": [
+        {
+          "season": 1,
+          "episodes": [
+            {
+              "episode": 1,
+              "title": "The Path of Fear",
+              "duration": 16
+            },
+            {
+              "episode": 2,
+              "title": "The Path of Anger",
+              "duration": 16
+            },
+            {
+              "episode": 3,
+              "title": "The Path of Hate",
+              "duration": 16
+            },
+            {
+              "episode": 4,
+              "title": "Devoted",
+              "duration": 16
+            },
+            {
+              "episode": 5,
+              "title": "Realization",
+              "duration": 16
+            },
+            {
+              "episode": 6,
+              "title": "The Way Out",
+              "duration": 16
+            }
+          ]
+        }
+      ],
+      "description": "An animated anthology series revealing untold stories from the age of the Empire, following characters forced to make defining choices under the crushing weight of Imperial rule.",
+      "format": "animated",
+      "era": "disney",
+      "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-b9acb4dc-2c55-4829-9ecf-37d1f96ff29f"
+    },
+    {
+      "id": "maul-shadow-lord",
+      "title": "Maul – Shadow Lord",
+      "type": "series",
+      "year": 2026,
+      "seasons": [
+        {
+          "season": 1,
+          "episodes": [
+            {
+              "episode": 1,
+              "title": "The Dark Revenge",
+              "duration": 30
+            },
+            {
+              "episode": 2,
+              "title": "Sinister Schemes",
+              "duration": 30
+            },
+            {
+              "episode": 3,
+              "title": "Whispers in the Unknown",
+              "duration": 30
+            },
+            {
+              "episode": 4,
+              "title": "Pride and Vengeance",
+              "duration": 30
+            },
+            {
+              "episode": 5,
+              "title": "Inquisition",
+              "duration": 30
+            },
+            {
+              "episode": 6,
+              "title": "Night of the Hunted",
+              "duration": 30
+            },
+            {
+              "episode": 7,
+              "title": "Call to the Oblivion",
+              "duration": 30
+            },
+            {
+              "episode": 8,
+              "title": "The Creeping Fear",
+              "duration": 30
+            },
+            {
+              "episode": 9,
+              "title": "Chapter 9",
+              "duration": 30
+            },
+            {
+              "episode": 10,
+              "title": "Chapter 10",
+              "duration": 30
+            }
+          ]
+        }
+      ],
+      "description": "Tracing the rise of Maul as a crime lord in the galaxy's underworld following the Clone Wars, as he builds a criminal empire and consolidates power from the shadows.",
+      "format": "animated",
+      "era": "disney",
+      "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-9ba0f41b-6173-4ff1-8967-71cad0620244"
+    },
+    {
+      "id": "tales-of-the-underworld",
+      "title": "Tales of the Underworld",
+      "type": "series",
+      "year": 2025,
+      "seasons": [
+        {
+          "season": 1,
+          "episodes": [
+            {
+              "episode": 1,
+              "title": "A Way Forward",
+              "duration": 16
+            },
+            {
+              "episode": 2,
+              "title": "Friends",
+              "duration": 16
+            },
+            {
+              "episode": 3,
+              "title": "One Warrior to Another",
+              "duration": 16
+            },
+            {
+              "episode": 4,
+              "title": "The Good Life",
+              "duration": 16
+            },
+            {
+              "episode": 5,
+              "title": "A Good Turn",
+              "duration": 16
+            },
+            {
+              "episode": 6,
+              "title": "One Good Deed",
+              "duration": 16
+            }
+          ]
+        }
+      ],
+      "description": "An anthology series exploring the criminal underworld of the Star Wars galaxy, following rogues, smugglers, and outlaws navigating danger and moral ambiguity on the fringes of society.",
+      "format": "animated",
+      "era": "disney",
+      "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-421b732e-fe78-4cfc-93e9-d3fbca13bb91"
+    },
+    {
+      "id": "solo-a-star-wars-story",
+      "title": "Solo",
+      "type": "movie",
+      "year": 2018,
+      "duration": 135,
+      "description": "The early adventures of Han Solo, from his escape off a grim homeworld to his first brush with the criminal underworld — including a fateful heist, a legendary ship, and a lifelong co-pilot.",
+      "format": "live-action",
+      "era": "disney",
+      "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-791bc772-d930-40c9-83ec-5ef85923573e"
+    },
+    {
+      "id": "obi-wan-kenobi",
+      "title": "Obi-Wan Kenobi",
+      "type": "series",
+      "year": 2022,
+      "seasons": [
+        {
+          "season": 1,
+          "episodes": [
+            {
+              "episode": 1,
+              "title": "Part I",
+              "duration": 53
+            },
+            {
+              "episode": 2,
+              "title": "Part II",
+              "duration": 41
+            },
+            {
+              "episode": 3,
+              "title": "Part III",
+              "duration": 47
+            },
+            {
+              "episode": 4,
+              "title": "Part IV",
+              "duration": 36
+            },
+            {
+              "episode": 5,
+              "title": "Part V",
+              "duration": 48
+            },
+            {
+              "episode": 6,
+              "title": "Part VI",
+              "duration": 44
+            }
+          ]
+        }
+      ],
+      "description": "A haunted and diminished Obi-Wan Kenobi is pulled out of his lonely desert exile ten years after the fall of the Jedi, forced to confront enemies from his past on a mission that tests everything he has left.",
+      "format": "live-action",
+      "era": "disney",
+      "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-e28eab5e-5cff-4ef2-b018-d2267c750364"
+    },
+    {
+      "id": "andor",
+      "title": "Andor",
+      "type": "series",
+      "year": 2022,
+      "seasons": [
+        {
+          "season": 1,
+          "episodes": [
+            {
+              "episode": 1,
+              "title": "Kassa",
+              "duration": 39
+            },
+            {
+              "episode": 2,
+              "title": "That Would Be Me",
+              "duration": 38
+            },
+            {
+              "episode": 3,
+              "title": "Reckoning",
+              "duration": 41
+            },
+            {
+              "episode": 4,
+              "title": "Aldhani",
+              "duration": 43
+            },
+            {
+              "episode": 5,
+              "title": "The Axe Forgets",
+              "duration": 41
+            },
+            {
+              "episode": 6,
+              "title": "The Eye",
+              "duration": 44
+            },
+            {
+              "episode": 7,
+              "title": "Announcement",
+              "duration": 43
+            },
+            {
+              "episode": 8,
+              "title": "Narkina 5",
+              "duration": 47
+            },
+            {
+              "episode": 9,
+              "title": "Nobody's Listening!",
+              "duration": 44
+            },
+            {
+              "episode": 10,
+              "title": "One Way Out",
+              "duration": 45
+            },
+            {
+              "episode": 11,
+              "title": "Daughter of Ferrix",
+              "duration": 50
+            },
+            {
+              "episode": 12,
+              "title": "Rix Road",
+              "duration": 56
+            }
+          ]
+        },
+        {
+          "season": 2,
+          "episodes": [
+            {
+              "episode": 1,
+              "title": "One Year Later",
+              "duration": 50
+            },
+            {
+              "episode": 2,
+              "title": "Sagrona Teema",
+              "duration": 49
+            },
+            {
+              "episode": 3,
+              "title": "Harvest",
+              "duration": 49
+            },
+            {
+              "episode": 4,
+              "title": "Ever Been to Ghorman?",
+              "duration": 47
+            },
+            {
+              "episode": 5,
+              "title": "I Have Friends Everywhere",
+              "duration": 48
+            },
+            {
+              "episode": 6,
+              "title": "What a Festive Evening",
+              "duration": 49
+            },
+            {
+              "episode": 7,
+              "title": "Messenger",
+              "duration": 41
+            },
+            {
+              "episode": 8,
+              "title": "Who Are You?",
+              "duration": 53
+            },
+            {
+              "episode": 9,
+              "title": "Welcome to the Rebellion",
+              "duration": 54
+            },
+            {
+              "episode": 10,
+              "title": "Make It Stop",
+              "duration": 50
+            },
+            {
+              "episode": 11,
+              "title": "Who Else Knows?",
+              "duration": 47
+            },
+            {
+              "episode": 12,
+              "title": "Jedha, Kyber, Erso",
+              "duration": 51
+            }
+          ]
+        }
+      ],
+      "description": "A ground-level, espionage-driven prequel to Rogue One following Cassian Andor's gradual radicalisation — tracing how an ordinary man becomes a committed revolutionary against the Empire's suffocating machinery.",
+      "format": "live-action",
+      "era": "disney",
+      "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-faba988a-a9f5-45f2-a074-0775a7d6f67a"
+    },
+    {
+      "id": "rebels-shorts",
+      "title": "Rebels Shorts",
+      "type": "tv-shorts",
+      "format": "animated",
+      "year": 2014,
+      "description": "Four short animated vignettes released ahead of the Rebels premiere, introducing the crew of the Ghost as they clash with Imperial forces and cross paths with a street kid named Ezra Bridger.",
+      "seasons": [
+        {
+          "season": 1,
+          "episodes": [
+            {
+              "episode": 1,
+              "title": "The Machine in the Ghost",
+              "duration": 4
+            },
+            {
+              "episode": 2,
+              "title": "Art Attack",
+              "duration": 3
+            },
+            {
+              "episode": 3,
+              "title": "Entanglement",
+              "duration": 3
+            },
+            {
+              "episode": 4,
+              "title": "Property of Ezra Bridger",
+              "duration": 3
+            }
+          ]
+        }
+      ],
+      "era": "disney",
+      "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-000ffb83-6459-4d2b-9e11-2087a235c8f6"
+    },
+    {
+      "id": "star-wars-rebels",
+      "title": "Rebels",
+      "type": "series",
+      "year": 2014,
+      "seasons": [
+        {
+          "season": 1,
+          "episodes": [
+            {
+              "episode": 1,
+              "title": "Spark of Rebellion",
+              "duration": 44
+            },
+            {
+              "episode": 2,
+              "title": "Droids in Distress",
+              "duration": 22
+            },
+            {
+              "episode": 3,
+              "title": "Fighter Flight",
+              "duration": 22
+            },
+            {
+              "episode": 4,
+              "title": "Rise of the Old Masters",
+              "duration": 22
+            },
+            {
+              "episode": 5,
+              "title": "Breaking Ranks",
+              "duration": 22
+            },
+            {
+              "episode": 6,
+              "title": "Out of Darkness",
+              "duration": 22
+            },
+            {
+              "episode": 7,
+              "title": "Empire Day",
+              "duration": 22
+            },
+            {
+              "episode": 8,
+              "title": "Gathering Forces",
+              "duration": 22
+            },
+            {
+              "episode": 9,
+              "title": "Path of the Jedi",
+              "duration": 22
+            },
+            {
+              "episode": 10,
+              "title": "Idiot's Array",
+              "duration": 22
+            },
+            {
+              "episode": 11,
+              "title": "Vision of Hope",
+              "duration": 22
+            },
+            {
+              "episode": 12,
+              "title": "Call to Action",
+              "duration": 22
+            },
+            {
+              "episode": 13,
+              "title": "Rebel Resolve",
+              "duration": 22
+            },
+            {
+              "episode": 14,
+              "title": "Fire Across the Galaxy",
+              "duration": 22
+            }
+          ]
+        },
+        {
+          "season": 2,
+          "episodes": [
+            {
+              "episode": 1,
+              "title": "The Siege of Lothal",
+              "duration": 44
+            },
+            {
+              "episode": 2,
+              "title": "The Lost Commanders",
+              "duration": 22
+            },
+            {
+              "episode": 3,
+              "title": "Relics of the Old Republic",
+              "duration": 22
+            },
+            {
+              "episode": 4,
+              "title": "Always Two There Are",
+              "duration": 22
+            },
+            {
+              "episode": 5,
+              "title": "Brothers of the Broken Horn",
+              "duration": 22
+            },
+            {
+              "episode": 6,
+              "title": "Wings of the Master",
+              "duration": 22
+            },
+            {
+              "episode": 7,
+              "title": "Blood Sisters",
+              "duration": 22
+            },
+            {
+              "episode": 8,
+              "title": "Stealth Strike",
+              "duration": 22
+            },
+            {
+              "episode": 9,
+              "title": "The Future of the Force",
+              "duration": 22
+            },
+            {
+              "episode": 10,
+              "title": "Legacy",
+              "duration": 22
+            },
+            {
+              "episode": 11,
+              "title": "A Princess on Lothal",
+              "duration": 22
+            },
+            {
+              "episode": 12,
+              "title": "The Protector of Concord Dawn",
+              "duration": 22
+            },
+            {
+              "episode": 13,
+              "title": "Legends of the Lasat",
+              "duration": 22
+            },
+            {
+              "episode": 14,
+              "title": "The Call",
+              "duration": 22
+            },
+            {
+              "episode": 15,
+              "title": "Homecoming",
+              "duration": 22
+            },
+            {
+              "episode": 16,
+              "title": "The Honorable Ones",
+              "duration": 22
+            },
+            {
+              "episode": 17,
+              "title": "Shroud of Darkness",
+              "duration": 22
+            },
+            {
+              "episode": 18,
+              "title": "The Forgotten Droid",
+              "duration": 22
+            },
+            {
+              "episode": 19,
+              "title": "The Mystery of Chopper Base",
+              "duration": 22
+            },
+            {
+              "episode": 20,
+              "title": "Twilight of the Apprentice",
+              "duration": 44
+            }
+          ]
+        },
+        {
+          "season": 3,
+          "episodes": [
+            {
+              "episode": 1,
+              "title": "Steps Into Shadow",
+              "duration": 44
+            },
+            {
+              "episode": 2,
+              "title": "The Holocrons of Fate",
+              "duration": 22
+            },
+            {
+              "episode": 3,
+              "title": "The Antilles Extraction",
+              "duration": 22
+            },
+            {
+              "episode": 4,
+              "title": "Hera's Heroes",
+              "duration": 22
+            },
+            {
+              "episode": 5,
+              "title": "The Last Battle",
+              "duration": 22
+            },
+            {
+              "episode": 6,
+              "title": "Imperial Supercommandos",
+              "duration": 22
+            },
+            {
+              "episode": 7,
+              "title": "Iron Squadron",
+              "duration": 22
+            },
+            {
+              "episode": 8,
+              "title": "The Wynkahthu Job",
+              "duration": 22
+            },
+            {
+              "episode": 9,
+              "title": "An Inside Man",
+              "duration": 22
+            },
+            {
+              "episode": 10,
+              "title": "Visions and Voices",
+              "duration": 22
+            },
+            {
+              "episode": 11,
+              "title": "Ghosts of Geonosis",
+              "duration": 44
+            },
+            {
+              "episode": 12,
+              "title": "Warhead",
+              "duration": 22
+            },
+            {
+              "episode": 13,
+              "title": "Trials of the Darksaber",
+              "duration": 22
+            },
+            {
+              "episode": 14,
+              "title": "Legacy of Mandalore",
+              "duration": 22
+            },
+            {
+              "episode": 15,
+              "title": "Through Imperial Eyes",
+              "duration": 22
+            },
+            {
+              "episode": 16,
+              "title": "Secret Cargo",
+              "duration": 22
+            },
+            {
+              "episode": 17,
+              "title": "Double Agent Droid",
+              "duration": 22
+            },
+            {
+              "episode": 18,
+              "title": "Twin Suns",
+              "duration": 22
+            },
+            {
+              "episode": 19,
+              "title": "Zero Hour",
+              "duration": 44
+            }
+          ]
+        },
+        {
+          "season": 4,
+          "episodes": [
+            {
+              "episode": 1,
+              "title": "Heroes of Mandalore",
+              "duration": 44
+            },
+            {
+              "episode": 2,
+              "title": "In the Name of the Rebellion",
+              "duration": 44
+            },
+            {
+              "episode": 3,
+              "title": "The Occupation",
+              "duration": 22
+            },
+            {
+              "episode": 4,
+              "title": "Flight of the Defender",
+              "duration": 22
+            },
+            {
+              "episode": 5,
+              "title": "Kindred",
+              "duration": 22
+            },
+            {
+              "episode": 6,
+              "title": "Crawler Commandeers",
+              "duration": 22
+            },
+            {
+              "episode": 7,
+              "title": "Rebel Assault",
+              "duration": 22
+            },
+            {
+              "episode": 8,
+              "title": "Jedi Night",
+              "duration": 22
+            },
+            {
+              "episode": 9,
+              "title": "DUME",
+              "duration": 22
+            },
+            {
+              "episode": 10,
+              "title": "Wolves and a Door",
+              "duration": 22
+            },
+            {
+              "episode": 11,
+              "title": "A World Between Worlds",
+              "duration": 22
+            },
+            {
+              "episode": 12,
+              "title": "A Fool's Hope",
+              "duration": 22
+            },
+            {
+              "episode": 13,
+              "title": "Family Reunion – and Farewell",
+              "duration": 44
+            }
+          ]
+        }
+      ],
+      "description": "Years before the Battle of Yavin, a scrappy crew of misfits aboard a small freighter plants seeds of rebellion in an occupied system, slowly connecting with a larger resistance and guiding a teenager with a rare gift in the Force.",
+      "format": "animated",
+      "era": "disney",
+      "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-08249c74-0178-4861-a1e4-dfc7b168dce5"
+    },
+    {
+      "id": "rogue-one-a-star-wars-story",
+      "title": "Rogue One",
+      "type": "movie",
+      "year": 2016,
+      "duration": 133,
+      "description": "A band of rebels with little to lose band together on a desperate, unsanctioned mission to steal the plans for the Empire's planet-killing superweapon — a mission the galaxy cannot afford to fail.",
+      "format": "live-action",
+      "era": "disney",
+      "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-5ec74210-f970-42b7-a39f-8653c0a9eab8"
+    },
+    {
+      "id": "episode-iv-a-new-hope",
+      "title": "Episode IV – A New Hope",
+      "type": "movie",
+      "year": 1977,
+      "duration": 121,
+      "description": "A young man's ordinary life on a remote desert planet is upended when he joins a smuggler, an old hermit, and a desperate princess in a mission to destroy the Empire's most fearsome weapon.",
+      "format": "live-action",
+      "era": "lucas",
+      "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-9a280e53-fcc0-4e17-a02c-b1f40913eb0b"
+    },
+    {
+      "id": "episode-v-the-empire-strikes-back",
+      "title": "Episode V – The Empire Strikes Back",
+      "type": "movie",
+      "year": 1980,
+      "duration": 124,
+      "description": "The Empire launches a devastating counter-offensive against the Rebel Alliance. While the rebels flee across the galaxy, a young Jedi seeks out a legendary master to complete his training — and learns a truth that changes everything.",
+      "format": "live-action",
+      "era": "lucas",
+      "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-0f5c5223-f4f6-46ef-ba8a-69cb0e17d8d3"
+    },
+    {
+      "id": "episode-vi-return-of-the-jedi",
+      "title": "Episode VI – Return of the Jedi",
+      "type": "movie",
+      "year": 1983,
+      "duration": 131,
+      "description": "The Rebel Alliance rallies for a final strike against the Empire's new superweapon, while a young Jedi Knight faces his greatest test: convincing his father to return from the dark side before it is too late.",
+      "format": "live-action",
+      "era": "lucas",
+      "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-4b6e7cda-daa5-4f2d-9b61-35bbe562c69c"
+    },
+    {
+      "id": "squadrons-hunted",
+      "title": "Squadrons – Hunted",
+      "type": "short-movie",
+      "year": 2020,
+      "duration": 7,
+      "description": "A lone TIE fighter pilot separated from his squadron must outmaneuver New Republic forces in a desperate bid to survive after the fall of the Empire.",
+      "format": "animated",
+      "era": "disney",
+      "disneyPlusUrl": "https://www.youtube.com/watch?v=f2VmOqjV_7Q"
+    },
+    {
+      "id": "the-mandalorian",
+      "title": "The Mandalorian",
+      "type": "series",
+      "year": 2019,
+      "seasons": [
+        {
+          "season": 1,
+          "episodes": [
+            {
+              "episode": 1,
+              "title": "Chapter 1: The Mandalorian",
+              "duration": 41
+            },
+            {
+              "episode": 2,
+              "title": "Chapter 2: The Child",
+              "duration": 34
+            },
+            {
+              "episode": 3,
+              "title": "Chapter 3: The Sin",
+              "duration": 39
+            },
+            {
+              "episode": 4,
+              "title": "Chapter 4: Sanctuary",
+              "duration": 43
+            },
+            {
+              "episode": 5,
+              "title": "Chapter 5: The Gunslinger",
+              "duration": 37
+            },
+            {
+              "episode": 6,
+              "title": "Chapter 6: The Prisoner",
+              "duration": 45
+            },
+            {
+              "episode": 7,
+              "title": "Chapter 7: The Reckoning",
+              "duration": 42
+            },
+            {
+              "episode": 8,
+              "title": "Chapter 8: Redemption",
+              "duration": 50
+            }
+          ]
+        },
+        {
+          "season": 2,
+          "episodes": [
+            {
+              "episode": 1,
+              "title": "Chapter 9: The Marshal",
+              "duration": 56
+            },
+            {
+              "episode": 2,
+              "title": "Chapter 10: The Passenger",
+              "duration": 43
+            },
+            {
+              "episode": 3,
+              "title": "Chapter 11: The Heiress",
+              "duration": 37
+            },
+            {
+              "episode": 4,
+              "title": "Chapter 12: The Siege",
+              "duration": 41
+            },
+            {
+              "episode": 5,
+              "title": "Chapter 13: The Jedi",
+              "duration": 48
+            },
+            {
+              "episode": 6,
+              "title": "Chapter 14: The Tragedy",
+              "duration": 35
+            },
+            {
+              "episode": 7,
+              "title": "Chapter 15: The Believer",
+              "duration": 40
+            },
+            {
+              "episode": 8,
+              "title": "Chapter 16: The Rescue",
+              "duration": 48
+            }
+          ]
+        },
+        {
+          "season": 3,
+          "episodes": [
+            {
+              "episode": 1,
+              "title": "Chapter 17: The Apostate",
+              "duration": 38
+            },
+            {
+              "episode": 2,
+              "title": "Chapter 18: The Mines of Mandalore",
+              "duration": 45
+            },
+            {
+              "episode": 3,
+              "title": "Chapter 19: The Convert",
+              "duration": 59
+            },
+            {
+              "episode": 4,
+              "title": "Chapter 20: The Foundling",
+              "duration": 33
+            },
+            {
+              "episode": 5,
+              "title": "Chapter 21: The Pirate",
+              "duration": 44
+            },
+            {
+              "episode": 6,
+              "title": "Chapter 22: Guns for Hire",
+              "duration": 47
+            },
+            {
+              "episode": 7,
+              "title": "Chapter 23: The Spies",
+              "duration": 54
+            },
+            {
+              "episode": 8,
+              "title": "Chapter 24: The Return",
+              "duration": 42
+            }
+          ]
+        }
+      ],
+      "description": "A solitary bounty hunter operating far from the reach of the New Republic takes a job with an unusual payload — a mysterious child he cannot bring himself to hand over — and becomes an unlikely guardian.",
+      "format": "live-action",
+      "era": "disney",
+      "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-422f6dcc-226f-44e7-98d4-22de69b31cf3"
+    },
+    {
+      "id": "the-book-of-boba-fett",
+      "title": "The Book of Boba Fett",
+      "type": "series",
+      "year": 2021,
+      "seasons": [
+        {
+          "season": 1,
+          "episodes": [
+            {
+              "episode": 1,
+              "title": "Chapter 1: Stranger in a Strange Land",
+              "duration": 39
+            },
+            {
+              "episode": 2,
+              "title": "Chapter 2: The Tribes of Tatooine",
+              "duration": 51
+            },
+            {
+              "episode": 3,
+              "title": "Chapter 3: The Streets of Mos Espa",
+              "duration": 47
+            },
+            {
+              "episode": 4,
+              "title": "Chapter 4: The Gathering Storm",
+              "duration": 47
+            },
+            {
+              "episode": 5,
+              "title": "Chapter 5: Return of the Mandalorian",
+              "duration": 50
+            },
+            {
+              "episode": 6,
+              "title": "Chapter 6: From the Desert Comes a Stranger",
+              "duration": 47
+            },
+            {
+              "episode": 7,
+              "title": "Chapter 7: In the Name of Honor",
+              "duration": 62
+            }
+          ]
+        }
+      ],
+      "description": "The notorious bounty hunter Boba Fett returns to Tatooine to claim the territory once ruled by Jabba the Hutt, confronting rival crime factions and old enemies as he attempts to rule through respect rather than fear.",
+      "format": "live-action",
+      "era": "disney",
+      "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-3749c03e-8204-46c5-b102-0410e6d51758"
+    },
+    {
+      "id": "grogu-cutest-in-the-galaxy",
+      "title": "Grogu: Cutest in the Galaxy",
+      "type": "tv-shorts",
+      "year": 2024,
+      "description": "A series of bite-sized animated shorts featuring Grogu in playful, wordless vignettes full of charm and mischief, tied to the New Republic era.",
+      "seasons": [
+        {
+          "season": 1,
+          "episodes": [
+            { "episode": 1, "title": "Episode 1", "duration": 1 },
+            { "episode": 2, "title": "Episode 2", "duration": 1 },
+            { "episode": 3, "title": "Episode 3", "duration": 1 },
+            { "episode": 4, "title": "Episode 4", "duration": 1 },
+            { "episode": 5, "title": "Episode 5", "duration": 1 },
+            { "episode": 6, "title": "Episode 6", "duration": 1 },
+            { "episode": 7, "title": "Episode 7", "duration": 1 },
+            { "episode": 8, "title": "Episode 8", "duration": 1 },
+            { "episode": 9, "title": "Episode 9", "duration": 1 },
+            { "episode": 10, "title": "Episode 10", "duration": 1 },
+            { "episode": 11, "title": "Episode 11", "duration": 1 },
+            { "episode": 12, "title": "Episode 12", "duration": 1 },
+            { "episode": 13, "title": "Episode 13", "duration": 1 }
+          ]
+        }
+      ],
+      "format": "animated",
+      "era": "disney"
+    },
+    {
+      "id": "the-mandalorian-and-grogu",
+      "title": "The Mandalorian and Grogu",
+      "type": "movie",
+      "year": 2026,
+      "duration": 132,
+      "description": "Din Djarin and Grogu face a new chapter of their journey together, drawn into dangers that test the bond between the Mandalorian warrior and the child he has sworn to protect.",
+      "format": "live-action",
+      "era": "disney",
+      "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-d830ec57-499e-498c-b6b3-2b85a18a5f51"
+    },
+    {
+      "id": "ahsoka",
+      "title": "Ahsoka",
+      "type": "series",
+      "year": 2023,
+      "seasons": [
+        {
+          "season": 1,
+          "episodes": [
+            {
+              "episode": 1,
+              "title": "Part One: Master and Apprentice",
+              "duration": 55
+            },
+            {
+              "episode": 2,
+              "title": "Part Two: Toil and Trouble",
+              "duration": 41
+            },
+            {
+              "episode": 3,
+              "title": "Part Three: Time to Fly",
+              "duration": 38
+            },
+            {
+              "episode": 4,
+              "title": "Part Four: Fallen Jedi",
+              "duration": 43
+            },
+            {
+              "episode": 5,
+              "title": "Part Five: Shadow Warrior",
+              "duration": 60
+            },
+            {
+              "episode": 6,
+              "title": "Part Six: Far, Far Away",
+              "duration": 44
+            },
+            {
+              "episode": 7,
+              "title": "Part Seven: Dreams and Madness",
+              "duration": 47
+            },
+            {
+              "episode": 8,
+              "title": "Part Eight: The Jedi, the Witch, and the Warlord",
+              "duration": 56
+            }
+          ]
+        }
+      ],
+      "description": "Ahsoka Tano pursues a trail of clues pointing to the return of a dangerous Imperial threat, while reckoning with her own past and the fractured relationship with a former apprentice who has chosen a different path.",
+      "format": "live-action",
+      "era": "disney",
+      "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-e64c22fc-fc7c-4ada-bbec-ab8351b8db97"
+    },
+    {
+      "id": "skeleton-crew",
+      "title": "Skeleton Crew",
+      "type": "series",
+      "year": 2024,
+      "seasons": [
+        {
+          "season": 1,
+          "episodes": [
+            {
+              "episode": 1,
+              "title": "This Could Be a Real Adventure",
+              "duration": 49
+            },
+            {
+              "episode": 2,
+              "title": "Way, Way Out Past the Barrier",
+              "duration": 32
+            },
+            {
+              "episode": 3,
+              "title": "Very Interesting, as an Astrogation Problem",
+              "duration": 40
+            },
+            {
+              "episode": 4,
+              "title": "Can't Say I Remember No At Attin",
+              "duration": 39
+            },
+            {
+              "episode": 5,
+              "title": "You Have a Lot to Learn About Pirates",
+              "duration": 46
+            },
+            {
+              "episode": 6,
+              "title": "Zero Friends Again",
+              "duration": 34
+            },
+            {
+              "episode": 7,
+              "title": "We're Gonna Be in So Much Trouble",
+              "duration": 37
+            },
+            {
+              "episode": 8,
+              "title": "The Real Good Guys",
+              "duration": 41
+            }
+          ]
+        }
+      ],
+      "description": "Four kids from a peaceful, isolated planet stumble into the wider galaxy by accident and find themselves completely out of their depth — stranded in a lawless corner of space with only a mysterious stranger to guide them home.",
+      "format": "live-action",
+      "era": "disney",
+      "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-4a73a750-f18c-450a-b9f7-d9f40974ff9d"
+    },
+    {
+      "id": "star-wars-resistance",
+      "title": "Resistance",
+      "type": "series",
+      "year": 2018,
+      "seasons": [
+        {
+          "season": 1,
+          "episodes": [
+            {
+              "episode": 1,
+              "title": "The Recruit, Part 1",
+              "duration": 22
+            },
+            {
+              "episode": 2,
+              "title": "The Recruit, Part 2",
+              "duration": 22
+            },
+            {
+              "episode": 3,
+              "title": "The Triple Dark",
+              "duration": 22
+            },
+            {
+              "episode": 4,
+              "title": "Fuel for the Fire",
+              "duration": 22
+            },
+            {
+              "episode": 5,
+              "title": "The High Tower",
+              "duration": 22
+            },
+            {
+              "episode": 6,
+              "title": "The Children from Tehar",
+              "duration": 22
+            },
+            {
+              "episode": 7,
+              "title": "Signal from Sector Six",
+              "duration": 22
+            },
+            {
+              "episode": 8,
+              "title": "Synara's Score",
+              "duration": 22
+            },
+            {
+              "episode": 9,
+              "title": "The Platform Classic",
+              "duration": 22
+            },
+            {
+              "episode": 10,
+              "title": "Secrets and Holograms",
+              "duration": 22
+            },
+            {
+              "episode": 11,
+              "title": "Station Theta Black",
+              "duration": 22
+            },
+            {
+              "episode": 12,
+              "title": "Bibo",
+              "duration": 22
+            },
+            {
+              "episode": 13,
+              "title": "Dangerous Business",
+              "duration": 22
+            },
+            {
+              "episode": 14,
+              "title": "The Doza Dilemma",
+              "duration": 22
+            },
+            {
+              "episode": 15,
+              "title": "The First Order Occupation",
+              "duration": 22
+            },
+            {
+              "episode": 16,
+              "title": "The New Trooper",
+              "duration": 22
+            },
+            {
+              "episode": 17,
+              "title": "The Core Problem",
+              "duration": 22
+            },
+            {
+              "episode": 18,
+              "title": "The Disappeared",
+              "duration": 22
+            },
+            {
+              "episode": 19,
+              "title": "Descent",
+              "duration": 22
+            },
+            {
+              "episode": 20,
+              "title": "No Escape: Part 1",
+              "duration": 22
+            },
+            {
+              "episode": 21,
+              "title": "No Escape: Part 2",
+              "duration": 22
+            }
+          ]
+        },
+        {
+          "season": 2,
+          "episodes": [
+            {
+              "episode": 1,
+              "title": "Into the Unknown",
+              "duration": 22
+            },
+            {
+              "episode": 2,
+              "title": "A Quick Salvage Run",
+              "duration": 22
+            },
+            {
+              "episode": 3,
+              "title": "Live Fire",
+              "duration": 22
+            },
+            {
+              "episode": 4,
+              "title": "Hunt on Celsor 3",
+              "duration": 22
+            },
+            {
+              "episode": 5,
+              "title": "The Engineer",
+              "duration": 22
+            },
+            {
+              "episode": 6,
+              "title": "From Beneath",
+              "duration": 22
+            },
+            {
+              "episode": 7,
+              "title": "The Relic Raiders",
+              "duration": 22
+            },
+            {
+              "episode": 8,
+              "title": "Rendezvous Point",
+              "duration": 22
+            },
+            {
+              "episode": 9,
+              "title": "The Voxx Vortex 5000",
+              "duration": 22
+            },
+            {
+              "episode": 10,
+              "title": "Kaz's Curse",
+              "duration": 22
+            },
+            {
+              "episode": 11,
+              "title": "Station to Station",
+              "duration": 22
+            },
+            {
+              "episode": 12,
+              "title": "The Missing Agent",
+              "duration": 22
+            },
+            {
+              "episode": 13,
+              "title": "Breakout",
+              "duration": 22
+            },
+            {
+              "episode": 14,
+              "title": "The Mutiny",
+              "duration": 22
+            },
+            {
+              "episode": 15,
+              "title": "The New World",
+              "duration": 22
+            },
+            {
+              "episode": 16,
+              "title": "No Place Safe",
+              "duration": 22
+            },
+            {
+              "episode": 17,
+              "title": "Rebuilding the Resistance",
+              "duration": 22
+            },
+            {
+              "episode": 18,
+              "title": "The Escape",
+              "duration": 22
+            },
+            {
+              "episode": 19,
+              "title": "The Escape, Part 2",
+              "duration": 22
+            }
+          ]
+        }
+      ],
+      "description": "A young pilot is sent undercover to a remote racing station on the galaxy's frontier, where he uncovers the growing shadow of the First Order in the months leading up to The Force Awakens.",
+      "format": "animated",
+      "era": "disney",
+      "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-01ad3367-1b24-458c-a8fb-a245226ea237"
+    },
+    {
+      "id": "episode-vii-the-force-awakens",
+      "title": "Episode VII – The Force Awakens",
+      "type": "movie",
+      "year": 2015,
+      "duration": 138,
+      "description": "A young scavenger, a disillusioned stormtrooper, and a droid carrying a critical secret are swept into a conflict between the crumbling Resistance and a new order rising to fill the Empire's place.",
+      "format": "live-action",
+      "era": "disney",
+      "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-2854a94d-3702-40bd-97a4-12d55a809188"
+    },
+    {
+      "id": "episode-viii-the-last-jedi",
+      "title": "Episode VIII – The Last Jedi",
+      "type": "movie",
+      "year": 2017,
+      "duration": 152,
+      "description": "With the Resistance on the run and dwindling fast, desperate gambits are launched on multiple fronts while the connection between a young hero and a fearsome enforcer of the dark side deepens in unexpected ways.",
+      "format": "live-action",
+      "era": "disney",
+      "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-50c1aff5-3051-4839-9ebf-e332c635e216"
+    },
+    {
+      "id": "episode-ix-the-rise-of-skywalker",
+      "title": "Episode IX – The Rise of Skywalker",
+      "type": "movie",
+      "year": 2019,
+      "duration": 142,
+      "description": "The Skywalker Saga reaches its conclusion as the Resistance faces an ancient and resurgent evil, forcing allies old and new to come together for one last stand to decide the fate of the galaxy.",
+      "format": "live-action",
+      "era": "disney",
+      "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-43f9c275-e7e8-4ab3-802d-00d06a8ad841"
+    },
+    {
+      "id": "star-wars-droid-diaries",
+      "title": "Star Wars: Droid Diaries",
+      "type": "tv-shorts",
+      "year": 2025,
+      "description": "A short-form animated comedy series following R2-D2 and BB-8 through chaotic, laugh-out-loud misadventures during the Sequel era, from lost lightsabers to bounty hunters hot on their trail.",
+      "seasons": [
+        {
+          "season": 1,
+          "episodes": [
+            { "episode": 1, "title": "R2-D2 and BB-8's Messy Mission!", "duration": 2 },
+            { "episode": 2, "title": "R2-D2 and BB-8's Quest for a New Arm!", "duration": 2 },
+            { "episode": 3, "title": "R2-D2, BB-8 and Rey's Lightsaber on the Loose!", "duration": 2 },
+            { "episode": 4, "title": "R2-D2 & BB-8 Save The Millennium Falcon!", "duration": 3 },
+            { "episode": 5, "title": "Who's Making That Noise in The Millennium Falcon?!", "duration": 3 },
+            { "episode": 6, "title": "BB-8 and R2-D2 Go Undercover!", "duration": 4 },
+            { "episode": 7, "title": "R2-D2 and BB-8's Super Snowy Shenanigans", "duration": 3 },
+            { "episode": 8, "title": "R2-D2 and BB-8 Chased By A Bounty Hunter?!", "duration": 2 }
+          ]
+        }
+      ],
+      "format": "animated",
+      "era": "disney",
+      "disneyPlusUrl": "https://www.youtube.com/playlist?list=PLXsbMnnbPpLXNXka3xiYdRhGRHPqq_nSN"
+    },
+    {
+      "id": "forces-of-destiny",
+      "title": "Forces of Destiny",
+      "type": "tv-shorts",
+      "year": 2017,
+      "description": "A collection of animated micro-shorts celebrating acts of courage and kindness from heroes across every era of the Star Wars saga, featuring Ahsoka, Padmé, Leia, Sabine, Rey, Rose, and more.",
+      "seasons": [
+        {
+          "season": 1,
+          "episodes": [
+            {
+              "episode": 1,
+              "title": "Sands of Jakku",
+              "duration": 3
+            },
+            {
+              "episode": 2,
+              "title": "BB-8 Bandits",
+              "duration": 3
+            },
+            {
+              "episode": 3,
+              "title": "Ewok Escape",
+              "duration": 3
+            },
+            {
+              "episode": 4,
+              "title": "The Padawan Path",
+              "duration": 3
+            },
+            {
+              "episode": 5,
+              "title": "Beasts of Echo Base",
+              "duration": 3
+            },
+            {
+              "episode": 6,
+              "title": "The Imposter Inside",
+              "duration": 3
+            },
+            {
+              "episode": 7,
+              "title": "The Stranger",
+              "duration": 3
+            },
+            {
+              "episode": 8,
+              "title": "Bounty of Trouble",
+              "duration": 3
+            },
+            {
+              "episode": 9,
+              "title": "Newest Recruit",
+              "duration": 3
+            },
+            {
+              "episode": 10,
+              "title": "The Starfighter Stunt",
+              "duration": 3
+            },
+            {
+              "episode": 11,
+              "title": "Tracker Trouble",
+              "duration": 3
+            },
+            {
+              "episode": 12,
+              "title": "Teach You, I Will",
+              "duration": 3
+            },
+            {
+              "episode": 13,
+              "title": "Accidental Allies",
+              "duration": 3
+            },
+            {
+              "episode": 14,
+              "title": "An Imperial Feast",
+              "duration": 3
+            },
+            {
+              "episode": 15,
+              "title": "The Happabore Hazard",
+              "duration": 3
+            },
+            {
+              "episode": 16,
+              "title": "Crash Course",
+              "duration": 3
+            }
+          ]
+        },
+        {
+          "season": 2,
+          "episodes": [
+            {
+              "episode": 1,
+              "title": "Hasty Departure",
+              "duration": 3
+            },
+            {
+              "episode": 2,
+              "title": "Unexpected Company",
+              "duration": 3
+            },
+            {
+              "episode": 3,
+              "title": "Shuttle Shock",
+              "duration": 3
+            },
+            {
+              "episode": 4,
+              "title": "Jyn's Trade",
+              "duration": 3
+            },
+            {
+              "episode": 5,
+              "title": "Run Rey Run",
+              "duration": 3
+            },
+            {
+              "episode": 6,
+              "title": "Bounty Hunted",
+              "duration": 3
+            },
+            {
+              "episode": 7,
+              "title": "The Path Ahead",
+              "duration": 3
+            },
+            {
+              "episode": 8,
+              "title": "Porg Problems",
+              "duration": 3
+            },
+            {
+              "episode": 9,
+              "title": "Chopper and Friends",
+              "duration": 3
+            },
+            {
+              "episode": 10,
+              "title": "Monster Misunderstanding",
+              "duration": 3
+            },
+            {
+              "episode": 11,
+              "title": "Art History",
+              "duration": 3
+            },
+            {
+              "episode": 12,
+              "title": "Porgs!",
+              "duration": 3
+            },
+            {
+              "episode": 13,
+              "title": "Perilous Pursuit",
+              "duration": 3
+            },
+            {
+              "episode": 14,
+              "title": "Traps and Tribulations",
+              "duration": 3
+            },
+            {
+              "episode": 15,
+              "title": "A Disarming Lesson",
+              "duration": 3
+            },
+            {
+              "episode": 16,
+              "title": "Triplecross",
+              "duration": 3
+            }
+          ]
+        }
+      ],
+      "format": "animated",
+      "era": "disney",
+      "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-158c4929-11c0-4b66-98f7-3bba207aac8a"
+    },
+    {
+      "id": "star-wars-galaxy-of-creatures",
+      "title": "Galaxy of Creatures",
+      "type": "tv-shorts",
+      "year": 2021,
+      "description": "An animated documentary-style shorts series following droid SF-R3 as she travels the galaxy on behalf of the Galactic Society of Creature Enthusiasts, learning about beloved Star Wars wildlife from Banthas to Rancors.",
+      "seasons": [
+        {
+          "season": 1,
+          "episodes": [
+            { "episode": 1, "title": "Bantha", "duration": 2 },
+            { "episode": 2, "title": "Porgs", "duration": 2 },
+            { "episode": 3, "title": "Voorpak", "duration": 2 },
+            { "episode": 4, "title": "Blurrg", "duration": 2 },
+            { "episode": 5, "title": "Wampa", "duration": 2 },
+            { "episode": 6, "title": "Tooka", "duration": 2 },
+            { "episode": 7, "title": "Kowakian Monkey-Lizard", "duration": 2 },
+            { "episode": 8, "title": "Mynocks", "duration": 2 },
+            { "episode": 9, "title": "Charhound", "duration": 2 },
+            { "episode": 10, "title": "Nexu", "duration": 2 },
+            { "episode": 11, "title": "Rancor", "duration": 2 },
+            { "episode": 12, "title": "Tauntaun", "duration": 2 }
+          ]
+        },
+        {
+          "season": 2,
+          "episodes": [
+            { "episode": 1, "title": "Bogling", "duration": 2 },
+            { "episode": 2, "title": "Eopie", "duration": 2 },
+            { "episode": 3, "title": "Convor", "duration": 2 },
+            { "episode": 4, "title": "Gergilla", "duration": 2 },
+            { "episode": 5, "title": "Kamoradon", "duration": 2 },
+            { "episode": 6, "title": "Kybuck", "duration": 2 },
+            { "episode": 7, "title": "Ice Spider", "duration": 2 },
+            { "episode": 8, "title": "Dianoga", "duration": 2 },
+            { "episode": 9, "title": "Gundark", "duration": 2 },
+            { "episode": 10, "title": "Puffer Pig", "duration": 2 },
+            { "episode": 11, "title": "Ordo Moon Dragon", "duration": 2 },
+            { "episode": 12, "title": "Gorgs", "duration": 2 }
+          ]
+        }
+      ],
+      "format": "animated",
+      "era": "disney",
+      "disneyPlusUrl": "https://www.youtube.com/watch?v=1GNXjjugaJQ&list=PLXsbMnnbPpLWXxGzP8c39peWAu-nQfDOK&index=2"
+    },
+    {
+      "id": "star-wars-galactic-pals",
+      "title": "Galactic Pals",
+      "type": "tv-shorts",
+      "year": 2022,
+      "description": "A cheerful animated shorts series following Miree, a caretaker droid, as she nurtures younglings of different Star Wars species — from Ewoks and Wookiees to Jawas and Rancors.",
+      "seasons": [
+        {
+          "season": 1,
+          "episodes": [
+            { "episode": 1, "title": "Wookiee", "duration": 2 },
+            { "episode": 2, "title": "Ewok", "duration": 2 },
+            { "episode": 3, "title": "Jawa", "duration": 2 },
+            { "episode": 4, "title": "Rodian", "duration": 2 },
+            { "episode": 5, "title": "Gamorrean", "duration": 2 },
+            { "episode": 6, "title": "Huttlet", "duration": 2 },
+            { "episode": 7, "title": "Tauntaun", "duration": 2 },
+            { "episode": 8, "title": "Rancor", "duration": 2 },
+            { "episode": 9, "title": "Porgs", "duration": 2 },
+            { "episode": 10, "title": "Ortolan", "duration": 2 },
+            { "episode": 11, "title": "Gungan", "duration": 2 },
+            { "episode": 12, "title": "Loth-Cat", "duration": 2 }
+          ]
+        }
+      ],
+      "format": "animated",
+      "era": "disney",
+      "disneyPlusUrl": "https://www.youtube.com/watch?v=F_lwJbsWNr4&list=PLXsbMnnbPpLX9F50O9HSc2n8W8fVq2YZG&index=3"
+    }
+  ]
+}
