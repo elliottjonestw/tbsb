@@ -4,7 +4,6 @@ let catalog = [];
 let watched = {};
 let activeEra = 'all';
 let activeType = 'all';
-let activeFormat = 'all';
 let activeStatus = 'all';
 let activeSort = 'chronological';
 let activeSortDir = 'asc';
@@ -62,7 +61,6 @@ function setSeriesWatched(item, val) {
 
 function save() {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(watched));
-  updateGlobalProgress();
   updateStats();
 }
 
@@ -70,6 +68,7 @@ function save() {
 
 function isMovie(item)  { return item.type === 'movie'  || item.type === 'short-movie'; }
 function isSeries(item) { return item.type === 'series' || item.type === 'tv-shorts'; }
+function isNovel(item)  { return item.type === 'novel' || item.type === 'ya-novel'; }
 
 // ── Progress calculations ────────────────────────────────────────────────────
 
@@ -81,6 +80,7 @@ function seriesMinutes(item) {
 
 function totalMinutes() {
   return catalog.reduce((t, item) => {
+    if (isNovel(item)) return t;
     return t + (isMovie(item) ? movieMinutes(item) : seriesMinutes(item));
   }, 0);
 }
@@ -100,6 +100,7 @@ function watchedMinutesSeries(item) {
 }
 
 function watchedMinutesItem(item) {
+  if (isNovel(item)) return 0;
   return isMovie(item) ? watchedMinutesMovie(item) : watchedMinutesSeries(item);
 }
 
@@ -108,7 +109,7 @@ function totalWatchedMinutes() {
 }
 
 function itemStatus(item) {
-  if (isMovie(item)) return getMovieWatched(item.id) ? 'watched' : 'unwatched';
+  if (isMovie(item) || isNovel(item)) return getMovieWatched(item.id) ? 'watched' : 'unwatched';
   const total = seriesMinutes(item);
   const done = watchedMinutesSeries(item);
   if (done === 0) return 'unwatched';
@@ -137,20 +138,13 @@ function formatMinutes(mins) {
   return `${h}h ${m}m`;
 }
 
-// ── Global progress ──────────────────────────────────────────────────────────
-
-function updateGlobalProgress() {
-  const pct = Math.round((totalWatchedMinutes() / totalMinutes()) * 100);
-  document.getElementById('globalProgressBar').style.width = pct + '%';
-  document.getElementById('globalProgressPct').textContent = pct + '%';
-}
-
 // ── Stats ────────────────────────────────────────────────────────────────────
 
 function updateStats() {
   const fullMovies = catalog.filter(i => i.type === 'movie');
   const shortFilms = catalog.filter(i => i.type === 'short-movie');
   const series = catalog.filter(i => isSeries(i));
+  const novels = catalog.filter(i => isNovel(i));
   const watchedFullMovies = fullMovies.filter(i => getMovieWatched(i.id)).length;
   const watchedShortFilms = shortFilms.filter(i => getMovieWatched(i.id)).length;
   const totalEps = series
@@ -158,15 +152,21 @@ function updateStats() {
   const watchedEps = series
     .reduce((t, i) => t + i.seasons.reduce((s, se) =>
       s + se.episodes.filter(ep => getEpWatched(i.id, se.season, ep.episode)).length, 0), 0);
+  const readNovels = novels.filter(i => getMovieWatched(i.id)).length;
+  const totalNovelPages = novels.reduce((t, i) => t + i.pageCount, 0);
+  const readPages = novels.filter(i => getMovieWatched(i.id)).reduce((t, i) => t + i.pageCount, 0);
+  const remainingPages = totalNovelPages - readPages;
+
+  const canonReadPct = totalNovelPages > 0 ? Math.round((readPages / totalNovelPages) * 100) : 0;
 
   document.getElementById('statsRow').innerHTML = `
     <div class="stat-card">
       <div class="stat-value accent">${Math.round((totalWatchedMinutes() / totalMinutes()) * 100)}%</div>
-      <div class="stat-label">Canon Watched</div>
+      <div class="stat-label">Watched</div>
     </div>
     <div class="stat-card">
-      <div class="stat-value watched-color">${Math.round(totalWatchedMinutes() / 60)}h</div>
-      <div class="stat-label">Time Watched</div>
+      <div class="stat-value accent">${canonReadPct}%</div>
+      <div class="stat-label">Read</div>
     </div>
     <div class="stat-card">
       <div class="stat-value">${watchedFullMovies}/${fullMovies.length}</div>
@@ -181,8 +181,16 @@ function updateStats() {
       <div class="stat-label">Episodes</div>
     </div>
     <div class="stat-card">
+      <div class="stat-value">${readNovels}/${novels.length}</div>
+      <div class="stat-label">Novels</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value">${remainingPages.toLocaleString()}</div>
+      <div class="stat-label">Pages Remaining</div>
+    </div>
+    <div class="stat-card">
       <div class="stat-value">${Math.round((totalMinutes() - totalWatchedMinutes()) / 60)}h</div>
-      <div class="stat-label">Time Remaining</div>
+      <div class="stat-label">Hours Remaining</div>
     </div>
   `;
 }
@@ -195,11 +203,12 @@ function filteredCatalog() {
   if (activeEra !== 'all')  items = items.filter(i => i.era === activeEra);
   if (activeType !== 'all') items = items.filter(i => i.type === activeType);
 
-  if (activeFormat === 'live-action') items = items.filter(i => i.format === 'live-action');
-  if (activeFormat === 'animated')    items = items.filter(i => i.format === 'animated');
-
   if (activeStatus !== 'all') {
-    const statusKey = activeStatus === 'in-progress' ? 'partial' : activeStatus;
+    const statusKey =
+      activeStatus === 'in-progress' ? 'partial' :
+      activeStatus === 'not-started' ? 'unwatched' :
+      activeStatus === 'finished'    ? 'watched'   :
+      activeStatus;
     items = items.filter(i => itemStatus(i) === statusKey);
   }
 
@@ -211,12 +220,6 @@ function filteredCatalog() {
   const dir = activeSortDir === 'asc' ? 1 : -1;
   if (activeSort === 'release') {
     sorted.sort((a, b) => (a.year - b.year) * dir);
-  } else if (activeSort === 'duration') {
-    sorted.sort((a, b) => {
-      const da = isMovie(a) ? a.duration : seriesMinutes(a);
-      const db = isMovie(b) ? b.duration : seriesMinutes(b);
-      return (da - db) * dir;
-    });
   }
   return sorted;
 }
@@ -233,7 +236,6 @@ function updateSortButtons() {
 }
 
 function render() {
-  updateGlobalProgress();
   updateStats();
   updateSortButtons();
   renderCatalog();
@@ -260,17 +262,27 @@ function renderCatalog() {
 
 function renderCard(item) {
   const status = itemStatus(item);
-  const total = isMovie(item) ? item.duration : seriesMinutes(item);
-  const done = watchedMinutesItem(item);
-  const pct = total > 0 ? Math.round((done / total) * 100) : 0;
-  const typeLabels = { movie: 'Movie', 'short-movie': 'Short Film', series: 'TV Series', 'tv-shorts': 'TV Shorts' };
+  let pct;
+  if (isSeries(item)) {
+    const total = seriesMinutes(item);
+    const done = watchedMinutesSeries(item);
+    pct = total > 0 ? Math.round((done / total) * 100) : 0;
+  } else {
+    pct = status === 'watched' ? 100 : 0;
+  }
+  const typeLabels = { movie: 'Movie', 'short-movie': 'Short Film', series: 'TV Series', 'tv-shorts': 'TV Shorts', novel: 'Novel', 'ya-novel': 'YA Novel' };
   const typeLabel = typeLabels[item.type] || item.type;
-  const durationLabel = isMovie(item)
-    ? formatMinutes(item.duration)
-    : `${item.seasons.length} Season${item.seasons.length > 1 ? 's' : ''}`;
+  let metaLabel;
+  if (isNovel(item)) {
+    metaLabel = `${item.pageCount} pages`;
+  } else if (isMovie(item)) {
+    metaLabel = formatMinutes(item.duration);
+  } else {
+    metaLabel = `${item.seasons.length} Season${item.seasons.length > 1 ? 's' : ''}`;
+  }
 
   const badgeClass = status === 'watched' ? 'badge-watched' : status === 'partial' ? 'badge-partial' : 'badge-unwatched';
-  const badgeText = status === 'watched' ? '✓ Watched' : status === 'partial' ? 'In Progress' : 'Unwatched';
+  const badgeText = status === 'watched' ? '✓ Finished' : status === 'partial' ? 'In Progress' : 'Not Started';
 
   const watchIcon = status === 'watched' ? '✓' : '＋';
   const posterSrc = `posters/${item.id}.jpg`;
@@ -289,7 +301,7 @@ function renderCard(item) {
           <div class="card-type">${typeLabel} · ${item.year}</div>
           <div class="card-title">${item.title}</div>
           <div class="card-meta">
-            <span class="card-duration">${durationLabel}</span>
+            <span class="card-duration">${metaLabel}</span>
             <span class="card-badge ${badgeClass}">${badgeText}</span>
           </div>
         </div>
@@ -297,7 +309,7 @@ function renderCard(item) {
           <div class="card-progress-wrap">
             <div class="card-progress-fill" style="width:${pct}%"></div>
           </div>
-          <button class="card-watch-btn" title="${status === 'watched' ? 'Mark Unwatched' : 'Mark Watched'}">${watchIcon}</button>
+          <button class="card-watch-btn" title="${status === 'watched' ? 'Mark as Not Started' : 'Mark as Finished'}">${watchIcon}</button>
         </div>
       </div>
     </div>
@@ -305,7 +317,7 @@ function renderCard(item) {
 }
 
 function quickToggle(item) {
-  if (isMovie(item)) {
+  if (isMovie(item) || isNovel(item)) {
     setMovieWatched(item.id, !getMovieWatched(item.id));
   } else {
     const s = itemStatus(item);
@@ -318,9 +330,10 @@ function quickToggle(item) {
 
 function openModal(item) {
   document.getElementById('modalTitle').textContent = item.title;
-  document.getElementById('modalBody').innerHTML = isMovie(item)
-    ? renderMovieModal(item)
-    : renderSeriesModal(item);
+  document.getElementById('modalBody').innerHTML =
+    isNovel(item)  ? renderNovelModal(item)  :
+    isMovie(item)  ? renderMovieModal(item)  :
+    renderSeriesModal(item);
   document.getElementById('modalOverlay').classList.add('open');
   bindModalEvents(item);
 }
@@ -330,21 +343,47 @@ function closeModal() {
 }
 
 function renderMovieModal(item) {
-  const isWatched = getMovieWatched(item.id);
+  const isDone = getMovieWatched(item.id);
   return `
     <div class="movie-detail">
       <div class="movie-info-row">
-        <span class="card-badge ${isWatched ? 'badge-watched' : 'badge-unwatched'}">${isWatched ? '✓ Watched' : 'Unwatched'}</span>
+        <span class="card-badge ${isDone ? 'badge-watched' : 'badge-unwatched'}">${isDone ? '✓ Finished' : 'Not Started'}</span>
         <span style="color:var(--text-muted);font-size:0.85rem">${item.year}</span>
         <span style="color:var(--text-muted);font-size:0.85rem">${formatMinutes(item.duration)}</span>
       </div>
       ${item.description ? `<p class="modal-description">${item.description}</p>` : ''}
       ${item.disneyPlusUrl ? `<a class="btn-disney" href="${item.disneyPlusUrl}" target="_blank" rel="noopener noreferrer">▶ ${item.disneyPlusUrl.includes('youtube.com') ? 'Watch on YouTube' : 'Watch on Disney+'}</a>` : ''}
-      <button class="movie-watch-toggle ${isWatched ? 'active' : ''}" id="movieToggle">
-        <div class="toggle-icon">${isWatched ? '✓' : '○'}</div>
+      <button class="movie-watch-toggle ${isDone ? 'active' : ''}" id="movieToggle">
+        <div class="toggle-icon">${isDone ? '✓' : '○'}</div>
         <div>
-          <div class="toggle-text">${isWatched ? 'Watched' : 'Mark as Watched'}</div>
-          <div class="toggle-sub">${isWatched ? 'Click to mark as unwatched' : 'Click to log this movie'}</div>
+          <div class="toggle-text">${isDone ? 'Watched' : 'Mark as Watched'}</div>
+          <div class="toggle-sub">${isDone ? 'Click to mark as not started' : 'Click to log this movie'}</div>
+        </div>
+      </button>
+    </div>
+  `;
+}
+
+function renderNovelModal(item) {
+  const isRead = getMovieWatched(item.id);
+  return `
+    <div class="movie-detail">
+      <div class="movie-info-row">
+        <span class="card-badge ${isRead ? 'badge-watched' : 'badge-unwatched'}">${isRead ? '✓ Read' : 'Not Started'}</span>
+        <span style="color:var(--text-muted);font-size:0.85rem">${item.year}</span>
+        <span style="color:var(--text-muted);font-size:0.85rem">by ${item.author}</span>
+        <span style="color:var(--text-muted);font-size:0.85rem">${item.pageCount} pages</span>
+      </div>
+      ${item.description ? `<p class="modal-description">${item.description}</p>` : ''}
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        ${item.audibleUrl ? `<a class="btn-audible" href="${item.audibleUrl}" target="_blank" rel="noopener noreferrer">Listen on Audible</a>` : ''}
+        ${item.amazonUrl ? `<a class="btn-amazon" href="${item.amazonUrl}" target="_blank" rel="noopener noreferrer">Buy on Amazon</a>` : ''}
+      </div>
+      <button class="movie-watch-toggle ${isRead ? 'active' : ''}" id="movieToggle">
+        <div class="toggle-icon">${isRead ? '✓' : '○'}</div>
+        <div>
+          <div class="toggle-text">${isRead ? 'Read' : 'Mark as Read'}</div>
+          <div class="toggle-sub">${isRead ? 'Click to mark as not started' : 'Click to log this book'}</div>
         </div>
       </button>
     </div>
@@ -399,6 +438,16 @@ function renderSeriesModal(item) {
 }
 
 function bindModalEvents(item) {
+  if (isNovel(item)) {
+    document.getElementById('movieToggle')?.addEventListener('click', () => {
+      setMovieWatched(item.id, !getMovieWatched(item.id));
+      document.getElementById('modalBody').innerHTML = renderNovelModal(item);
+      bindModalEvents(item);
+      renderCatalog();
+    });
+    return;
+  }
+
   if (isMovie(item)) {
     document.getElementById('movieToggle')?.addEventListener('click', () => {
       setMovieWatched(item.id, !getMovieWatched(item.id));
@@ -498,7 +547,6 @@ function bindEvents() {
   function applyFilter(filterType, val) {
     if (filterType === 'era') activeEra = val;
     else if (filterType === 'type') activeType = val;
-    else if (filterType === 'format') activeFormat = val;
     else if (filterType === 'status') activeStatus = val;
     document.querySelectorAll(`.${filterType}-btn`).forEach(b => {
       b.classList.toggle('active', b.dataset[filterType] === val);
@@ -508,7 +556,7 @@ function bindEvents() {
     renderCatalog();
   }
 
-  ['era', 'type', 'format', 'status'].forEach(filterType => {
+  ['era', 'type', 'status'].forEach(filterType => {
     document.querySelectorAll(`.${filterType}-btn`).forEach(btn => {
       btn.addEventListener('click', () => applyFilter(filterType, btn.dataset[filterType]));
     });
@@ -532,7 +580,7 @@ function bindEvents() {
   });
 
   document.getElementById('resetBtn').addEventListener('click', () => {
-    if (confirm('Reset all watch progress? This cannot be undone.')) {
+    if (confirm('Reset all progress? This cannot be undone.')) {
       watched = {};
       save();
       renderCatalog();
@@ -567,6 +615,7 @@ const FOOTER_QUOTES = [
   'The ability to stream does not make you intelligent.',
   'I watched them. I watched them all. And not just the movies, but the shows and the shorts, too.',
   'I find your lack of watch progress disturbing.',
+  'Read the books. Read them all.',
 ];
 
 function renderFooter() {

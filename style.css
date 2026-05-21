@@ -137,8 +137,8 @@ main {
 /* Stats */
 .stats-row {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 12px;
   margin-bottom: 32px;
 }
 
@@ -146,11 +146,11 @@ main {
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 20px;
+  padding: 16px;
 }
 
 .stat-value {
-  font-size: 2rem;
+  font-size: 1.6rem;
   font-weight: 800;
   line-height: 1;
   margin-bottom: 4px;
@@ -661,6 +661,42 @@ main {
 }
 
 .btn-disney:hover { background: #0073ff; }
+
+.btn-audible {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: #ff6f00;
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.btn-audible:hover { background: #e65c00; }
+
+.btn-amazon {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: #ff9900;
+  color: #000;
+  border: none;
+  padding: 10px 18px;
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.btn-amazon:hover { background: #e68a00; }
 
 .season-block {
   margin-bottom: 24px;

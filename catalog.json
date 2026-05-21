@@ -1,6 +1,73 @@
 {
   "content": [
     {
+      "id": "path-of-deceit",
+      "title": "The High Republic: Path of Deceit",
+      "type": "ya-novel",
+      "author": "Justina Ireland & Tessa Gratton",
+      "year": 2022,
+      "era": "disney",
+      "pageCount": 368,
+      "description": "Set 150 years before the height of the High Republic era, a Jedi Padawan and a member of the mysterious Path of the Open Hand are thrown together on a world at the edge of the galaxy, where a dangerous secret forces them each to question their deepest loyalties.",
+      "audibleUrl": "https://www.audible.com/pd/Star-Wars-The-High-Republic-Path-of-Deceit-Audiobook/B0F8FG4C5Z",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+High+Republic+Path+of+Deceit"
+    },
+    {
+      "id": "the-high-republic-convergence",
+      "title": "The High Republic: Convergence",
+      "type": "novel",
+      "author": "Zoraida Córdova",
+      "year": 2022,
+      "era": "disney",
+      "pageCount": 336,
+      "description": "On the planet Eiram, two noble houses have warred for generations — but an arranged marriage is brokered to end the conflict. When an assassination attempt threatens the peace, a young Jedi must uncover the truth before the fragile truce collapses.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+High+Republic+Convergence+Cordova"
+    },
+    {
+      "id": "the-high-republic-cataclysm",
+      "title": "The High Republic: Cataclysm",
+      "type": "novel",
+      "author": "Lydia Kang",
+      "year": 2023,
+      "era": "disney",
+      "pageCount": 416,
+      "description": "In the aftermath of Eiram and E'ronoh's brief peace, a dangerous Path of the Open Hand cult ignites old wounds and new crises — forcing Jedi and their allies to confront a galaxy on the edge of catastrophe.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+High+Republic+Cataclysm+Kang"
+    },
+    {
+      "id": "the-high-republic-path-of-vengeance",
+      "title": "The High Republic: Path of Vengeance",
+      "type": "ya-novel",
+      "author": "Cavan Scott",
+      "year": 2023,
+      "era": "disney",
+      "pageCount": 517,
+      "description": "The Path of the Open Hand's grip on the galaxy tightens as two young women — one a Jedi, one a true believer in the Path — are drawn into a collision course that will test everything they know about loyalty, faith, and the Force.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+High+Republic+Path+of+Vengeance+Scott"
+    },
+    {
+      "id": "the-high-republic-light-of-the-jedi",
+      "title": "The High Republic: Light of the Jedi",
+      "type": "novel",
+      "author": "Charles Soule",
+      "year": 2021,
+      "era": "disney",
+      "pageCount": 432,
+      "description": "At the height of the Republic's golden age, a catastrophic disaster in hyperspace throws the Jedi Order into a desperate rescue operation — and reveals a terrifying new threat lurking in the darkness between the stars.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+High+Republic+Light+of+the+Jedi+Soule"
+    },
+    {
+      "id": "the-high-republic-into-the-dark",
+      "title": "The High Republic: Into the Dark",
+      "type": "ya-novel",
+      "author": "Claudia Gray",
+      "year": 2021,
+      "era": "disney",
+      "pageCount": 425,
+      "description": "A Jedi Padawan and a crew of smugglers become stranded at a derelict space station after a hyperspace disaster — and what they find there may be more dangerous than anything waiting in the dark outside.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+High+Republic+Into+the+Dark+Claudia+Gray"
+    },
+    {
       "id": "young-jedi-adventures-shorts",
       "title": "Young Jedi Adventures Shorts",
       "type": "tv-shorts",
@@ -507,6 +574,127 @@
       "disneyPlusUrl": "https://www.youtube.com/playlist?list=PLXsbMnnbPpLXMUzQ0oBMxM0GnUs153EbL"
     },
     {
+      "id": "the-high-republic-the-rising-storm",
+      "title": "The High Republic: The Rising Storm",
+      "type": "novel",
+      "author": "Cavan Scott",
+      "year": 2021,
+      "era": "disney",
+      "pageCount": 416,
+      "description": "As the Republic Fair celebrates the galaxy's unity, the Nihil strike in their most audacious and devastating attack yet — plunging the Jedi into a desperate fight to protect the innocent and hold back the storm.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+High+Republic+The+Rising+Storm+Cavan+Scott"
+    },
+    {
+      "id": "the-high-republic-out-of-the-shadows",
+      "title": "The High Republic: Out of the Shadows",
+      "type": "ya-novel",
+      "author": "Justina Ireland",
+      "year": 2021,
+      "era": "disney",
+      "pageCount": 432,
+      "description": "A Jedi Knight investigating a mysterious hyperspace disaster is pulled into a web of political intrigue and buried secrets — while the shadow of the Nihil continues to fall across the Outer Rim.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+High+Republic+Out+of+the+Shadows+Ireland"
+    },
+    {
+      "id": "the-high-republic-the-fallen-star",
+      "title": "The High Republic: The Fallen Star",
+      "type": "novel",
+      "author": "Claudia Gray",
+      "year": 2022,
+      "era": "disney",
+      "pageCount": 400,
+      "description": "The Nihil launch their most devastating strike at the heart of the High Republic — attacking Starlight Beacon itself, turning the galaxy's greatest symbol of hope into a desperate fight for survival.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+High+Republic+The+Fallen+Star+Claudia+Gray"
+    },
+    {
+      "id": "the-high-republic-midnight-horizon",
+      "title": "The High Republic: Midnight Horizon",
+      "type": "ya-novel",
+      "author": "Daniel José Older",
+      "year": 2022,
+      "era": "disney",
+      "pageCount": 490,
+      "description": "Two young Jedi arrive on the cosmopolitan city-world of Corellia to investigate a Nihil plot — navigating an underworld of crime and corruption while the fate of the Republic hangs in the balance.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+High+Republic+Midnight+Horizon+Older"
+    },
+    {
+      "id": "the-high-republic-the-eye-of-darkness",
+      "title": "The High Republic: The Eye of Darkness",
+      "type": "novel",
+      "author": "George Mann",
+      "year": 2023,
+      "era": "disney",
+      "pageCount": 416,
+      "description": "Years after the fall of Starlight Beacon, the galaxy has been cut off from the Republic by the Nihil's Stormwall. Now the Jedi must find a way to strike back against the darkness — from within.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+High+Republic+Eye+of+Darkness+Mann"
+    },
+    {
+      "id": "the-high-republic-defy-the-storm",
+      "title": "The High Republic: Defy the Storm",
+      "type": "ya-novel",
+      "author": "Justina Ireland & Tessa Gratton",
+      "year": 2024,
+      "era": "disney",
+      "pageCount": 464,
+      "description": "With the Nihil's Stormwall isolating the Outer Rim, a group of Jedi and their allies must push beyond its deadly barrier — risking everything on a daring mission to reach those trapped inside.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+High+Republic+Defy+the+Storm"
+    },
+    {
+      "id": "the-high-republic-temptation-of-the-force",
+      "title": "The High Republic: Temptation of the Force",
+      "type": "novel",
+      "author": "Tessa Gratton",
+      "year": 2024,
+      "era": "disney",
+      "pageCount": 425,
+      "description": "As the Jedi work to dismantle the Nihil from within the Stormwall, a Jedi Knight is drawn toward a seductive and dangerous philosophy — one that could save lives or shatter everything the Order stands for.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+High+Republic+Temptation+of+the+Force+Gratton"
+    },
+    {
+      "id": "the-high-republic-tears-of-the-nameless",
+      "title": "The High Republic: Tears of the Nameless",
+      "type": "ya-novel",
+      "author": "George Mann",
+      "year": 2024,
+      "era": "disney",
+      "pageCount": 500,
+      "description": "A young Jedi investigates a mysterious signal emanating from deep within Nihil-held space — uncovering a secret that could change the course of the war and the understanding of the Force itself.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+High+Republic+Tears+of+the+Nameless+Mann"
+    },
+    {
+      "id": "the-high-republic-into-the-light",
+      "title": "The High Republic: Into the Light",
+      "type": "ya-novel",
+      "author": "Claudia Gray",
+      "year": 2025,
+      "era": "disney",
+      "pageCount": 368,
+      "description": "In the final days of the High Republic Era, a Jedi searches for hope amid the wreckage of war — confronting the darkness that has settled over the galaxy and the light she still believes can prevail.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+High+Republic+Into+the+Light+Claudia+Gray"
+    },
+    {
+      "id": "the-high-republic-trials-of-the-jedi",
+      "title": "The High Republic: Trials of the Jedi",
+      "type": "novel",
+      "author": "Charles Soule",
+      "year": 2025,
+      "era": "disney",
+      "pageCount": 448,
+      "description": "As the conflict with the Nihil reaches its climax, the Jedi Order faces a reckoning — tested in ways that will determine not just the outcome of the war, but the future of the Order itself.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+High+Republic+Trials+of+the+Jedi+Soule"
+    },
+    {
+      "id": "the-acolyte-wayseeker",
+      "title": "The Acolyte: Wayseeker",
+      "type": "novel",
+      "author": "Justina Ireland",
+      "year": 2025,
+      "era": "disney",
+      "pageCount": 304,
+      "description": "Set two centuries after the High Republic's golden age, a Jedi on the fringes of the Order follows a trail of dark side energy through a galaxy grown complacent — and discovers a threat the Order is not prepared to face.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Acolyte+Wayseeker+Justina+Ireland"
+    },
+    {
       "id": "the-acolyte",
       "title": "The Acolyte",
       "type": "series",
@@ -564,6 +752,39 @@
       "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-a5c84b7d-fd4e-42c8-95e3-960e73e1a71e"
     },
     {
+      "id": "padawan",
+      "title": "Padawan",
+      "type": "ya-novel",
+      "author": "Kiersten White",
+      "year": 2022,
+      "era": "disney",
+      "pageCount": 410,
+      "description": "A restless young Obi-Wan Kenobi runs away from his master on an unsanctioned mission — and finds himself stranded on a mysterious planet where he must figure out what kind of Jedi, and what kind of person, he wants to be.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Padawan+Kiersten+White"
+    },
+    {
+      "id": "master-and-apprentice",
+      "title": "Master & Apprentice",
+      "type": "novel",
+      "author": "Claudia Gray",
+      "year": 2019,
+      "era": "disney",
+      "pageCount": 330,
+      "description": "Qui-Gon Jinn and a young Obi-Wan Kenobi travel to a planet on the verge of civil war — where an unexpected prophecy and a difficult decision will test the bonds between master and apprentice.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Master+and+Apprentice+Claudia+Gray"
+    },
+    {
+      "id": "the-living-force",
+      "title": "The Living Force",
+      "type": "novel",
+      "author": "John Jackson Miller",
+      "year": 2024,
+      "era": "disney",
+      "pageCount": 432,
+      "description": "One year before the Battle of Naboo, the entire Jedi Council travels to the Outer Rim world of Kwenn — a routine trip that becomes anything but, as the Jedi confront questions about their place in the galaxy and the living Force itself.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+The+Living+Force+John+Jackson+Miller"
+    },
+    {
       "id": "zen-grogu-and-dust-bunnies",
       "title": "Zen – Grogu and Dust Bunnies",
       "type": "short-movie",
@@ -586,6 +807,39 @@
       "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-e0a9fee4-2959-4077-ad8c-8fab4fd6e4d1"
     },
     {
+      "id": "queens-peril",
+      "title": "Queen's Peril",
+      "type": "ya-novel",
+      "author": "E.K. Johnston",
+      "year": 2020,
+      "era": "disney",
+      "pageCount": 288,
+      "description": "The untold story of how Padmé Amidala became Queen of Naboo — and how she assembled the handmaidens who would stand beside her, forging bonds of loyalty and friendship in the shadow of an invasion.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Queen%27s+Peril+EK+Johnston"
+    },
+    {
+      "id": "mace-windu-the-glass-abyss",
+      "title": "Mace Windu: The Glass Abyss",
+      "type": "novel",
+      "author": "Steven Barnes",
+      "year": 2024,
+      "era": "disney",
+      "pageCount": 416,
+      "description": "In the days after Qui-Gon Jinn's funeral, Mace Windu travels to a remote world haunted by dark-side energy — leading a perilous mission that forces him to confront questions about the Force, leadership, and the nature of evil.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Mace+Windu+The+Glass+Abyss+Steven+Barnes"
+    },
+    {
+      "id": "queens-shadow",
+      "title": "Queen's Shadow",
+      "type": "ya-novel",
+      "author": "E.K. Johnston",
+      "year": 2019,
+      "era": "disney",
+      "pageCount": 352,
+      "description": "Padmé Amidala's reign as Queen ends, and she takes her place in the Galactic Senate — navigating a treacherous political world with the help of her loyal handmaidens as she finds her voice as a senator.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Queen%27s+Shadow+EK+Johnston"
+    },
+    {
       "id": "episode-ii-attack-of-the-clones",
       "title": "Episode II – Attack of the Clones",
       "type": "movie",
@@ -595,6 +849,28 @@
       "format": "live-action",
       "era": "lucas",
       "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-39cbdf17-1bbe-4de2-b4a4-8e342875c2c6"
+    },
+    {
+      "id": "queens-hope",
+      "title": "Queen's Hope",
+      "type": "ya-novel",
+      "author": "E.K. Johnston",
+      "year": 2022,
+      "era": "disney",
+      "pageCount": 352,
+      "description": "As the Clone Wars begin, Padmé Amidala confronts the cost of the conflict she tried to prevent — while a secret ceremony, lasting promises, and her deepest convictions are tested by a galaxy at war.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Queen%27s+Hope+EK+Johnston"
+    },
+    {
+      "id": "brotherhood",
+      "title": "Brotherhood",
+      "type": "novel",
+      "author": "Mike Chen",
+      "year": 2022,
+      "era": "disney",
+      "pageCount": 384,
+      "description": "In the earliest days of the Clone Wars, Obi-Wan Kenobi is dispatched to Cato Neimoidia to investigate a bombing — while Anakin Skywalker, now a Jedi Knight on his own for the first time, must prove himself without his master.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Brotherhood+Mike+Chen"
     },
     {
       "id": "the-clone-wars-film",
@@ -1367,6 +1643,39 @@
       "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-da8eb910-7fba-44ae-a37e-edd4b4d6630b"
     },
     {
+      "id": "dark-disciple",
+      "title": "Dark Disciple",
+      "type": "novel",
+      "author": "Christie Golden",
+      "year": 2015,
+      "era": "disney",
+      "pageCount": 336,
+      "description": "Based on unproduced Clone Wars scripts, an unlikely partnership forms between a Jedi Master and former Sith assassin Asajj Ventress — tasked with a mission to eliminate Count Dooku before more lives are lost to the war.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Dark+Disciple+Christie+Golden"
+    },
+    {
+      "id": "thrawn-ascendancy-chaos-rising",
+      "title": "Thrawn Ascendancy: Chaos Rising",
+      "type": "novel",
+      "author": "Timothy Zahn",
+      "year": 2020,
+      "era": "disney",
+      "pageCount": 383,
+      "description": "In the Unknown Regions of the galaxy, the Chiss Ascendancy faces a mysterious enemy unlike any they have encountered before — and a young military officer named Thrawn begins his rise through the ranks.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Thrawn+Ascendancy+Chaos+Rising+Zahn"
+    },
+    {
+      "id": "thrawn-ascendancy-greater-good",
+      "title": "Thrawn Ascendancy: Greater Good",
+      "type": "novel",
+      "author": "Timothy Zahn",
+      "year": 2021,
+      "era": "disney",
+      "pageCount": 432,
+      "description": "Thrawn continues to defend the Chiss Ascendancy against unseen threats in the Unknown Regions — but political enemies within the Ascendancy itself may prove more dangerous than any foe beyond its borders.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Thrawn+Ascendancy+Greater+Good+Zahn"
+    },
+    {
       "id": "episode-iii-revenge-of-the-sith",
       "title": "Episode III – Revenge of the Sith",
       "type": "movie",
@@ -1376,6 +1685,17 @@
       "format": "live-action",
       "era": "lucas",
       "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-eb1e2c5f-69bf-4240-a61f-7ffc4e0311b3"
+    },
+    {
+      "id": "master-of-evil",
+      "title": "Master of Evil",
+      "type": "novel",
+      "author": "Adam Christopher",
+      "year": 2025,
+      "era": "disney",
+      "pageCount": 384,
+      "description": "In the immediate aftermath of Order 66, Darth Vader is dispatched to a remote world to investigate rumors of a Force-wielding shaman — a mission that forces the new Sith Lord to confront the cost of absolute power.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Master+of+Evil+Adam+Christopher"
     },
     {
       "id": "the-bad-batch",
@@ -1640,6 +1960,83 @@
       "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-c93113fb-94ec-43b6-9d38-308825f7cd94"
     },
     {
+      "id": "inquisitor-rise-of-the-red-blade",
+      "title": "Inquisitor: Rise of the Red Blade",
+      "type": "novel",
+      "author": "Delilah S. Dawson",
+      "year": 2023,
+      "era": "disney",
+      "pageCount": 336,
+      "description": "The secret origin of the Inquisitorius — following a Jedi who survived Order 66 and is broken, reshaped, and reforged into one of the Emperor's most dangerous dark-side hunters.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Inquisitor+Rise+of+the+Red+Blade+Dawson"
+    },
+    {
+      "id": "sanctuary-a-bad-batch-novel",
+      "title": "Sanctuary: A Bad Batch Novel",
+      "type": "novel",
+      "author": "Lamar Giles",
+      "year": 2025,
+      "era": "disney",
+      "pageCount": 320,
+      "description": "Set during the earliest days of the Empire, Clone Force 99 takes a mission that goes wrong on a world caught between Imperial control and desperate resistance — forcing the Bad Batch to choose who they protect.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Sanctuary+Bad+Batch+Novel+Lamar+Giles"
+    },
+    {
+      "id": "thrawn-ascendancy-lesser-evil",
+      "title": "Thrawn Ascendancy: Lesser Evil",
+      "type": "novel",
+      "author": "Timothy Zahn",
+      "year": 2021,
+      "era": "disney",
+      "pageCount": 592,
+      "description": "The Chiss Ascendancy is fracturing from within as rival families conspire for power — and Thrawn must navigate a treacherous political crisis in the Unknown Regions while a greater threat looms beyond.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Thrawn+Ascendancy+Lesser+Evil+Zahn"
+    },
+    {
+      "id": "ahsoka-novel",
+      "title": "Ahsoka",
+      "type": "ya-novel",
+      "author": "E.K. Johnston",
+      "year": 2016,
+      "era": "disney",
+      "pageCount": 353,
+      "description": "One year after Order 66, Ahsoka Tano is living in hiding — until she is drawn into a conflict on a farming moon that forces her to pick up her lightsabers again and choose what she stands for in a galaxy without the Jedi.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Ahsoka+EK+Johnston"
+    },
+    {
+      "id": "catalyst-a-rogue-one-novel",
+      "title": "Catalyst: A Rogue One Novel",
+      "type": "novel",
+      "author": "James Luceno",
+      "year": 2016,
+      "era": "disney",
+      "pageCount": 330,
+      "description": "The secret origin of the Death Star — how a brilliant scientist and his family are drawn into the Empire's most terrifying weapons program, and how a decades-long friendship becomes the first crack in the armor of the Empire.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Catalyst+A+Rogue+One+Novel+Luceno"
+    },
+    {
+      "id": "lords-of-the-sith",
+      "title": "Lords of the Sith",
+      "type": "novel",
+      "author": "Paul S. Kemp",
+      "year": 2015,
+      "era": "disney",
+      "pageCount": 320,
+      "description": "Darth Vader and Emperor Palpatine are ambushed and stranded on the hostile world of Ryloth — and must fight their way through a rebel insurgency together, revealing the brutal dynamic between master and apprentice.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Lords+of+the+Sith+Paul+Kemp"
+    },
+    {
+      "id": "tarkin",
+      "title": "Tarkin",
+      "type": "novel",
+      "author": "James Luceno",
+      "year": 2014,
+      "era": "disney",
+      "pageCount": 274,
+      "description": "The definitive portrait of Wilhuff Tarkin — tracing his ruthless rise through the Empire's ranks and exploring the ideology that shaped the man who would command the Death Star.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Tarkin+James+Luceno"
+    },
+    {
       "id": "tales-of-the-empire",
       "title": "Tales of the Empire",
       "type": "series",
@@ -1801,6 +2198,39 @@
       "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-421b732e-fe78-4cfc-93e9-d3fbca13bb91"
     },
     {
+      "id": "most-wanted",
+      "title": "Most Wanted",
+      "type": "ya-novel",
+      "author": "Rae Carson",
+      "year": 2018,
+      "era": "disney",
+      "pageCount": 352,
+      "description": "Before the events of Solo, a young Han and Qi'ra are low-level street scrumrats on Corellia — until a botched job thrusts them into the crosshairs of two rival crime syndicates and forces them to rely on each other.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Most+Wanted+Rae+Carson"
+    },
+    {
+      "id": "crimson-climb",
+      "title": "Crimson Climb",
+      "type": "ya-novel",
+      "author": "E.K. Johnston",
+      "year": 2023,
+      "era": "disney",
+      "pageCount": 368,
+      "description": "After the events of Solo, Qi'ra survives within the brutal ranks of Crimson Dawn — climbing through its hierarchy with cunning and ruthlessness, shaping the woman she is becoming in the galaxy's underworld.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Crimson+Climb+EK+Johnston"
+    },
+    {
+      "id": "a-new-dawn",
+      "title": "A New Dawn",
+      "type": "novel",
+      "author": "John Jackson Miller",
+      "year": 2014,
+      "era": "disney",
+      "pageCount": 367,
+      "description": "A cynical former Jedi and an idealistic rebel cross paths on an Imperial-controlled mining world — setting in motion events that will bring Kanan Jarrus and Hera Syndulla together and kindle the spark of rebellion.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+A+New+Dawn+John+Jackson+Miller"
+    },
+    {
       "id": "solo-a-star-wars-story",
       "title": "Solo",
       "type": "movie",
@@ -1810,6 +2240,17 @@
       "format": "live-action",
       "era": "disney",
       "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-791bc772-d930-40c9-83ec-5ef85923573e"
+    },
+    {
+      "id": "solo-a-star-wars-story-expanded-edition",
+      "title": "Solo (Expanded Edition)",
+      "type": "novel",
+      "author": "Mur Lafferty",
+      "year": 2018,
+      "era": "disney",
+      "pageCount": 282,
+      "description": "The novelization of Solo: A Star Wars Story — expanding on Han's early adventures, the Kessel Run, and the crew of the Millennium Falcon with additional scenes and deeper character moments.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Solo+Expanded+Edition+Mur+Lafferty"
     },
     {
       "id": "obi-wan-kenobi",
@@ -2400,6 +2841,61 @@
       "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-08249c74-0178-4861-a1e4-dfc7b168dce5"
     },
     {
+      "id": "leia-princess-of-alderaan",
+      "title": "Leia, Princess of Alderaan",
+      "type": "ya-novel",
+      "author": "Claudia Gray",
+      "year": 2017,
+      "era": "disney",
+      "pageCount": 409,
+      "description": "At sixteen, Leia Organa must prove herself worthy of the Alderaanian throne through acts of courage and service — while quietly uncovering the Rebellion her parents have been secretly building, and choosing her own path.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Leia+Princess+of+Alderaan+Claudia+Gray"
+    },
+    {
+      "id": "thrawn",
+      "title": "Thrawn",
+      "type": "novel",
+      "author": "Timothy Zahn",
+      "year": 2017,
+      "era": "disney",
+      "pageCount": 427,
+      "description": "The story of how the alien tactician Thrawn rose through the Imperial ranks — told through his own eyes and those of a young Imperial officer caught in his orbit, as Thrawn dissects enemies through art, culture, and cold genius.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Thrawn+Timothy+Zahn+2017"
+    },
+    {
+      "id": "thrawn-alliances",
+      "title": "Thrawn: Alliances",
+      "type": "novel",
+      "author": "Timothy Zahn",
+      "year": 2018,
+      "era": "disney",
+      "pageCount": 368,
+      "description": "Darth Vader and Thrawn are sent on a joint mission to the Unknown Regions — a mission that parallels an earlier encounter between Anakin Skywalker and Thrawn during the Clone Wars, revealing the complicated history between them.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Thrawn+Alliances+Timothy+Zahn"
+    },
+    {
+      "id": "thrawn-treason",
+      "title": "Thrawn: Treason",
+      "type": "novel",
+      "author": "Timothy Zahn",
+      "year": 2019,
+      "era": "disney",
+      "pageCount": 320,
+      "description": "Thrawn is ordered to prove the value of his TIE Defender project against the Death Star program — a political battle that sends him on a mission into the Unknown Regions and forces him to choose between loyalty and principle.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Thrawn+Treason+Timothy+Zahn"
+    },
+    {
+      "id": "rebel-rising",
+      "title": "Rebel Rising",
+      "type": "ya-novel",
+      "author": "Beth Revis",
+      "year": 2017,
+      "era": "disney",
+      "pageCount": 410,
+      "description": "Filling in the years between Rogue One's prologue and its main story — Jyn Erso's life after being abandoned by Saw Gerrera, the hardships that shaped her, and the long road that brought her to the Rebellion.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Rebel+Rising+Beth+Revis"
+    },
+    {
       "id": "rogue-one-a-star-wars-story",
       "title": "Rogue One",
       "type": "movie",
@@ -2422,6 +2918,17 @@
       "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-9a280e53-fcc0-4e17-a02c-b1f40913eb0b"
     },
     {
+      "id": "heir-to-the-jedi",
+      "title": "Heir to the Jedi",
+      "type": "novel",
+      "author": "Kevin Hearne",
+      "year": 2015,
+      "era": "disney",
+      "pageCount": 304,
+      "description": "Luke Skywalker takes on a solo mission for the Rebellion to rescue a valued slicer from Imperial captivity — and begins his first tentative steps toward understanding the Force without a master to guide him.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Heir+to+the+Jedi+Kevin+Hearne"
+    },
+    {
       "id": "episode-v-the-empire-strikes-back",
       "title": "Episode V – The Empire Strikes Back",
       "type": "movie",
@@ -2431,6 +2938,17 @@
       "format": "live-action",
       "era": "lucas",
       "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-0f5c5223-f4f6-46ef-ba8a-69cb0e17d8d3"
+    },
+    {
+      "id": "battlefront-twilight-company",
+      "title": "Battlefront: Twilight Company",
+      "type": "novel",
+      "author": "Alexander Freed",
+      "year": 2015,
+      "era": "disney",
+      "pageCount": 397,
+      "description": "A ground-level view of the Galactic Civil War through the eyes of the 61st Mobile Infantry — soldiers, refugees, and deserters — as Twilight Company fights a brutal campaign across multiple worlds with no end in sight.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Battlefront+Twilight+Company+Alexander+Freed"
     },
     {
       "id": "episode-vi-return-of-the-jedi",
@@ -2444,6 +2962,17 @@
       "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-4b6e7cda-daa5-4f2d-9b61-35bbe562c69c"
     },
     {
+      "id": "the-princess-and-the-scoundrel",
+      "title": "The Princess and the Scoundrel",
+      "type": "novel",
+      "author": "Beth Revis",
+      "year": 2022,
+      "era": "disney",
+      "pageCount": 344,
+      "description": "In the immediate aftermath of the Battle of Endor, Leia and Han take a brief honeymoon aboard an Imperial luxury liner — only to discover the Empire is far from finished, and their first days of peace may be their last.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+The+Princess+and+the+Scoundrel+Beth+Revis"
+    },
+    {
       "id": "squadrons-hunted",
       "title": "Squadrons – Hunted",
       "type": "short-movie",
@@ -2453,6 +2982,94 @@
       "format": "animated",
       "era": "disney",
       "disneyPlusUrl": "https://www.youtube.com/watch?v=f2VmOqjV_7Q"
+    },
+    {
+      "id": "alphabet-squadron",
+      "title": "Alphabet Squadron",
+      "type": "novel",
+      "author": "Alexander Freed",
+      "year": 2019,
+      "era": "disney",
+      "pageCount": 432,
+      "description": "In the chaos following the Emperor's death, a New Republic Intelligence officer assembles a ragtag squadron of misfit pilots — each haunted by their own past — and points them at a deadly Imperial shadow wing that refuses to surrender.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Alphabet+Squadron+Alexander+Freed"
+    },
+    {
+      "id": "aftermath",
+      "title": "Aftermath",
+      "type": "novel",
+      "author": "Chuck Wendig",
+      "year": 2015,
+      "era": "disney",
+      "pageCount": 366,
+      "description": "In the weeks after the Battle of Endor, Imperial remnants plot their next move on the planet Akiva — as a New Republic pilot, a bounty hunter, a former Imperial loyalty officer, and a teenage rebel collide in a fight for the galaxy's future.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Aftermath+Chuck+Wendig"
+    },
+    {
+      "id": "aftermath-life-debt",
+      "title": "Aftermath: Life Debt",
+      "type": "novel",
+      "author": "Chuck Wendig",
+      "year": 2016,
+      "era": "disney",
+      "pageCount": 430,
+      "description": "Han Solo goes rogue to liberate Wookiee slaves on Kashyyyk — drawing Norra Wexley and her crew into a mission that puts them on a collision course with one of the Empire's most dangerous surviving leaders.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Aftermath+Life+Debt+Chuck+Wendig"
+    },
+    {
+      "id": "alphabet-squadron-shadow-fall",
+      "title": "Alphabet Squadron: Shadow Fall",
+      "type": "novel",
+      "author": "Alexander Freed",
+      "year": 2020,
+      "era": "disney",
+      "pageCount": 416,
+      "description": "Alphabet Squadron hunts the last remnants of the 204th Imperial Fighter Wing into the outer reaches of the galaxy — but the quarry is more dangerous than ever, and the hunters are fracturing from within.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Alphabet+Squadron+Shadow+Fall+Freed"
+    },
+    {
+      "id": "alphabet-squadron-victorys-price",
+      "title": "Alphabet Squadron: Victory's Price",
+      "type": "novel",
+      "author": "Alexander Freed",
+      "year": 2021,
+      "era": "disney",
+      "pageCount": 320,
+      "description": "The final confrontation between Alphabet Squadron and the 204th approaches — but victory will demand a cost none of them anticipated, and the end of the war may not look like the one any of them imagined.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Alphabet+Squadron+Victory%27s+Price+Freed"
+    },
+    {
+      "id": "aftermath-empires-end",
+      "title": "Aftermath: Empire's End",
+      "type": "novel",
+      "author": "Chuck Wendig",
+      "year": 2017,
+      "era": "disney",
+      "pageCount": 423,
+      "description": "The Galactic Civil War reaches its conclusion at the Battle of Jakku — as Norra Wexley and her crew, Admiral Rae Sloane, and the last of the Imperial fleet converge for a final reckoning that will determine the galaxy's fate.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Aftermath+Empire%27s+End+Chuck+Wendig"
+    },
+    {
+      "id": "lost-stars",
+      "title": "Lost Stars",
+      "type": "ya-novel",
+      "author": "Claudia Gray",
+      "year": 2015,
+      "era": "disney",
+      "pageCount": 551,
+      "description": "Two childhood friends from a backwater planet both join the Empire — one becomes a TIE pilot, the other eventually defects to the Rebellion — as their opposing paths and enduring bond trace the entire arc of the Galactic Civil War.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Lost+Stars+Claudia+Gray"
+    },
+    {
+      "id": "last-shot",
+      "title": "Last Shot",
+      "type": "novel",
+      "author": "Daniel José Older",
+      "year": 2018,
+      "era": "disney",
+      "pageCount": 368,
+      "description": "A dual-timeline thriller following Han Solo and Lando Calrissian — jumping between their wild younger days and the early years of the New Republic — as they hunt a dangerous criminal tied to a weapon capable of terrible destruction.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Last+Shot+Daniel+Jose+Older"
     },
     {
       "id": "the-mandalorian",
@@ -2663,19 +3280,71 @@
         {
           "season": 1,
           "episodes": [
-            { "episode": 1, "title": "Episode 1", "duration": 1 },
-            { "episode": 2, "title": "Episode 2", "duration": 1 },
-            { "episode": 3, "title": "Episode 3", "duration": 1 },
-            { "episode": 4, "title": "Episode 4", "duration": 1 },
-            { "episode": 5, "title": "Episode 5", "duration": 1 },
-            { "episode": 6, "title": "Episode 6", "duration": 1 },
-            { "episode": 7, "title": "Episode 7", "duration": 1 },
-            { "episode": 8, "title": "Episode 8", "duration": 1 },
-            { "episode": 9, "title": "Episode 9", "duration": 1 },
-            { "episode": 10, "title": "Episode 10", "duration": 1 },
-            { "episode": 11, "title": "Episode 11", "duration": 1 },
-            { "episode": 12, "title": "Episode 12", "duration": 1 },
-            { "episode": 13, "title": "Episode 13", "duration": 1 }
+            {
+              "episode": 1,
+              "title": "Episode 1",
+              "duration": 1
+            },
+            {
+              "episode": 2,
+              "title": "Episode 2",
+              "duration": 1
+            },
+            {
+              "episode": 3,
+              "title": "Episode 3",
+              "duration": 1
+            },
+            {
+              "episode": 4,
+              "title": "Episode 4",
+              "duration": 1
+            },
+            {
+              "episode": 5,
+              "title": "Episode 5",
+              "duration": 1
+            },
+            {
+              "episode": 6,
+              "title": "Episode 6",
+              "duration": 1
+            },
+            {
+              "episode": 7,
+              "title": "Episode 7",
+              "duration": 1
+            },
+            {
+              "episode": 8,
+              "title": "Episode 8",
+              "duration": 1
+            },
+            {
+              "episode": 9,
+              "title": "Episode 9",
+              "duration": 1
+            },
+            {
+              "episode": 10,
+              "title": "Episode 10",
+              "duration": 1
+            },
+            {
+              "episode": 11,
+              "title": "Episode 11",
+              "duration": 1
+            },
+            {
+              "episode": 12,
+              "title": "Episode 12",
+              "duration": 1
+            },
+            {
+              "episode": 13,
+              "title": "Episode 13",
+              "duration": 1
+            }
           ]
         }
       ],
@@ -2806,6 +3475,62 @@
       "format": "live-action",
       "era": "disney",
       "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-4a73a750-f18c-450a-b9f7-d9f40974ff9d"
+    },
+    {
+      "id": "poe-dameron-free-fall",
+      "title": "Poe Dameron: Free Fall",
+      "type": "ya-novel",
+      "author": "Alex Segura",
+      "year": 2020,
+      "era": "disney",
+      "pageCount": 384,
+      "description": "Long before becoming the Resistance's greatest pilot, a teenage Poe Dameron runs away from home and falls in with a crew of spice runners — learning hard lessons about loyalty, consequence, and who he wants to become.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Poe+Dameron+Free+Fall+Alex+Segura"
+    },
+    {
+      "id": "shadow-of-the-sith",
+      "title": "Shadow of the Sith",
+      "type": "novel",
+      "author": "Adam Christopher",
+      "year": 2022,
+      "era": "disney",
+      "pageCount": 496,
+      "description": "Luke Skywalker and Lando Calrissian search for a family hiding from the Sith — following a trail of dark-side breadcrumbs that leads toward Exegol and fills in the untold history behind the events of The Rise of Skywalker.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Shadow+of+the+Sith+Adam+Christopher"
+    },
+    {
+      "id": "bloodline",
+      "title": "Bloodline",
+      "type": "novel",
+      "author": "Claudia Gray",
+      "year": 2016,
+      "era": "disney",
+      "pageCount": 349,
+      "description": "Six years before the rise of the First Order, Senator Leia Organa navigates a fractured New Republic Senate while a conspiracy threatens to tear the galaxy apart — and forces her to confront a truth that will change everything.",
+      "audibleUrl": "https://www.audible.com/pd/Star-Wars-Bloodline-New-Republic-Audiobook/B01CRMO9BE",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Bloodline+Claudia+Gray"
+    },
+    {
+      "id": "force-collector",
+      "title": "Force Collector",
+      "type": "ya-novel",
+      "author": "Kevin Shinick",
+      "year": 2019,
+      "era": "disney",
+      "pageCount": 379,
+      "description": "A teenage boy with the ability to sense Force echoes in old objects embarks on a road trip through the galaxy — uncovering relics and stories from the Jedi Order's past as the First Order's shadow begins to fall.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Force+Collector+Kevin+Shinick"
+    },
+    {
+      "id": "phasma",
+      "title": "Phasma",
+      "type": "novel",
+      "author": "Delilah S. Dawson",
+      "year": 2017,
+      "era": "disney",
+      "pageCount": 380,
+      "description": "The origin story of Captain Phasma — a tale of brutal survival on a harsh world, ruthless ambition, and the cold pragmatism that forged one of the First Order's most feared commanders.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Phasma+Delilah+S+Dawson"
     },
     {
       "id": "star-wars-resistance",
@@ -3041,6 +3766,17 @@
       "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-2854a94d-3702-40bd-97a4-12d55a809188"
     },
     {
+      "id": "canto-bight",
+      "title": "Canto Bight",
+      "type": "novel",
+      "author": "Saladin Ahmed, Rae Carson, Mira Grant, John Jackson Miller",
+      "year": 2017,
+      "era": "disney",
+      "pageCount": 320,
+      "description": "Four novellas set in the glittering casino city of Canto Bight — weaving interconnected stories of gamblers, grifters, and dreamers on the night Finn and Rose passed through, painting a vivid portrait of the galaxy's gilded inequality.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Canto+Bight+anthology"
+    },
+    {
       "id": "episode-viii-the-last-jedi",
       "title": "Episode VIII – The Last Jedi",
       "type": "movie",
@@ -3050,6 +3786,39 @@
       "format": "live-action",
       "era": "disney",
       "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-50c1aff5-3051-4839-9ebf-e332c635e216"
+    },
+    {
+      "id": "resistance-reborn",
+      "title": "Resistance Reborn",
+      "type": "novel",
+      "author": "Rebecca Roanhorse",
+      "year": 2019,
+      "era": "disney",
+      "pageCount": 320,
+      "description": "In the aftermath of the Resistance's devastating losses, Poe Dameron, Finn, and their allies scramble to rebuild — reaching out to old contacts and new allies across the galaxy before the First Order can extinguish them entirely.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Resistance+Reborn+Rebecca+Roanhorse"
+    },
+    {
+      "id": "galaxys-edge-black-spire",
+      "title": "Galaxy's Edge: Black Spire",
+      "type": "novel",
+      "author": "Delilah S. Dawson",
+      "year": 2019,
+      "era": "disney",
+      "pageCount": 400,
+      "description": "A Resistance spy is sent to the remote outpost world of Batuu — Black Spire Outpost — to recruit allies and find a haven for the Resistance, deep in a frontier town where everyone has something to hide.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Galaxy%27s+Edge+Black+Spire+Dawson"
+    },
+    {
+      "id": "galaxys-edge-a-crash-of-fate",
+      "title": "Galaxy's Edge: A Crash of Fate",
+      "type": "ya-novel",
+      "author": "Zoraida Córdova",
+      "year": 2019,
+      "era": "disney",
+      "pageCount": 348,
+      "description": "Two childhood friends are reunited by chance on Batuu — a world of secrets and scoundrels — and must navigate old feelings and new dangers as a simple delivery job spirals into something far more dangerous.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Galaxy%27s+Edge+A+Crash+of+Fate+Cordova"
     },
     {
       "id": "episode-ix-the-rise-of-skywalker",
@@ -3063,6 +3832,17 @@
       "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-43f9c275-e7e8-4ab3-802d-00d06a8ad841"
     },
     {
+      "id": "the-last-order",
+      "title": "The Last Order",
+      "type": "ya-novel",
+      "author": "Kwame Mbalia",
+      "year": 2025,
+      "era": "disney",
+      "pageCount": 464,
+      "description": "In the aftermath of the Battle of Exegol, a young hero navigates a galaxy reshaping itself after the First Order's fall — confronting remnants of the old regime and discovering what it means to rebuild hope.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+The+Last+Order+Kwame+Mbalia"
+    },
+    {
       "id": "star-wars-droid-diaries",
       "title": "Droid Diaries",
       "type": "tv-shorts",
@@ -3072,14 +3852,46 @@
         {
           "season": 1,
           "episodes": [
-            { "episode": 1, "title": "R2-D2 and BB-8's Messy Mission!", "duration": 2 },
-            { "episode": 2, "title": "R2-D2 and BB-8's Quest for a New Arm!", "duration": 2 },
-            { "episode": 3, "title": "R2-D2, BB-8 and Rey's Lightsaber on the Loose!", "duration": 2 },
-            { "episode": 4, "title": "R2-D2 & BB-8 Save The Millennium Falcon!", "duration": 3 },
-            { "episode": 5, "title": "Who's Making That Noise in The Millennium Falcon?!", "duration": 3 },
-            { "episode": 6, "title": "BB-8 and R2-D2 Go Undercover!", "duration": 4 },
-            { "episode": 7, "title": "R2-D2 and BB-8's Super Snowy Shenanigans", "duration": 3 },
-            { "episode": 8, "title": "R2-D2 and BB-8 Chased By A Bounty Hunter?!", "duration": 2 }
+            {
+              "episode": 1,
+              "title": "R2-D2 and BB-8's Messy Mission!",
+              "duration": 2
+            },
+            {
+              "episode": 2,
+              "title": "R2-D2 and BB-8's Quest for a New Arm!",
+              "duration": 2
+            },
+            {
+              "episode": 3,
+              "title": "R2-D2, BB-8 and Rey's Lightsaber on the Loose!",
+              "duration": 2
+            },
+            {
+              "episode": 4,
+              "title": "R2-D2 & BB-8 Save The Millennium Falcon!",
+              "duration": 3
+            },
+            {
+              "episode": 5,
+              "title": "Who's Making That Noise in The Millennium Falcon?!",
+              "duration": 3
+            },
+            {
+              "episode": 6,
+              "title": "BB-8 and R2-D2 Go Undercover!",
+              "duration": 4
+            },
+            {
+              "episode": 7,
+              "title": "R2-D2 and BB-8's Super Snowy Shenanigans",
+              "duration": 3
+            },
+            {
+              "episode": 8,
+              "title": "R2-D2 and BB-8 Chased By A Bounty Hunter?!",
+              "duration": 2
+            }
           ]
         }
       ],
@@ -3279,35 +4091,131 @@
         {
           "season": 1,
           "episodes": [
-            { "episode": 1, "title": "Bantha", "duration": 2 },
-            { "episode": 2, "title": "Porgs", "duration": 2 },
-            { "episode": 3, "title": "Voorpak", "duration": 2 },
-            { "episode": 4, "title": "Blurrg", "duration": 2 },
-            { "episode": 5, "title": "Wampa", "duration": 2 },
-            { "episode": 6, "title": "Tooka", "duration": 2 },
-            { "episode": 7, "title": "Kowakian Monkey-Lizard", "duration": 2 },
-            { "episode": 8, "title": "Mynocks", "duration": 2 },
-            { "episode": 9, "title": "Charhound", "duration": 2 },
-            { "episode": 10, "title": "Nexu", "duration": 2 },
-            { "episode": 11, "title": "Rancor", "duration": 2 },
-            { "episode": 12, "title": "Tauntaun", "duration": 2 }
+            {
+              "episode": 1,
+              "title": "Bantha",
+              "duration": 2
+            },
+            {
+              "episode": 2,
+              "title": "Porgs",
+              "duration": 2
+            },
+            {
+              "episode": 3,
+              "title": "Voorpak",
+              "duration": 2
+            },
+            {
+              "episode": 4,
+              "title": "Blurrg",
+              "duration": 2
+            },
+            {
+              "episode": 5,
+              "title": "Wampa",
+              "duration": 2
+            },
+            {
+              "episode": 6,
+              "title": "Tooka",
+              "duration": 2
+            },
+            {
+              "episode": 7,
+              "title": "Kowakian Monkey-Lizard",
+              "duration": 2
+            },
+            {
+              "episode": 8,
+              "title": "Mynocks",
+              "duration": 2
+            },
+            {
+              "episode": 9,
+              "title": "Charhound",
+              "duration": 2
+            },
+            {
+              "episode": 10,
+              "title": "Nexu",
+              "duration": 2
+            },
+            {
+              "episode": 11,
+              "title": "Rancor",
+              "duration": 2
+            },
+            {
+              "episode": 12,
+              "title": "Tauntaun",
+              "duration": 2
+            }
           ]
         },
         {
           "season": 2,
           "episodes": [
-            { "episode": 1, "title": "Bogling", "duration": 2 },
-            { "episode": 2, "title": "Eopie", "duration": 2 },
-            { "episode": 3, "title": "Convor", "duration": 2 },
-            { "episode": 4, "title": "Gergilla", "duration": 2 },
-            { "episode": 5, "title": "Kamoradon", "duration": 2 },
-            { "episode": 6, "title": "Kybuck", "duration": 2 },
-            { "episode": 7, "title": "Ice Spider", "duration": 2 },
-            { "episode": 8, "title": "Dianoga", "duration": 2 },
-            { "episode": 9, "title": "Gundark", "duration": 2 },
-            { "episode": 10, "title": "Puffer Pig", "duration": 2 },
-            { "episode": 11, "title": "Ordo Moon Dragon", "duration": 2 },
-            { "episode": 12, "title": "Gorgs", "duration": 2 }
+            {
+              "episode": 1,
+              "title": "Bogling",
+              "duration": 2
+            },
+            {
+              "episode": 2,
+              "title": "Eopie",
+              "duration": 2
+            },
+            {
+              "episode": 3,
+              "title": "Convor",
+              "duration": 2
+            },
+            {
+              "episode": 4,
+              "title": "Gergilla",
+              "duration": 2
+            },
+            {
+              "episode": 5,
+              "title": "Kamoradon",
+              "duration": 2
+            },
+            {
+              "episode": 6,
+              "title": "Kybuck",
+              "duration": 2
+            },
+            {
+              "episode": 7,
+              "title": "Ice Spider",
+              "duration": 2
+            },
+            {
+              "episode": 8,
+              "title": "Dianoga",
+              "duration": 2
+            },
+            {
+              "episode": 9,
+              "title": "Gundark",
+              "duration": 2
+            },
+            {
+              "episode": 10,
+              "title": "Puffer Pig",
+              "duration": 2
+            },
+            {
+              "episode": 11,
+              "title": "Ordo Moon Dragon",
+              "duration": 2
+            },
+            {
+              "episode": 12,
+              "title": "Gorgs",
+              "duration": 2
+            }
           ]
         }
       ],
@@ -3325,18 +4233,66 @@
         {
           "season": 1,
           "episodes": [
-            { "episode": 1, "title": "Wookiee", "duration": 2 },
-            { "episode": 2, "title": "Ewok", "duration": 2 },
-            { "episode": 3, "title": "Jawa", "duration": 2 },
-            { "episode": 4, "title": "Rodian", "duration": 2 },
-            { "episode": 5, "title": "Gamorrean", "duration": 2 },
-            { "episode": 6, "title": "Huttlet", "duration": 2 },
-            { "episode": 7, "title": "Tauntaun", "duration": 2 },
-            { "episode": 8, "title": "Rancor", "duration": 2 },
-            { "episode": 9, "title": "Porgs", "duration": 2 },
-            { "episode": 10, "title": "Ortolan", "duration": 2 },
-            { "episode": 11, "title": "Gungan", "duration": 2 },
-            { "episode": 12, "title": "Loth-Cat", "duration": 2 }
+            {
+              "episode": 1,
+              "title": "Wookiee",
+              "duration": 2
+            },
+            {
+              "episode": 2,
+              "title": "Ewok",
+              "duration": 2
+            },
+            {
+              "episode": 3,
+              "title": "Jawa",
+              "duration": 2
+            },
+            {
+              "episode": 4,
+              "title": "Rodian",
+              "duration": 2
+            },
+            {
+              "episode": 5,
+              "title": "Gamorrean",
+              "duration": 2
+            },
+            {
+              "episode": 6,
+              "title": "Huttlet",
+              "duration": 2
+            },
+            {
+              "episode": 7,
+              "title": "Tauntaun",
+              "duration": 2
+            },
+            {
+              "episode": 8,
+              "title": "Rancor",
+              "duration": 2
+            },
+            {
+              "episode": 9,
+              "title": "Porgs",
+              "duration": 2
+            },
+            {
+              "episode": 10,
+              "title": "Ortolan",
+              "duration": 2
+            },
+            {
+              "episode": 11,
+              "title": "Gungan",
+              "duration": 2
+            },
+            {
+              "episode": 12,
+              "title": "Loth-Cat",
+              "duration": 2
+            }
           ]
         }
       ],

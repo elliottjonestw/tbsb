@@ -15,14 +15,7 @@
         </svg>
         <span>The Backlog Strikes Back</span>
       </div>
-      <div class="progress-pill">
-        <span class="progress-label">Canon Progress</span>
-        <div class="progress-bar-wrap">
-          <div class="progress-bar-fill" id="globalProgressBar"></div>
-        </div>
-        <span class="progress-pct" id="globalProgressPct">0%</span>
-      </div>
-      <div class="header-actions">
+<div class="header-actions">
         <button class="btn-secondary" id="resetBtn">Reset</button>
         <button class="btn-secondary" id="saveBtn">Save</button>
         <button class="btn-secondary" id="loadBtn">Load</button>
@@ -54,43 +47,35 @@
             <option value="short-movie">Short Films</option>
             <option value="series">TV Shows</option>
             <option value="tv-shorts">TV Show Shorts</option>
+            <option value="novel">Adult Novels</option>
+            <option value="ya-novel">YA Novels</option>
           </select>
           <button class="filter-btn type-btn active" data-type="all">All</button>
           <button class="filter-btn type-btn" data-type="movie">Movies</button>
           <button class="filter-btn type-btn" data-type="short-movie">Short Films</button>
           <button class="filter-btn type-btn" data-type="series">TV Shows</button>
           <button class="filter-btn type-btn" data-type="tv-shorts">TV Show Shorts</button>
-        </div>
-        <div class="filter-row">
-          <span class="filter-row-label">Format</span>
-          <select class="filter-select format-select">
-            <option value="all">All</option>
-            <option value="live-action">Live Action</option>
-            <option value="animated">Animated</option>
-          </select>
-          <button class="filter-btn format-btn active" data-format="all">All</button>
-          <button class="filter-btn format-btn" data-format="live-action">Live Action</button>
-          <button class="filter-btn format-btn" data-format="animated">Animated</button>
+          <button class="filter-btn type-btn" data-type="novel">Adult Novels</button>
+          <button class="filter-btn type-btn" data-type="ya-novel">YA Novels</button>
         </div>
         <div class="filter-row">
           <span class="filter-row-label">Progress</span>
           <select class="filter-select status-select">
             <option value="all">All</option>
-            <option value="unwatched">Unwatched</option>
+            <option value="not-started">Not Started</option>
             <option value="in-progress">In Progress</option>
-            <option value="watched">Watched</option>
+            <option value="finished">Finished</option>
           </select>
           <button class="filter-btn status-btn active" data-status="all">All</button>
-          <button class="filter-btn status-btn" data-status="unwatched">Unwatched</button>
+          <button class="filter-btn status-btn" data-status="not-started">Not Started</button>
           <button class="filter-btn status-btn" data-status="in-progress">In Progress</button>
-          <button class="filter-btn status-btn" data-status="watched">Watched</button>
+          <button class="filter-btn status-btn" data-status="finished">Finished</button>
         </div>
       </div>
       <div class="sort-bar">
         <span class="sort-label">Sort</span>
         <button class="sort-btn active" data-sort="chronological" data-label="Chronological">Chronological</button>
         <button class="sort-btn" data-sort="release" data-label="Release Date">Release Date</button>
-        <button class="sort-btn" data-sort="duration" data-label="Duration">Duration</button>
       </div>
     </div>
     <div class="catalog" id="catalog"></div>
@@ -99,11 +84,11 @@
   <div class="modal-overlay" id="saveModalOverlay">
     <div class="modal save-modal">
       <div class="modal-header">
-        <h2>Watch History</h2>
+        <h2>Progress History</h2>
         <button class="modal-close" id="saveModalClose">&times;</button>
       </div>
       <div class="modal-body save-modal-body">
-        <p>Your watch history is automatically saved in your browser's local storage, so it persists between visits. However, it is tied to this browser and device — it will be lost if you clear your browser data or open the site on a different device.</p>
+        <p>Your progress is automatically saved in your browser's local storage, so it persists between visits. However, it is tied to this browser and device — it will be lost if you clear your browser data or open the site on a different device.</p>
         <p>Download a backup file to keep your progress safe. You can restore it at any time using the <strong>Load</strong> button.</p>
         <div class="save-modal-actions">
           <button class="btn-outline" id="saveModalCloseBtn">Close</button>
