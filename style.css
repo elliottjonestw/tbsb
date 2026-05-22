@@ -134,10 +134,10 @@ main {
   padding: 32px 24px 80px;
 }
 
-/* Stats */
+/* Stats — 5 columns × 2 rows on desktop */
 .stats-row {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  grid-template-columns: repeat(5, 1fr);
   gap: 12px;
   margin-bottom: 32px;
 }
@@ -186,6 +186,20 @@ main {
 }
 
 .filter-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+/* Type filter — two intentional sub-rows */
+.type-btn-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.type-btn-subrow {
   display: flex;
   gap: 8px;
   flex-wrap: wrap;
@@ -865,6 +879,24 @@ main {
   .save-modal-actions { flex-direction: column; }
   .save-modal-actions .btn-outline,
   .save-modal-actions .btn-primary { width: 100%; text-align: center; }
+}
+
+/* Game modal — platform tags */
+.game-platforms {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 4px;
+}
+
+.platform-tag {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-bright);
+  color: var(--text-muted);
+  font-size: 0.72rem;
+  padding: 3px 9px;
+  border-radius: 100px;
+  white-space: nowrap;
 }
 
 /* Footer */

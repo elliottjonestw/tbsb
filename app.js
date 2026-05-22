@@ -69,6 +69,7 @@ function save() {
 function isMovie(item)  { return item.type === 'movie'  || item.type === 'short-movie'; }
 function isSeries(item) { return item.type === 'series' || item.type === 'tv-shorts'; }
 function isNovel(item)  { return item.type === 'novel' || item.type === 'ya-novel'; }
+function isGame(item)   { return item.type === 'multiplatform-game'; }
 
 // ── Progress calculations ────────────────────────────────────────────────────
 
@@ -80,7 +81,7 @@ function seriesMinutes(item) {
 
 function totalMinutes() {
   return catalog.reduce((t, item) => {
-    if (isNovel(item)) return t;
+    if (isNovel(item) || isGame(item)) return t;
     return t + (isMovie(item) ? movieMinutes(item) : seriesMinutes(item));
   }, 0);
 }
@@ -100,7 +101,7 @@ function watchedMinutesSeries(item) {
 }
 
 function watchedMinutesItem(item) {
-  if (isNovel(item)) return 0;
+  if (isNovel(item) || isGame(item)) return 0;
   return isMovie(item) ? watchedMinutesMovie(item) : watchedMinutesSeries(item);
 }
 
@@ -109,7 +110,7 @@ function totalWatchedMinutes() {
 }
 
 function itemStatus(item) {
-  if (isMovie(item) || isNovel(item)) return getMovieWatched(item.id) ? 'watched' : 'unwatched';
+  if (isMovie(item) || isNovel(item) || isGame(item)) return getMovieWatched(item.id) ? 'watched' : 'unwatched';
   const total = seriesMinutes(item);
   const done = watchedMinutesSeries(item);
   if (done === 0) return 'unwatched';
@@ -145,6 +146,7 @@ function updateStats() {
   const shortFilms = catalog.filter(i => i.type === 'short-movie');
   const series = catalog.filter(i => isSeries(i));
   const novels = catalog.filter(i => isNovel(i));
+  const games = catalog.filter(i => isGame(i));
   const watchedFullMovies = fullMovies.filter(i => getMovieWatched(i.id)).length;
   const watchedShortFilms = shortFilms.filter(i => getMovieWatched(i.id)).length;
   const totalEps = series
@@ -156,8 +158,10 @@ function updateStats() {
   const totalNovelPages = novels.reduce((t, i) => t + i.pageCount, 0);
   const readPages = novels.filter(i => getMovieWatched(i.id)).reduce((t, i) => t + i.pageCount, 0);
   const remainingPages = totalNovelPages - readPages;
+  const playedGames = games.filter(i => getMovieWatched(i.id)).length;
 
   const canonReadPct = totalNovelPages > 0 ? Math.round((readPages / totalNovelPages) * 100) : 0;
+  const playedPct = games.length > 0 ? Math.round((playedGames / games.length) * 100) : 0;
 
   document.getElementById('statsRow').innerHTML = `
     <div class="stat-card">
@@ -167,6 +171,10 @@ function updateStats() {
     <div class="stat-card">
       <div class="stat-value accent">${canonReadPct}%</div>
       <div class="stat-label">Read</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value accent">${playedPct}%</div>
+      <div class="stat-label">Played</div>
     </div>
     <div class="stat-card">
       <div class="stat-value">${watchedFullMovies}/${fullMovies.length}</div>
@@ -183,6 +191,10 @@ function updateStats() {
     <div class="stat-card">
       <div class="stat-value">${readNovels}/${novels.length}</div>
       <div class="stat-label">Novels</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value">${playedGames}/${games.length}</div>
+      <div class="stat-label">Games</div>
     </div>
     <div class="stat-card">
       <div class="stat-value">${remainingPages.toLocaleString()}</div>
@@ -270,11 +282,13 @@ function renderCard(item) {
   } else {
     pct = status === 'watched' ? 100 : 0;
   }
-  const typeLabels = { movie: 'Movie', 'short-movie': 'Short Film', series: 'TV Series', 'tv-shorts': 'TV Shorts', novel: 'Novel', 'ya-novel': 'YA Novel' };
+  const typeLabels = { movie: 'Movie', 'short-movie': 'Short Film', series: 'TV Series', 'tv-shorts': 'TV Shorts', novel: 'Novel', 'ya-novel': 'YA Novel', 'multiplatform-game': 'Multiplatform Game' };
   const typeLabel = typeLabels[item.type] || item.type;
   let metaLabel;
   if (isNovel(item)) {
     metaLabel = `${item.pageCount} pages`;
+  } else if (isGame(item)) {
+    metaLabel = formatPlatforms(item.platforms);
   } else if (isMovie(item)) {
     metaLabel = formatMinutes(item.duration);
   } else {
@@ -282,7 +296,9 @@ function renderCard(item) {
   }
 
   const badgeClass = status === 'watched' ? 'badge-watched' : status === 'partial' ? 'badge-partial' : 'badge-unwatched';
-  const badgeText = status === 'watched' ? '✓ Finished' : status === 'partial' ? 'In Progress' : 'Not Started';
+  const badgeText = isGame(item)
+    ? (status === 'watched' ? '✓ Played' : 'Not Played')
+    : (status === 'watched' ? '✓ Finished' : status === 'partial' ? 'In Progress' : 'Not Started');
 
   const watchIcon = status === 'watched' ? '✓' : '＋';
   const posterSrc = `posters/${item.id}.jpg`;
@@ -309,15 +325,21 @@ function renderCard(item) {
           <div class="card-progress-wrap">
             <div class="card-progress-fill" style="width:${pct}%"></div>
           </div>
-          <button class="card-watch-btn" title="${status === 'watched' ? 'Mark as Not Started' : 'Mark as Finished'}">${watchIcon}</button>
+          <button class="card-watch-btn" title="${isGame(item) ? (status === 'watched' ? 'Mark as Not Played' : 'Mark as Played') : (status === 'watched' ? 'Mark as Not Started' : 'Mark as Finished')}">${watchIcon}</button>
         </div>
       </div>
     </div>
   `;
 }
 
+function formatPlatforms(platforms) {
+  if (!platforms || platforms.length === 0) return '';
+  if (platforms.length <= 3) return platforms.join(', ');
+  return platforms.slice(0, 2).join(', ') + ` +${platforms.length - 2} more`;
+}
+
 function quickToggle(item) {
-  if (isMovie(item) || isNovel(item)) {
+  if (isMovie(item) || isNovel(item) || isGame(item)) {
     setMovieWatched(item.id, !getMovieWatched(item.id));
   } else {
     const s = itemStatus(item);
@@ -331,6 +353,7 @@ function quickToggle(item) {
 function openModal(item) {
   document.getElementById('modalTitle').textContent = item.title;
   document.getElementById('modalBody').innerHTML =
+    isGame(item)   ? renderGameModal(item)   :
     isNovel(item)  ? renderNovelModal(item)  :
     isMovie(item)  ? renderMovieModal(item)  :
     renderSeriesModal(item);
@@ -390,6 +413,32 @@ function renderNovelModal(item) {
   `;
 }
 
+function renderGameModal(item) {
+  const isPlayed = getMovieWatched(item.id);
+  const platformsHtml = item.platforms && item.platforms.length
+    ? `<div class="game-platforms">${item.platforms.map(p => `<span class="platform-tag">${p}</span>`).join('')}</div>`
+    : '';
+  return `
+    <div class="movie-detail">
+      <div class="movie-info-row">
+        <span class="card-badge ${isPlayed ? 'badge-watched' : 'badge-unwatched'}">${isPlayed ? '✓ Played' : 'Not Played'}</span>
+        <span style="color:var(--text-muted);font-size:0.85rem">${item.year}</span>
+        <span style="color:var(--text-muted);font-size:0.85rem">${item.developer}</span>
+      </div>
+      ${platformsHtml}
+      ${item.description ? `<p class="modal-description">${item.description}</p>` : ''}
+      ${item.amazonUrl ? `<a class="btn-amazon" href="${item.amazonUrl}" target="_blank" rel="noopener noreferrer">Buy on Amazon</a>` : ''}
+      <button class="movie-watch-toggle ${isPlayed ? 'active' : ''}" id="movieToggle">
+        <div class="toggle-icon">${isPlayed ? '✓' : '○'}</div>
+        <div>
+          <div class="toggle-text">${isPlayed ? 'Played' : 'Mark as Played'}</div>
+          <div class="toggle-sub">${isPlayed ? 'Click to mark as not played' : 'Click to log this game'}</div>
+        </div>
+      </button>
+    </div>
+  `;
+}
+
 function renderSeriesModal(item) {
   const totalMins = seriesMinutes(item);
   const doneMins = watchedMinutesSeries(item);
@@ -438,6 +487,16 @@ function renderSeriesModal(item) {
 }
 
 function bindModalEvents(item) {
+  if (isGame(item)) {
+    document.getElementById('movieToggle')?.addEventListener('click', () => {
+      setMovieWatched(item.id, !getMovieWatched(item.id));
+      document.getElementById('modalBody').innerHTML = renderGameModal(item);
+      bindModalEvents(item);
+      renderCatalog();
+    });
+    return;
+  }
+
   if (isNovel(item)) {
     document.getElementById('movieToggle')?.addEventListener('click', () => {
       setMovieWatched(item.id, !getMovieWatched(item.id));

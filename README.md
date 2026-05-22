@@ -1,6 +1,6 @@
 # The Backlog Strikes Back
 
-A client-side Star Wars canon watch and read tracker. No build step, no framework, no server-side logic — just three files served statically.
+A client-side Star Wars canon watch, read, and play tracker. No build step, no framework, no server-side logic — just three files served statically.
 
 ---
 
@@ -12,8 +12,8 @@ startracker/
 ├── style.css       # All visual styling, CSS custom properties, responsive layout
 ├── app.js          # All application logic — data fetching, state, rendering, events
 ├── catalog.json    # Source of truth for canon content and runtime durations / page counts
-└── posters/        # Poster images, one per catalog item (optional per item)
-    ├── mandalorian.jpg
+└── posters/        # Poster/cover images, one per catalog item (optional per item)
+    ├── the-mandalorian.jpg
     ├── rogue-one-a-star-wars-story.jpg
     └── ...
 ```
@@ -32,7 +32,7 @@ On every state mutation, `save()` flushes `watched` to `localStorage`, then call
 
 ## catalog.json
 
-The catalog is an array of **content items** under the top-level `"content"` key. Each item is a `movie`, `short-movie`, `series`, `tv-shorts`, or `novel`.
+The catalog is an array of **content items** under the top-level `"content"` key. Each item is one of: `movie`, `short-movie`, `series`, `tv-shorts`, `novel`, `ya-novel`, or `multiplatform-game`.
 
 ### Movie / Short Movie schema
 
@@ -156,21 +156,56 @@ Novels do not have `format`, `duration`, `disneyPlusUrl`, or `seasons`. They are
 
 The YA Novel schema is identical to the Adult Novel schema — the only difference is `"type": "ya-novel"`. All stat calculations (Novels count, Pages Remaining, Read %) treat `novel` and `ya-novel` items identically via the `isNovel()` helper. The type filter exposes them as separate options ("Adult Novels" and "YA Novels") so users can filter to one category at a time.
 
-The catalog order controls default display order. Items are shown in the order they appear in `catalog.json`. The user's version is ordered chronologically by in-universe timeline.
+### Multiplatform Game schema
+
+```json
+{
+  "id": "star-wars-jedi-fallen-order",
+  "title": "Star Wars Jedi: Fallen Order",
+  "type": "multiplatform-game",
+  "developer": "Respawn Entertainment",
+  "publisher": "Electronic Arts",
+  "year": 2019,
+  "era": "disney",
+  "platforms": ["PS4", "PS5", "Xbox One", "Xbox Series X/S", "PC"],
+  "description": "Set five years after Order 66, Fallen Order follows Cal Kestis, a young Padawan-turned-fugitive surviving as a scrapper on Bracca. When his Force abilities are exposed, he must outrun the Empire's Inquisitors while attempting to rebuild the Jedi Order.",
+  "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Jedi+Fallen+Order"
+}
+```
+
+| Field        | Type     | Description                                                                 |
+|--------------|----------|-----------------------------------------------------------------------------|
+| `id`         | string   | Unique stable identifier (slug). Used as localStorage key and cover filename. |
+| `title`      | string   | Display title                                                               |
+| `type`       | string   | `"multiplatform-game"`                                                      |
+| `developer`  | string   | Studio(s) that developed the game. Shown in the detail modal info row.      |
+| `publisher`  | string   | Publisher(s). Stored for data completeness.                                 |
+| `year`       | number   | Release year of the earliest platform release.                              |
+| `era`        | string   | `"lucas"` or `"disney"`                                                     |
+| `platforms`  | string[] | Ordered list of platforms the game is available on (e.g. `["PS5", "Xbox Series X/S", "PC"]`). Shown as pill tags in the detail modal and as a truncated summary on the catalog card. |
+| `description`| string   | Optional. Spoiler-free summary shown in the detail modal.                   |
+| `amazonUrl`  | string   | Optional. URL to the game on Amazon (product page or search). Renders a "Buy on Amazon" button in the modal. |
+
+Games do not have `duration`, `pageCount`, `disneyPlusUrl`, `audibleUrl`, or `seasons`. They are treated as binary items (played or not played) using the same flat state model as movies and novels.
+
+The `year` field should reflect the earliest real-world release date across all platforms, not the most recent port.
+
+The catalog order controls default display order. Items appear in the order they appear in `catalog.json`. The user's version is ordered chronologically by in-universe timeline position.
 
 ---
 
 ## State model
 
-All watch/read state lives in a single `watched` object in memory, mirrored to `localStorage` under the key `startracker_watched` (defined as the constant `STORAGE_KEY`).
+All watch/read/play state lives in a single `watched` object in memory, mirrored to `localStorage` under the key `startracker_watched` (defined as the constant `STORAGE_KEY`).
 
 ### Shape
 
 ```
 watched = {
-  // Movie, short-movie, or novel: boolean flag keyed by item id
+  // Movie, short-movie, novel, or multiplatform-game: boolean flag keyed by item id
   "rogue-one-a-star-wars-story": true,
   "bloodline": true,
+  "star-wars-jedi-fallen-order": true,
 
   // Series or tv-shorts: nested object keyed by season number, then episode number
   "the-mandalorian": {
@@ -180,32 +215,33 @@ watched = {
 }
 ```
 
-Movies, short-movies, and novels are all stored as a flat boolean (`id → true/false/undefined`). Series and tv-shorts are stored as a two-level integer-keyed map: `watched[seriesId][seasonNumber][episodeNumber]`. Missing keys are treated as `false` via optional chaining (`watched[id]?.[season]?.[ep]`), so the object is sparse — only watched/read content is explicitly stored.
+Movies, short-movies, novels, and multiplatform-games are all stored as a flat boolean (`id → true/false/undefined`). Series and tv-shorts are stored as a two-level integer-keyed map: `watched[seriesId][seasonNumber][episodeNumber]`. Missing keys are treated as `false` via optional chaining (`watched[id]?.[season]?.[ep]`), so the object is sparse — only watched/read/played content is explicitly stored.
 
 ### Type helpers
 
-Three helper functions centralise type branching across the codebase:
+Four helper functions centralise type branching across the codebase:
 
 ```js
 function isMovie(item)  { return item.type === 'movie'  || item.type === 'short-movie'; }
 function isSeries(item) { return item.type === 'series' || item.type === 'tv-shorts'; }
 function isNovel(item)  { return item.type === 'novel'  || item.type === 'ya-novel'; }
+function isGame(item)   { return item.type === 'multiplatform-game'; }
 ```
 
-Every place that needs to distinguish content types calls these — not `item.type` directly — so adding a new type only requires updating the helpers.
+Every place that needs to distinguish content types calls these — not `item.type` directly — so adding a new game type in the future only requires updating `isGame()`, and adding a new content category requires only a new helper plus a handful of call sites.
 
 ### Accessor functions
 
-| Function           | Signature                                      | Description                                                    |
-|--------------------|------------------------------------------------|----------------------------------------------------------------|
-| `getMovieWatched`  | `(id) → bool`                                  | Returns watch/read state for a movie, short-movie, or novel    |
-| `setMovieWatched`  | `(id, val)`                                    | Sets watch/read state and saves                                |
-| `getEpWatched`     | `(seriesId, season, ep) → bool`                | Returns watch state for one episode                            |
-| `setEpWatched`     | `(seriesId, season, ep, val)`                  | Sets one episode and saves                                     |
-| `setSeasonWatched` | `(seriesId, seasonNum, episodes[], val)`        | Bulk-sets all episodes in a season                             |
-| `setSeriesWatched` | `(item, val)`                                  | Bulk-sets every episode across all seasons in a series         |
+| Function           | Signature                                      | Description                                                                    |
+|--------------------|------------------------------------------------|--------------------------------------------------------------------------------|
+| `getMovieWatched`  | `(id) → bool`                                  | Returns watched/read/played state for a movie, short-movie, novel, or game     |
+| `setMovieWatched`  | `(id, val)`                                    | Sets watched/read/played state and saves                                       |
+| `getEpWatched`     | `(seriesId, season, ep) → bool`                | Returns watch state for one episode                                            |
+| `setEpWatched`     | `(seriesId, season, ep, val)`                  | Sets one episode and saves                                                     |
+| `setSeasonWatched` | `(seriesId, seasonNum, episodes[], val)`        | Bulk-sets all episodes in a season                                             |
+| `setSeriesWatched` | `(item, val)`                                  | Bulk-sets every episode across all seasons in a series                         |
 
-`getMovieWatched` and `setMovieWatched` are shared by movies, short-movies, and novels since all three use the same flat boolean storage pattern.
+`getMovieWatched` and `setMovieWatched` are shared by movies, short-movies, novels, and games — all four use the same flat boolean storage pattern. The function names are historical; they apply to all flat boolean item types.
 
 Every setter calls `save()`, which serialises `watched` to `localStorage` and then calls `updateStats()` to refresh the stats bar.
 
@@ -221,7 +257,7 @@ The percentage shown in the Watched stat tile is computed purely from **watch ti
 canonWatchedPct = totalWatchedMinutes() / totalMinutes() × 100   (rounded to nearest integer)
 ```
 
-Novels are excluded from all minute-based calculations — `totalMinutes()` and `watchedMinutesItem()` skip items where `isNovel(item)` is true.
+Novels and games are excluded from all minute-based calculations — `totalMinutes()` and `watchedMinutesItem()` skip items where `isNovel(item)` or `isGame(item)` is true.
 
 ### Functions
 
@@ -229,10 +265,10 @@ Novels are excluded from all minute-based calculations — `totalMinutes()` and 
 |-------------------------|-----------------------------------------------------------------------------|
 | `movieMinutes(item)`    | Returns `item.duration` for a movie or short-movie                         |
 | `seriesMinutes(item)`   | Sums all episode durations across all seasons via nested `reduce`           |
-| `totalMinutes()`        | Sums `movieMinutes` or `seriesMinutes` for every non-novel item in the catalog |
+| `totalMinutes()`        | Sums `movieMinutes` or `seriesMinutes` for every non-novel, non-game item in the catalog |
 | `watchedMinutesMovie(item)` | Returns `item.duration` if watched, else 0                             |
 | `watchedMinutesSeries(item)` | Iterates seasons → episodes, sums durations for watched episodes only |
-| `watchedMinutesItem(item)` | Returns 0 for novels; dispatches to movie or series variant otherwise  |
+| `watchedMinutesItem(item)` | Returns 0 for novels and games; dispatches to movie or series variant otherwise |
 | `totalWatchedMinutes()` | Sums `watchedMinutesItem` for every item in the catalog                    |
 
 ### Novel content
@@ -243,21 +279,29 @@ The Read stat tile is computed from **page counts**:
 canonReadPct = readPages / totalNovelPages × 100   (rounded to nearest integer)
 ```
 
-Where `readPages` is the total page count of all novels marked as read, and `totalNovelPages` is the total page count of all novels in the catalog.
+Where `readPages` is the total page count of all novels marked as read, and `totalNovelPages` is the total page count of all novels in the catalog. Both `novel` and `ya-novel` types are included via `isNovel()`.
+
+### Game content
+
+The Played stat tile is computed from a simple **equal-weight item count**, since games have no meaningful duration unit to compare across titles:
+
+```
+playedPct = playedGames / totalGames × 100   (rounded to nearest integer)
+```
+
+Where `playedGames` is the count of all games marked as played, and `totalGames` is the total count of all games in the catalog. Every game title contributes equal weight regardless of length or platform.
 
 ### Item status
 
 `itemStatus(item)` derives a display state from the same calculations:
 
-| Status        | Condition                                              |
-|---------------|--------------------------------------------------------|
-| `"unwatched"` | Movie/novel not marked; or 0 minutes watched in series |
-| `"partial"`   | 1 or more minutes watched, less than total (series only) |
-| `"watched"`   | Movie/novel marked true; or watched minutes ≥ total minutes |
+| Status        | Condition                                                         |
+|---------------|-------------------------------------------------------------------|
+| `"unwatched"` | Movie/novel/game not marked; or 0 minutes watched in series       |
+| `"partial"`   | 1 or more minutes watched, less than total (series only)          |
+| `"watched"`   | Movie/novel/game marked true; or watched minutes ≥ total minutes  |
 
-Movies, short-movies, and novels are always either `"unwatched"` or `"watched"` — there is no partial state for flat boolean items.
-
-This status value drives the card border colour, the status bar fill height, the card progress bar fill, and the badge text.
+Movies, short-movies, novels, and games are always either `"unwatched"` or `"watched"` — there is no partial state for flat boolean items. This status value drives the card border colour, the status bar fill height, the card progress bar fill, and the badge text.
 
 ### Season-level helpers
 
@@ -279,20 +323,24 @@ These are used exclusively in `renderSeriesModal` and `bindModalEvents` to drive
 
 ## Stats bar
 
-`updateStats()` rebuilds all eight stat cards inside `#statsRow` on every save. It sets `innerHTML` directly — no diffing. The eight cards are displayed in this order:
+`updateStats()` rebuilds all ten stat cards inside `#statsRow` on every save. It sets `innerHTML` directly — no diffing. On desktop the ten cards are laid out in two rows of five (`grid-template-columns: repeat(5, 1fr)`). On mobile they collapse to a two-column grid.
+
+The ten cards are displayed in this order:
 
 | Card             | Value                                                             | Colour class     |
 |------------------|-------------------------------------------------------------------|------------------|
 | Watched          | `totalWatchedMinutes / totalMinutes` as `N%`                      | `.accent`        |
 | Read             | `readPages / totalNovelPages` as `N%`                             | `.accent`        |
+| Played           | `playedGames / totalGames` as `N%`                                | `.accent`        |
 | Movies           | `watchedMovies / totalMovies` (e.g. `11/13`)                      | default          |
 | Short Films      | `watchedShortFilms / totalShortFilms` (e.g. `0/2`)               | default          |
 | Episodes         | `watchedEps / totalEps` (e.g. `43/579`)                          | default          |
-| Novels           | `readNovels / totalNovels` (e.g. `0/1`)                          | default          |
+| Novels           | `readNovels / totalNovels` (e.g. `0/66`)                         | default          |
+| Games            | `playedGames / totalGames` (e.g. `0/15`)                         | default          |
 | Pages Remaining  | Total page count of all unread novels                             | default          |
 | Hours Remaining  | `Math.round((totalMinutes - totalWatchedMinutes) / 60)` as `Nh`  | default          |
 
-Movies count covers both `movie` and `short-movie` types (via `isMovie()`). Episodes count covers both `series` and `tv-shorts` types (via `isSeries()`). Novels count covers `novel` types (via `isNovel()`). Watched is video-only; Read is novels-only.
+Movies count covers both `movie` and `short-movie` types (via `isMovie()`). Episodes count covers both `series` and `tv-shorts` types (via `isSeries()`). Novels count covers both `novel` and `ya-novel` types (via `isNovel()`). Games count covers `multiplatform-game` (via `isGame()`). As additional game types are added in the future, `isGame()` will be expanded to include them, automatically incorporating them into the Played % and Games counts. Watched is video-only; Read is novels-only; Played is games-only.
 
 ---
 
@@ -302,7 +350,7 @@ The app has no templating engine. HTML is built via tagged template literals and
 
 **Catalog grid** (`renderCatalog`) — Rebuilds the entire `#catalog` div on every filter change or state mutation. After setting `innerHTML`, it immediately re-attaches event listeners by querying the freshly created DOM nodes.
 
-**Modal** (`openModal`, `renderMovieModal`, `renderNovelModal`, `renderSeriesModal`) — Rebuilds `#modalBody` on open, and re-renders it in place on every interaction inside the modal. `bindModalEvents` is called after each re-render to re-attach all click handlers to the new DOM.
+**Modal** (`openModal`, `renderMovieModal`, `renderNovelModal`, `renderGameModal`, `renderSeriesModal`) — Rebuilds `#modalBody` on open, and re-renders it in place on every interaction inside the modal. `bindModalEvents` is called after each re-render to re-attach all click handlers to the new DOM.
 
 This pattern avoids stale closure bugs that would arise from caching references to DOM nodes across re-renders, at the cost of always doing a full subtree replace.
 
@@ -314,7 +362,7 @@ Each card is a horizontal flex row:
 ┌──────────┬─────────────────────────────┐
 │          │ TYPE · YEAR                 │
 │  poster  │ Title                       │
-│          │ Duration/Pages   BADGE      │
+│          │ Duration/Pages/Platforms  BADGE │
 │          ├─────────────────────────────┤
 │          │ ══════progress bar══  [btn] │
 └──────────┴─────────────────────────────┘
@@ -324,37 +372,51 @@ The card root element receives a CSS class matching its status: `.card.watched`,
 
 **Type labels** are mapped in `renderCard`:
 
-| `item.type`    | Displayed label |
-|----------------|-----------------|
-| `movie`        | Movie           |
-| `short-movie`  | Short Film      |
-| `series`       | TV Series       |
-| `tv-shorts`    | TV Shorts       |
-| `novel`        | Novel           |
-| `ya-novel`     | YA Novel        |
+| `item.type`           | Displayed label       |
+|-----------------------|-----------------------|
+| `movie`               | Movie                 |
+| `short-movie`         | Short Film            |
+| `series`              | TV Series             |
+| `tv-shorts`           | TV Shorts             |
+| `novel`               | Novel                 |
+| `ya-novel`            | YA Novel              |
+| `multiplatform-game`  | Multiplatform Game    |
 
 **Meta label** (shown below the title):
 
-| Item type        | Meta label                                            |
-|------------------|-------------------------------------------------------|
-| Movie/Short Film | `formatMinutes(item.duration)` — e.g. `"2h 16m"`     |
-| Series/TV Shorts | `N Season(s)` — e.g. `"3 Seasons"`                   |
-| Novel            | `N pages` — e.g. `"349 pages"`                       |
+| Item type             | Meta label                                                        |
+|-----------------------|-------------------------------------------------------------------|
+| Movie/Short Film      | `formatMinutes(item.duration)` — e.g. `"2h 16m"`                 |
+| Series/TV Shorts      | `N Season(s)` — e.g. `"3 Seasons"`                               |
+| Novel/YA Novel        | `N pages` — e.g. `"349 pages"`                                   |
+| Multiplatform Game    | `formatPlatforms(item.platforms)` — up to 3 platforms joined by `, `; if more than 3, shows `"Platform1, Platform2 +N more"` |
 
 **Badge classes and text**:
 
-| Status      | CSS class         | Text          |
-|-------------|-------------------|---------------|
-| `watched`   | `.badge-watched`  | ✓ Finished    |
-| `partial`   | `.badge-partial`  | In Progress   |
-| `unwatched` | `.badge-unwatched`| Not Started   |
+| Status      | CSS class          | Text (non-game)  | Text (game)  |
+|-------------|--------------------|------------------|--------------|
+| `watched`   | `.badge-watched`   | ✓ Finished       | ✓ Played     |
+| `partial`   | `.badge-partial`   | In Progress      | —            |
+| `unwatched` | `.badge-unwatched` | Not Started      | Not Played   |
+
+Games never show "In Progress" — they are always either "Not Played" or "✓ Played".
 
 **Progress bar percentage**:
 
 - Series/TV Shorts: `watchedMinutesSeries / seriesMinutes × 100`, giving a true partial fill.
-- All other types (movies, short-movies, novels): `100` if status is `"watched"`, `0` otherwise — there is no partial state for flat boolean items.
+- All other types (movies, short-movies, novels, games): `100` if status is `"watched"`, `0` otherwise — there is no partial state for flat boolean items.
 
-**Quick-toggle button** (`.card-watch-btn`): shows `✓` when finished, `＋` when not. For movies/short-movies/novels, toggles the boolean directly via `setMovieWatched`. For series/tv-shorts, checks `itemStatus` — if the series is fully `watched`, marks all episodes unwatched; otherwise marks all episodes watched. After toggling, calls `renderCatalog()` to refresh the grid.
+**Quick-toggle button** (`.card-watch-btn`): shows `✓` when finished/played, `＋` when not. For movies/short-movies/novels/games, toggles the boolean directly via `setMovieWatched`. For series/tv-shorts, checks `itemStatus` — if the series is fully `watched`, marks all episodes unwatched; otherwise marks all episodes watched. After toggling, calls `renderCatalog()` to refresh the grid.
+
+The button tooltip reads "Mark as Not Played" / "Mark as Played" for games, and "Mark as Not Started" / "Mark as Finished" for all other flat boolean types.
+
+### formatPlatforms
+
+`formatPlatforms(platforms)` formats a game's platform array for the card meta label:
+- If 3 or fewer platforms: returns them joined with `", "` — e.g. `"PS5, Xbox Series X/S, PC"`
+- If more than 3 platforms: returns the first two followed by `"+N more"` — e.g. `"PS4, PS5 +3 more"`
+
+The full list of platforms is always shown as individual pill tags (`.platform-tag`) in the game's detail modal.
 
 ### Status indicator
 
@@ -382,7 +444,7 @@ On hover, cards lift `translateY(-2px)`, background shifts from `--bg-card` to `
 
 ### Opening and closing
 
-`openModal(item)` sets `#modalTitle` from `item.title`, fills `#modalBody` with the appropriate modal renderer based on type (`renderNovelModal` → `renderMovieModal` → `renderSeriesModal`), adds the `.open` class to `#modalOverlay`, and calls `bindModalEvents`.
+`openModal(item)` sets `#modalTitle` from `item.title`, fills `#modalBody` with the appropriate modal renderer based on type (`renderGameModal` → `renderNovelModal` → `renderMovieModal` → `renderSeriesModal`), adds the `.open` class to `#modalOverlay`, and calls `bindModalEvents`.
 
 `closeModal()` removes the `.open` class. The overlay is `display: none` by default and `display: flex` when `.open`. Three triggers call `closeModal`: the `×` button, clicking the backdrop (overlay but not the modal box itself, checked via `e.target === e.currentTarget`), and the `Escape` key.
 
@@ -408,7 +470,17 @@ Layout (`.movie-detail`, vertical flex, `gap: 20px`):
    - **Buy on Amazon** (`.btn-amazon`): links to the book on Amazon in a new tab.
 4. **Read toggle button** (`.movie-watch-toggle`): same structure as the movie toggle. When read, icon shows `✓`, main text is "Read", sub-text is "Click to mark as not started". When unread, icon shows `○`, main text is "Mark as Read", sub-text is "Click to log this book".
 
-The novel modal reuses the `.movie-watch-toggle` styling and the `#movieToggle` id. `bindModalEvents` routes novel items to re-render via `renderNovelModal` rather than `renderMovieModal`.
+### Game modal
+
+Layout (`.movie-detail`, vertical flex, `gap: 20px`):
+
+1. **Info row** (`.movie-info-row`): badge, year, developer name — all inline, wrapped.
+2. **Platform tags** (`.game-platforms`): one `.platform-tag` pill per platform in `item.platforms`. All platforms are shown here (not truncated as on the card).
+3. **Description** (`.modal-description`): rendered only if `item.description` is present.
+4. **Buy on Amazon** (`.btn-amazon`): rendered only if `item.amazonUrl` is present. Links to the game on Amazon in a new tab.
+5. **Play toggle button** (`.movie-watch-toggle`): same structure as the movie and novel toggles. When played, the button has class `.active`, icon shows `✓`, main text is "Played", sub-text is "Click to mark as not played". When not played, icon shows `○`, main text is "Mark as Played", sub-text is "Click to log this game". Clicking toggles the state, re-renders the modal body, re-binds events, and calls `renderCatalog()`.
+
+The game modal reuses the `.movie-watch-toggle` styling and the `#movieToggle` id. `bindModalEvents` routes game items to re-render via `renderGameModal`.
 
 ### Series / TV-Shorts modal
 
@@ -426,19 +498,33 @@ Every interactive action inside the modal re-renders the full `#modalBody` and r
 
 ## Filtering and sorting
 
-Three independent filter rows and one sort control sit above the catalog grid. On desktop, each filter row is a set of pill buttons. On mobile (≤ 600 px), the pill buttons are hidden and replaced by a `<select>` dropdown for each row. Both controls share the same `applyFilter()` handler and stay in sync at any viewport width. Selecting a value in one row does not affect the others, so all three can be combined freely.
+Three independent filter rows and one sort control sit above the catalog grid. On desktop, each filter row is a set of pill buttons. The Type filter row is split into two intentional sub-rows: screen content (All, Movies, Short Films, TV Shows, TV Show Shorts) on the first line and text/interactive content (Adult Novels, YA Novels, Multiplatform Games) on the second. On mobile (≤ 600 px), the pill buttons are hidden and replaced by a `<select>` dropdown for each row. Both controls share the same `applyFilter()` handler and stay in sync at any viewport width.
 
 ### Filter state
 
-| Variable       | Values                                                | Desktop (pill buttons) | Mobile (select)  | Filter row label |
-|----------------|-------------------------------------------------------|------------------------|------------------|------------------|
-| `activeEra`    | `all`, `lucas`, `disney`                              | `.era-btn`             | `.era-select`    | Era              |
-| `activeType`   | `all`, `movie`, `short-movie`, `series`, `tv-shorts`, `novel`, `ya-novel` | `.type-btn`  | `.type-select`   | Type             |
-| `activeStatus` | `all`, `not-started`, `in-progress`, `finished`       | `.status-btn`          | `.status-select` | Progress         |
-| `activeSort`   | `chronological`, `release`                            | `.sort-btn`            | —                | Sort (separate)  |
-| `activeSortDir`| `asc`, `desc`                                         | —                      | —                | (arrow on button)|
+| Variable       | Values                                                                           | Desktop (pill buttons) | Mobile (select)  | Filter row label |
+|----------------|----------------------------------------------------------------------------------|------------------------|------------------|------------------|
+| `activeEra`    | `all`, `lucas`, `disney`                                                         | `.era-btn`             | `.era-select`    | Era              |
+| `activeType`   | `all`, `movie`, `short-movie`, `series`, `tv-shorts`, `novel`, `ya-novel`, `multiplatform-game` | `.type-btn` | `.type-select` | Type |
+| `activeStatus` | `all`, `not-started`, `in-progress`, `finished`                                  | `.status-btn`          | `.status-select` | Progress         |
+| `activeSort`   | `chronological`, `release`                                                       | `.sort-btn`            | —                | Sort (separate)  |
+| `activeSortDir`| `asc`, `desc`                                                                    | —                      | —                | (arrow on button)|
 
 All five default to `all` / `chronological` / `asc` on load.
+
+### Progress filter and games
+
+The Progress filter maps UI labels to internal status values:
+
+```js
+const statusKey =
+  activeStatus === 'in-progress' ? 'partial'   :
+  activeStatus === 'not-started' ? 'unwatched' :
+  activeStatus === 'finished'    ? 'watched'   :
+  activeStatus;
+```
+
+For games, "Finished" shows all played games, "Not Started" shows all unplayed games. "In Progress" always returns zero results for games (no partial state exists).
 
 ### Pipeline
 
@@ -453,21 +539,7 @@ catalog[]
   → renderCatalog()
 ```
 
-Each filter step is a simple `Array.filter` on the in-memory `catalog` array. No data is re-fetched. For the sort step, `[...items]` produces a shallow copy before sorting so the original catalog order is never mutated (preserving chronological order as the default).
-
-### Status filter note
-
-`itemStatus()` returns internal values (`'unwatched'`, `'partial'`, `'watched'`), but the filter buttons use different keys (`not-started`, `in-progress`, `finished`). `filteredCatalog()` maps between them before comparing:
-
-```js
-const statusKey =
-  activeStatus === 'in-progress' ? 'partial'   :
-  activeStatus === 'not-started' ? 'unwatched' :
-  activeStatus === 'finished'    ? 'watched'   :
-  activeStatus;
-```
-
-This keeps the internal status values stable (they are also used as CSS class names) while allowing the UI to use more content-neutral language.
+Each filter step is a simple `Array.filter` on the in-memory `catalog` array. No data is re-fetched.
 
 ### Sort keys
 
@@ -478,11 +550,7 @@ This keeps the internal status values stable (they are also used as CSS class na
 
 ### Sort direction
 
-Each sort supports two directions — ascending (`↑`) and descending (`↓`) — toggled by clicking the active sort button a second time. The active button always shows its label plus the arrow (`Chronological ↑`, `Release Date ↓`, etc.).
-
-`activeSortDir` resets to `'asc'` whenever the user switches to a different sort key.
-
-`updateSortButtons()` reads `activeSort` and `activeSortDir`, then updates every `.sort-btn`'s `textContent`. It is called at the end of every `render()` pass and immediately after a sort button click so the arrow always reflects current state.
+Each sort supports two directions — ascending (`↑`) and descending (`↓`) — toggled by clicking the active sort button a second time. `activeSortDir` resets to `'asc'` whenever the user switches to a different sort key. `updateSortButtons()` reads `activeSort` and `activeSortDir`, then updates every `.sort-btn`'s `textContent`. It is called at the end of every `render()` pass and immediately after a sort button click.
 
 ---
 
@@ -505,6 +573,7 @@ Events are bound in two places:
 - `#loadInput` change → calls `loadWatchHistory(file)`, then clears the input value
 
 **`bindModalEvents(item)`** — called after every modal render. Routes to different handlers based on type:
+- **Game**: `#movieToggle` → `setMovieWatched`, re-render `renderGameModal`, re-bind, `renderCatalog()`. Checked first before novel and movie handlers.
 - **Novel**: `#movieToggle` → `setMovieWatched`, re-render `renderNovelModal`, re-bind, `renderCatalog()`
 - **Movie**: `#movieToggle` → `setMovieWatched`, re-render `renderMovieModal`, re-bind, `renderCatalog()`
 - **Series**: "Mark All Watched" (`#markAllBtn`) → `setSeriesWatched(item, true)`; "Clear All" (`#unmarkAllBtn`) → `setSeriesWatched(item, false)`; `.season-btn` clicks → `setSeasonWatched` toggle; `.episode-row` clicks → `setEpWatched` toggle. All re-render, re-bind, and call `renderCatalog()`.
@@ -528,12 +597,12 @@ All colours and radii are defined as CSS custom properties on `:root`:
 | `--text`          | `#e8e8f0`                      | Primary text                                 |
 | `--text-muted`    | `#888899`                      | Secondary text, metadata                     |
 | `--text-dim`      | `#555566`                      | Tertiary text, labels, disabled states       |
-| `--accent`        | `#ffe81a`                      | Star Wars yellow — logo, active filters, Watched/Read tiles |
+| `--accent`        | `#ffe81a`                      | Star Wars yellow — logo, active filters, Watched/Read/Played tiles |
 | `--accent-dim`    | `rgba(255,232,26,0.15)`        | Active filter button background              |
 | `--accent-hover`  | `#ffed4a`                      | Hover accent                                 |
-| `--watched`       | `#22c55e`                      | Green — watched/finished state               |
-| `--watched-dim`   | `rgba(34,197,94,0.15)`         | Watched state background tint                |
-| `--partial`       | `#f59e0b`                      | Amber — in-progress state                    |
+| `--watched`       | `#22c55e`                      | Green — watched/read/played state            |
+| `--watched-dim`   | `rgba(34,197,94,0.15)`         | Watched/played state background tint         |
+| `--partial`       | `#f59e0b`                      | Amber — in-progress state (series only)      |
 | `--partial-dim`   | `rgba(245,158,11,0.15)`        | In-progress background tint                  |
 | `--radius`        | `12px`                         | Standard border radius                       |
 | `--radius-sm`     | `8px`                          | Small border radius (buttons, inputs)        |
@@ -547,20 +616,26 @@ The header is `position: sticky; top: 0; z-index: 100` with `backdrop-filter: bl
 
 Both `.filter-btn` and `.sort-btn` share the same visual treatment: `border-radius: 100px` pill shape, `--bg-card` background, `--border` border, `--text-muted` text. On hover, border brightens and text becomes `--text`. When `.active`, background becomes `--accent-dim`, border becomes `--accent`, text becomes `--accent`, font-weight 600. Filter row labels (`.filter-row-label`) are `min-width: 56px`, uppercase, `--text-dim` colour, aligned center within their row.
 
+The Type filter row uses a nested `.type-btn-rows` flex column containing two `.type-btn-subrow` divs, allowing two intentional rows of buttons to share a single "TYPE" label that vertically centres between them.
+
+### Platform tags
+
+Game detail modals display each platform as a `.platform-tag` pill: `--bg-elevated` background, `--border-bright` border, `--text-muted` text, `border-radius: 100px`. Tags are contained in a `.game-platforms` flex-wrap row with `gap: 6px`.
+
 ### Catalog grid
 
 Fixed two-column grid: `grid-template-columns: repeat(2, 1fr)`, `gap: 16px`. No maximum number of rows — the grid grows as needed.
 
 ### Action buttons
 
-| Class         | Colour                       | Usage                                |
-|---------------|------------------------------|--------------------------------------|
-| `.btn-primary`| `--accent` (yellow) fill     | Mark All Watched in series modal     |
-| `.btn-outline`| Transparent, ghost border    | Clear All in series modal            |
-| `.btn-secondary`| Transparent, muted border  | Header actions (Reset, Save, Load)   |
-| `.btn-disney` | `#0063e5` (blue)             | Watch on Disney+ / YouTube links     |
-| `.btn-audible`| `#ff6f00` (deep orange)      | Listen on Audible links in novel modal |
-| `.btn-amazon` | `#ff9900` (amber), black text | Buy on Amazon links in novel modal  |
+| Class         | Colour                       | Usage                                           |
+|---------------|------------------------------|-------------------------------------------------|
+| `.btn-primary`| `--accent` (yellow) fill     | Mark All Watched in series modal                |
+| `.btn-outline`| Transparent, ghost border    | Clear All in series modal                       |
+| `.btn-secondary`| Transparent, muted border  | Header actions (Reset, Save, Load)              |
+| `.btn-disney` | `#0063e5` (blue)             | Watch on Disney+ / YouTube links                |
+| `.btn-audible`| `#ff6f00` (deep orange)      | Listen on Audible links in novel modal          |
+| `.btn-amazon` | `#ff9900` (amber), black text | Buy on Amazon links in novel and game modals   |
 
 ---
 
@@ -587,7 +662,7 @@ Clicking **Save** opens a dedicated modal (`#saveModalOverlay`) that explains th
 
 `downloadWatchHistory()` serialises the in-memory `watched` object to a formatted JSON string, wraps it in a `Blob`, creates a temporary object URL, programmatically clicks a disposable `<a>` element to trigger the browser's native file-save dialog, then immediately revokes the URL.
 
-The downloaded file is the exact in-memory shape of `watched` — movies and novels as flat booleans, series as nested season/episode maps. Example:
+The downloaded file is the exact in-memory shape of `watched` — movies, novels, and games as flat booleans, series as nested season/episode maps. Example:
 
 ```json
 {
@@ -596,7 +671,8 @@ The downloaded file is the exact in-memory shape of `watched` — movies and nov
     "2": { "1": true }
   },
   "rogue-one-a-star-wars-story": true,
-  "bloodline": true
+  "bloodline": true,
+  "star-wars-jedi-fallen-order": true
 }
 ```
 
@@ -606,7 +682,7 @@ Clicking **Load** programmatically clicks a hidden `<input type="file" id="loadI
 
 `loadWatchHistory(file)` reads the file asynchronously via `FileReader`. If `JSON.parse` fails or the result is not a plain object, the user sees an `alert`. On success, `watched` is replaced with the parsed data, `save()` flushes it to localStorage, and `renderCatalog()` refreshes the grid.
 
-The backup file format is identical to the `startracker_watched` localStorage entry. Any file produced by a previous version of the app — including backups predating novel support — is a valid input. Novel entries are stored as flat booleans just like movies, so there is no migration needed.
+The backup file format is identical to the `startracker_watched` localStorage entry. Any file produced by a previous version of the app — including backups predating novel or game support — is a valid input. Game entries are stored as flat booleans just like movies, so there is no migration needed.
 
 ---
 
@@ -625,11 +701,13 @@ A single `@media (max-width: 600px)` block overrides desktop styles. The desktop
 - `.sort-bar` becomes `width: 100%; flex-shrink: 1`.
 
 **Stats row**
-- `.stats-row` collapses to a `2-column grid` (`grid-template-columns: 1fr 1fr`). With 8 stat tiles, this produces 4 rows of 2.
+- On desktop: `.stats-row` is a `5-column grid` (`grid-template-columns: repeat(5, 1fr)`), producing two rows of five tiles.
+- On mobile: `.stats-row` collapses to a `2-column grid` (`grid-template-columns: 1fr 1fr`). With 10 stat tiles, this produces 5 rows of 2.
 - `.stat-value` reduces to `1.5rem`, `.stat-label` to `0.72rem`.
 
 **Filters**
 - `.filter-btn` elements are hidden (`display: none`). `.filter-select` dropdowns are shown (`display: block`) and stretch to fill the remaining row width. The dropdowns are styled to match the dark theme with a custom SVG chevron.
+- The `.type-btn-rows` / `.type-btn-subrow` nested structure is irrelevant on mobile since all buttons are hidden.
 
 **Catalog grid**
 - `.catalog` collapses to single column (`grid-template-columns: 1fr`), gap reduces to `10px`.
@@ -666,7 +744,7 @@ No build step, no bundler, no transpilation. The browser receives the source fil
 
 ## Adding content to the catalog
 
-Append an object to the `"content"` array in `catalog.json` following the appropriate schema above. The `id` must be unique across all items — it is used as the localStorage key and the poster filename. The app reloads the catalog on every page load, so changes take effect on refresh.
+Append an object to the `"content"` array in `catalog.json` following the appropriate schema above. The `id` must be unique across all items — it is used as the localStorage key and the poster/cover filename. The app reloads the catalog on every page load, so changes take effect on refresh.
 
 ### Adding movies or series
 
@@ -680,7 +758,17 @@ Use `"type": "novel"` for adult novels and `"type": "ya-novel"` for young adult 
 
 Novels are read or unread — there is no partial state. They are excluded from the Watched percentage and Hours Remaining calculations, and contribute only to Read, Novels, and Pages Remaining stats.
 
-### Adding poster images
+### Adding games
+
+Use `"type": "multiplatform-game"` for games available across multiple platforms (console, PC, VR headsets, etc.). Set `year` to the earliest real-world release date across all platforms. List all known platforms in `platforms` as an array of strings — these are shown as pill tags in the modal and summarised on the card.
+
+Games are played or not played — there is no partial state. They are excluded from all minute-based calculations (Watched %, Hours Remaining) and contribute only to Played %, Games, and the played/unplayed filter.
+
+The `isGame()` helper currently checks for `'multiplatform-game'` only. When additional game types are introduced (e.g. mobile-only, console-exclusive), add their `type` values to `isGame()` so they are automatically picked up by all stat calculations, filtering, card rendering, and modal routing without touching any other code.
+
+Provide `amazonUrl` pointing to the game's Amazon product page or a search URL. No `audibleUrl` or `disneyPlusUrl` fields are used for games.
+
+### Adding cover images
 
 Drop a `.jpg` into the `posters/` directory named after the item's `id`:
 
@@ -688,6 +776,7 @@ Drop a `.jpg` into the `posters/` directory named after the item's `id`:
 posters/the-mandalorian.jpg
 posters/rogue-one-a-star-wars-story.jpg
 posters/bloodline.jpg
+posters/star-wars-jedi-fallen-order.jpg
 ```
 
-The filename must match the `id` field in `catalog.json` exactly, with a `.jpg` extension. Items with no matching file display a `✕` placeholder over a hatched background automatically — no configuration required.
+The filename must match the `id` field in `catalog.json` exactly, with a `.jpg` extension. Items with no matching file display a `✕` placeholder over a hatched background automatically — no configuration required. For games, Steam library portrait images (`library_600x900_2x.jpg` from Valve's CDN) work well as cover art.

@@ -2037,6 +2037,24 @@
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Tarkin+James+Luceno"
     },
     {
+      "id": "star-wars-jedi-fallen-order",
+      "title": "Jedi: Fallen Order",
+      "type": "multiplatform-game",
+      "developer": "Respawn Entertainment",
+      "publisher": "Electronic Arts",
+      "year": 2019,
+      "era": "disney",
+      "platforms": [
+        "PS4",
+        "PS5",
+        "Xbox One",
+        "Xbox Series X/S",
+        "PC"
+      ],
+      "description": "Set five years after Order 66, Fallen Order follows Cal Kestis, a young Padawan-turned-fugitive surviving as a scrapper on Bracca. When his Force abilities are exposed, he must outrun the Empire's Inquisitors while attempting to rebuild the Jedi Order.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Jedi+Fallen+Order"
+    },
+    {
       "id": "tales-of-the-empire",
       "title": "Tales of the Empire",
       "type": "series",
@@ -2253,6 +2271,21 @@
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Solo+Expanded+Edition+Mur+Lafferty"
     },
     {
+      "id": "star-wars-beyond-victory",
+      "title": "Beyond Victory — A Mixed Reality Playset",
+      "type": "multiplatform-game",
+      "developer": "ILM Immersive",
+      "publisher": "ILM Immersive",
+      "year": 2025,
+      "era": "disney",
+      "platforms": [
+        "Meta Quest 3",
+        "Meta Quest 3S"
+      ],
+      "description": "A mixed reality playset blending the thrilling world of podracing with an original story. Players follow aspiring podracer Volo, whose life is upended under the mentorship of the infamous Sebulba. Features Adventure, Arcade, and Playset modes.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Beyond+Victory+Meta+Quest"
+    },
+    {
       "id": "obi-wan-kenobi",
       "title": "Obi-Wan Kenobi",
       "type": "series",
@@ -2298,6 +2331,22 @@
       "format": "live-action",
       "era": "disney",
       "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-e28eab5e-5cff-4ef2-b018-d2267c750364"
+    },
+    {
+      "id": "star-wars-jedi-survivor",
+      "title": "Jedi: Survivor",
+      "type": "multiplatform-game",
+      "developer": "Respawn Entertainment",
+      "publisher": "Electronic Arts",
+      "year": 2023,
+      "era": "disney",
+      "platforms": [
+        "PS5",
+        "Xbox Series X/S",
+        "PC"
+      ],
+      "description": "Five years after Fallen Order, Cal Kestis is the last Jedi standing between the Empire and the dawn of a new hope. On the run with the crew of the Mantis, Cal discovers a mysterious portal that could change the fate of the galaxy.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Jedi+Survivor+game"
     },
     {
       "id": "andor",
@@ -2907,6 +2956,70 @@
       "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-5ec74210-f970-42b7-a39f-8653c0a9eab8"
     },
     {
+      "id": "vader-immortal-episode-i",
+      "title": "Vader Immortal — Episode I",
+      "type": "multiplatform-game",
+      "developer": "ILMxLAB",
+      "publisher": "Disney Interactive",
+      "year": 2019,
+      "era": "disney",
+      "platforms": [
+        "Oculus Quest",
+        "PSVR",
+        "PC VR"
+      ],
+      "description": "The first chapter of an immersive VR trilogy. Players are smugglers captured by Darth Vader and brought to his fortress on Mustafar, where an ancient secret connected to a power greater than the Force awaits.",
+      "amazonUrl": "https://www.amazon.com/s?k=Vader+Immortal+Episode+I+VR"
+    },
+    {
+      "id": "vader-immortal-episode-ii",
+      "title": "Vader Immortal — Episode II",
+      "type": "multiplatform-game",
+      "developer": "ILMxLAB",
+      "publisher": "Disney Interactive",
+      "year": 2019,
+      "era": "disney",
+      "platforms": [
+        "Oculus Quest",
+        "PSVR",
+        "PC VR"
+      ],
+      "description": "In the second chapter of the Vader Immortal trilogy, the mystery of Mustafar deepens as players learn the true nature of Vader's obsession with the ancient Bright Star artifact.",
+      "amazonUrl": "https://www.amazon.com/s?k=Vader+Immortal+Episode+II+VR"
+    },
+    {
+      "id": "vader-immortal-episode-iii",
+      "title": "Vader Immortal — Episode III",
+      "type": "multiplatform-game",
+      "developer": "ILMxLAB",
+      "publisher": "Disney Interactive",
+      "year": 2019,
+      "era": "disney",
+      "platforms": [
+        "Oculus Quest",
+        "PSVR",
+        "PC VR"
+      ],
+      "description": "The thrilling conclusion to the Vader Immortal trilogy. Players must face Darth Vader himself in a final confrontation deep within the Mustafar fortress as the fate of the Bright Star is decided.",
+      "amazonUrl": "https://www.amazon.com/s?k=Vader+Immortal+Episode+III+VR"
+    },
+    {
+      "id": "star-wars-battlefront-2015",
+      "title": "Battlefront",
+      "type": "multiplatform-game",
+      "developer": "DICE",
+      "publisher": "Electronic Arts",
+      "year": 2015,
+      "era": "disney",
+      "platforms": [
+        "PS4",
+        "Xbox One",
+        "PC"
+      ],
+      "description": "An action shooter set across iconic original trilogy battlegrounds including Hoth, Endor, and Sullust. Players fight as soldiers of the Rebel Alliance or the Galactic Empire in large-scale multiplayer battles.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Battlefront+2015+EA+DICE"
+    },
+    {
       "id": "episode-iv-a-new-hope",
       "title": "Episode IV – A New Hope",
       "type": "movie",
@@ -2951,6 +3064,22 @@
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Battlefront+Twilight+Company+Alexander+Freed"
     },
     {
+      "id": "star-wars-outlaws",
+      "title": "Outlaws",
+      "type": "multiplatform-game",
+      "developer": "Massive Entertainment",
+      "publisher": "Ubisoft",
+      "year": 2024,
+      "era": "disney",
+      "platforms": [
+        "PS5",
+        "Xbox Series X/S",
+        "PC"
+      ],
+      "description": "Set in the period between The Empire Strikes Back and Return of the Jedi, Outlaws follows Kay Vess, a young scoundrel, and her companion Nix as they attempt to pull off the biggest heist in the Outer Rim — getting tangled up with the galaxy's most dangerous crime syndicates.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Outlaws+game+Ubisoft"
+    },
+    {
       "id": "episode-vi-return-of-the-jedi",
       "title": "Episode VI – Return of the Jedi",
       "type": "movie",
@@ -2960,6 +3089,40 @@
       "format": "live-action",
       "era": "lucas",
       "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-4b6e7cda-daa5-4f2d-9b61-35bbe562c69c"
+    },
+    {
+      "id": "star-wars-squadrons",
+      "title": "Squadrons",
+      "type": "multiplatform-game",
+      "developer": "Motive Studios",
+      "publisher": "Electronic Arts",
+      "year": 2020,
+      "era": "disney",
+      "platforms": [
+        "PS4",
+        "Xbox One",
+        "PC",
+        "PSVR",
+        "PC VR"
+      ],
+      "description": "An immersive starfighter combat game set in the aftermath of the Battle of Endor. Experience both sides of the conflict in a single-player campaign following New Republic pilot Vanguard Squadron and Imperial pilot Titan Squadron.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Squadrons+game+EA"
+    },
+    {
+      "id": "star-wars-battlefront-ii",
+      "title": "Battlefront II",
+      "type": "multiplatform-game",
+      "developer": "DICE, Motive Studios, Criterion Games",
+      "publisher": "Electronic Arts",
+      "year": 2017,
+      "era": "disney",
+      "platforms": [
+        "PS4",
+        "Xbox One",
+        "PC"
+      ],
+      "description": "Featuring a canonical single-player story following Imperial special forces commander Iden Versio from the Battle of Endor through the fall of the Empire, plus multiplayer battles spanning all eras — from the Clone Wars to the rise of the First Order.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Battlefront+II+2017+EA"
     },
     {
       "id": "the-princess-and-the-scoundrel",
@@ -3269,6 +3432,22 @@
       "format": "live-action",
       "era": "disney",
       "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-3749c03e-8204-46c5-b102-0410e6d51758"
+    },
+    {
+      "id": "star-wars-hunters",
+      "title": "Hunters",
+      "type": "multiplatform-game",
+      "developer": "NaturalMotion",
+      "publisher": "Zynga",
+      "year": 2024,
+      "era": "disney",
+      "platforms": [
+        "Nintendo Switch",
+        "iOS",
+        "Android"
+      ],
+      "description": "Set in the New Republic era after the fall of the Empire, Hunters is a competitive arena combat game where warriors from across the galaxy battle in the ruins of repurposed Imperial arenas on the planet Vespaara.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Hunters+game+Switch"
     },
     {
       "id": "grogu-cutest-in-the-galaxy",
@@ -3786,6 +3965,51 @@
       "format": "live-action",
       "era": "disney",
       "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-50c1aff5-3051-4839-9ebf-e332c635e216"
+    },
+    {
+      "id": "star-wars-droid-repair-bay",
+      "title": "Droid Repair Bay",
+      "type": "multiplatform-game",
+      "developer": "ILMxLAB",
+      "publisher": "Lucasfilm",
+      "year": 2017,
+      "era": "disney",
+      "platforms": [
+        "Samsung Gear VR",
+        "Oculus Go"
+      ],
+      "description": "A mobile VR experience set aboard the Resistance flagship. Players repair and maintain the droids of the Resistance fleet in preparation for the fight against the First Order.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Droid+Repair+Bay+VR"
+    },
+    {
+      "id": "star-wars-tales-from-the-galaxys-edge",
+      "title": "Tales from the Galaxy's Edge",
+      "type": "multiplatform-game",
+      "developer": "ILMxLAB",
+      "publisher": "Disney Interactive",
+      "year": 2020,
+      "era": "disney",
+      "platforms": [
+        "Oculus Quest",
+        "PSVR2"
+      ],
+      "description": "A VR adventure on the frontier planet of Batuu during the sequel era. Players take the role of a droid technician who gets caught up in a conflict involving the First Order, the Resistance, and the local criminal underworld of Black Spire Outpost.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Tales+Galaxys+Edge+VR"
+    },
+    {
+      "id": "star-wars-tales-from-the-galaxys-edge-last-call",
+      "title": "Tales from the Galaxy's Edge — Last Call",
+      "type": "multiplatform-game",
+      "developer": "ILMxLAB",
+      "publisher": "Disney Electronic Content",
+      "year": 2021,
+      "era": "disney",
+      "platforms": [
+        "Oculus Quest",
+        "PSVR2"
+      ],
+      "description": "A standalone VR sequel set in the cantina of Black Spire Outpost on Batuu. Last Call features new characters and an original story exploring the criminal underworld of the Outer Rim.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Tales+Galaxys+Edge+Last+Call+VR"
     },
     {
       "id": "resistance-reborn",
