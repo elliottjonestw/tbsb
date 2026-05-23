@@ -2,9 +2,9 @@ const STORAGE_KEY = 'startracker_watched';
 
 let catalog = [];
 let watched = {};
-let activeEra = 'all';
-let activeType = 'all';
-let activeStatus = 'all';
+let activeEras    = new Set();   // empty = all
+let activeTypes   = new Set();   // empty = all
+let activeStatuses = new Set();  // empty = all
 let activeSort = 'chronological';
 let activeSortDir = 'asc';
 
@@ -212,16 +212,15 @@ function updateStats() {
 function filteredCatalog() {
   let items = catalog;
 
-  if (activeEra !== 'all')  items = items.filter(i => i.era === activeEra);
-  if (activeType !== 'all') items = items.filter(i => i.type === activeType);
+  if (activeEras.size > 0)   items = items.filter(i => activeEras.has(i.era));
+  if (activeTypes.size > 0)  items = items.filter(i => activeTypes.has(i.type));
 
-  if (activeStatus !== 'all') {
-    const statusKey =
-      activeStatus === 'in-progress' ? 'partial' :
-      activeStatus === 'not-started' ? 'unwatched' :
-      activeStatus === 'finished'    ? 'watched'   :
-      activeStatus;
-    items = items.filter(i => itemStatus(i) === statusKey);
+  if (activeStatuses.size > 0) {
+    const statusMap = { 'not-started': 'unwatched', 'in-progress': 'partial', 'finished': 'watched' };
+    items = items.filter(i => {
+      const s = itemStatus(i);
+      return [...activeStatuses].some(key => (statusMap[key] ?? key) === s);
+    });
   }
 
   if (activeSort === 'chronological') {
@@ -603,24 +602,48 @@ function bindEvents() {
     if (e.target === e.currentTarget) closeModal();
   });
 
-  function applyFilter(filterType, val) {
-    if (filterType === 'era') activeEra = val;
-    else if (filterType === 'type') activeType = val;
-    else if (filterType === 'status') activeStatus = val;
+  function getActiveSet(filterType) {
+    return filterType === 'era' ? activeEras : filterType === 'type' ? activeTypes : activeStatuses;
+  }
+
+  function syncFilterButtons(filterType) {
+    const activeSet = getActiveSet(filterType);
+    const isAll = activeSet.size === 0;
     document.querySelectorAll(`.${filterType}-btn`).forEach(b => {
-      b.classList.toggle('active', b.dataset[filterType] === val);
+      b.classList.toggle('active', b.dataset[filterType] === 'all' ? isAll : activeSet.has(b.dataset[filterType]));
     });
+  }
+
+  // Desktop buttons: multi-select toggle
+  function applyFilterBtn(filterType, val) {
+    const activeSet = getActiveSet(filterType);
+    if (val === 'all') {
+      activeSet.clear();
+    } else {
+      activeSet.has(val) ? activeSet.delete(val) : activeSet.add(val);
+    }
+    syncFilterButtons(filterType);
+    // Sync mobile select: reflect single selection, otherwise reset to "all"
     const sel = document.querySelector(`.${filterType}-select`);
-    if (sel) sel.value = val;
+    if (sel) sel.value = activeSet.size === 1 ? [...activeSet][0] : 'all';
+    renderCatalog();
+  }
+
+  // Mobile select: single-value, clears set then adds one entry
+  function applyFilterSel(filterType, val) {
+    const activeSet = getActiveSet(filterType);
+    activeSet.clear();
+    if (val !== 'all') activeSet.add(val);
+    syncFilterButtons(filterType);
     renderCatalog();
   }
 
   ['era', 'type', 'status'].forEach(filterType => {
     document.querySelectorAll(`.${filterType}-btn`).forEach(btn => {
-      btn.addEventListener('click', () => applyFilter(filterType, btn.dataset[filterType]));
+      btn.addEventListener('click', () => applyFilterBtn(filterType, btn.dataset[filterType]));
     });
     const sel = document.querySelector(`.${filterType}-select`);
-    if (sel) sel.addEventListener('change', () => applyFilter(filterType, sel.value));
+    if (sel) sel.addEventListener('change', () => applyFilterSel(filterType, sel.value));
   });
 
   document.querySelectorAll('.sort-btn').forEach(btn => {

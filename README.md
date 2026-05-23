@@ -498,33 +498,44 @@ Every interactive action inside the modal re-renders the full `#modalBody` and r
 
 ## Filtering and sorting
 
-Three independent filter rows and one sort control sit above the catalog grid. On desktop, each filter row is a set of pill buttons. The Type filter row is split into two intentional sub-rows: screen content (All, Movies, Short Films, TV Shows, TV Show Shorts) on the first line and text/interactive content (Adult Novels, YA Novels, Multiplatform Games) on the second. On mobile (≤ 600 px), the pill buttons are hidden and replaced by a `<select>` dropdown for each row. Both controls share the same `applyFilter()` handler and stay in sync at any viewport width.
+Three independent filter rows and one sort control sit above the catalog grid. On desktop, each filter row is a set of pill buttons that support **multi-select**: any combination of options within a row can be active simultaneously. The Type filter row is split into two intentional sub-rows: screen content (All, Movies, Short Films, TV Shows, TV Show Shorts) on the first line and text/interactive content (Adult Novels, YA Novels, Multiplatform Games) on the second. On mobile (≤ 600 px), the pill buttons are hidden and replaced by a `<select>` dropdown for each row, which remains single-select.
 
 ### Filter state
 
-| Variable       | Values                                                                           | Desktop (pill buttons) | Mobile (select)  | Filter row label |
-|----------------|----------------------------------------------------------------------------------|------------------------|------------------|------------------|
-| `activeEra`    | `all`, `lucas`, `disney`                                                         | `.era-btn`             | `.era-select`    | Era              |
-| `activeType`   | `all`, `movie`, `short-movie`, `series`, `tv-shorts`, `novel`, `ya-novel`, `multiplatform-game` | `.type-btn` | `.type-select` | Type |
-| `activeStatus` | `all`, `not-started`, `in-progress`, `finished`                                  | `.status-btn`          | `.status-select` | Progress         |
-| `activeSort`   | `chronological`, `release`                                                       | `.sort-btn`            | —                | Sort (separate)  |
-| `activeSortDir`| `asc`, `desc`                                                                    | —                      | —                | (arrow on button)|
+Each filter is stored as a `Set` of active values. An **empty set means "all"** — no filter applied. The "All" button is active when the set is empty.
 
-All five default to `all` / `chronological` / `asc` on load.
+| Variable         | Possible values in set                                                           | Desktop (pill buttons) | Mobile (select)  | Filter row label |
+|------------------|----------------------------------------------------------------------------------|------------------------|------------------|------------------|
+| `activeEras`     | `lucas`, `disney`                                                                | `.era-btn`             | `.era-select`    | Era              |
+| `activeTypes`    | `movie`, `short-movie`, `series`, `tv-shorts`, `novel`, `ya-novel`, `multiplatform-game` | `.type-btn` | `.type-select` | Type |
+| `activeStatuses` | `not-started`, `in-progress`, `finished`                                         | `.status-btn`          | `.status-select` | Progress         |
+| `activeSort`     | `chronological`, `release`                                                       | `.sort-btn`            | —                | Sort (separate)  |
+| `activeSortDir`  | `asc`, `desc`                                                                    | —                      | —                | (arrow on button)|
+
+All filter sets start empty (= "all") on load; sort defaults to `chronological` / `asc`.
+
+**Desktop button behaviour (multi-select):**
+- Clicking a non-"All" button toggles that value in the set. "All" deactivates automatically when any value is in the set.
+- Clicking an already-active button removes it from the set. When the set becomes empty, "All" re-activates automatically.
+- Clicking "All" clears the entire set.
+- Multiple values in a set act as **OR** within that filter row — e.g. Era = {lucas, disney} shows everything; Type = {movie, novel} shows only movies and novels.
+- Filters across rows combine as **AND** — e.g. Era = {lucas} AND Type = {movie} shows only Lucas-era movies.
+
+**Mobile select behaviour (single-select):** Changing the select clears the set and adds at most one value (or nothing, for "All"). The select reflects the current set state: shows the single selected value if exactly one is active, otherwise shows "All".
 
 ### Progress filter and games
 
-The Progress filter maps UI labels to internal status values:
+The Progress filter maps UI values to internal status strings via a lookup table:
 
 ```js
-const statusKey =
-  activeStatus === 'in-progress' ? 'partial'   :
-  activeStatus === 'not-started' ? 'unwatched' :
-  activeStatus === 'finished'    ? 'watched'   :
-  activeStatus;
+const statusMap = { 'not-started': 'unwatched', 'in-progress': 'partial', 'finished': 'watched' };
+items = items.filter(i => {
+  const s = itemStatus(i);
+  return [...activeStatuses].some(key => (statusMap[key] ?? key) === s);
+});
 ```
 
-For games, "Finished" shows all played games, "Not Started" shows all unplayed games. "In Progress" always returns zero results for games (no partial state exists).
+For games, "Finished" shows all played games, "Not Started" shows all unplayed games. "In Progress" always returns zero results for games (no partial state exists). Selecting both "Not Started" and "Finished" shows all games.
 
 ### Pipeline
 
@@ -532,14 +543,14 @@ For games, "Finished" shows all played games, "Not Started" shows all unplayed g
 
 ```
 catalog[]
-  → era filter    (i.era === activeEra)
-  → type filter   (i.type === activeType)
-  → status filter (itemStatus(i) === statusKey)
+  → era filter    (activeEras.size > 0 → i.era ∈ activeEras)
+  → type filter   (activeTypes.size > 0 → i.type ∈ activeTypes)
+  → status filter (activeStatuses.size > 0 → itemStatus(i) ∈ mapped activeStatuses)
   → sort
   → renderCatalog()
 ```
 
-Each filter step is a simple `Array.filter` on the in-memory `catalog` array. No data is re-fetched.
+Each filter step is a simple `Array.filter` on the in-memory `catalog` array. A filter with an empty set is a no-op (no items are removed). No data is re-fetched.
 
 ### Sort keys
 
@@ -562,7 +573,8 @@ Events are bound in two places:
 - Modal close button click
 - Modal overlay backdrop click (checks `e.target === e.currentTarget`)
 - `Escape` keydown → `closeModal()` and `closeSaveModal()`
-- All `.era-btn` / `.era-select`, `.type-btn` / `.type-select`, `.status-btn` / `.status-select` interactions → routed through `applyFilter(filterType, val)`, which updates the active state variable, syncs the `.active` class on pill buttons and the `value` on the select, then calls `renderCatalog()`.
+- All `.era-btn` / `.type-btn` / `.status-btn` clicks → routed through `applyFilterBtn(filterType, val)`, which toggles `val` in the corresponding `Set` (or clears the set if `val === 'all'`), calls `syncFilterButtons` to update `.active` classes, syncs the mobile select, then calls `renderCatalog()`.
+- All `.era-select` / `.type-select` / `.status-select` changes → routed through `applyFilterSel(filterType, val)`, which clears the set and adds at most one value, then syncs buttons and re-renders. `getActiveSet(filterType)` is a helper that returns the correct set for a given filter type. `syncFilterButtons(filterType)` updates `.active` on all buttons in the group: the "All" button is active when the set is empty, all other buttons reflect set membership.
 - All `.sort-btn` clicks → if the clicked button is already the active sort, `activeSortDir` toggles; otherwise the clicked button becomes active, `activeSort` updates, and `activeSortDir` resets to `'asc'`. `updateSortButtons()` is called first, then `renderCatalog()`.
 - Reset button click → shows `confirm('Reset all progress? This cannot be undone.')` dialog; on confirmation sets `watched = {}`, calls `save()` and `renderCatalog()`
 - Save button click → calls `openSaveModal()`, adding `.open` to `#saveModalOverlay`
