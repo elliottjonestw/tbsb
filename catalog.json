@@ -16,11 +16,11 @@
       "id": "the-high-republic-convergence",
       "title": "The High Republic: Convergence",
       "type": "novel",
-      "author": "Zoraida Córdova",
+      "author": "Zoraida C\u00f3rdova",
       "year": 2022,
       "era": "disney",
       "pageCount": 336,
-      "description": "On the planet Eiram, two noble houses have warred for generations — but an arranged marriage is brokered to end the conflict. When an assassination attempt threatens the peace, a young Jedi must uncover the truth before the fragile truce collapses.",
+      "description": "On the planet Eiram, two noble houses have warred for generations \u2014 but an arranged marriage is brokered to end the conflict. When an assassination attempt threatens the peace, a young Jedi must uncover the truth before the fragile truce collapses.",
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+High+Republic+Convergence+Cordova"
     },
     {
@@ -31,7 +31,7 @@
       "year": 2023,
       "era": "disney",
       "pageCount": 416,
-      "description": "In the aftermath of Eiram and E'ronoh's brief peace, a dangerous Path of the Open Hand cult ignites old wounds and new crises — forcing Jedi and their allies to confront a galaxy on the edge of catastrophe.",
+      "description": "In the aftermath of Eiram and E'ronoh's brief peace, a dangerous Path of the Open Hand cult ignites old wounds and new crises \u2014 forcing Jedi and their allies to confront a galaxy on the edge of catastrophe.",
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+High+Republic+Cataclysm+Kang"
     },
     {
@@ -42,7 +42,7 @@
       "year": 2023,
       "era": "disney",
       "pageCount": 517,
-      "description": "The Path of the Open Hand's grip on the galaxy tightens as two young women — one a Jedi, one a true believer in the Path — are drawn into a collision course that will test everything they know about loyalty, faith, and the Force.",
+      "description": "The Path of the Open Hand's grip on the galaxy tightens as two young women \u2014 one a Jedi, one a true believer in the Path \u2014 are drawn into a collision course that will test everything they know about loyalty, faith, and the Force.",
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+High+Republic+Path+of+Vengeance+Scott"
     },
     {
@@ -53,7 +53,7 @@
       "year": 2021,
       "era": "disney",
       "pageCount": 432,
-      "description": "At the height of the Republic's golden age, a catastrophic disaster in hyperspace throws the Jedi Order into a desperate rescue operation — and reveals a terrifying new threat lurking in the darkness between the stars.",
+      "description": "At the height of the Republic's golden age, a catastrophic disaster in hyperspace throws the Jedi Order into a desperate rescue operation \u2014 and reveals a terrifying new threat lurking in the darkness between the stars.",
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+High+Republic+Light+of+the+Jedi+Soule"
     },
     {
@@ -64,7 +64,7 @@
       "year": 2021,
       "era": "disney",
       "pageCount": 425,
-      "description": "A Jedi Padawan and a crew of smugglers become stranded at a derelict space station after a hyperspace disaster — and what they find there may be more dangerous than anything waiting in the dark outside.",
+      "description": "A Jedi Padawan and a crew of smugglers become stranded at a derelict space station after a hyperspace disaster \u2014 and what they find there may be more dangerous than anything waiting in the dark outside.",
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+High+Republic+Into+the+Dark+Claudia+Gray"
     },
     {
@@ -452,6 +452,20 @@
       "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-faa35b37-3287-4a7c-9d42-a3a5f9ad9185"
     },
     {
+      "id": "young-jedi-adventures-galactic-training",
+      "title": "Young Jedi Adventures: Galactic Training",
+      "type": "mobile-game",
+      "developer": "Disney Interactive",
+      "publisher": "Disney Interactive",
+      "year": 2023,
+      "era": "disney",
+      "platforms": [
+        "iOS",
+        "Android"
+      ],
+      "description": "An educational mobile game based on the animated series Star Wars: Young Jedi Adventures, featuring mini-games and activities designed to teach young players the ways of the Jedi."
+    },
+    {
       "id": "fun-with-nubs",
       "title": "Fun with Nubs",
       "type": "tv-shorts",
@@ -581,7 +595,7 @@
       "year": 2021,
       "era": "disney",
       "pageCount": 416,
-      "description": "As the Republic Fair celebrates the galaxy's unity, the Nihil strike in their most audacious and devastating attack yet — plunging the Jedi into a desperate fight to protect the innocent and hold back the storm.",
+      "description": "As the Republic Fair celebrates the galaxy's unity, the Nihil strike in their most audacious and devastating attack yet \u2014 plunging the Jedi into a desperate fight to protect the innocent and hold back the storm.",
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+High+Republic+The+Rising+Storm+Cavan+Scott"
     },
     {
@@ -592,7 +606,7 @@
       "year": 2021,
       "era": "disney",
       "pageCount": 432,
-      "description": "A Jedi Knight investigating a mysterious hyperspace disaster is pulled into a web of political intrigue and buried secrets — while the shadow of the Nihil continues to fall across the Outer Rim.",
+      "description": "A Jedi Knight investigating a mysterious hyperspace disaster is pulled into a web of political intrigue and buried secrets \u2014 while the shadow of the Nihil continues to fall across the Outer Rim.",
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+High+Republic+Out+of+the+Shadows+Ireland"
     },
     {
@@ -603,18 +617,18 @@
       "year": 2022,
       "era": "disney",
       "pageCount": 400,
-      "description": "The Nihil launch their most devastating strike at the heart of the High Republic — attacking Starlight Beacon itself, turning the galaxy's greatest symbol of hope into a desperate fight for survival.",
+      "description": "The Nihil launch their most devastating strike at the heart of the High Republic \u2014 attacking Starlight Beacon itself, turning the galaxy's greatest symbol of hope into a desperate fight for survival.",
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+High+Republic+The+Fallen+Star+Claudia+Gray"
     },
     {
       "id": "the-high-republic-midnight-horizon",
       "title": "The High Republic: Midnight Horizon",
       "type": "ya-novel",
-      "author": "Daniel José Older",
+      "author": "Daniel Jos\u00e9 Older",
       "year": 2022,
       "era": "disney",
       "pageCount": 490,
-      "description": "Two young Jedi arrive on the cosmopolitan city-world of Corellia to investigate a Nihil plot — navigating an underworld of crime and corruption while the fate of the Republic hangs in the balance.",
+      "description": "Two young Jedi arrive on the cosmopolitan city-world of Corellia to investigate a Nihil plot \u2014 navigating an underworld of crime and corruption while the fate of the Republic hangs in the balance.",
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+High+Republic+Midnight+Horizon+Older"
     },
     {
@@ -625,7 +639,7 @@
       "year": 2023,
       "era": "disney",
       "pageCount": 416,
-      "description": "Years after the fall of Starlight Beacon, the galaxy has been cut off from the Republic by the Nihil's Stormwall. Now the Jedi must find a way to strike back against the darkness — from within.",
+      "description": "Years after the fall of Starlight Beacon, the galaxy has been cut off from the Republic by the Nihil's Stormwall. Now the Jedi must find a way to strike back against the darkness \u2014 from within.",
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+High+Republic+Eye+of+Darkness+Mann"
     },
     {
@@ -636,7 +650,7 @@
       "year": 2024,
       "era": "disney",
       "pageCount": 464,
-      "description": "With the Nihil's Stormwall isolating the Outer Rim, a group of Jedi and their allies must push beyond its deadly barrier — risking everything on a daring mission to reach those trapped inside.",
+      "description": "With the Nihil's Stormwall isolating the Outer Rim, a group of Jedi and their allies must push beyond its deadly barrier \u2014 risking everything on a daring mission to reach those trapped inside.",
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+High+Republic+Defy+the+Storm"
     },
     {
@@ -647,7 +661,7 @@
       "year": 2024,
       "era": "disney",
       "pageCount": 425,
-      "description": "As the Jedi work to dismantle the Nihil from within the Stormwall, a Jedi Knight is drawn toward a seductive and dangerous philosophy — one that could save lives or shatter everything the Order stands for.",
+      "description": "As the Jedi work to dismantle the Nihil from within the Stormwall, a Jedi Knight is drawn toward a seductive and dangerous philosophy \u2014 one that could save lives or shatter everything the Order stands for.",
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+High+Republic+Temptation+of+the+Force+Gratton"
     },
     {
@@ -658,7 +672,7 @@
       "year": 2024,
       "era": "disney",
       "pageCount": 500,
-      "description": "A young Jedi investigates a mysterious signal emanating from deep within Nihil-held space — uncovering a secret that could change the course of the war and the understanding of the Force itself.",
+      "description": "A young Jedi investigates a mysterious signal emanating from deep within Nihil-held space \u2014 uncovering a secret that could change the course of the war and the understanding of the Force itself.",
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+High+Republic+Tears+of+the+Nameless+Mann"
     },
     {
@@ -669,7 +683,7 @@
       "year": 2025,
       "era": "disney",
       "pageCount": 368,
-      "description": "In the final days of the High Republic Era, a Jedi searches for hope amid the wreckage of war — confronting the darkness that has settled over the galaxy and the light she still believes can prevail.",
+      "description": "In the final days of the High Republic Era, a Jedi searches for hope amid the wreckage of war \u2014 confronting the darkness that has settled over the galaxy and the light she still believes can prevail.",
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+High+Republic+Into+the+Light+Claudia+Gray"
     },
     {
@@ -680,7 +694,7 @@
       "year": 2025,
       "era": "disney",
       "pageCount": 448,
-      "description": "As the conflict with the Nihil reaches its climax, the Jedi Order faces a reckoning — tested in ways that will determine not just the outcome of the war, but the future of the Order itself.",
+      "description": "As the conflict with the Nihil reaches its climax, the Jedi Order faces a reckoning \u2014 tested in ways that will determine not just the outcome of the war, but the future of the Order itself.",
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+High+Republic+Trials+of+the+Jedi+Soule"
     },
     {
@@ -691,7 +705,7 @@
       "year": 2025,
       "era": "disney",
       "pageCount": 304,
-      "description": "Set two centuries after the High Republic's golden age, a Jedi on the fringes of the Order follows a trail of dark side energy through a galaxy grown complacent — and discovers a threat the Order is not prepared to face.",
+      "description": "Set two centuries after the High Republic's golden age, a Jedi on the fringes of the Order follows a trail of dark side energy through a galaxy grown complacent \u2014 and discovers a threat the Order is not prepared to face.",
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Acolyte+Wayseeker+Justina+Ireland"
     },
     {
@@ -759,7 +773,7 @@
       "year": 2022,
       "era": "disney",
       "pageCount": 410,
-      "description": "A restless young Obi-Wan Kenobi runs away from his master on an unsanctioned mission — and finds himself stranded on a mysterious planet where he must figure out what kind of Jedi, and what kind of person, he wants to be.",
+      "description": "A restless young Obi-Wan Kenobi runs away from his master on an unsanctioned mission \u2014 and finds himself stranded on a mysterious planet where he must figure out what kind of Jedi, and what kind of person, he wants to be.",
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Padawan+Kiersten+White"
     },
     {
@@ -770,7 +784,7 @@
       "year": 2019,
       "era": "disney",
       "pageCount": 330,
-      "description": "Qui-Gon Jinn and a young Obi-Wan Kenobi travel to a planet on the verge of civil war — where an unexpected prophecy and a difficult decision will test the bonds between master and apprentice.",
+      "description": "Qui-Gon Jinn and a young Obi-Wan Kenobi travel to a planet on the verge of civil war \u2014 where an unexpected prophecy and a difficult decision will test the bonds between master and apprentice.",
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Master+and+Apprentice+Claudia+Gray"
     },
     {
@@ -781,12 +795,12 @@
       "year": 2024,
       "era": "disney",
       "pageCount": 432,
-      "description": "One year before the Battle of Naboo, the entire Jedi Council travels to the Outer Rim world of Kwenn — a routine trip that becomes anything but, as the Jedi confront questions about their place in the galaxy and the living Force itself.",
+      "description": "One year before the Battle of Naboo, the entire Jedi Council travels to the Outer Rim world of Kwenn \u2014 a routine trip that becomes anything but, as the Jedi confront questions about their place in the galaxy and the living Force itself.",
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+The+Living+Force+John+Jackson+Miller"
     },
     {
       "id": "zen-grogu-and-dust-bunnies",
-      "title": "Zen – Grogu and Dust Bunnies",
+      "title": "Zen \u2013 Grogu and Dust Bunnies",
       "type": "short-movie",
       "format": "animated",
       "year": 2022,
@@ -797,14 +811,40 @@
     },
     {
       "id": "episode-i-the-phantom-menace",
-      "title": "Episode I – The Phantom Menace",
+      "title": "Episode I \u2013 The Phantom Menace",
       "type": "movie",
       "year": 1999,
       "duration": 136,
-      "description": "Two Jedi knights escort a young queen through a political crisis and discover a slave boy with an extraordinary connection to the Force — one that could fulfil an ancient Jedi prophecy.",
+      "description": "Two Jedi knights escort a young queen through a political crisis and discover a slave boy with an extraordinary connection to the Force \u2014 one that could fulfil an ancient Jedi prophecy.",
       "format": "live-action",
       "era": "lucas",
       "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-e0a9fee4-2959-4077-ad8c-8fab4fd6e4d1"
+    },
+    {
+      "id": "star-wars-journeys-the-phantom-menace",
+      "title": "Journeys: The Phantom Menace",
+      "type": "mobile-game",
+      "developer": "Disney Mobile",
+      "publisher": "Disney Publishing Worldwide",
+      "year": 2014,
+      "era": "disney",
+      "platforms": [
+        "iOS"
+      ],
+      "description": "An interactive retelling of Star Wars: Episode I \u2013 The Phantom Menace, combining motion comic-style visuals with mini-games and collectibles to guide players through the events of the film."
+    },
+    {
+      "id": "star-wars-journeys-beginnings",
+      "title": "Journeys: Beginnings",
+      "type": "mobile-game",
+      "developer": "Disney Interactive",
+      "publisher": "Disney Publishing Worldwide",
+      "year": 2014,
+      "era": "disney",
+      "platforms": [
+        "iOS"
+      ],
+      "description": "A prequel companion to Star Wars Journeys: The Phantom Menace, exploring the early life of Anakin Skywalker and the events on Tatooine leading up to the Boonta Eve Classic podrace."
     },
     {
       "id": "queens-peril",
@@ -814,7 +854,7 @@
       "year": 2020,
       "era": "disney",
       "pageCount": 288,
-      "description": "The untold story of how Padmé Amidala became Queen of Naboo — and how she assembled the handmaidens who would stand beside her, forging bonds of loyalty and friendship in the shadow of an invasion.",
+      "description": "The untold story of how Padm\u00e9 Amidala became Queen of Naboo \u2014 and how she assembled the handmaidens who would stand beside her, forging bonds of loyalty and friendship in the shadow of an invasion.",
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Queen%27s+Peril+EK+Johnston"
     },
     {
@@ -825,7 +865,7 @@
       "year": 2024,
       "era": "disney",
       "pageCount": 416,
-      "description": "In the days after Qui-Gon Jinn's funeral, Mace Windu travels to a remote world haunted by dark-side energy — leading a perilous mission that forces him to confront questions about the Force, leadership, and the nature of evil.",
+      "description": "In the days after Qui-Gon Jinn's funeral, Mace Windu travels to a remote world haunted by dark-side energy \u2014 leading a perilous mission that forces him to confront questions about the Force, leadership, and the nature of evil.",
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Mace+Windu+The+Glass+Abyss+Steven+Barnes"
     },
     {
@@ -836,12 +876,12 @@
       "year": 2019,
       "era": "disney",
       "pageCount": 352,
-      "description": "Padmé Amidala's reign as Queen ends, and she takes her place in the Galactic Senate — navigating a treacherous political world with the help of her loyal handmaidens as she finds her voice as a senator.",
+      "description": "Padm\u00e9 Amidala's reign as Queen ends, and she takes her place in the Galactic Senate \u2014 navigating a treacherous political world with the help of her loyal handmaidens as she finds her voice as a senator.",
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Queen%27s+Shadow+EK+Johnston"
     },
     {
       "id": "episode-ii-attack-of-the-clones",
-      "title": "Episode II – Attack of the Clones",
+      "title": "Episode II \u2013 Attack of the Clones",
       "type": "movie",
       "year": 2002,
       "duration": 142,
@@ -858,7 +898,7 @@
       "year": 2022,
       "era": "disney",
       "pageCount": 352,
-      "description": "As the Clone Wars begin, Padmé Amidala confronts the cost of the conflict she tried to prevent — while a secret ceremony, lasting promises, and her deepest convictions are tested by a galaxy at war.",
+      "description": "As the Clone Wars begin, Padm\u00e9 Amidala confronts the cost of the conflict she tried to prevent \u2014 while a secret ceremony, lasting promises, and her deepest convictions are tested by a galaxy at war.",
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Queen%27s+Hope+EK+Johnston"
     },
     {
@@ -869,7 +909,7 @@
       "year": 2022,
       "era": "disney",
       "pageCount": 384,
-      "description": "In the earliest days of the Clone Wars, Obi-Wan Kenobi is dispatched to Cato Neimoidia to investigate a bombing — while Anakin Skywalker, now a Jedi Knight on his own for the first time, must prove himself without his master.",
+      "description": "In the earliest days of the Clone Wars, Obi-Wan Kenobi is dispatched to Cato Neimoidia to investigate a bombing \u2014 while Anakin Skywalker, now a Jedi Knight on his own for the first time, must prove himself without his master.",
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Brotherhood+Mike+Chen"
     },
     {
@@ -1650,7 +1690,7 @@
       "year": 2015,
       "era": "disney",
       "pageCount": 336,
-      "description": "Based on unproduced Clone Wars scripts, an unlikely partnership forms between a Jedi Master and former Sith assassin Asajj Ventress — tasked with a mission to eliminate Count Dooku before more lives are lost to the war.",
+      "description": "Based on unproduced Clone Wars scripts, an unlikely partnership forms between a Jedi Master and former Sith assassin Asajj Ventress \u2014 tasked with a mission to eliminate Count Dooku before more lives are lost to the war.",
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Dark+Disciple+Christie+Golden"
     },
     {
@@ -1661,7 +1701,7 @@
       "year": 2020,
       "era": "disney",
       "pageCount": 383,
-      "description": "In the Unknown Regions of the galaxy, the Chiss Ascendancy faces a mysterious enemy unlike any they have encountered before — and a young military officer named Thrawn begins his rise through the ranks.",
+      "description": "In the Unknown Regions of the galaxy, the Chiss Ascendancy faces a mysterious enemy unlike any they have encountered before \u2014 and a young military officer named Thrawn begins his rise through the ranks.",
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Thrawn+Ascendancy+Chaos+Rising+Zahn"
     },
     {
@@ -1672,12 +1712,12 @@
       "year": 2021,
       "era": "disney",
       "pageCount": 432,
-      "description": "Thrawn continues to defend the Chiss Ascendancy against unseen threats in the Unknown Regions — but political enemies within the Ascendancy itself may prove more dangerous than any foe beyond its borders.",
+      "description": "Thrawn continues to defend the Chiss Ascendancy against unseen threats in the Unknown Regions \u2014 but political enemies within the Ascendancy itself may prove more dangerous than any foe beyond its borders.",
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Thrawn+Ascendancy+Greater+Good+Zahn"
     },
     {
       "id": "episode-iii-revenge-of-the-sith",
-      "title": "Episode III – Revenge of the Sith",
+      "title": "Episode III \u2013 Revenge of the Sith",
       "type": "movie",
       "year": 2005,
       "duration": 140,
@@ -1694,7 +1734,7 @@
       "year": 2025,
       "era": "disney",
       "pageCount": 384,
-      "description": "In the immediate aftermath of Order 66, Darth Vader is dispatched to a remote world to investigate rumors of a Force-wielding shaman — a mission that forces the new Sith Lord to confront the cost of absolute power.",
+      "description": "In the immediate aftermath of Order 66, Darth Vader is dispatched to a remote world to investigate rumors of a Force-wielding shaman \u2014 a mission that forces the new Sith Lord to confront the cost of absolute power.",
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Master+of+Evil+Adam+Christopher"
     },
     {
@@ -1967,7 +2007,7 @@
       "year": 2023,
       "era": "disney",
       "pageCount": 336,
-      "description": "The secret origin of the Inquisitorius — following a Jedi who survived Order 66 and is broken, reshaped, and reforged into one of the Emperor's most dangerous dark-side hunters.",
+      "description": "The secret origin of the Inquisitorius \u2014 following a Jedi who survived Order 66 and is broken, reshaped, and reforged into one of the Emperor's most dangerous dark-side hunters.",
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Inquisitor+Rise+of+the+Red+Blade+Dawson"
     },
     {
@@ -1978,7 +2018,7 @@
       "year": 2025,
       "era": "disney",
       "pageCount": 320,
-      "description": "Set during the earliest days of the Empire, Clone Force 99 takes a mission that goes wrong on a world caught between Imperial control and desperate resistance — forcing the Bad Batch to choose who they protect.",
+      "description": "Set during the earliest days of the Empire, Clone Force 99 takes a mission that goes wrong on a world caught between Imperial control and desperate resistance \u2014 forcing the Bad Batch to choose who they protect.",
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Sanctuary+Bad+Batch+Novel+Lamar+Giles"
     },
     {
@@ -1989,7 +2029,7 @@
       "year": 2021,
       "era": "disney",
       "pageCount": 592,
-      "description": "The Chiss Ascendancy is fracturing from within as rival families conspire for power — and Thrawn must navigate a treacherous political crisis in the Unknown Regions while a greater threat looms beyond.",
+      "description": "The Chiss Ascendancy is fracturing from within as rival families conspire for power \u2014 and Thrawn must navigate a treacherous political crisis in the Unknown Regions while a greater threat looms beyond.",
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Thrawn+Ascendancy+Lesser+Evil+Zahn"
     },
     {
@@ -2000,7 +2040,7 @@
       "year": 2016,
       "era": "disney",
       "pageCount": 353,
-      "description": "One year after Order 66, Ahsoka Tano is living in hiding — until she is drawn into a conflict on a farming moon that forces her to pick up her lightsabers again and choose what she stands for in a galaxy without the Jedi.",
+      "description": "One year after Order 66, Ahsoka Tano is living in hiding \u2014 until she is drawn into a conflict on a farming moon that forces her to pick up her lightsabers again and choose what she stands for in a galaxy without the Jedi.",
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Ahsoka+EK+Johnston"
     },
     {
@@ -2011,7 +2051,7 @@
       "year": 2016,
       "era": "disney",
       "pageCount": 330,
-      "description": "The secret origin of the Death Star — how a brilliant scientist and his family are drawn into the Empire's most terrifying weapons program, and how a decades-long friendship becomes the first crack in the armor of the Empire.",
+      "description": "The secret origin of the Death Star \u2014 how a brilliant scientist and his family are drawn into the Empire's most terrifying weapons program, and how a decades-long friendship becomes the first crack in the armor of the Empire.",
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Catalyst+A+Rogue+One+Novel+Luceno"
     },
     {
@@ -2022,7 +2062,7 @@
       "year": 2015,
       "era": "disney",
       "pageCount": 320,
-      "description": "Darth Vader and Emperor Palpatine are ambushed and stranded on the hostile world of Ryloth — and must fight their way through a rebel insurgency together, revealing the brutal dynamic between master and apprentice.",
+      "description": "Darth Vader and Emperor Palpatine are ambushed and stranded on the hostile world of Ryloth \u2014 and must fight their way through a rebel insurgency together, revealing the brutal dynamic between master and apprentice.",
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Lords+of+the+Sith+Paul+Kemp"
     },
     {
@@ -2033,7 +2073,7 @@
       "year": 2014,
       "era": "disney",
       "pageCount": 274,
-      "description": "The definitive portrait of Wilhuff Tarkin — tracing his ruthless rise through the Empire's ranks and exploring the ideology that shaped the man who would command the Death Star.",
+      "description": "The definitive portrait of Wilhuff Tarkin \u2014 tracing his ruthless rise through the Empire's ranks and exploring the ideology that shaped the man who would command the Death Star.",
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Tarkin+James+Luceno"
     },
     {
@@ -2103,7 +2143,7 @@
     },
     {
       "id": "maul-shadow-lord",
-      "title": "Maul – Shadow Lord",
+      "title": "Maul \u2013 Shadow Lord",
       "type": "series",
       "year": 2026,
       "seasons": [
@@ -2223,7 +2263,7 @@
       "year": 2018,
       "era": "disney",
       "pageCount": 352,
-      "description": "Before the events of Solo, a young Han and Qi'ra are low-level street scrumrats on Corellia — until a botched job thrusts them into the crosshairs of two rival crime syndicates and forces them to rely on each other.",
+      "description": "Before the events of Solo, a young Han and Qi'ra are low-level street scrumrats on Corellia \u2014 until a botched job thrusts them into the crosshairs of two rival crime syndicates and forces them to rely on each other.",
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Most+Wanted+Rae+Carson"
     },
     {
@@ -2234,7 +2274,7 @@
       "year": 2023,
       "era": "disney",
       "pageCount": 368,
-      "description": "After the events of Solo, Qi'ra survives within the brutal ranks of Crimson Dawn — climbing through its hierarchy with cunning and ruthlessness, shaping the woman she is becoming in the galaxy's underworld.",
+      "description": "After the events of Solo, Qi'ra survives within the brutal ranks of Crimson Dawn \u2014 climbing through its hierarchy with cunning and ruthlessness, shaping the woman she is becoming in the galaxy's underworld.",
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Crimson+Climb+EK+Johnston"
     },
     {
@@ -2245,7 +2285,7 @@
       "year": 2014,
       "era": "disney",
       "pageCount": 367,
-      "description": "A cynical former Jedi and an idealistic rebel cross paths on an Imperial-controlled mining world — setting in motion events that will bring Kanan Jarrus and Hera Syndulla together and kindle the spark of rebellion.",
+      "description": "A cynical former Jedi and an idealistic rebel cross paths on an Imperial-controlled mining world \u2014 setting in motion events that will bring Kanan Jarrus and Hera Syndulla together and kindle the spark of rebellion.",
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+A+New+Dawn+John+Jackson+Miller"
     },
     {
@@ -2254,7 +2294,7 @@
       "type": "movie",
       "year": 2018,
       "duration": 135,
-      "description": "The early adventures of Han Solo, from his escape off a grim homeworld to his first brush with the criminal underworld — including a fateful heist, a legendary ship, and a lifelong co-pilot.",
+      "description": "The early adventures of Han Solo, from his escape off a grim homeworld to his first brush with the criminal underworld \u2014 including a fateful heist, a legendary ship, and a lifelong co-pilot.",
       "format": "live-action",
       "era": "disney",
       "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-791bc772-d930-40c9-83ec-5ef85923573e"
@@ -2267,12 +2307,12 @@
       "year": 2018,
       "era": "disney",
       "pageCount": 282,
-      "description": "The novelization of Solo: A Star Wars Story — expanding on Han's early adventures, the Kessel Run, and the crew of the Millennium Falcon with additional scenes and deeper character moments.",
+      "description": "The novelization of Solo: A Star Wars Story \u2014 expanding on Han's early adventures, the Kessel Run, and the crew of the Millennium Falcon with additional scenes and deeper character moments.",
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Solo+Expanded+Edition+Mur+Lafferty"
     },
     {
       "id": "star-wars-beyond-victory",
-      "title": "Beyond Victory — A Mixed Reality Playset",
+      "title": "Beyond Victory \u2014 A Mixed Reality Playset",
       "type": "multiplatform-game",
       "developer": "ILM Immersive",
       "publisher": "ILM Immersive",
@@ -2485,7 +2525,7 @@
           ]
         }
       ],
-      "description": "A ground-level, espionage-driven prequel to Rogue One following Cassian Andor's gradual radicalisation — tracing how an ordinary man becomes a committed revolutionary against the Empire's suffocating machinery.",
+      "description": "A ground-level, espionage-driven prequel to Rogue One following Cassian Andor's gradual radicalisation \u2014 tracing how an ordinary man becomes a committed revolutionary against the Empire's suffocating machinery.",
       "format": "live-action",
       "era": "disney",
       "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-faba988a-a9f5-45f2-a074-0775a7d6f67a"
@@ -2878,7 +2918,7 @@
             },
             {
               "episode": 13,
-              "title": "Family Reunion – and Farewell",
+              "title": "Family Reunion \u2013 and Farewell",
               "duration": 44
             }
           ]
@@ -2897,7 +2937,9 @@
       "publisher": "Disney Interactive",
       "year": 2014,
       "era": "disney",
-      "platforms": ["Browser"],
+      "platforms": [
+        "Browser"
+      ],
       "description": "A browser game set during the early days of the Spectres crew, in which players help defend the Ghost from Imperial attack."
     },
     {
@@ -2908,7 +2950,9 @@
       "publisher": "Disney Interactive",
       "year": 2014,
       "era": "disney",
-      "platforms": ["Browser"],
+      "platforms": [
+        "Browser"
+      ],
       "description": "A turn-based strategy browser game in which players command the Spectres through tactical missions against Imperial forces."
     },
     {
@@ -2919,7 +2963,9 @@
       "publisher": "Disney Interactive",
       "year": 2016,
       "era": "disney",
-      "platforms": ["Browser"],
+      "platforms": [
+        "Browser"
+      ],
       "description": "A browser game centred on the Ghost's irascible astromech droid Chopper, navigating obstacles and Imperial hazards."
     },
     {
@@ -2930,8 +2976,25 @@
       "publisher": "Disney Interactive",
       "year": 2015,
       "era": "disney",
-      "platforms": ["Browser"],
+      "platforms": [
+        "Browser"
+      ],
       "description": "An arcade browser game loosely adapting the Siege of Lothal, putting the Spectres crew up against Imperial forces on Lothal's capital."
+    },
+    {
+      "id": "rebels-recon-missions",
+      "title": "Rebels: Recon Missions",
+      "type": "mobile-game",
+      "developer": "Gigataur",
+      "publisher": "Disney Interactive",
+      "year": 2015,
+      "era": "disney",
+      "platforms": [
+        "iOS",
+        "Android",
+        "Windows Phone"
+      ],
+      "description": "A side-scrolling platformer mobile game set in the Star Wars Rebels universe, in which players control Ezra Bridger on missions against the Galactic Empire across multiple levels and environments."
     },
     {
       "id": "rebels-imperial-heist",
@@ -2941,7 +3004,9 @@
       "publisher": "Disney Interactive",
       "year": 2017,
       "era": "disney",
-      "platforms": ["Browser"],
+      "platforms": [
+        "Browser"
+      ],
       "description": "An endless-runner browser game set during the Rebels era, in which players navigate Imperial-controlled territory as a member of the growing rebellion."
     },
     {
@@ -2952,7 +3017,9 @@
       "publisher": "Disney Interactive",
       "year": 2015,
       "era": "disney",
-      "platforms": ["Browser"],
+      "platforms": [
+        "Browser"
+      ],
       "description": "A browser game featuring the Season 2 cast of Rebels, sending players on combat missions against the Empire across a variety of dangerous locales."
     },
     {
@@ -2963,7 +3030,9 @@
       "publisher": "Disney Interactive",
       "year": 2017,
       "era": "disney",
-      "platforms": ["Browser"],
+      "platforms": [
+        "Browser"
+      ],
       "description": "A browser game using characters and elements from Rebels, tasking players with covert special operations missions alongside the crew of the Ghost."
     },
     {
@@ -2974,7 +3043,7 @@
       "year": 2017,
       "era": "disney",
       "pageCount": 409,
-      "description": "At sixteen, Leia Organa must prove herself worthy of the Alderaanian throne through acts of courage and service — while quietly uncovering the Rebellion her parents have been secretly building, and choosing her own path.",
+      "description": "At sixteen, Leia Organa must prove herself worthy of the Alderaanian throne through acts of courage and service \u2014 while quietly uncovering the Rebellion her parents have been secretly building, and choosing her own path.",
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Leia+Princess+of+Alderaan+Claudia+Gray"
     },
     {
@@ -2985,7 +3054,7 @@
       "year": 2017,
       "era": "disney",
       "pageCount": 427,
-      "description": "The story of how the alien tactician Thrawn rose through the Imperial ranks — told through his own eyes and those of a young Imperial officer caught in his orbit, as Thrawn dissects enemies through art, culture, and cold genius.",
+      "description": "The story of how the alien tactician Thrawn rose through the Imperial ranks \u2014 told through his own eyes and those of a young Imperial officer caught in his orbit, as Thrawn dissects enemies through art, culture, and cold genius.",
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Thrawn+Timothy+Zahn+2017"
     },
     {
@@ -2996,7 +3065,7 @@
       "year": 2018,
       "era": "disney",
       "pageCount": 368,
-      "description": "Darth Vader and Thrawn are sent on a joint mission to the Unknown Regions — a mission that parallels an earlier encounter between Anakin Skywalker and Thrawn during the Clone Wars, revealing the complicated history between them.",
+      "description": "Darth Vader and Thrawn are sent on a joint mission to the Unknown Regions \u2014 a mission that parallels an earlier encounter between Anakin Skywalker and Thrawn during the Clone Wars, revealing the complicated history between them.",
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Thrawn+Alliances+Timothy+Zahn"
     },
     {
@@ -3007,7 +3076,7 @@
       "year": 2019,
       "era": "disney",
       "pageCount": 320,
-      "description": "Thrawn is ordered to prove the value of his TIE Defender project against the Death Star program — a political battle that sends him on a mission into the Unknown Regions and forces him to choose between loyalty and principle.",
+      "description": "Thrawn is ordered to prove the value of his TIE Defender project against the Death Star program \u2014 a political battle that sends him on a mission into the Unknown Regions and forces him to choose between loyalty and principle.",
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Thrawn+Treason+Timothy+Zahn"
     },
     {
@@ -3018,7 +3087,7 @@
       "year": 2017,
       "era": "disney",
       "pageCount": 410,
-      "description": "Filling in the years between Rogue One's prologue and its main story — Jyn Erso's life after being abandoned by Saw Gerrera, the hardships that shaped her, and the long road that brought her to the Rebellion.",
+      "description": "Filling in the years between Rogue One's prologue and its main story \u2014 Jyn Erso's life after being abandoned by Saw Gerrera, the hardships that shaped her, and the long road that brought her to the Rebellion.",
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Rebel+Rising+Beth+Revis"
     },
     {
@@ -3027,7 +3096,7 @@
       "type": "movie",
       "year": 2016,
       "duration": 133,
-      "description": "A band of rebels with little to lose band together on a desperate, unsanctioned mission to steal the plans for the Empire's planet-killing superweapon — a mission the galaxy cannot afford to fail.",
+      "description": "A band of rebels with little to lose band together on a desperate, unsanctioned mission to steal the plans for the Empire's planet-killing superweapon \u2014 a mission the galaxy cannot afford to fail.",
       "format": "live-action",
       "era": "disney",
       "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-5ec74210-f970-42b7-a39f-8653c0a9eab8"
@@ -3040,12 +3109,14 @@
       "publisher": "Disney Interactive",
       "year": 2017,
       "era": "disney",
-      "platforms": ["Browser"],
+      "platforms": [
+        "Browser"
+      ],
       "description": "A browser companion game released alongside Rogue One, drawing on the film's characters and events to put players in the thick of the Rebel assault to steal the Death Star plans."
     },
     {
       "id": "vader-immortal-episode-i",
-      "title": "Vader Immortal — Episode I",
+      "title": "Vader Immortal \u2014 Episode I",
       "type": "multiplatform-game",
       "developer": "ILMxLAB",
       "publisher": "Disney Interactive",
@@ -3061,7 +3132,7 @@
     },
     {
       "id": "vader-immortal-episode-ii",
-      "title": "Vader Immortal — Episode II",
+      "title": "Vader Immortal \u2014 Episode II",
       "type": "multiplatform-game",
       "developer": "ILMxLAB",
       "publisher": "Disney Interactive",
@@ -3077,7 +3148,7 @@
     },
     {
       "id": "vader-immortal-episode-iii",
-      "title": "Vader Immortal — Episode III",
+      "title": "Vader Immortal \u2014 Episode III",
       "type": "multiplatform-game",
       "developer": "ILMxLAB",
       "publisher": "Disney Interactive",
@@ -3109,7 +3180,7 @@
     },
     {
       "id": "episode-iv-a-new-hope",
-      "title": "Episode IV – A New Hope",
+      "title": "Episode IV \u2013 A New Hope",
       "type": "movie",
       "year": 1977,
       "duration": 121,
@@ -3119,6 +3190,34 @@
       "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-9a280e53-fcc0-4e17-a02c-b1f40913eb0b"
     },
     {
+      "id": "star-wars-heroes-path",
+      "title": "Heroes Path",
+      "type": "mobile-game",
+      "developer": "Disney Interactive",
+      "publisher": "Disney Interactive",
+      "year": 2015,
+      "era": "disney",
+      "platforms": [
+        "iOS"
+      ],
+      "description": "A puzzle game in which players guide iconic Star Wars heroes through increasingly complex maze-based levels, unlocking new characters from across the saga as they progress."
+    },
+    {
+      "id": "star-wars-commander",
+      "title": "Commander",
+      "type": "mobile-game",
+      "developer": "Disney Mobile",
+      "publisher": "Disney Interactive",
+      "year": 2014,
+      "era": "disney",
+      "platforms": [
+        "iOS",
+        "Android",
+        "Windows Phone"
+      ],
+      "description": "A base-building real-time strategy game in which players choose to fight for the Galactic Empire or the Rebel Alliance, constructing and defending bases while deploying troops in battles across the galaxy."
+    },
+    {
       "id": "heir-to-the-jedi",
       "title": "Heir to the Jedi",
       "type": "novel",
@@ -3126,16 +3225,16 @@
       "year": 2015,
       "era": "disney",
       "pageCount": 304,
-      "description": "Luke Skywalker takes on a solo mission for the Rebellion to rescue a valued slicer from Imperial captivity — and begins his first tentative steps toward understanding the Force without a master to guide him.",
+      "description": "Luke Skywalker takes on a solo mission for the Rebellion to rescue a valued slicer from Imperial captivity \u2014 and begins his first tentative steps toward understanding the Force without a master to guide him.",
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Heir+to+the+Jedi+Kevin+Hearne"
     },
     {
       "id": "episode-v-the-empire-strikes-back",
-      "title": "Episode V – The Empire Strikes Back",
+      "title": "Episode V \u2013 The Empire Strikes Back",
       "type": "movie",
       "year": 1980,
       "duration": 124,
-      "description": "The Empire launches a devastating counter-offensive against the Rebel Alliance. While the rebels flee across the galaxy, a young Jedi seeks out a legendary master to complete his training — and learns a truth that changes everything.",
+      "description": "The Empire launches a devastating counter-offensive against the Rebel Alliance. While the rebels flee across the galaxy, a young Jedi seeks out a legendary master to complete his training \u2014 and learns a truth that changes everything.",
       "format": "live-action",
       "era": "lucas",
       "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-0f5c5223-f4f6-46ef-ba8a-69cb0e17d8d3"
@@ -3148,7 +3247,9 @@
       "publisher": "Disney Interactive",
       "year": 2016,
       "era": "disney",
-      "platforms": ["Browser"],
+      "platforms": [
+        "Browser"
+      ],
       "description": "A browser game loosely adapting events from The Empire Strikes Back, in which players undergo lightsaber training under Yoda's guidance on the swamp planet Dagobah."
     },
     {
@@ -3159,7 +3260,7 @@
       "year": 2015,
       "era": "disney",
       "pageCount": 397,
-      "description": "A ground-level view of the Galactic Civil War through the eyes of the 61st Mobile Infantry — soldiers, refugees, and deserters — as Twilight Company fights a brutal campaign across multiple worlds with no end in sight.",
+      "description": "A ground-level view of the Galactic Civil War through the eyes of the 61st Mobile Infantry \u2014 soldiers, refugees, and deserters \u2014 as Twilight Company fights a brutal campaign across multiple worlds with no end in sight.",
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Battlefront+Twilight+Company+Alexander+Freed"
     },
     {
@@ -3175,12 +3276,12 @@
         "Xbox Series X/S",
         "PC"
       ],
-      "description": "Set in the period between The Empire Strikes Back and Return of the Jedi, Outlaws follows Kay Vess, a young scoundrel, and her companion Nix as they attempt to pull off the biggest heist in the Outer Rim — getting tangled up with the galaxy's most dangerous crime syndicates.",
+      "description": "Set in the period between The Empire Strikes Back and Return of the Jedi, Outlaws follows Kay Vess, a young scoundrel, and her companion Nix as they attempt to pull off the biggest heist in the Outer Rim \u2014 getting tangled up with the galaxy's most dangerous crime syndicates.",
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Outlaws+game+Ubisoft"
     },
     {
       "id": "episode-vi-return-of-the-jedi",
-      "title": "Episode VI – Return of the Jedi",
+      "title": "Episode VI \u2013 Return of the Jedi",
       "type": "movie",
       "year": 1983,
       "duration": 131,
@@ -3188,6 +3289,20 @@
       "format": "live-action",
       "era": "lucas",
       "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-4b6e7cda-daa5-4f2d-9b61-35bbe562c69c"
+    },
+    {
+      "id": "star-wars-uprising",
+      "title": "Uprising",
+      "type": "mobile-game",
+      "developer": "Kabam",
+      "publisher": "Disney Interactive",
+      "year": 2015,
+      "era": "disney",
+      "platforms": [
+        "iOS",
+        "Android"
+      ],
+      "description": "An action RPG set in the immediate aftermath of the Battle of Endor, following a new hero fighting against Imperial remnants blockading the Anoat sector as news of the Emperor's death spreads."
     },
     {
       "id": "star-wars-squadrons",
@@ -3220,7 +3335,7 @@
         "Xbox One",
         "PC"
       ],
-      "description": "Featuring a canonical single-player story following Imperial special forces commander Iden Versio from the Battle of Endor through the fall of the Empire, plus multiplayer battles spanning all eras — from the Clone Wars to the rise of the First Order.",
+      "description": "Featuring a canonical single-player story following Imperial special forces commander Iden Versio from the Battle of Endor through the fall of the Empire, plus multiplayer battles spanning all eras \u2014 from the Clone Wars to the rise of the First Order.",
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Battlefront+II+2017+EA"
     },
     {
@@ -3231,12 +3346,12 @@
       "year": 2022,
       "era": "disney",
       "pageCount": 344,
-      "description": "In the immediate aftermath of the Battle of Endor, Leia and Han take a brief honeymoon aboard an Imperial luxury liner — only to discover the Empire is far from finished, and their first days of peace may be their last.",
+      "description": "In the immediate aftermath of the Battle of Endor, Leia and Han take a brief honeymoon aboard an Imperial luxury liner \u2014 only to discover the Empire is far from finished, and their first days of peace may be their last.",
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+The+Princess+and+the+Scoundrel+Beth+Revis"
     },
     {
       "id": "squadrons-hunted",
-      "title": "Squadrons – Hunted",
+      "title": "Squadrons \u2013 Hunted",
       "type": "short-movie",
       "year": 2020,
       "duration": 7,
@@ -3253,7 +3368,7 @@
       "year": 2019,
       "era": "disney",
       "pageCount": 432,
-      "description": "In the chaos following the Emperor's death, a New Republic Intelligence officer assembles a ragtag squadron of misfit pilots — each haunted by their own past — and points them at a deadly Imperial shadow wing that refuses to surrender.",
+      "description": "In the chaos following the Emperor's death, a New Republic Intelligence officer assembles a ragtag squadron of misfit pilots \u2014 each haunted by their own past \u2014 and points them at a deadly Imperial shadow wing that refuses to surrender.",
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Alphabet+Squadron+Alexander+Freed"
     },
     {
@@ -3264,7 +3379,7 @@
       "year": 2015,
       "era": "disney",
       "pageCount": 366,
-      "description": "In the weeks after the Battle of Endor, Imperial remnants plot their next move on the planet Akiva — as a New Republic pilot, a bounty hunter, a former Imperial loyalty officer, and a teenage rebel collide in a fight for the galaxy's future.",
+      "description": "In the weeks after the Battle of Endor, Imperial remnants plot their next move on the planet Akiva \u2014 as a New Republic pilot, a bounty hunter, a former Imperial loyalty officer, and a teenage rebel collide in a fight for the galaxy's future.",
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Aftermath+Chuck+Wendig"
     },
     {
@@ -3275,7 +3390,7 @@
       "year": 2016,
       "era": "disney",
       "pageCount": 430,
-      "description": "Han Solo goes rogue to liberate Wookiee slaves on Kashyyyk — drawing Norra Wexley and her crew into a mission that puts them on a collision course with one of the Empire's most dangerous surviving leaders.",
+      "description": "Han Solo goes rogue to liberate Wookiee slaves on Kashyyyk \u2014 drawing Norra Wexley and her crew into a mission that puts them on a collision course with one of the Empire's most dangerous surviving leaders.",
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Aftermath+Life+Debt+Chuck+Wendig"
     },
     {
@@ -3286,7 +3401,7 @@
       "year": 2020,
       "era": "disney",
       "pageCount": 416,
-      "description": "Alphabet Squadron hunts the last remnants of the 204th Imperial Fighter Wing into the outer reaches of the galaxy — but the quarry is more dangerous than ever, and the hunters are fracturing from within.",
+      "description": "Alphabet Squadron hunts the last remnants of the 204th Imperial Fighter Wing into the outer reaches of the galaxy \u2014 but the quarry is more dangerous than ever, and the hunters are fracturing from within.",
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Alphabet+Squadron+Shadow+Fall+Freed"
     },
     {
@@ -3297,7 +3412,7 @@
       "year": 2021,
       "era": "disney",
       "pageCount": 320,
-      "description": "The final confrontation between Alphabet Squadron and the 204th approaches — but victory will demand a cost none of them anticipated, and the end of the war may not look like the one any of them imagined.",
+      "description": "The final confrontation between Alphabet Squadron and the 204th approaches \u2014 but victory will demand a cost none of them anticipated, and the end of the war may not look like the one any of them imagined.",
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Alphabet+Squadron+Victory%27s+Price+Freed"
     },
     {
@@ -3308,7 +3423,7 @@
       "year": 2017,
       "era": "disney",
       "pageCount": 423,
-      "description": "The Galactic Civil War reaches its conclusion at the Battle of Jakku — as Norra Wexley and her crew, Admiral Rae Sloane, and the last of the Imperial fleet converge for a final reckoning that will determine the galaxy's fate.",
+      "description": "The Galactic Civil War reaches its conclusion at the Battle of Jakku \u2014 as Norra Wexley and her crew, Admiral Rae Sloane, and the last of the Imperial fleet converge for a final reckoning that will determine the galaxy's fate.",
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Aftermath+Empire%27s+End+Chuck+Wendig"
     },
     {
@@ -3319,18 +3434,18 @@
       "year": 2015,
       "era": "disney",
       "pageCount": 551,
-      "description": "Two childhood friends from a backwater planet both join the Empire — one becomes a TIE pilot, the other eventually defects to the Rebellion — as their opposing paths and enduring bond trace the entire arc of the Galactic Civil War.",
+      "description": "Two childhood friends from a backwater planet both join the Empire \u2014 one becomes a TIE pilot, the other eventually defects to the Rebellion \u2014 as their opposing paths and enduring bond trace the entire arc of the Galactic Civil War.",
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Lost+Stars+Claudia+Gray"
     },
     {
       "id": "last-shot",
       "title": "Last Shot",
       "type": "novel",
-      "author": "Daniel José Older",
+      "author": "Daniel Jos\u00e9 Older",
       "year": 2018,
       "era": "disney",
       "pageCount": 368,
-      "description": "A dual-timeline thriller following Han Solo and Lando Calrissian — jumping between their wild younger days and the early years of the New Republic — as they hunt a dangerous criminal tied to a weapon capable of terrible destruction.",
+      "description": "A dual-timeline thriller following Han Solo and Lando Calrissian \u2014 jumping between their wild younger days and the early years of the New Republic \u2014 as they hunt a dangerous criminal tied to a weapon capable of terrible destruction.",
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Last+Shot+Daniel+Jose+Older"
     },
     {
@@ -3475,7 +3590,7 @@
           ]
         }
       ],
-      "description": "A solitary bounty hunter operating far from the reach of the New Republic takes a job with an unusual payload — a mysterious child he cannot bring himself to hand over — and becomes an unlikely guardian.",
+      "description": "A solitary bounty hunter operating far from the reach of the New Republic takes a job with an unusual payload \u2014 a mysterious child he cannot bring himself to hand over \u2014 and becomes an unlikely guardian.",
       "format": "live-action",
       "era": "disney",
       "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-422f6dcc-226f-44e7-98d4-22de69b31cf3"
@@ -3749,7 +3864,7 @@
           ]
         }
       ],
-      "description": "Four kids from a peaceful, isolated planet stumble into the wider galaxy by accident and find themselves completely out of their depth — stranded in a lawless corner of space with only a mysterious stranger to guide them home.",
+      "description": "Four kids from a peaceful, isolated planet stumble into the wider galaxy by accident and find themselves completely out of their depth \u2014 stranded in a lawless corner of space with only a mysterious stranger to guide them home.",
       "format": "live-action",
       "era": "disney",
       "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-4a73a750-f18c-450a-b9f7-d9f40974ff9d"
@@ -3762,7 +3877,7 @@
       "year": 2020,
       "era": "disney",
       "pageCount": 384,
-      "description": "Long before becoming the Resistance's greatest pilot, a teenage Poe Dameron runs away from home and falls in with a crew of spice runners — learning hard lessons about loyalty, consequence, and who he wants to become.",
+      "description": "Long before becoming the Resistance's greatest pilot, a teenage Poe Dameron runs away from home and falls in with a crew of spice runners \u2014 learning hard lessons about loyalty, consequence, and who he wants to become.",
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Poe+Dameron+Free+Fall+Alex+Segura"
     },
     {
@@ -3773,7 +3888,7 @@
       "year": 2022,
       "era": "disney",
       "pageCount": 496,
-      "description": "Luke Skywalker and Lando Calrissian search for a family hiding from the Sith — following a trail of dark-side breadcrumbs that leads toward Exegol and fills in the untold history behind the events of The Rise of Skywalker.",
+      "description": "Luke Skywalker and Lando Calrissian search for a family hiding from the Sith \u2014 following a trail of dark-side breadcrumbs that leads toward Exegol and fills in the untold history behind the events of The Rise of Skywalker.",
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Shadow+of+the+Sith+Adam+Christopher"
     },
     {
@@ -3784,7 +3899,7 @@
       "year": 2016,
       "era": "disney",
       "pageCount": 349,
-      "description": "Six years before the rise of the First Order, Senator Leia Organa navigates a fractured New Republic Senate while a conspiracy threatens to tear the galaxy apart — and forces her to confront a truth that will change everything.",
+      "description": "Six years before the rise of the First Order, Senator Leia Organa navigates a fractured New Republic Senate while a conspiracy threatens to tear the galaxy apart \u2014 and forces her to confront a truth that will change everything.",
       "audibleUrl": "https://www.audible.com/pd/Star-Wars-Bloodline-New-Republic-Audiobook/B01CRMO9BE",
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Bloodline+Claudia+Gray"
     },
@@ -3796,7 +3911,7 @@
       "year": 2019,
       "era": "disney",
       "pageCount": 379,
-      "description": "A teenage boy with the ability to sense Force echoes in old objects embarks on a road trip through the galaxy — uncovering relics and stories from the Jedi Order's past as the First Order's shadow begins to fall.",
+      "description": "A teenage boy with the ability to sense Force echoes in old objects embarks on a road trip through the galaxy \u2014 uncovering relics and stories from the Jedi Order's past as the First Order's shadow begins to fall.",
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Force+Collector+Kevin+Shinick"
     },
     {
@@ -3807,7 +3922,7 @@
       "year": 2017,
       "era": "disney",
       "pageCount": 380,
-      "description": "The origin story of Captain Phasma — a tale of brutal survival on a harsh world, ruthless ambition, and the cold pragmatism that forged one of the First Order's most feared commanders.",
+      "description": "The origin story of Captain Phasma \u2014 a tale of brutal survival on a harsh world, ruthless ambition, and the cold pragmatism that forged one of the First Order's most feared commanders.",
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Phasma+Delilah+S+Dawson"
     },
     {
@@ -4034,7 +4149,7 @@
     },
     {
       "id": "episode-vii-the-force-awakens",
-      "title": "Episode VII – The Force Awakens",
+      "title": "Episode VII \u2013 The Force Awakens",
       "type": "movie",
       "year": 2015,
       "duration": 138,
@@ -4044,6 +4159,20 @@
       "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-2854a94d-3702-40bd-97a4-12d55a809188"
     },
     {
+      "id": "star-wars-batuu-bounty-hunters",
+      "title": "Batuu Bounty Hunters",
+      "type": "mobile-game",
+      "developer": "Disney",
+      "publisher": "Disney",
+      "year": 2022,
+      "era": "disney",
+      "platforms": [
+        "iOS",
+        "Android"
+      ],
+      "description": "A casual mobile game set on the planet Batuu, in which players track down bounty targets across the Black Spire Outpost and surrounding areas of Galaxy's Edge."
+    },
+    {
       "id": "star-wars-x-wing-fighter",
       "title": "X-wing Fighter",
       "type": "browser-game",
@@ -4051,7 +4180,9 @@
       "publisher": "Disney Interactive",
       "year": 2017,
       "era": "disney",
-      "platforms": ["Browser"],
+      "platforms": [
+        "Browser"
+      ],
       "description": "A browser game adapting events from The Force Awakens, in which players pilot an X-wing on missions against the First Order."
     },
     {
@@ -4062,12 +4193,12 @@
       "year": 2017,
       "era": "disney",
       "pageCount": 320,
-      "description": "Four novellas set in the glittering casino city of Canto Bight — weaving interconnected stories of gamblers, grifters, and dreamers on the night Finn and Rose passed through, painting a vivid portrait of the galaxy's gilded inequality.",
+      "description": "Four novellas set in the glittering casino city of Canto Bight \u2014 weaving interconnected stories of gamblers, grifters, and dreamers on the night Finn and Rose passed through, painting a vivid portrait of the galaxy's gilded inequality.",
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Canto+Bight+anthology"
     },
     {
       "id": "episode-viii-the-last-jedi",
-      "title": "Episode VIII – The Last Jedi",
+      "title": "Episode VIII \u2013 The Last Jedi",
       "type": "movie",
       "year": 2017,
       "duration": 152,
@@ -4108,7 +4239,7 @@
     },
     {
       "id": "star-wars-tales-from-the-galaxys-edge-last-call",
-      "title": "Tales from the Galaxy's Edge — Last Call",
+      "title": "Tales from the Galaxy's Edge \u2014 Last Call",
       "type": "multiplatform-game",
       "developer": "ILMxLAB",
       "publisher": "Disney Electronic Content",
@@ -4129,7 +4260,7 @@
       "year": 2019,
       "era": "disney",
       "pageCount": 320,
-      "description": "In the aftermath of the Resistance's devastating losses, Poe Dameron, Finn, and their allies scramble to rebuild — reaching out to old contacts and new allies across the galaxy before the First Order can extinguish them entirely.",
+      "description": "In the aftermath of the Resistance's devastating losses, Poe Dameron, Finn, and their allies scramble to rebuild \u2014 reaching out to old contacts and new allies across the galaxy before the First Order can extinguish them entirely.",
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Resistance+Reborn+Rebecca+Roanhorse"
     },
     {
@@ -4140,23 +4271,23 @@
       "year": 2019,
       "era": "disney",
       "pageCount": 400,
-      "description": "A Resistance spy is sent to the remote outpost world of Batuu — Black Spire Outpost — to recruit allies and find a haven for the Resistance, deep in a frontier town where everyone has something to hide.",
+      "description": "A Resistance spy is sent to the remote outpost world of Batuu \u2014 Black Spire Outpost \u2014 to recruit allies and find a haven for the Resistance, deep in a frontier town where everyone has something to hide.",
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Galaxy%27s+Edge+Black+Spire+Dawson"
     },
     {
       "id": "galaxys-edge-a-crash-of-fate",
       "title": "Galaxy's Edge: A Crash of Fate",
       "type": "ya-novel",
-      "author": "Zoraida Córdova",
+      "author": "Zoraida C\u00f3rdova",
       "year": 2019,
       "era": "disney",
       "pageCount": 348,
-      "description": "Two childhood friends are reunited by chance on Batuu — a world of secrets and scoundrels — and must navigate old feelings and new dangers as a simple delivery job spirals into something far more dangerous.",
+      "description": "Two childhood friends are reunited by chance on Batuu \u2014 a world of secrets and scoundrels \u2014 and must navigate old feelings and new dangers as a simple delivery job spirals into something far more dangerous.",
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Galaxy%27s+Edge+A+Crash+of+Fate+Cordova"
     },
     {
       "id": "episode-ix-the-rise-of-skywalker",
-      "title": "Episode IX – The Rise of Skywalker",
+      "title": "Episode IX \u2013 The Rise of Skywalker",
       "type": "movie",
       "year": 2019,
       "duration": 142,
@@ -4173,7 +4304,7 @@
       "year": 2025,
       "era": "disney",
       "pageCount": 464,
-      "description": "In the aftermath of the Battle of Exegol, a young hero navigates a galaxy reshaping itself after the First Order's fall — confronting remnants of the old regime and discovering what it means to rebuild hope.",
+      "description": "In the aftermath of the Battle of Exegol, a young hero navigates a galaxy reshaping itself after the First Order's fall \u2014 confronting remnants of the old regime and discovering what it means to rebuild hope.",
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+The+Last+Order+Kwame+Mbalia"
     },
     {
@@ -4238,7 +4369,7 @@
       "title": "Forces of Destiny",
       "type": "tv-shorts",
       "year": 2017,
-      "description": "A collection of animated micro-shorts celebrating acts of courage and kindness from heroes across every era of the Star Wars saga, featuring Ahsoka, Padmé, Leia, Sabine, Rey, Rose, and more.",
+      "description": "A collection of animated micro-shorts celebrating acts of courage and kindness from heroes across every era of the Star Wars saga, featuring Ahsoka, Padm\u00e9, Leia, Sabine, Rey, Rose, and more.",
       "seasons": [
         {
           "season": 1,
@@ -4562,7 +4693,7 @@
       "title": "Galactic Pals",
       "type": "tv-shorts",
       "year": 2022,
-      "description": "A cheerful animated shorts series following Miree, a caretaker droid, as she nurtures younglings of different Star Wars species — from Ewoks and Wookiees to Jawas and Rancors.",
+      "description": "A cheerful animated shorts series following Miree, a caretaker droid, as she nurtures younglings of different Star Wars species \u2014 from Ewoks and Wookiees to Jawas and Rancors.",
       "seasons": [
         {
           "season": 1,
@@ -4633,6 +4764,20 @@
       "format": "animated",
       "era": "disney",
       "disneyPlusUrl": "https://www.youtube.com/watch?v=F_lwJbsWNr4&list=PLXsbMnnbPpLX9F50O9HSc2n8W8fVq2YZG&index=3"
+    },
+    {
+      "id": "unlock-star-wars-escape-game",
+      "title": "Unlock!",
+      "type": "mobile-game",
+      "developer": "Space Cowboys",
+      "publisher": "Space Cowboys",
+      "year": 2020,
+      "era": "disney",
+      "platforms": [
+        "iOS",
+        "Android"
+      ],
+      "description": "The digital companion app for the Unlock!: Star Wars card-based escape room game by Space Cowboys, used to scan cards, validate codes, and access story elements and hints during play."
     }
   ]
 }

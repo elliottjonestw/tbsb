@@ -32,7 +32,7 @@ On every state mutation, `save()` flushes `watched` to `localStorage`, then call
 
 ## catalog.json
 
-The catalog is an array of **content items** under the top-level `"content"` key. Each item is one of: `movie`, `short-movie`, `series`, `tv-shorts`, `novel`, `ya-novel`, `multiplatform-game`, or `browser-game`.
+The catalog is an array of **content items** under the top-level `"content"` key. Each item is one of: `movie`, `short-movie`, `series`, `tv-shorts`, `novel`, `ya-novel`, `multiplatform-game`, `browser-game`, or `mobile-game`.
 
 ### Movie / Short Movie schema
 
@@ -208,6 +208,24 @@ The `year` field should reflect the earliest real-world release date across all 
 
 The Browser Game schema is identical to the Multiplatform Game schema — the only difference is `"type": "browser-game"`. Browser games typically have `"platforms": ["Browser"]` and no `amazonUrl` (they were free web games). All stat calculations, card rendering, badge text, and modal behaviour are identical to multiplatform games — both types are covered by `isGame()`.
 
+### Mobile Game schema
+
+```json
+{
+  "id": "star-wars-commander",
+  "title": "Star Wars: Commander",
+  "type": "mobile-game",
+  "developer": "Disney Mobile",
+  "publisher": "Disney Interactive",
+  "year": 2014,
+  "era": "disney",
+  "platforms": ["iOS", "Android", "Windows Phone"],
+  "description": "A base-building real-time strategy game in which players choose to fight for the Galactic Empire or the Rebel Alliance, constructing and defending bases while deploying troops in battles across the galaxy."
+}
+```
+
+The Mobile Game schema is identical to the Multiplatform Game schema — the only difference is `"type": "mobile-game"`. Mobile games list their target platforms in the `platforms` array (e.g. `["iOS", "Android"]`). No `amazonUrl` is needed as these were typically free or low-cost app store releases. All stat calculations, card rendering, badge text, and modal behaviour are identical to other game types — all are covered by `isGame()`.
+
 The catalog order controls default display order. Items appear in the order they appear in `catalog.json`. The user's version is ordered chronologically by in-universe timeline position.
 
 ---
@@ -243,7 +261,7 @@ Four helper functions centralise type branching across the codebase:
 function isMovie(item)  { return item.type === 'movie'  || item.type === 'short-movie'; }
 function isSeries(item) { return item.type === 'series' || item.type === 'tv-shorts'; }
 function isNovel(item)  { return item.type === 'novel'  || item.type === 'ya-novel'; }
-function isGame(item)   { return item.type === 'multiplatform-game' || item.type === 'browser-game'; }
+function isGame(item)   { return item.type === 'multiplatform-game' || item.type === 'browser-game' || item.type === 'mobile-game'; }
 ```
 
 Every place that needs to distinguish content types calls these — not `item.type` directly — so adding a new game type only requires updating `isGame()`, and adding an entirely new content category requires only a new helper plus a handful of call sites.
@@ -358,7 +376,7 @@ The ten cards are displayed in this order:
 | Pages Remaining  | Total page count of all unread novels                             | default          |
 | Hours Remaining  | `Math.round((totalMinutes - totalWatchedMinutes) / 60)` as `Nh`  | default          |
 
-Movies count covers both `movie` and `short-movie` types (via `isMovie()`). Episodes count covers both `series` and `tv-shorts` types (via `isSeries()`). Books count covers both `novel` and `ya-novel` types (via `isNovel()`). Games count covers `multiplatform-game` and `browser-game` (via `isGame()`). As additional game types are added in the future, `isGame()` will be expanded to include them, automatically incorporating them into the Played % and Games counts. Watched is video-only; Read is novels-only; Played is games-only.
+Movies count covers both `movie` and `short-movie` types (via `isMovie()`). Episodes count covers both `series` and `tv-shorts` types (via `isSeries()`). Books count covers both `novel` and `ya-novel` types (via `isNovel()`). Games count covers `multiplatform-game`, `browser-game`, and `mobile-game` (via `isGame()`). As additional game types are added in the future, `isGame()` will be expanded to include them, automatically incorporating them into the Played % and Games counts. Watched is video-only; Read is novels-only; Played is games-only.
 
 ---
 
@@ -400,6 +418,7 @@ The card root element receives a CSS class matching its status: `.card.watched`,
 | `ya-novel`            | YA Novel              |
 | `multiplatform-game`  | Multiplatform Game    |
 | `browser-game`        | Browser Game          |
+| `mobile-game`         | Mobile Game           |
 
 **Meta label** (shown below the title):
 
@@ -410,6 +429,7 @@ The card root element receives a CSS class matching its status: `.card.watched`,
 | Novel/YA Novel        | `N pages` — e.g. `"349 pages"`                                   |
 | Multiplatform Game    | `formatPlatforms(item.platforms)` — up to 3 platforms joined by `, `; if more than 3, shows `"Platform1, Platform2 +N more"` |
 | Browser Game          | `formatPlatforms(item.platforms)` — same as above; typically just `"Browser"` |
+| Mobile Game           | `formatPlatforms(item.platforms)` — same as above; e.g. `"iOS, Android"` |
 
 **Badge classes and text**:
 
@@ -518,7 +538,7 @@ Every interactive action inside the modal re-renders the full `#modalBody` and r
 
 ## Filtering and sorting
 
-Three independent filter rows and one sort control sit above the catalog grid. On desktop, each filter row is a set of pill buttons that support **multi-select**: any combination of options within a row can be active simultaneously. The Type filter row is split into two intentional sub-rows: screen content (All, Movies, Short Films, TV Shows, TV Show Shorts) on the first line and text/interactive content (Adult Novels, YA Novels, Multiplatform Games, Browser Games) on the second. On mobile (≤ 600 px), the pill buttons are hidden and replaced by a `<select>` dropdown for each row, which remains single-select.
+Three independent filter rows and one sort control sit above the catalog grid. On desktop, each filter row is a set of pill buttons that support **multi-select**: any combination of options within a row can be active simultaneously. The Type filter row is split into two intentional sub-rows: screen content (All, Movies, Short Films, TV Shows, TV Show Shorts) on the first line and text/interactive content (Adult Novels, YA Novels, Multiplatform Games, Browser Games, Mobile Games) on the second. On mobile (≤ 600 px), the pill buttons are hidden and replaced by a `<select>` dropdown for each row, which remains single-select.
 
 ### Filter state
 
@@ -527,7 +547,7 @@ Each filter is stored as a `Set` of active values. An **empty set means "all"** 
 | Variable         | Possible values in set                                                           | Desktop (pill buttons) | Mobile (select)  | Filter row label |
 |------------------|----------------------------------------------------------------------------------|------------------------|------------------|------------------|
 | `activeEras`     | `lucas`, `disney`                                                                | `.era-btn`             | `.era-select`    | Era              |
-| `activeTypes`    | `movie`, `short-movie`, `series`, `tv-shorts`, `novel`, `ya-novel`, `multiplatform-game`, `browser-game` | `.type-btn` | `.type-select` | Type |
+| `activeTypes`    | `movie`, `short-movie`, `series`, `tv-shorts`, `novel`, `ya-novel`, `multiplatform-game`, `browser-game`, `mobile-game` | `.type-btn` | `.type-select` | Type |
 | `activeStatuses` | `not-started`, `in-progress`, `finished`                                         | `.status-btn`          | `.status-select` | Progress         |
 | `activeSort`     | `chronological`, `release`                                                       | `.sort-btn`            | —                | Sort (separate)  |
 | `activeSortDir`  | `asc`, `desc`                                                                    | —                      | —                | (arrow on button)|
@@ -796,7 +816,9 @@ Novels are read or unread — there is no partial state. They are excluded from 
 
 **Browser games** (`"type": "browser-game"`) are games that were playable in a web browser, typically hosted on Disney.com, StarWars.com, or similar official sites. Use `"platforms": ["Browser"]`. No `amazonUrl` is needed as these were free web games.
 
-All game types are played or not played — there is no partial state. They are excluded from all minute-based calculations (Watched %, Hours Remaining) and contribute only to Played %, Games, and the played/unplayed filter. Both types share identical card rendering, badge text, and modal behaviour via `isGame()`.
+**Mobile games** (`"type": "mobile-game"`) are games released for iOS and/or Android. List all platforms the game was available on (e.g. `["iOS", "Android"]`, `["iOS", "Android", "Windows Phone"]`). No `amazonUrl` is needed as these were typically free or low-cost app store releases.
+
+All game types are played or not played — there is no partial state. They are excluded from all minute-based calculations (Watched %, Hours Remaining) and contribute only to Played %, Games, and the played/unplayed filter. All types share identical card rendering, badge text, and modal behaviour via `isGame()`.
 
 When additional game types are introduced in the future, add their `type` values to `isGame()` and `typeLabels` — they will automatically be picked up by all stat calculations, filtering, card rendering, and modal routing.
 
