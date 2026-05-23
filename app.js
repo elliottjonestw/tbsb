@@ -190,7 +190,7 @@ function updateStats() {
     </div>
     <div class="stat-card">
       <div class="stat-value">${readNovels}/${novels.length}</div>
-      <div class="stat-label">Novels</div>
+      <div class="stat-label">Books</div>
     </div>
     <div class="stat-card">
       <div class="stat-value">${playedGames}/${games.length}</div>

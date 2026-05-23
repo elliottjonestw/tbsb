@@ -335,12 +335,12 @@ The ten cards are displayed in this order:
 | Movies           | `watchedMovies / totalMovies` (e.g. `11/13`)                      | default          |
 | Short Films      | `watchedShortFilms / totalShortFilms` (e.g. `0/2`)               | default          |
 | Episodes         | `watchedEps / totalEps` (e.g. `43/579`)                          | default          |
-| Novels           | `readNovels / totalNovels` (e.g. `0/66`)                         | default          |
+| Books            | `readNovels / totalNovels` (e.g. `0/66`)                         | default          |
 | Games            | `playedGames / totalGames` (e.g. `0/15`)                         | default          |
 | Pages Remaining  | Total page count of all unread novels                             | default          |
 | Hours Remaining  | `Math.round((totalMinutes - totalWatchedMinutes) / 60)` as `Nh`  | default          |
 
-Movies count covers both `movie` and `short-movie` types (via `isMovie()`). Episodes count covers both `series` and `tv-shorts` types (via `isSeries()`). Novels count covers both `novel` and `ya-novel` types (via `isNovel()`). Games count covers `multiplatform-game` (via `isGame()`). As additional game types are added in the future, `isGame()` will be expanded to include them, automatically incorporating them into the Played % and Games counts. Watched is video-only; Read is novels-only; Played is games-only.
+Movies count covers both `movie` and `short-movie` types (via `isMovie()`). Episodes count covers both `series` and `tv-shorts` types (via `isSeries()`). Books count covers both `novel` and `ya-novel` types (via `isNovel()`). Games count covers `multiplatform-game` (via `isGame()`). As additional game types are added in the future, `isGame()` will be expanded to include them, automatically incorporating them into the Played % and Games counts. Watched is video-only; Read is novels-only; Played is games-only.
 
 ---
 
@@ -768,7 +768,7 @@ Use `"type": "novel"` for adult novels and `"type": "ya-novel"` for young adult 
 
 `pageCount` is an integer (print edition page count). Provide `audibleUrl` pointing directly to the audiobook product page on Audible (format: `https://www.audible.com/pd/{title}/{ASIN}`), and `amazonUrl` pointing to the product page or a search URL on Amazon.
 
-Novels are read or unread — there is no partial state. They are excluded from the Watched percentage and Hours Remaining calculations, and contribute only to Read, Novels, and Pages Remaining stats.
+Novels are read or unread — there is no partial state. They are excluded from the Watched percentage and Hours Remaining calculations, and contribute only to Read, Books, and Pages Remaining stats.
 
 ### Adding games
 
