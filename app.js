@@ -714,7 +714,7 @@ const FOOTER_QUOTES = [
   'The ability to stream does not make you intelligent.',
   'I watched them. I watched them all. And not just the movies, but the shows and the shorts, too.',
   'I find your lack of watch progress disturbing.',
-  'Read the books. Read them all.',
+  'I know what I have to watch, but I don\'t know if I have the strength to do it.',
 ];
 
 function renderFooter() {
