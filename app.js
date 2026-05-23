@@ -265,6 +265,9 @@ function renderCatalog() {
   const el = document.getElementById('catalog');
   el.innerHTML = items.map(item => renderCard(item)).join('');
 
+  const countEl = document.getElementById('catalogCount');
+  if (countEl) countEl.textContent = `Showing ${items.length} / ${catalog.length} items`;
+
   el.querySelectorAll('.card').forEach(card => {
     const id = card.dataset.id;
     const item = catalog.find(i => i.id === id);

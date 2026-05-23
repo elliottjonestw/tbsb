@@ -313,6 +313,20 @@ main {
   font-weight: 600;
 }
 
+/* Catalog count */
+.catalog-count-row {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+  margin-top: -14px;
+}
+
+.catalog-count {
+  font-size: 0.76rem;
+  color: var(--text-dim);
+  letter-spacing: 0.02em;
+}
+
 /* Catalog */
 .catalog {
   display: grid;
@@ -917,6 +931,9 @@ html.light .episode-row.watched { border-color: rgba(22, 163, 74, 0.3); }
   /* ── Controls ────────────────────────────────────────────────────────────── */
   .controls-row { gap: 12px; margin-bottom: 20px; }
   .sort-bar { width: 100%; flex-shrink: 1; }
+
+  /* ── Catalog count — hidden on mobile ───────────────────────────────────── */
+  .catalog-count-row { display: none; }
 
   /* ── Catalog ─────────────────────────────────────────────────────────────── */
   .catalog { grid-template-columns: 1fr; gap: 10px; }

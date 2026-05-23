@@ -384,7 +384,7 @@ Movies count covers both `movie` and `short-movie` types (via `isMovie()`). Epis
 
 The app has no templating engine. HTML is built via tagged template literals and assigned to `innerHTML`. There are two render scopes:
 
-**Catalog grid** (`renderCatalog`) — Rebuilds the entire `#catalog` div on every filter change or state mutation. After setting `innerHTML`, it immediately re-attaches event listeners by querying the freshly created DOM nodes.
+**Catalog grid** (`renderCatalog`) — Rebuilds the entire `#catalog` div on every filter change or state mutation. After setting `innerHTML`, it immediately re-attaches event listeners by querying the freshly created DOM nodes. It also updates `#catalogCount` with the text `"Showing N / T items"` (filtered count vs total catalog size) every time it runs.
 
 **Modal** (`openModal`, `renderMovieModal`, `renderNovelModal`, `renderGameModal`, `renderSeriesModal`) — Rebuilds `#modalBody` on open, and re-renders it in place on every interaction inside the modal. `bindModalEvents` is called after each re-render to re-attach all click handlers to the new DOM.
 
@@ -703,6 +703,10 @@ The Type filter row uses a nested `.type-btn-rows` flex column containing two `.
 
 Game detail modals display each platform as a `.platform-tag` pill: `--bg-elevated` background, `--border-bright` border, `--text-muted` text, `border-radius: 100px`. Tags are contained in a `.game-platforms` flex-wrap row with `gap: 6px`.
 
+### Catalog count
+
+A `.catalog-count-row` sits between the controls and the catalog grid, right-aligned. It contains a `#catalogCount` `<span>` that `renderCatalog()` updates on every render with `"Showing N / T items"`. Hidden on mobile via the `@media (max-width: 600px)` block.
+
 ### Catalog grid
 
 Fixed two-column grid: `grid-template-columns: repeat(2, 1fr)`, `gap: 16px`. No maximum number of rows — the grid grows as needed.
@@ -797,6 +801,9 @@ A single `@media (max-width: 600px)` block overrides desktop styles. The desktop
 **Filters**
 - `.filter-btn` elements are hidden (`display: none`). `.filter-select` dropdowns are shown (`display: block`) and stretch to fill the remaining row width. The dropdowns are styled to match the dark theme with a custom SVG chevron.
 - The `.type-btn-rows` / `.type-btn-subrow` nested structure is irrelevant on mobile since all buttons are hidden.
+
+**Catalog count**
+- `.catalog-count-row` is hidden (`display: none`).
 
 **Catalog grid**
 - `.catalog` collapses to single column (`grid-template-columns: 1fr`), gap reduces to `10px`.
