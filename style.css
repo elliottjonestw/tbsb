@@ -22,6 +22,27 @@
   --shadow: 0 4px 24px rgba(0,0,0,0.4);
 }
 
+/* ── Light mode token overrides ─────────────────────────────────────────── */
+html.light {
+  --bg:             #f0f0f7;
+  --bg-card:        #ffffff;
+  --bg-card-hover:  #f5f5fb;
+  --bg-elevated:    #e8e8f2;
+  --border:         #dcdcea;
+  --border-bright:  #c0c0d4;
+  --text:           #0f0f1a;
+  --text-muted:     #5c5c74;
+  --text-dim:       #9898b2;
+  --accent:         #c8920c;
+  --accent-dim:     rgba(200, 146, 12, 0.13);
+  --accent-hover:   #a87808;
+  --watched:        #16a34a;
+  --watched-dim:    rgba(22, 163, 74, 0.12);
+  --partial:        #d97706;
+  --partial-dim:    rgba(217, 119, 6, 0.12);
+  --shadow:         0 4px 24px rgba(0, 0, 0, 0.1);
+}
+
 body {
   background: var(--bg);
   color: var(--text);
@@ -38,6 +59,10 @@ header {
   background: rgba(10, 10, 15, 0.85);
   backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border);
+}
+
+html.light header {
+  background: rgba(240, 240, 247, 0.92);
 }
 
 .header-inner {
@@ -126,6 +151,23 @@ header {
   align-items: center;
   gap: 8px;
 }
+
+/* Theme toggle — icon-only btn-secondary variant */
+.btn-theme {
+  padding: 7px 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+/* Dark mode (default): show sun → click goes to light */
+.btn-theme .icon-sun  { display: block; }
+.btn-theme .icon-moon { display: none; }
+
+/* Light mode: show moon → click goes to dark */
+html.light .btn-theme .icon-sun  { display: none; }
+html.light .btn-theme .icon-moon { display: block; }
 
 /* Main */
 main {
@@ -300,6 +342,9 @@ main {
 
 .card.watched { border-color: rgba(34, 197, 94, 0.3); }
 .card.partial { border-color: rgba(245, 158, 11, 0.3); }
+
+html.light .card.watched { border-color: rgba(22, 163, 74, 0.45); }
+html.light .card.partial { border-color: rgba(217, 119, 6, 0.45); }
 
 /* Poster */
 .card-poster {
@@ -483,6 +528,8 @@ main {
   padding: 20px;
 }
 
+html.light .modal-overlay { background: rgba(0, 0, 0, 0.45); }
+
 .modal-overlay.open { display: flex; }
 
 .modal {
@@ -496,6 +543,8 @@ main {
   flex-direction: column;
   box-shadow: 0 24px 80px rgba(0,0,0,0.6);
 }
+
+html.light .modal { box-shadow: 0 24px 80px rgba(0, 0, 0, 0.18); }
 
 .modal-header {
   padding: 24px 24px 20px;
@@ -779,6 +828,8 @@ main {
   background: var(--watched-dim);
   border-color: rgba(34, 197, 94, 0.2);
 }
+
+html.light .episode-row.watched { border-color: rgba(22, 163, 74, 0.3); }
 
 .ep-check {
   width: 22px;

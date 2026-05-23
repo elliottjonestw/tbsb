@@ -616,6 +616,7 @@ Events are bound in two places:
 - All `.era-btn` / `.type-btn` / `.status-btn` clicks → routed through `applyFilterBtn(filterType, val)`, which toggles `val` in the corresponding `Set` (or clears the set if `val === 'all'`), calls `syncFilterButtons` to update `.active` classes, syncs the mobile select, then calls `renderCatalog()`.
 - All `.era-select` / `.type-select` / `.status-select` changes → routed through `applyFilterSel(filterType, val)`, which clears the set and adds at most one value, then syncs buttons and re-renders. `getActiveSet(filterType)` is a helper that returns the correct set for a given filter type. `syncFilterButtons(filterType)` updates `.active` on all buttons in the group: the "All" button is active when the set is empty, all other buttons reflect set membership.
 - All `.sort-btn` clicks → if the clicked button is already the active sort, `activeSortDir` toggles; otherwise the clicked button becomes active, `activeSort` updates, and `activeSortDir` resets to `'asc'`. `updateSortButtons()` is called first, then `renderCatalog()`.
+- Theme toggle click (`#themeBtn`) → reads `html.classList.contains('light')`; flips to the opposite theme; persists to `localStorage` under `THEME_KEY`; calls `applyTheme(theme)`, which toggles the `light` class on `<html>` and updates the button's `title`.
 - Reset button click → shows `confirm('Reset all progress? This cannot be undone.')` dialog; on confirmation sets `watched = {}`, calls `save()` and `renderCatalog()`
 - Save button click → calls `openSaveModal()`, adding `.open` to `#saveModalOverlay`
 - Save/close modal buttons → call `closeSaveModal()`
@@ -636,9 +637,11 @@ The catalog card click handler lives inside `renderCatalog()` and is re-attached
 
 ## CSS design system
 
-All colours and radii are defined as CSS custom properties on `:root`:
+All colours and radii are defined as CSS custom properties on `:root`. The app supports two themes — **dark** (default) and **light** — applied by toggling the `light` class on the `<html>` element. `html.light` overrides every colour token; layout, spacing, and radius tokens are shared.
 
-| Variable          | Value                          | Usage                                        |
+### Dark mode tokens (`:root` defaults)
+
+| Variable          | Dark value                     | Usage                                        |
 |-------------------|--------------------------------|----------------------------------------------|
 | `--bg`            | `#0a0a0f`                      | Page background                              |
 | `--bg-card`       | `#12121a`                      | Card and UI element backgrounds              |
@@ -660,9 +663,35 @@ All colours and radii are defined as CSS custom properties on `:root`:
 | `--radius-sm`     | `8px`                          | Small border radius (buttons, inputs)        |
 | `--shadow`        | `0 4px 24px rgba(0,0,0,0.4)`   | Card hover shadow                            |
 
+### Light mode tokens (`html.light` overrides)
+
+| Variable          | Light value                      |
+|-------------------|----------------------------------|
+| `--bg`            | `#f0f0f7`                        |
+| `--bg-card`       | `#ffffff`                        |
+| `--bg-card-hover` | `#f5f5fb`                        |
+| `--bg-elevated`   | `#e8e8f2`                        |
+| `--border`        | `#dcdcea`                        |
+| `--border-bright` | `#c0c0d4`                        |
+| `--text`          | `#0f0f1a`                        |
+| `--text-muted`    | `#5c5c74`                        |
+| `--text-dim`      | `#9898b2`                        |
+| `--accent`        | `#c8920c`                        |
+| `--accent-dim`    | `rgba(200,146,12,0.13)`          |
+| `--accent-hover`  | `#a87808`                        |
+| `--watched`       | `#16a34a`                        |
+| `--watched-dim`   | `rgba(22,163,74,0.12)`           |
+| `--partial`       | `#d97706`                        |
+| `--partial-dim`   | `rgba(217,119,6,0.12)`           |
+| `--shadow`        | `0 4px 24px rgba(0,0,0,0.1)`     |
+
+The accent in light mode is a deep amber-gold (`#c8920c`) rather than the bright yellow used in dark mode — yellow has insufficient contrast against white backgrounds at normal text sizes.
+
+Several properties that are hardcoded rather than variable-driven also have `html.light` overrides: the header backdrop colour, the modal box-shadow, the modal overlay opacity, and the watched/partial card border opacity (increased so green/amber borders remain visible against white card backgrounds).
+
 ### Header
 
-The header is `position: sticky; top: 0; z-index: 100` with `backdrop-filter: blur(20px)` and a semi-transparent background (`rgba(10,10,15,0.85)`), so it floats above the catalog without fully blocking it. The inner content is constrained to `max-width: 1200px` and laid out as a single flex row: logo on the left, header action buttons (Reset, Save, Load) on the right as a `.header-actions` flex row with `gap: 8px`.
+The header is `position: sticky; top: 0; z-index: 100` with `backdrop-filter: blur(20px)` and a semi-transparent background (dark: `rgba(10,10,15,0.85)`, light: `rgba(240,240,247,0.92)`), so it floats above the catalog without fully blocking it. The inner content is constrained to `max-width: 1200px` and laid out as a single flex row: logo on the left, header action buttons (Reset, Save, Load, and the theme toggle) on the right as a `.header-actions` flex row with `gap: 8px`.
 
 ### Filter and sort buttons
 
@@ -680,28 +709,36 @@ Fixed two-column grid: `grid-template-columns: repeat(2, 1fr)`, `gap: 16px`. No 
 
 ### Action buttons
 
-| Class         | Colour                       | Usage                                           |
-|---------------|------------------------------|-------------------------------------------------|
-| `.btn-primary`| `--accent` (yellow) fill     | Mark All Watched in series modal                |
-| `.btn-outline`| Transparent, ghost border    | Clear All in series modal                       |
-| `.btn-secondary`| Transparent, muted border  | Header actions (Reset, Save, Load)              |
-| `.btn-disney` | `#0063e5` (blue)             | Watch on Disney+ / YouTube links                |
-| `.btn-audible`| `#ff6f00` (deep orange)      | Listen on Audible links in novel modal          |
-| `.btn-amazon` | `#ff9900` (amber), black text | Buy on Amazon links in novel and game modals   |
+| Class           | Colour                       | Usage                                           |
+|-----------------|------------------------------|-------------------------------------------------|
+| `.btn-primary`  | `--accent` (yellow) fill     | Mark All Watched in series modal                |
+| `.btn-outline`  | Transparent, ghost border    | Clear All in series modal                       |
+| `.btn-secondary`| Transparent, muted border    | Header actions (Reset, Save, Load, theme toggle)|
+| `.btn-theme`    | Inherits `.btn-secondary`    | Icon-only theme toggle; adds `display: flex` and tighter padding. Contains two SVGs (`.icon-sun`, `.icon-moon`) — CSS shows the sun in dark mode and the moon in light mode via `html.light` visibility rules. |
+| `.btn-disney`   | `#0063e5` (blue)             | Watch on Disney+ / YouTube links                |
+| `.btn-audible`  | `#ff6f00` (deep orange)      | Listen on Audible links in novel modal          |
+| `.btn-amazon`   | `#ff9900` (amber), black text| Buy on Amazon links in novel and game modals    |
 
 ---
 
 ## Persistence
 
-`localStorage` is the only automatic persistence mechanism. The entire `watched` object is serialised to JSON and stored under the key `startracker_watched` on every mutation. On load, `init()` deserialises it back with `JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}')`. No server, no IndexedDB, no cookies.
+`localStorage` is the only automatic persistence mechanism. Two keys are used:
 
-Clearing browser storage or clicking the Reset button (which calls `confirm()` first) sets `watched = {}` and re-saves, returning all state to zero.
+| Key                    | Constant       | Content                                         |
+|------------------------|----------------|-------------------------------------------------|
+| `startracker_watched`  | `STORAGE_KEY`  | Serialised `watched` object — all play/watch/read state |
+| `startracker_theme`    | `THEME_KEY`    | `"dark"` or `"light"` — user's theme preference |
+
+`watched` is serialised to JSON and written on every state mutation. On load, `init()` reads it back with `JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}')`. The theme preference is read at the very start of `init()` (before the catalog fetch) so the correct theme is applied before any rendering occurs. Both keys default gracefully — missing `watched` becomes `{}`, missing theme becomes `'dark'`.
+
+Clearing browser storage or clicking the Reset button (which calls `confirm()` first) sets `watched = {}` and re-saves, returning all content state to zero. The theme preference is unaffected by Reset.
 
 ---
 
 ## Save / load
 
-The header exposes three action buttons — **Reset**, **Save**, and **Load**.
+The header exposes four action buttons — **Reset**, **Save**, **Load**, and the **theme toggle**.
 
 ### Save (export)
 

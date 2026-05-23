@@ -1,4 +1,5 @@
 const STORAGE_KEY = 'startracker_watched';
+const THEME_KEY   = 'startracker_theme';
 
 let catalog = [];
 let watched = {};
@@ -8,7 +9,14 @@ let activeStatuses = new Set();  // empty = all
 let activeSort = 'chronological';
 let activeSortDir = 'asc';
 
+function applyTheme(theme) {
+  document.documentElement.classList.toggle('light', theme === 'light');
+  const btn = document.getElementById('themeBtn');
+  if (btn) btn.title = theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode';
+}
+
 async function init() {
+  applyTheme(localStorage.getItem(THEME_KEY) || 'dark');
   const res = await fetch('catalog.json');
   catalog = (await res.json()).content;
   watched = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
@@ -659,6 +667,12 @@ function bindEvents() {
       updateSortButtons();
       renderCatalog();
     });
+  });
+
+  document.getElementById('themeBtn').addEventListener('click', () => {
+    const next = document.documentElement.classList.contains('light') ? 'dark' : 'light';
+    localStorage.setItem(THEME_KEY, next);
+    applyTheme(next);
   });
 
   document.getElementById('resetBtn').addEventListener('click', () => {
