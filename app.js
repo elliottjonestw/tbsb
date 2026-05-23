@@ -69,7 +69,7 @@ function save() {
 function isMovie(item)  { return item.type === 'movie'  || item.type === 'short-movie'; }
 function isSeries(item) { return item.type === 'series' || item.type === 'tv-shorts'; }
 function isNovel(item)  { return item.type === 'novel' || item.type === 'ya-novel'; }
-function isGame(item)   { return item.type === 'multiplatform-game'; }
+function isGame(item)   { return item.type === 'multiplatform-game' || item.type === 'browser-game'; }
 
 // ── Progress calculations ────────────────────────────────────────────────────
 
@@ -281,7 +281,7 @@ function renderCard(item) {
   } else {
     pct = status === 'watched' ? 100 : 0;
   }
-  const typeLabels = { movie: 'Movie', 'short-movie': 'Short Film', series: 'TV Series', 'tv-shorts': 'TV Shorts', novel: 'Novel', 'ya-novel': 'YA Novel', 'multiplatform-game': 'Multiplatform Game' };
+  const typeLabels = { movie: 'Movie', 'short-movie': 'Short Film', series: 'TV Series', 'tv-shorts': 'TV Shorts', novel: 'Novel', 'ya-novel': 'YA Novel', 'multiplatform-game': 'Multiplatform Game', 'browser-game': 'Browser Game' };
   const typeLabel = typeLabels[item.type] || item.type;
   let metaLabel;
   if (isNovel(item)) {

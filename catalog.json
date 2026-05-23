@@ -2890,6 +2890,83 @@
       "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-08249c74-0178-4861-a1e4-dfc7b168dce5"
     },
     {
+      "id": "rebels-ghost-raid",
+      "title": "Rebels: Ghost Raid",
+      "type": "browser-game",
+      "developer": "Disney Interactive",
+      "publisher": "Disney Interactive",
+      "year": 2014,
+      "era": "disney",
+      "platforms": ["Browser"],
+      "description": "A browser game set during the early days of the Spectres crew, in which players help defend the Ghost from Imperial attack."
+    },
+    {
+      "id": "rebels-rebel-strike",
+      "title": "Rebels: Rebel Strike",
+      "type": "browser-game",
+      "developer": "Disney Interactive",
+      "publisher": "Disney Interactive",
+      "year": 2014,
+      "era": "disney",
+      "platforms": ["Browser"],
+      "description": "A turn-based strategy browser game in which players command the Spectres through tactical missions against Imperial forces."
+    },
+    {
+      "id": "rebels-chopper-chase",
+      "title": "Rebels: Chopper Chase",
+      "type": "browser-game",
+      "developer": "Disney Interactive",
+      "publisher": "Disney Interactive",
+      "year": 2016,
+      "era": "disney",
+      "platforms": ["Browser"],
+      "description": "A browser game centred on the Ghost's irascible astromech droid Chopper, navigating obstacles and Imperial hazards."
+    },
+    {
+      "id": "rebels-team-tactics",
+      "title": "Rebels: Team Tactics",
+      "type": "browser-game",
+      "developer": "Goodboy Digital",
+      "publisher": "Disney Interactive",
+      "year": 2015,
+      "era": "disney",
+      "platforms": ["Browser"],
+      "description": "An arcade browser game loosely adapting the Siege of Lothal, putting the Spectres crew up against Imperial forces on Lothal's capital."
+    },
+    {
+      "id": "rebels-imperial-heist",
+      "title": "Rebels: Imperial Heist",
+      "type": "browser-game",
+      "developer": "Disney Interactive",
+      "publisher": "Disney Interactive",
+      "year": 2017,
+      "era": "disney",
+      "platforms": ["Browser"],
+      "description": "An endless-runner browser game set during the Rebels era, in which players navigate Imperial-controlled territory as a member of the growing rebellion."
+    },
+    {
+      "id": "rebels-strike-missions",
+      "title": "Rebels: Strike Missions",
+      "type": "browser-game",
+      "developer": "Disney Interactive",
+      "publisher": "Disney Interactive",
+      "year": 2015,
+      "era": "disney",
+      "platforms": ["Browser"],
+      "description": "A browser game featuring the Season 2 cast of Rebels, sending players on combat missions against the Empire across a variety of dangerous locales."
+    },
+    {
+      "id": "rebels-special-ops",
+      "title": "Rebels: Special Ops",
+      "type": "browser-game",
+      "developer": "Disney Interactive",
+      "publisher": "Disney Interactive",
+      "year": 2017,
+      "era": "disney",
+      "platforms": ["Browser"],
+      "description": "A browser game using characters and elements from Rebels, tasking players with covert special operations missions alongside the crew of the Ghost."
+    },
+    {
       "id": "leia-princess-of-alderaan",
       "title": "Leia, Princess of Alderaan",
       "type": "ya-novel",
@@ -2954,6 +3031,17 @@
       "format": "live-action",
       "era": "disney",
       "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-5ec74210-f970-42b7-a39f-8653c0a9eab8"
+    },
+    {
+      "id": "rogue-one-boots-on-the-ground",
+      "title": "Rogue One: Boots on the Ground",
+      "type": "browser-game",
+      "developer": "Disney Interactive",
+      "publisher": "Disney Interactive",
+      "year": 2017,
+      "era": "disney",
+      "platforms": ["Browser"],
+      "description": "A browser companion game released alongside Rogue One, drawing on the film's characters and events to put players in the thick of the Rebel assault to steal the Death Star plans."
     },
     {
       "id": "vader-immortal-episode-i",
@@ -3051,6 +3139,17 @@
       "format": "live-action",
       "era": "lucas",
       "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-0f5c5223-f4f6-46ef-ba8a-69cb0e17d8d3"
+    },
+    {
+      "id": "star-wars-yodas-jedi-training",
+      "title": "Yoda's Jedi Training",
+      "type": "browser-game",
+      "developer": "Disney Interactive",
+      "publisher": "Disney Interactive",
+      "year": 2016,
+      "era": "disney",
+      "platforms": ["Browser"],
+      "description": "A browser game loosely adapting events from The Empire Strikes Back, in which players undergo lightsaber training under Yoda's guidance on the swamp planet Dagobah."
     },
     {
       "id": "battlefront-twilight-company",
@@ -3943,6 +4042,17 @@
       "format": "live-action",
       "era": "disney",
       "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-2854a94d-3702-40bd-97a4-12d55a809188"
+    },
+    {
+      "id": "star-wars-x-wing-fighter",
+      "title": "X-wing Fighter",
+      "type": "browser-game",
+      "developer": "Disney Interactive",
+      "publisher": "Disney Interactive",
+      "year": 2017,
+      "era": "disney",
+      "platforms": ["Browser"],
+      "description": "A browser game adapting events from The Force Awakens, in which players pilot an X-wing on missions against the First Order."
     },
     {
       "id": "canto-bight",
