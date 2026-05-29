@@ -34,6 +34,8 @@ On every state mutation, `save()` flushes `watched` to `localStorage`, then call
 
 The catalog is an array of **content items** under the top-level `"content"` key. Each item is one of: `movie`, `short-movie`, `series`, `tv-shorts`, `novel`, `ya-novel`, `multiplatform-game`, `browser-game`, or `mobile-game`.
 
+An item's `type` field can be a single string **or an array of strings** when it belongs to more than one type (e.g. a game released on both browser and mobile). Multi-type items appear in filter results for any of their types, and their card displays all type labels joined with ` / ` (e.g. `BROWSER GAME / MOBILE GAME`). The state model, stats, and modal routing are unaffected — they all normalise `type` through the `itemTypes(item)` helper before branching.
+
 ### Movie / Short Movie schema
 
 ```json
@@ -56,7 +58,7 @@ Use `"type": "short-movie"` for short films. The schema is identical — `durati
 |---------------|--------|--------------------------------------------------------------------|
 | `id`          | string | Unique stable identifier (slug). Used as localStorage key and poster filename. |
 | `title`       | string | Display title                                                      |
-| `type`        | string | `"movie"` or `"short-movie"`                                       |
+| `type`        | string or string[] | `"movie"` or `"short-movie"` (array form not applicable for movies) |
 | `year`        | number | Release year                                                       |
 | `duration`    | number | Runtime in minutes                                                 |
 | `description` | string | Optional. Spoiler-free summary shown in the detail modal.          |
@@ -177,7 +179,7 @@ The YA Novel schema is identical to the Adult Novel schema — the only differen
 |--------------|----------|-----------------------------------------------------------------------------|
 | `id`         | string   | Unique stable identifier (slug). Used as localStorage key and cover filename. |
 | `title`      | string   | Display title                                                               |
-| `type`       | string   | `"multiplatform-game"`                                                      |
+| `type`       | string or string[] | `"multiplatform-game"`, `"browser-game"`, or `"mobile-game"` — or an array of these when the game was released on multiple platforms of different categories (e.g. `["browser-game", "mobile-game"]`) |
 | `developer`  | string   | Studio(s) that developed the game. Shown in the detail modal info row.      |
 | `publisher`  | string   | Publisher(s). Stored for data completeness.                                 |
 | `year`       | number   | Release year of the earliest platform release.                              |
@@ -255,16 +257,17 @@ Movies, short-movies, novels, multiplatform-games, and browser-games are all sto
 
 ### Type helpers
 
-Four helper functions centralise type branching across the codebase:
+A normaliser and four helper functions centralise type branching across the codebase:
 
 ```js
-function isMovie(item)  { return item.type === 'movie'  || item.type === 'short-movie'; }
-function isSeries(item) { return item.type === 'series' || item.type === 'tv-shorts'; }
-function isNovel(item)  { return item.type === 'novel'  || item.type === 'ya-novel'; }
-function isGame(item)   { return item.type === 'multiplatform-game' || item.type === 'browser-game' || item.type === 'mobile-game'; }
+function itemTypes(item) { return Array.isArray(item.type) ? item.type : [item.type]; }
+function isMovie(item)  { const t = itemTypes(item); return t.includes('movie') || t.includes('short-movie'); }
+function isSeries(item) { const t = itemTypes(item); return t.includes('series') || t.includes('tv-shorts'); }
+function isNovel(item)  { const t = itemTypes(item); return t.includes('novel') || t.includes('ya-novel'); }
+function isGame(item)   { const t = itemTypes(item); return t.includes('multiplatform-game') || t.includes('browser-game') || t.includes('mobile-game'); }
 ```
 
-Every place that needs to distinguish content types calls these — not `item.type` directly — so adding a new game type only requires updating `isGame()`, and adding an entirely new content category requires only a new helper plus a handful of call sites.
+`itemTypes` normalises `item.type` to an array regardless of whether it is a string or array, so every other helper and call site works correctly for both single-type and multi-type items. Every place that needs to distinguish content types calls these helpers — not `item.type` directly — so adding a new game type only requires updating `isGame()`, and adding an entirely new content category requires only a new helper plus a handful of call sites.
 
 ### Accessor functions
 

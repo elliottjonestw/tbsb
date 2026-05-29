@@ -842,6 +842,7 @@
       "year": 2014,
       "era": "disney",
       "platforms": [
+        "Browser",
         "iOS"
       ],
       "description": "A prequel companion to Star Wars Journeys: The Phantom Menace, exploring the early life of Anakin Skywalker and the events on Tatooine leading up to the Boonta Eve Classic podrace."

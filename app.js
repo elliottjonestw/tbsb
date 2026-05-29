@@ -74,10 +74,11 @@ function save() {
 
 // ── Type helpers ─────────────────────────────────────────────────────────────
 
-function isMovie(item)  { return item.type === 'movie'  || item.type === 'short-movie'; }
-function isSeries(item) { return item.type === 'series' || item.type === 'tv-shorts'; }
-function isNovel(item)  { return item.type === 'novel' || item.type === 'ya-novel'; }
-function isGame(item)   { return item.type === 'multiplatform-game' || item.type === 'browser-game' || item.type === 'mobile-game'; }
+function itemTypes(item) { return Array.isArray(item.type) ? item.type : [item.type]; }
+function isMovie(item)  { const t = itemTypes(item); return t.includes('movie') || t.includes('short-movie'); }
+function isSeries(item) { const t = itemTypes(item); return t.includes('series') || t.includes('tv-shorts'); }
+function isNovel(item)  { const t = itemTypes(item); return t.includes('novel') || t.includes('ya-novel'); }
+function isGame(item)   { const t = itemTypes(item); return t.includes('multiplatform-game') || t.includes('browser-game') || t.includes('mobile-game'); }
 
 // ── Progress calculations ────────────────────────────────────────────────────
 
@@ -150,8 +151,8 @@ function formatMinutes(mins) {
 // ── Stats ────────────────────────────────────────────────────────────────────
 
 function updateStats() {
-  const fullMovies = catalog.filter(i => i.type === 'movie');
-  const shortFilms = catalog.filter(i => i.type === 'short-movie');
+  const fullMovies = catalog.filter(i => itemTypes(i).includes('movie'));
+  const shortFilms = catalog.filter(i => itemTypes(i).includes('short-movie'));
   const series = catalog.filter(i => isSeries(i));
   const novels = catalog.filter(i => isNovel(i));
   const games = catalog.filter(i => isGame(i));
@@ -221,7 +222,7 @@ function filteredCatalog() {
   let items = catalog;
 
   if (activeEras.size > 0)   items = items.filter(i => activeEras.has(i.era));
-  if (activeTypes.size > 0)  items = items.filter(i => activeTypes.has(i.type));
+  if (activeTypes.size > 0)  items = items.filter(i => itemTypes(i).some(t => activeTypes.has(t)));
 
   if (activeStatuses.size > 0) {
     const statusMap = { 'not-started': 'unwatched', 'in-progress': 'partial', 'finished': 'watched' };
@@ -293,7 +294,7 @@ function renderCard(item) {
     pct = status === 'watched' ? 100 : 0;
   }
   const typeLabels = { movie: 'Movie', 'short-movie': 'Short Film', series: 'TV Series', 'tv-shorts': 'TV Shorts', novel: 'Novel', 'ya-novel': 'YA Novel', 'multiplatform-game': 'Multiplatform Game', 'browser-game': 'Browser Game', 'mobile-game': 'Mobile Game' };
-  const typeLabel = typeLabels[item.type] || item.type;
+  const typeLabel = itemTypes(item).map(t => typeLabels[t] || t).join(' / ');
   let metaLabel;
   if (isNovel(item)) {
     metaLabel = `${item.pageCount} pages`;
