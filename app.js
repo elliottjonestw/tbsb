@@ -78,7 +78,7 @@ function itemTypes(item) { return Array.isArray(item.type) ? item.type : [item.t
 function isMovie(item)  { const t = itemTypes(item); return t.includes('movie') || t.includes('short-movie'); }
 function isSeries(item) { const t = itemTypes(item); return t.includes('series') || t.includes('tv-shorts'); }
 function isNovel(item)  { const t = itemTypes(item); return t.includes('novel') || t.includes('ya-novel'); }
-function isGame(item)   { const t = itemTypes(item); return t.includes('multiplatform-game') || t.includes('browser-game') || t.includes('mobile-game'); }
+function isGame(item)   { const t = itemTypes(item); return t.includes('console-game') || t.includes('vr-game') || t.includes('browser-game') || t.includes('mobile-game'); }
 
 // ── Progress calculations ────────────────────────────────────────────────────
 
@@ -293,7 +293,7 @@ function renderCard(item) {
   } else {
     pct = status === 'watched' ? 100 : 0;
   }
-  const typeLabels = { movie: 'Movie', 'short-movie': 'Short Film', series: 'TV Series', 'tv-shorts': 'TV Shorts', novel: 'Novel', 'ya-novel': 'YA Novel', 'multiplatform-game': 'Multiplatform Game', 'browser-game': 'Browser Game', 'mobile-game': 'Mobile Game' };
+  const typeLabels = { movie: 'Movie', 'short-movie': 'Short Film', series: 'TV Series', 'tv-shorts': 'TV Shorts', novel: 'Novel', 'ya-novel': 'YA Novel', 'console-game': 'Console Game', 'vr-game': 'VR Game', 'browser-game': 'Browser Game', 'mobile-game': 'Mobile Game' };
   const typeLabel = itemTypes(item).map(t => typeLabels[t] || t).join(' / ');
   let metaLabel;
   if (isNovel(item)) {

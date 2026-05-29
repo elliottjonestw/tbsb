@@ -836,7 +836,10 @@
     {
       "id": "star-wars-journeys-beginnings",
       "title": "Journeys: Beginnings",
-      "type": "mobile-game",
+      "type": [
+        "browser-game",
+        "mobile-game"
+      ],
       "developer": "Disney Interactive",
       "publisher": "Disney Publishing Worldwide",
       "year": 2014,
@@ -3663,7 +3666,10 @@
     {
       "id": "star-wars-hunters",
       "title": "Hunters",
-      "type": "console-game",
+      "type": [
+        "console-game",
+        "mobile-game"
+      ],
       "developer": "NaturalMotion",
       "publisher": "Zynga",
       "year": 2024,
