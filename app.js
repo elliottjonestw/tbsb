@@ -78,7 +78,8 @@ function itemTypes(item) { return Array.isArray(item.type) ? item.type : [item.t
 function isMovie(item)  { const t = itemTypes(item); return t.includes('movie') || t.includes('short-movie'); }
 function isSeries(item) { const t = itemTypes(item); return t.includes('series') || t.includes('tv-shorts'); }
 function isNovel(item)  { const t = itemTypes(item); return t.includes('novel') || t.includes('ya-novel'); }
-function isGame(item)   { const t = itemTypes(item); return t.includes('console-game') || t.includes('vr-game') || t.includes('browser-game') || t.includes('mobile-game'); }
+function isGame(item)       { const t = itemTypes(item); return t.includes('console-game') || t.includes('vr-game') || t.includes('browser-game') || t.includes('mobile-game'); }
+function isAudioDrama(item) { const t = itemTypes(item); return t.includes('audio-drama'); }
 
 // ── Progress calculations ────────────────────────────────────────────────────
 
@@ -90,7 +91,7 @@ function seriesMinutes(item) {
 
 function totalMinutes() {
   return catalog.reduce((t, item) => {
-    if (isNovel(item) || isGame(item)) return t;
+    if (isNovel(item) || isGame(item) || isAudioDrama(item)) return t;
     return t + (isMovie(item) ? movieMinutes(item) : seriesMinutes(item));
   }, 0);
 }
@@ -110,7 +111,7 @@ function watchedMinutesSeries(item) {
 }
 
 function watchedMinutesItem(item) {
-  if (isNovel(item) || isGame(item)) return 0;
+  if (isNovel(item) || isGame(item) || isAudioDrama(item)) return 0;
   return isMovie(item) ? watchedMinutesMovie(item) : watchedMinutesSeries(item);
 }
 
@@ -119,7 +120,7 @@ function totalWatchedMinutes() {
 }
 
 function itemStatus(item) {
-  if (isMovie(item) || isNovel(item) || isGame(item)) return getMovieWatched(item.id) ? 'watched' : 'unwatched';
+  if (isMovie(item) || isNovel(item) || isGame(item) || isAudioDrama(item)) return getMovieWatched(item.id) ? 'watched' : 'unwatched';
   const total = seriesMinutes(item);
   const done = watchedMinutesSeries(item);
   if (done === 0) return 'unwatched';
@@ -169,7 +170,13 @@ function updateStats() {
   const remainingPages = totalNovelPages - readPages;
   const playedGames = games.filter(i => getMovieWatched(i.id)).length;
 
-  const canonReadPct = totalNovelPages > 0 ? Math.round((readPages / totalNovelPages) * 100) : 0;
+  const audioDramas = catalog.filter(i => isAudioDrama(i));
+  const listenedAudioDramas = audioDramas.filter(i => getMovieWatched(i.id)).length;
+  const totalAudioDramaMins = audioDramas.reduce((t, i) => t + i.duration, 0);
+  const listenedAudioDramaMins = audioDramas.filter(i => getMovieWatched(i.id)).reduce((t, i) => t + i.duration, 0);
+
+  const readListenedTotal = novels.length + audioDramas.length;
+  const readListenedPct = readListenedTotal > 0 ? Math.round(((readNovels + listenedAudioDramas) / readListenedTotal) * 100) : 0;
   const playedPct = games.length > 0 ? Math.round((playedGames / games.length) * 100) : 0;
 
   document.getElementById('statsRow').innerHTML = `
@@ -178,8 +185,8 @@ function updateStats() {
       <div class="stat-label">Watched</div>
     </div>
     <div class="stat-card">
-      <div class="stat-value accent">${canonReadPct}%</div>
-      <div class="stat-label">Read</div>
+      <div class="stat-value accent">${readListenedPct}%</div>
+      <div class="stat-label">Read/Listened</div>
     </div>
     <div class="stat-card">
       <div class="stat-value accent">${playedPct}%</div>
@@ -210,7 +217,7 @@ function updateStats() {
       <div class="stat-label">Pages Remaining</div>
     </div>
     <div class="stat-card">
-      <div class="stat-value">${Math.round((totalMinutes() - totalWatchedMinutes()) / 60)}h</div>
+      <div class="stat-value">${Math.round((totalMinutes() - totalWatchedMinutes() + totalAudioDramaMins - listenedAudioDramaMins) / 60)}h</div>
       <div class="stat-label">Hours Remaining</div>
     </div>
   `;
@@ -293,14 +300,14 @@ function renderCard(item) {
   } else {
     pct = status === 'watched' ? 100 : 0;
   }
-  const typeLabels = { movie: 'Movie', 'short-movie': 'Short Film', series: 'TV Series', 'tv-shorts': 'TV Shorts', novel: 'Novel', 'ya-novel': 'YA Novel', 'console-game': 'Console Game', 'vr-game': 'VR Game', 'browser-game': 'Browser Game', 'mobile-game': 'Mobile Game' };
+  const typeLabels = { movie: 'Movie', 'short-movie': 'Short Film', series: 'TV Series', 'tv-shorts': 'TV Shorts', novel: 'Novel', 'ya-novel': 'YA Novel', 'console-game': 'Console Game', 'vr-game': 'VR Game', 'browser-game': 'Browser Game', 'mobile-game': 'Mobile Game', 'audio-drama': 'Audio Drama' };
   const typeLabel = itemTypes(item).map(t => typeLabels[t] || t).join(' / ');
   let metaLabel;
   if (isNovel(item)) {
     metaLabel = `${item.pageCount} pages`;
   } else if (isGame(item)) {
     metaLabel = formatPlatforms(item.platforms);
-  } else if (isMovie(item)) {
+  } else if (isMovie(item) || isAudioDrama(item)) {
     metaLabel = formatMinutes(item.duration);
   } else {
     metaLabel = `${item.seasons.length} Season${item.seasons.length > 1 ? 's' : ''}`;
@@ -309,7 +316,9 @@ function renderCard(item) {
   const badgeClass = status === 'watched' ? 'badge-watched' : status === 'partial' ? 'badge-partial' : 'badge-unwatched';
   const badgeText = isGame(item)
     ? (status === 'watched' ? '✓ Played' : 'Not Played')
-    : (status === 'watched' ? '✓ Finished' : status === 'partial' ? 'In Progress' : 'Not Started');
+    : isAudioDrama(item)
+      ? (status === 'watched' ? '✓ Listened' : 'Not Started')
+      : (status === 'watched' ? '✓ Finished' : status === 'partial' ? 'In Progress' : 'Not Started');
 
   const watchIcon = status === 'watched' ? '✓' : '＋';
   const posterSrc = `posters/${item.id}.jpg`;
@@ -336,7 +345,7 @@ function renderCard(item) {
           <div class="card-progress-wrap">
             <div class="card-progress-fill" style="width:${pct}%"></div>
           </div>
-          <button class="card-watch-btn" title="${isGame(item) ? (status === 'watched' ? 'Mark as Not Played' : 'Mark as Played') : (status === 'watched' ? 'Mark as Not Started' : 'Mark as Finished')}">${watchIcon}</button>
+          <button class="card-watch-btn" title="${isGame(item) ? (status === 'watched' ? 'Mark as Not Played' : 'Mark as Played') : isAudioDrama(item) ? (status === 'watched' ? 'Mark as Not Started' : 'Mark as Listened') : (status === 'watched' ? 'Mark as Not Started' : 'Mark as Finished')}">${watchIcon}</button>
         </div>
       </div>
     </div>
@@ -350,7 +359,7 @@ function formatPlatforms(platforms) {
 }
 
 function quickToggle(item) {
-  if (isMovie(item) || isNovel(item) || isGame(item)) {
+  if (isMovie(item) || isNovel(item) || isGame(item) || isAudioDrama(item)) {
     setMovieWatched(item.id, !getMovieWatched(item.id));
   } else {
     const s = itemStatus(item);
@@ -364,9 +373,10 @@ function quickToggle(item) {
 function openModal(item) {
   document.getElementById('modalTitle').textContent = item.title;
   document.getElementById('modalBody').innerHTML =
-    isGame(item)   ? renderGameModal(item)   :
-    isNovel(item)  ? renderNovelModal(item)  :
-    isMovie(item)  ? renderMovieModal(item)  :
+    isGame(item)       ? renderGameModal(item)       :
+    isAudioDrama(item) ? renderAudioDramaModal(item) :
+    isNovel(item)      ? renderNovelModal(item)       :
+    isMovie(item)      ? renderMovieModal(item)       :
     renderSeriesModal(item);
   document.getElementById('modalOverlay').classList.add('open');
   bindModalEvents(item);
@@ -374,6 +384,29 @@ function openModal(item) {
 
 function closeModal() {
   document.getElementById('modalOverlay').classList.remove('open');
+}
+
+function renderAudioDramaModal(item) {
+  const isListened = getMovieWatched(item.id);
+  return `
+    <div class="movie-detail">
+      <div class="movie-info-row">
+        <span class="card-badge ${isListened ? 'badge-watched' : 'badge-unwatched'}">${isListened ? '✓ Listened' : 'Not Started'}</span>
+        <span style="color:var(--text-muted);font-size:0.85rem">${item.year}</span>
+        <span style="color:var(--text-muted);font-size:0.85rem">by ${item.author}</span>
+        <span style="color:var(--text-muted);font-size:0.85rem">${formatMinutes(item.duration)}</span>
+      </div>
+      ${item.description ? `<p class="modal-description">${item.description}</p>` : ''}
+      ${item.audibleUrl ? `<a class="btn-audible" href="${item.audibleUrl}" target="_blank" rel="noopener noreferrer">▶ Listen on Audible</a>` : ''}
+      <button class="movie-watch-toggle ${isListened ? 'active' : ''}" id="movieToggle">
+        <div class="toggle-icon">${isListened ? '✓' : '○'}</div>
+        <div>
+          <div class="toggle-text">${isListened ? 'Listened' : 'Mark as Listened'}</div>
+          <div class="toggle-sub">${isListened ? 'Click to mark as not started' : 'Click to log this audio drama'}</div>
+        </div>
+      </button>
+    </div>
+  `;
 }
 
 function renderMovieModal(item) {
@@ -502,6 +535,16 @@ function bindModalEvents(item) {
     document.getElementById('movieToggle')?.addEventListener('click', () => {
       setMovieWatched(item.id, !getMovieWatched(item.id));
       document.getElementById('modalBody').innerHTML = renderGameModal(item);
+      bindModalEvents(item);
+      renderCatalog();
+    });
+    return;
+  }
+
+  if (isAudioDrama(item)) {
+    document.getElementById('movieToggle')?.addEventListener('click', () => {
+      setMovieWatched(item.id, !getMovieWatched(item.id));
+      document.getElementById('modalBody').innerHTML = renderAudioDramaModal(item);
       bindModalEvents(item);
       renderCatalog();
     });

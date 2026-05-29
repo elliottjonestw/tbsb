@@ -24,6 +24,17 @@
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+High+Republic+Convergence+Cordova"
     },
     {
+      "id": "the-high-republic-battle-of-jedha",
+      "title": "The High Republic: The Battle of Jedha",
+      "type": "audio-drama",
+      "author": "George Mann",
+      "year": 2023,
+      "era": "disney",
+      "duration": 328,
+      "description": "Two opposing sides converge on the holy city of Jedha — sacred to both the Jedi Order and the followers of the Path of the Open Hand. As tensions between them spiral toward open conflict, a pair of Jedi must find a way to prevent all-out war before the city of light is consumed by darkness.",
+      "audibleUrl": "https://www.audible.com/pd/B0B2BVG1R8"
+    },
+    {
       "id": "the-high-republic-cataclysm",
       "title": "The High Republic: Cataclysm",
       "type": "novel",
@@ -610,6 +621,17 @@
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+High+Republic+Out+of+the+Shadows+Ireland"
     },
     {
+      "id": "the-high-republic-tempest-runner",
+      "title": "The High Republic: Tempest Runner",
+      "type": "audio-drama",
+      "author": "Cavan Scott",
+      "year": 2021,
+      "era": "disney",
+      "duration": 360,
+      "description": "In the aftermath of a devastating Nihil raid, a young woman is captured and forced to survive within the brutal, cutthroat hierarchy of the galaxy's most feared marauders. Clawing her way up the ranks, she discovers that the only way out may be to go further in.",
+      "audibleUrl": "https://www.audible.com/pd/B091GSC6K4"
+    },
+    {
       "id": "the-high-republic-the-fallen-star",
       "title": "The High Republic: The Fallen Star",
       "type": "novel",
@@ -654,6 +676,28 @@
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+High+Republic+Defy+the+Storm"
     },
     {
+      "id": "the-high-republic-seeds-of-starlight",
+      "title": "The High Republic: Seeds of Starlight",
+      "type": "audio-drama",
+      "author": "George Mann",
+      "year": 2024,
+      "era": "disney",
+      "duration": 269,
+      "description": "With the Nihil's grip tightening across the galaxy, a Jedi and their unlikely allies must carry out a covert mission to protect a beacon of hope — planting the seeds of resistance in the darkest hour of the High Republic Era.",
+      "audibleUrl": "https://www.audible.com/pd/B0DKTYWPBT"
+    },
+    {
+      "id": "the-high-republic-tempest-breaker",
+      "title": "The High Republic: Tempest Breaker",
+      "type": "audio-drama",
+      "author": "Cavan Scott",
+      "year": 2024,
+      "era": "disney",
+      "duration": 367,
+      "description": "As the Nihil Stormwall continues to strangle the Outer Rim, a desperate mission to break through the barrier pushes a group of Jedi and their allies to their very limits — with the fate of everyone trapped inside hanging in the balance.",
+      "audibleUrl": "https://www.audible.com/pd/B0CXFBMS5L"
+    },
+    {
       "id": "the-high-republic-temptation-of-the-force",
       "title": "The High Republic: Temptation of the Force",
       "type": "novel",
@@ -685,6 +729,17 @@
       "pageCount": 368,
       "description": "In the final days of the High Republic Era, a Jedi searches for hope amid the wreckage of war — confronting the darkness that has settled over the galaxy and the light she still believes can prevail.",
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+High+Republic+Into+the+Light+Claudia+Gray"
+    },
+    {
+      "id": "the-high-republic-haunted-starlight",
+      "title": "The High Republic: Haunted Starlight",
+      "type": "audio-drama",
+      "author": "George Mann",
+      "year": 2025,
+      "era": "disney",
+      "duration": 255,
+      "description": "In the long shadow of the Nihil's devastation, a Jedi is drawn to a remote outpost haunted by echoes of tragedy — where the line between the living and the dead grows dangerously thin, and an old evil stirs in the darkness.",
+      "audibleUrl": "https://www.audible.com/pd/B0DTZM6NCR"
     },
     {
       "id": "the-high-republic-trials-of-the-jedi",
@@ -873,6 +928,17 @@
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Mace+Windu+The+Glass+Abyss+Steven+Barnes"
     },
     {
+      "id": "padawans-pride",
+      "title": "Padawan's Pride",
+      "type": "audio-drama",
+      "author": "Bryan Q. Miller",
+      "year": 2024,
+      "era": "disney",
+      "duration": 237,
+      "description": "Three years after the Battle of Naboo, Anakin Skywalker is still finding his footing as Obi-Wan Kenobi's Padawan. When a routine mission goes sideways, master and apprentice must confront not only a dangerous new threat but the growing tensions in their bond.",
+      "audibleUrl": "https://www.audible.com/pd/B0D9C7KWG3"
+    },
+    {
       "id": "queens-shadow",
       "title": "Queen's Shadow",
       "type": "ya-novel",
@@ -915,6 +981,17 @@
       "pageCount": 384,
       "description": "In the earliest days of the Clone Wars, Obi-Wan Kenobi is dispatched to Cato Neimoidia to investigate a bombing — while Anakin Skywalker, now a Jedi Knight on his own for the first time, must prove himself without his master.",
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Brotherhood+Mike+Chen"
+    },
+    {
+      "id": "dooku-jedi-lost",
+      "title": "Dooku: Jedi Lost",
+      "type": "audio-drama",
+      "author": "Cavan Scott",
+      "year": 2019,
+      "era": "disney",
+      "duration": 381,
+      "description": "Asajj Ventress is dispatched to recover a mysterious artifact and, in doing so, delves deep into Count Dooku's hidden past — uncovering the story of how a noble Jedi Padawan became one of the most feared men in the galaxy.",
+      "audibleUrl": "https://www.audible.com/pd/B07TJRR3M6"
     },
     {
       "id": "the-clone-wars-film",
@@ -3240,6 +3317,17 @@
       "pageCount": 304,
       "description": "Luke Skywalker takes on a solo mission for the Rebellion to rescue a valued slicer from Imperial captivity — and begins his first tentative steps toward understanding the Force without a master to guide him.",
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Heir+to+the+Jedi+Kevin+Hearne"
+    },
+    {
+      "id": "doctor-aphra-audiobook",
+      "title": "Doctor Aphra: An Audiobook Original",
+      "type": "audio-drama",
+      "author": "Sarah Kuhn",
+      "year": 2020,
+      "era": "disney",
+      "duration": 335,
+      "description": "Left for dead by Darth Vader, rogue archaeologist Doctor Chelli Lona Aphra survives against all odds and sets off on a desperate quest to stay one step ahead of the Empire — pulling together a crew of misfits for a series of increasingly dangerous schemes across the galaxy.",
+      "audibleUrl": "https://www.audible.com/pd/B087GZ74TB"
     },
     {
       "id": "episode-v-the-empire-strikes-back",
