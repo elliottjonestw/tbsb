@@ -603,7 +603,7 @@ Every interactive action inside the modal re-renders the full `#modalBody` and r
 
 ## Filtering and sorting
 
-Three independent filter rows and one sort control sit above the catalog grid. On desktop, each filter row is a set of pill buttons that support **multi-select**: any combination of options within a row can be active simultaneously. The Type filter row is split into three intentional sub-rows: screen content (All, Movies, Short Films, TV Shows, TV Show Shorts) on the first line; text/interactive content (Adult Novels, YA Novels, Console Games, VR Games) on the second; and additional interactive/audio content (Browser Games, Mobile Games, Audio Dramas) on the third. On mobile (≤ 600 px), the pill buttons are hidden and replaced by a `<select>` dropdown for each row, which remains single-select.
+Three independent filter rows, one sort control, and a live search bar sit above the catalog grid. On desktop, each filter row is a set of pill buttons that support **multi-select**: any combination of options within a row can be active simultaneously. The Type filter row is split into three intentional sub-rows: screen content (All, Movies, Short Films, TV Shows, TV Show Shorts) on the first line; text/interactive content (Adult Novels, YA Novels, Console Games, VR Games) on the second; and additional interactive/audio content (Browser Games, Mobile Games, Audio Dramas) on the third. On mobile (≤ 600 px), the pill buttons are hidden and replaced by a `<select>` dropdown for each row, which remains single-select.
 
 ### Filter state
 
@@ -617,7 +617,7 @@ Each filter is stored as a `Set` of active values. An **empty set means "all"** 
 | `activeSort`     | `chronological`, `release`                                                       | `.sort-btn`            | —                | Sort (separate)  |
 | `activeSortDir`  | `asc`, `desc`                                                                    | —                      | —                | (arrow on button)|
 
-All filter sets start empty (= "all") on load; sort defaults to `chronological` / `asc`.
+All filter sets start empty (= "all") on load; sort defaults to `chronological` / `asc`; `searchQuery` starts as an empty string.
 
 **Desktop button behaviour (multi-select):**
 - Clicking a non-"All" button toggles that value in the set. "All" deactivates automatically when any value is in the set.
@@ -642,15 +642,22 @@ items = items.filter(i => {
 
 For games, "Finished" shows all played games, "Not Started" shows all unplayed games. "In Progress" always returns zero results for games (no partial state exists). Selecting both "Not Started" and "Finished" shows all games.
 
+### Search
+
+`#searchInput` is a live `<input type="search">` that filters by title as the user types. The query is stored in the `searchQuery` string and applied as a case-insensitive substring match against `item.title`. An empty string is a no-op.
+
+On desktop, `#searchInput` sits in the `.controls-right` column below the sort buttons, right-aligned and vertically level with the Progress filter row. On mobile it sits below the sort buttons, full-width, as a direct continuation of the `.controls-right` stack.
+
 ### Pipeline
 
-`filteredCatalog()` applies all three filters then the sort in sequence:
+`filteredCatalog()` applies all three filters, the search query, then the sort in sequence:
 
 ```
 catalog[]
   → era filter    (activeEras.size > 0 → i.era ∈ activeEras)
   → type filter   (activeTypes.size > 0 → i.type ∈ activeTypes)
   → status filter (activeStatuses.size > 0 → itemStatus(i) ∈ mapped activeStatuses)
+  → search        (searchQuery → i.title.toLowerCase().includes(q))
   → sort
   → renderCatalog()
 ```

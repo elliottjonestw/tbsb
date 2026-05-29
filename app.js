@@ -8,6 +8,7 @@ let activeTypes   = new Set();   // empty = all
 let activeStatuses = new Set();  // empty = all
 let activeSort = 'chronological';
 let activeSortDir = 'asc';
+let searchQuery = '';
 
 function applyTheme(theme) {
   document.documentElement.classList.toggle('light', theme === 'light');
@@ -223,6 +224,11 @@ function filteredCatalog() {
       const s = itemStatus(i);
       return [...activeStatuses].some(key => (statusMap[key] ?? key) === s);
     });
+  }
+
+  if (searchQuery) {
+    const q = searchQuery.toLowerCase();
+    items = items.filter(i => i.title.toLowerCase().includes(q));
   }
 
   if (activeSort === 'chronological') {
@@ -722,6 +728,11 @@ function bindEvents() {
   document.getElementById('downloadBtn').addEventListener('click', downloadWatchHistory);
   document.getElementById('saveModalOverlay').addEventListener('click', e => {
     if (e.target === e.currentTarget) closeSaveModal();
+  });
+
+  document.getElementById('searchInput').addEventListener('input', e => {
+    searchQuery = e.target.value;
+    renderCatalog();
   });
 
   document.getElementById('loadBtn').addEventListener('click', () => {
