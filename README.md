@@ -32,7 +32,7 @@ On every state mutation, `save()` flushes `watched` to `localStorage`, then call
 
 ## catalog.json
 
-The catalog is an array of **content items** under the top-level `"content"` key. Each item is one of: `movie`, `short-movie`, `series`, `tv-shorts`, `novel`, `ya-novel`, `console-game`, `vr-game`, `browser-game`, or `mobile-game`.
+The catalog is an array of **content items** under the top-level `"content"` key. Each item is one of: `movie`, `short-movie`, `series`, `tv-shorts`, `novel`, `ya-novel`, `console-game`, `vr-game`, `browser-game`, `mobile-game`, or `audio-drama`.
 
 An item's `type` field can be a single string **or an array of strings** when it belongs to more than one type (e.g. a game released on both browser and mobile). Multi-type items appear in filter results for any of their types, and their card displays all type labels joined with ` / ` (e.g. `BROWSER GAME / MOBILE GAME`). The state model, stats, and modal routing are unaffected — they all normalise `type` through the `itemTypes(item)` helper before branching.
 
@@ -228,6 +228,36 @@ The Browser Game schema is identical to the Console/VR Game schema — the only 
 
 The Mobile Game schema is identical to the Console/VR Game schema — the only difference is `"type": "mobile-game"`. Mobile games list their target platforms in the `platforms` array (e.g. `["iOS", "Android"]`). No `amazonUrl` is needed as these were typically free or low-cost app store releases. All stat calculations, card rendering, badge text, and modal behaviour are identical to other game types — all are covered by `isGame()`.
 
+### Audio Drama schema
+
+```json
+{
+  "id": "the-high-republic-tempest-runner",
+  "title": "The High Republic: Tempest Runner",
+  "type": "audio-drama",
+  "author": "Cavan Scott",
+  "year": 2021,
+  "era": "disney",
+  "duration": 360,
+  "description": "In the aftermath of a devastating Nihil raid, a young woman is captured and forced to survive within the brutal, cutthroat hierarchy of the galaxy's most feared marauders.",
+  "audibleUrl": "https://www.audible.com/pd/B091GSC6K4"
+}
+```
+
+| Field        | Type   | Description                                                                 |
+|--------------|--------|-----------------------------------------------------------------------------|
+| `id`         | string | Unique stable identifier (slug). Used as localStorage key and poster filename. |
+| `title`      | string | Display title                                                               |
+| `type`       | string | `"audio-drama"`                                                             |
+| `author`     | string | Writer/adapter name. Shown in the detail modal info row.                    |
+| `year`       | number | Release year                                                                |
+| `era`        | string | `"lucas"` or `"disney"`                                                     |
+| `duration`   | number | Total runtime in minutes. Shown on the card and in the modal, and counted toward Hours Remaining. |
+| `description`| string | Optional. Spoiler-free summary shown in the detail modal.                   |
+| `audibleUrl` | string | Optional. Direct URL to the audio drama on Audible. Renders a "▶ Listen on Audible" button in the modal. |
+
+Audio dramas are treated as binary items (listened or not listened) using the same flat boolean state model as movies, novels, and games. They do not have `format`, `pageCount`, `platforms`, `disneyPlusUrl`, `amazonUrl`, or `seasons`. Audio dramas are excluded from the Watched percentage and included in the Read/Listened percentage and Hours Remaining calculations. The `audibleUrl` field uses the same `btn-audible` button style as the novel modal.
+
 The catalog order controls default display order. Items appear in the order they appear in `catalog.json`. The user's version is ordered chronologically by in-universe timeline position.
 
 ---
@@ -260,11 +290,12 @@ Movies, short-movies, novels, and all game types are all stored as a flat boolea
 A normaliser and four helper functions centralise type branching across the codebase:
 
 ```js
-function itemTypes(item) { return Array.isArray(item.type) ? item.type : [item.type]; }
-function isMovie(item)  { const t = itemTypes(item); return t.includes('movie') || t.includes('short-movie'); }
-function isSeries(item) { const t = itemTypes(item); return t.includes('series') || t.includes('tv-shorts'); }
-function isNovel(item)  { const t = itemTypes(item); return t.includes('novel') || t.includes('ya-novel'); }
-function isGame(item)   { const t = itemTypes(item); return t.includes('console-game') || t.includes('vr-game') || t.includes('browser-game') || t.includes('mobile-game'); }
+function itemTypes(item)    { return Array.isArray(item.type) ? item.type : [item.type]; }
+function isMovie(item)      { const t = itemTypes(item); return t.includes('movie') || t.includes('short-movie'); }
+function isSeries(item)     { const t = itemTypes(item); return t.includes('series') || t.includes('tv-shorts'); }
+function isNovel(item)      { const t = itemTypes(item); return t.includes('novel') || t.includes('ya-novel'); }
+function isGame(item)       { const t = itemTypes(item); return t.includes('console-game') || t.includes('vr-game') || t.includes('browser-game') || t.includes('mobile-game'); }
+function isAudioDrama(item) { const t = itemTypes(item); return t.includes('audio-drama'); }
 ```
 
 `itemTypes` normalises `item.type` to an array regardless of whether it is a string or array, so every other helper and call site works correctly for both single-type and multi-type items. Every place that needs to distinguish content types calls these helpers — not `item.type` directly — so adding a new game type only requires updating `isGame()`, and adding an entirely new content category requires only a new helper plus a handful of call sites.
@@ -280,7 +311,7 @@ function isGame(item)   { const t = itemTypes(item); return t.includes('console-
 | `setSeasonWatched` | `(seriesId, seasonNum, episodes[], val)`        | Bulk-sets all episodes in a season                                             |
 | `setSeriesWatched` | `(item, val)`                                  | Bulk-sets every episode across all seasons in a series                         |
 
-`getMovieWatched` and `setMovieWatched` are shared by movies, short-movies, novels, and games — all four use the same flat boolean storage pattern. The function names are historical; they apply to all flat boolean item types.
+`getMovieWatched` and `setMovieWatched` are shared by movies, short-movies, novels, games, and audio dramas — all five use the same flat boolean storage pattern. The function names are historical; they apply to all flat boolean item types.
 
 Every setter calls `save()`, which serialises `watched` to `localStorage` and then calls `updateStats()` to refresh the stats bar.
 
@@ -296,7 +327,7 @@ The percentage shown in the Watched stat tile is computed purely from **watch ti
 canonWatchedPct = totalWatchedMinutes() / totalMinutes() × 100   (rounded to nearest integer)
 ```
 
-Novels and games are excluded from all minute-based calculations — `totalMinutes()` and `watchedMinutesItem()` skip items where `isNovel(item)` or `isGame(item)` is true.
+Novels, games, and audio dramas are excluded from the video minute-based calculations — `totalMinutes()` and `watchedMinutesItem()` skip items where `isNovel(item)`, `isGame(item)`, or `isAudioDrama(item)` is true.
 
 ### Functions
 
@@ -304,21 +335,36 @@ Novels and games are excluded from all minute-based calculations — `totalMinut
 |-------------------------|-----------------------------------------------------------------------------|
 | `movieMinutes(item)`    | Returns `item.duration` for a movie or short-movie                         |
 | `seriesMinutes(item)`   | Sums all episode durations across all seasons via nested `reduce`           |
-| `totalMinutes()`        | Sums `movieMinutes` or `seriesMinutes` for every non-novel, non-game item in the catalog |
+| `totalMinutes()`        | Sums `movieMinutes` or `seriesMinutes` for every video item (excludes novels, games, and audio dramas) |
 | `watchedMinutesMovie(item)` | Returns `item.duration` if watched, else 0                             |
 | `watchedMinutesSeries(item)` | Iterates seasons → episodes, sums durations for watched episodes only |
-| `watchedMinutesItem(item)` | Returns 0 for novels and games; dispatches to movie or series variant otherwise |
+| `watchedMinutesItem(item)` | Returns 0 for novels, games, and audio dramas; dispatches to movie or series variant otherwise |
 | `totalWatchedMinutes()` | Sums `watchedMinutesItem` for every item in the catalog                    |
 
 ### Novel content
 
-The Read stat tile is computed from **page counts**:
+The Read/Listened stat tile is computed from an **equal-weight item count** across novels and audio dramas combined:
 
 ```
-canonReadPct = readPages / totalNovelPages × 100   (rounded to nearest integer)
+readListenedPct = (readNovels + listenedAudioDramas) / (totalNovels + totalAudioDramas) × 100   (rounded to nearest integer)
 ```
 
-Where `readPages` is the total page count of all novels marked as read, and `totalNovelPages` is the total page count of all novels in the catalog. Both `novel` and `ya-novel` types are included via `isNovel()`.
+Where `readNovels` is the count of all novels marked as read, `listenedAudioDramas` is the count of all audio dramas marked as listened, and the denominator is the total count of both. Both `novel` and `ya-novel` types are included via `isNovel()`; audio dramas are included via `isAudioDrama()`. An item-count approach is used (rather than page- or minute-based) to avoid mixing incompatible units across the two content types.
+
+### Audio drama content
+
+Audio dramas contribute to the Read/Listened percentage (above) and to Hours Remaining, but not to the Watched percentage. In `updateStats()`, audio drama minutes are computed separately:
+
+```
+totalAudioDramaMins    = sum of duration for all audio dramas in the catalog
+listenedAudioDramaMins = sum of duration for all listened audio dramas
+```
+
+These are added to the video time in the Hours Remaining calculation:
+
+```
+hoursRemaining = (totalMinutes() - totalWatchedMinutes() + totalAudioDramaMins - listenedAudioDramaMins) / 60
+```
 
 ### Game content
 
@@ -334,13 +380,13 @@ Where `playedGames` is the count of all games marked as played, and `totalGames`
 
 `itemStatus(item)` derives a display state from the same calculations:
 
-| Status        | Condition                                                         |
-|---------------|-------------------------------------------------------------------|
-| `"unwatched"` | Movie/novel/game not marked; or 0 minutes watched in series       |
-| `"partial"`   | 1 or more minutes watched, less than total (series only)          |
-| `"watched"`   | Movie/novel/game marked true; or watched minutes ≥ total minutes  |
+| Status        | Condition                                                                  |
+|---------------|----------------------------------------------------------------------------|
+| `"unwatched"` | Movie/novel/game/audio drama not marked; or 0 minutes watched in series    |
+| `"partial"`   | 1 or more minutes watched, less than total (series only)                   |
+| `"watched"`   | Movie/novel/game/audio drama marked true; or watched minutes ≥ total minutes |
 
-Movies, short-movies, novels, and games are always either `"unwatched"` or `"watched"` — there is no partial state for flat boolean items. This status value drives the card border colour, the status bar fill height, the card progress bar fill, and the badge text.
+Movies, short-movies, novels, games, and audio dramas are always either `"unwatched"` or `"watched"` — there is no partial state for flat boolean items. This status value drives the card border colour, the status bar fill height, the card progress bar fill, and the badge text.
 
 ### Season-level helpers
 
@@ -366,20 +412,20 @@ These are used exclusively in `renderSeriesModal` and `bindModalEvents` to drive
 
 The ten cards are displayed in this order:
 
-| Card             | Value                                                             | Colour class     |
-|------------------|-------------------------------------------------------------------|------------------|
-| Watched          | `totalWatchedMinutes / totalMinutes` as `N%`                      | `.accent`        |
-| Read             | `readPages / totalNovelPages` as `N%`                             | `.accent`        |
-| Played           | `playedGames / totalGames` as `N%`                                | `.accent`        |
-| Movies           | `watchedMovies / totalMovies` (e.g. `11/13`)                      | default          |
-| Short Films      | `watchedShortFilms / totalShortFilms` (e.g. `0/2`)               | default          |
-| Episodes         | `watchedEps / totalEps` (e.g. `43/579`)                          | default          |
-| Books            | `readNovels / totalNovels` (e.g. `0/66`)                         | default          |
-| Games            | `playedGames / totalGames` (e.g. `0/15`)                         | default          |
-| Pages Remaining  | Total page count of all unread novels                             | default          |
-| Hours Remaining  | `Math.round((totalMinutes - totalWatchedMinutes) / 60)` as `Nh`  | default          |
+| Card             | Value                                                                                                   | Colour class     |
+|------------------|---------------------------------------------------------------------------------------------------------|------------------|
+| Watched          | `totalWatchedMinutes / totalMinutes` as `N%` (video only)                                               | `.accent`        |
+| Read/Listened    | `(readNovels + listenedAudioDramas) / (totalNovels + totalAudioDramas)` as `N%`                         | `.accent`        |
+| Played           | `playedGames / totalGames` as `N%`                                                                      | `.accent`        |
+| Movies           | `watchedMovies / totalMovies` (e.g. `11/13`)                                                            | default          |
+| Short Films      | `watchedShortFilms / totalShortFilms` (e.g. `0/2`)                                                     | default          |
+| Episodes         | `watchedEps / totalEps` (e.g. `43/579`)                                                                 | default          |
+| Books            | `readNovels / totalNovels` (e.g. `0/66`)                                                                | default          |
+| Games            | `playedGames / totalGames` (e.g. `0/33`)                                                                | default          |
+| Pages Remaining  | Total page count of all unread novels                                                                   | default          |
+| Hours Remaining  | `Math.round((totalMinutes - totalWatchedMinutes + totalAudioDramaMins - listenedAudioDramaMins) / 60)` as `Nh` | default   |
 
-Movies count covers both `movie` and `short-movie` types (via `isMovie()`). Episodes count covers both `series` and `tv-shorts` types (via `isSeries()`). Books count covers both `novel` and `ya-novel` types (via `isNovel()`). Games count covers `console-game`, `vr-game`, `browser-game`, and `mobile-game` (via `isGame()`). As additional game types are added in the future, `isGame()` will be expanded to include them, automatically incorporating them into the Played % and Games counts. Watched is video-only; Read is novels-only; Played is games-only.
+Movies count covers both `movie` and `short-movie` types (via `isMovie()`). Episodes count covers both `series` and `tv-shorts` types (via `isSeries()`). Books count covers both `novel` and `ya-novel` types (via `isNovel()`). Games count covers `console-game`, `vr-game`, `browser-game`, and `mobile-game` (via `isGame()`). As additional game types are added in the future, `isGame()` will be expanded to include them, automatically incorporating them into the Played % and Games counts. Watched is video-only; Read/Listened covers novels and audio dramas; Played is games-only. Audio dramas have no dedicated count tile — they appear in the Read/Listened percentage and Hours Remaining, and can be isolated using the Type filter.
 
 ---
 
@@ -423,12 +469,14 @@ The card root element receives a CSS class matching its status: `.card.watched`,
 | `vr-game`             | VR Game               |
 | `browser-game`        | Browser Game          |
 | `mobile-game`         | Mobile Game           |
+| `audio-drama`         | Audio Drama           |
 
 **Meta label** (shown below the title):
 
 | Item type             | Meta label                                                        |
 |-----------------------|-------------------------------------------------------------------|
 | Movie/Short Film      | `formatMinutes(item.duration)` — e.g. `"2h 16m"`                 |
+| Audio Drama           | `formatMinutes(item.duration)` — e.g. `"6h"`                     |
 | Series/TV Shorts      | `N Season(s)` — e.g. `"3 Seasons"`                               |
 | Novel/YA Novel        | `N pages` — e.g. `"349 pages"`                                   |
 | Console/VR Game       | `formatPlatforms(item.platforms)` — up to 3 platforms joined by `, `; if more than 3, shows `"Platform1, Platform2 +N more"` |
@@ -437,22 +485,22 @@ The card root element receives a CSS class matching its status: `.card.watched`,
 
 **Badge classes and text**:
 
-| Status      | CSS class          | Text (non-game)  | Text (game)  |
-|-------------|--------------------|------------------|--------------|
-| `watched`   | `.badge-watched`   | ✓ Finished       | ✓ Played     |
-| `partial`   | `.badge-partial`   | In Progress      | —            |
-| `unwatched` | `.badge-unwatched` | Not Started      | Not Played   |
+| Status      | CSS class          | Text (non-game, non-audio-drama) | Text (game)  | Text (audio drama)  |
+|-------------|--------------------|----------------------------------|--------------|---------------------|
+| `watched`   | `.badge-watched`   | ✓ Finished                       | ✓ Played     | ✓ Listened          |
+| `partial`   | `.badge-partial`   | In Progress                      | —            | —                   |
+| `unwatched` | `.badge-unwatched` | Not Started                      | Not Played   | Not Started         |
 
-Games never show "In Progress" — they are always either "Not Played" or "✓ Played".
+Games and audio dramas never show "In Progress" — they are always either binary states. Games use "Not Played" / "✓ Played". Audio dramas use "Not Started" / "✓ Listened".
 
 **Progress bar percentage**:
 
 - Series/TV Shorts: `watchedMinutesSeries / seriesMinutes × 100`, giving a true partial fill.
 - All other types (movies, short-movies, novels, games): `100` if status is `"watched"`, `0` otherwise — there is no partial state for flat boolean items.
 
-**Quick-toggle button** (`.card-watch-btn`): shows `✓` when finished/played, `＋` when not. For movies/short-movies/novels/games, toggles the boolean directly via `setMovieWatched`. For series/tv-shorts, checks `itemStatus` — if the series is fully `watched`, marks all episodes unwatched; otherwise marks all episodes watched. After toggling, calls `renderCatalog()` to refresh the grid.
+**Quick-toggle button** (`.card-watch-btn`): shows `✓` when finished/played/listened, `＋` when not. For movies/short-movies/novels/games/audio-dramas, toggles the boolean directly via `setMovieWatched`. For series/tv-shorts, checks `itemStatus` — if the series is fully `watched`, marks all episodes unwatched; otherwise marks all episodes watched. After toggling, calls `renderCatalog()` to refresh the grid.
 
-The button tooltip reads "Mark as Not Played" / "Mark as Played" for games, and "Mark as Not Started" / "Mark as Finished" for all other flat boolean types.
+The button tooltip reads "Mark as Not Played" / "Mark as Played" for games, "Mark as Not Started" / "Mark as Listened" for audio dramas, and "Mark as Not Started" / "Mark as Finished" for all other flat boolean types.
 
 ### formatPlatforms
 
@@ -488,7 +536,7 @@ On hover, cards lift `translateY(-2px)`, background shifts from `--bg-card` to `
 
 ### Opening and closing
 
-`openModal(item)` sets `#modalTitle` from `item.title`, fills `#modalBody` with the appropriate modal renderer based on type (`renderGameModal` → `renderNovelModal` → `renderMovieModal` → `renderSeriesModal`), adds the `.open` class to `#modalOverlay`, and calls `bindModalEvents`.
+`openModal(item)` sets `#modalTitle` from `item.title`, fills `#modalBody` with the appropriate modal renderer based on type (`renderGameModal` → `renderAudioDramaModal` → `renderNovelModal` → `renderMovieModal` → `renderSeriesModal`), adds the `.open` class to `#modalOverlay`, and calls `bindModalEvents`.
 
 `closeModal()` removes the `.open` class. The overlay is `display: none` by default and `display: flex` when `.open`. Three triggers call `closeModal`: the `×` button, clicking the backdrop (overlay but not the modal box itself, checked via `e.target === e.currentTarget`), and the `Escape` key.
 
@@ -502,6 +550,17 @@ Layout (`.movie-detail`, vertical flex, `gap: 20px`):
 2. **Description** (`.modal-description`): rendered only if `item.description` is present.
 3. **Watch button** (`.btn-disney`): rendered only if `item.disneyPlusUrl` is present. Links to the item's Disney+ or YouTube page in a new tab. Label reads "▶ Watch on Disney+" for Disney+ URLs and "▶ Watch on YouTube" for `youtube.com` URLs. Detected via `url.includes('youtube.com')`.
 4. **Watch toggle button** (`.movie-watch-toggle`): full-width button with a circular icon on the left and two lines of text on the right. When watched, the button has class `.active`, the icon shows `✓`, main text is "Watched", sub-text is "Click to mark as not started". When unwatched, icon shows `○`, main text is "Mark as Watched", sub-text is "Click to log this movie". Clicking toggles the state, re-renders the modal body, re-binds events, and calls `renderCatalog()`.
+
+### Audio drama modal
+
+Layout (`.movie-detail`, vertical flex, `gap: 20px`):
+
+1. **Info row** (`.movie-info-row`): badge, year, author (`by Name`), runtime — all inline, wrapped.
+2. **Description** (`.modal-description`): rendered only if `item.description` is present.
+3. **Listen on Audible** (`.btn-audible`): rendered only if `item.audibleUrl` is present. Links to the audio drama on Audible in a new tab. Label reads "▶ Listen on Audible".
+4. **Listen toggle button** (`.movie-watch-toggle`): same structure as the movie and novel toggles. When listened, the button has class `.active`, icon shows `✓`, main text is "Listened", sub-text is "Click to mark as not started". When not started, icon shows `○`, main text is "Mark as Listened", sub-text is "Click to log this audio drama".
+
+The audio drama modal reuses the `.movie-watch-toggle` styling and the `#movieToggle` id. `bindModalEvents` routes audio drama items to re-render via `renderAudioDramaModal`. The `btn-audible` style is shared with the novel modal's Audible button.
 
 ### Novel modal
 
@@ -542,7 +601,7 @@ Every interactive action inside the modal re-renders the full `#modalBody` and r
 
 ## Filtering and sorting
 
-Three independent filter rows and one sort control sit above the catalog grid. On desktop, each filter row is a set of pill buttons that support **multi-select**: any combination of options within a row can be active simultaneously. The Type filter row is split into two intentional sub-rows: screen content (All, Movies, Short Films, TV Shows, TV Show Shorts) on the first line and text/interactive content (Adult Novels, YA Novels, Console Games, VR Games, Browser Games, Mobile Games) on the second. On mobile (≤ 600 px), the pill buttons are hidden and replaced by a `<select>` dropdown for each row, which remains single-select.
+Three independent filter rows and one sort control sit above the catalog grid. On desktop, each filter row is a set of pill buttons that support **multi-select**: any combination of options within a row can be active simultaneously. The Type filter row is split into three intentional sub-rows: screen content (All, Movies, Short Films, TV Shows, TV Show Shorts) on the first line; text/interactive content (Adult Novels, YA Novels, Console Games, VR Games) on the second; and additional interactive/audio content (Browser Games, Mobile Games, Audio Dramas) on the third. On mobile (≤ 600 px), the pill buttons are hidden and replaced by a `<select>` dropdown for each row, which remains single-select.
 
 ### Filter state
 
@@ -551,7 +610,7 @@ Each filter is stored as a `Set` of active values. An **empty set means "all"** 
 | Variable         | Possible values in set                                                           | Desktop (pill buttons) | Mobile (select)  | Filter row label |
 |------------------|----------------------------------------------------------------------------------|------------------------|------------------|------------------|
 | `activeEras`     | `lucas`, `disney`                                                                | `.era-btn`             | `.era-select`    | Era              |
-| `activeTypes`    | `movie`, `short-movie`, `series`, `tv-shorts`, `novel`, `ya-novel`, `console-game`, `vr-game`, `browser-game`, `mobile-game` | `.type-btn` | `.type-select` | Type |
+| `activeTypes`    | `movie`, `short-movie`, `series`, `tv-shorts`, `novel`, `ya-novel`, `console-game`, `vr-game`, `browser-game`, `mobile-game`, `audio-drama` | `.type-btn` | `.type-select` | Type |
 | `activeStatuses` | `not-started`, `in-progress`, `finished`                                         | `.status-btn`          | `.status-select` | Progress         |
 | `activeSort`     | `chronological`, `release`                                                       | `.sort-btn`            | —                | Sort (separate)  |
 | `activeSortDir`  | `asc`, `desc`                                                                    | —                      | —                | (arrow on button)|
@@ -630,7 +689,8 @@ Events are bound in two places:
 - `#loadInput` change → calls `loadWatchHistory(file)`, then clears the input value
 
 **`bindModalEvents(item)`** — called after every modal render. Routes to different handlers based on type:
-- **Game**: `#movieToggle` → `setMovieWatched`, re-render `renderGameModal`, re-bind, `renderCatalog()`. Checked first before novel and movie handlers.
+- **Game**: `#movieToggle` → `setMovieWatched`, re-render `renderGameModal`, re-bind, `renderCatalog()`. Checked first before audio drama, novel, and movie handlers.
+- **Audio Drama**: `#movieToggle` → `setMovieWatched`, re-render `renderAudioDramaModal`, re-bind, `renderCatalog()`. Checked after game, before novel and movie handlers.
 - **Novel**: `#movieToggle` → `setMovieWatched`, re-render `renderNovelModal`, re-bind, `renderCatalog()`
 - **Movie**: `#movieToggle` → `setMovieWatched`, re-render `renderMovieModal`, re-bind, `renderCatalog()`
 - **Series**: "Mark All Watched" (`#markAllBtn`) → `setSeriesWatched(item, true)`; "Clear All" (`#unmarkAllBtn`) → `setSeriesWatched(item, false)`; `.season-btn` clicks → `setSeasonWatched` toggle; `.episode-row` clicks → `setEpWatched` toggle. All re-render, re-bind, and call `renderCatalog()`.
@@ -701,7 +761,7 @@ The header is `position: sticky; top: 0; z-index: 100` with `backdrop-filter: bl
 
 Both `.filter-btn` and `.sort-btn` share the same visual treatment: `border-radius: 100px` pill shape, `--bg-card` background, `--border` border, `--text-muted` text. On hover, border brightens and text becomes `--text`. When `.active`, background becomes `--accent-dim`, border becomes `--accent`, text becomes `--accent`, font-weight 600. Filter row labels (`.filter-row-label`) are `min-width: 56px`, uppercase, `--text-dim` colour, aligned center within their row.
 
-The Type filter row uses a nested `.type-btn-rows` flex column containing two `.type-btn-subrow` divs, allowing two intentional rows of buttons to share a single "TYPE" label that vertically centres between them.
+The Type filter row uses a nested `.type-btn-rows` flex column containing three `.type-btn-subrow` divs, allowing three intentional rows of buttons to share a single "TYPE" label that vertically centres alongside them.
 
 ### Platform tags
 
@@ -875,6 +935,14 @@ All game types are played or not played — there is no partial state. They are 
 When additional game types are introduced in the future, add their `type` values to `isGame()` and `typeLabels` — they will automatically be picked up by all stat calculations, filtering, card rendering, and modal routing.
 
 Provide `amazonUrl` pointing to the game's Amazon product page or a search URL. No `audibleUrl` or `disneyPlusUrl` fields are used for games.
+
+### Adding audio dramas
+
+Use `"type": "audio-drama"`. Provide `author` (writer/adapter name), `duration` (total runtime in minutes), and `audibleUrl` pointing directly to the audio drama's product page on Audible.
+
+Audio dramas are listened or not listened — there is no partial state. They are excluded from the Watched percentage, counted in Read/Listened percentage (equal weight alongside novels), and contribute their full runtime to Hours Remaining. They do not have `format`, `pageCount`, `platforms`, `disneyPlusUrl`, or `amazonUrl`.
+
+The catalog order controls default display position. Insert audio dramas at the correct chronological position within `catalog.json` relative to the surrounding novels and films.
 
 ### Adding cover images
 
