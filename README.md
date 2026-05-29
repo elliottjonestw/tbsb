@@ -710,7 +710,7 @@ The catalog card click handler lives inside `renderCatalog()` and is re-attached
 
 ## CSS design system
 
-All colours and radii are defined as CSS custom properties on `:root`. The app supports two themes — **dark** (default) and **light** — applied by toggling the `light` class on the `<html>` element. `html.light` overrides every colour token; layout, spacing, and radius tokens are shared.
+All colours and radii are defined as CSS custom properties on `:root`. The app supports two themes — **light** (default) and **dark** — applied by toggling the `light` class on the `<html>` element. `html.light` overrides every colour token; layout, spacing, and radius tokens are shared.
 
 ### Dark mode tokens (`:root` defaults)
 
@@ -807,7 +807,7 @@ Fixed two-column grid: `grid-template-columns: repeat(2, 1fr)`, `gap: 16px`. No 
 | `startracker_watched`  | `STORAGE_KEY`  | Serialised `watched` object — all play/watch/read state |
 | `startracker_theme`    | `THEME_KEY`    | `"dark"` or `"light"` — user's theme preference |
 
-`watched` is serialised to JSON and written on every state mutation. On load, `init()` reads it back with `JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}')`. The theme preference is read at the very start of `init()` (before the catalog fetch) so the correct theme is applied before any rendering occurs. Both keys default gracefully — missing `watched` becomes `{}`, missing theme becomes `'dark'`.
+`watched` is serialised to JSON and written on every state mutation. On load, `init()` reads it back with `JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}')`. The theme preference is read at the very start of `init()` (before the catalog fetch) so the correct theme is applied before any rendering occurs. Both keys default gracefully — missing `watched` becomes `{}`, missing theme becomes `'light'`.
 
 Clearing browser storage or clicking the Reset button (which calls `confirm()` first) sets `watched = {}` and re-saves, returning all content state to zero. The theme preference is unaffected by Reset.
 

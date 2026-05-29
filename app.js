@@ -17,7 +17,7 @@ function applyTheme(theme) {
 }
 
 async function init() {
-  applyTheme(localStorage.getItem(THEME_KEY) || 'dark');
+  applyTheme(localStorage.getItem(THEME_KEY) || 'light');
   const res = await fetch('catalog.json');
   catalog = (await res.json()).content;
   watched = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
