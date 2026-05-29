@@ -179,48 +179,34 @@ function updateStats() {
   const readListenedPct = readListenedTotal > 0 ? Math.round(((readNovels + listenedAudioDramas) / readListenedTotal) * 100) : 0;
   const playedPct = games.length > 0 ? Math.round((playedGames / games.length) * 100) : 0;
 
-  document.getElementById('statsRow').innerHTML = `
+  const sc = (value, label, tip, accent = false) => `
     <div class="stat-card">
-      <div class="stat-value accent">${Math.round((totalWatchedMinutes() / totalMinutes()) * 100)}%</div>
-      <div class="stat-label">Watched</div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-value accent">${readListenedPct}%</div>
-      <div class="stat-label">Read/Listened</div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-value accent">${playedPct}%</div>
-      <div class="stat-label">Played</div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-value">${watchedFullMovies}/${fullMovies.length}</div>
-      <div class="stat-label">Movies</div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-value">${watchedShortFilms}/${shortFilms.length}</div>
-      <div class="stat-label">Short Films</div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-value">${watchedEps}/${totalEps}</div>
-      <div class="stat-label">Episodes</div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-value">${readNovels}/${novels.length}</div>
-      <div class="stat-label">Books</div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-value">${playedGames}/${games.length}</div>
-      <div class="stat-label">Games</div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-value">${remainingPages.toLocaleString()}</div>
-      <div class="stat-label">Pages Remaining</div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-value">${Math.round((totalMinutes() - totalWatchedMinutes() + totalAudioDramaMins - listenedAudioDramaMins) / 60)}h</div>
-      <div class="stat-label">Hours Remaining</div>
-    </div>
-  `;
+      <span class="stat-info">i<span class="stat-tooltip">${tip}</span></span>
+      <div class="stat-value${accent ? ' accent' : ''}">${value}</div>
+      <div class="stat-label">${label}</div>
+    </div>`;
+
+  document.getElementById('statsRow').innerHTML =
+    sc(`${Math.round((totalWatchedMinutes() / totalMinutes()) * 100)}%`, 'Watched',
+      'Percentage of total video runtime watched, weighted by duration — a 2-hour movie contributes more than a 22-minute episode. Covers movies, short films, TV shows, and TV shorts. Books, audio dramas, and games are excluded.', true) +
+    sc(`${readListenedPct}%`, 'Read/Listened',
+      'Percentage of books and audio dramas completed. Each item counts equally regardless of length — a short novella and an 800-page novel each count as one. Covers adult novels, YA novels, and audio dramas.', true) +
+    sc(`${playedPct}%`, 'Played',
+      'Percentage of games played. Each title counts equally regardless of length. Covers console, VR, browser, and mobile games.', true) +
+    sc(`${watchedFullMovies}/${fullMovies.length}`, 'Movies',
+      'Feature-length movies watched vs. total in the catalog. Short films are counted separately in the Short Films tile.') +
+    sc(`${watchedShortFilms}/${shortFilms.length}`, 'Short Films',
+      'Short films watched vs. total. Feature-length movies are not included here.') +
+    sc(`${watchedEps}/${totalEps}`, 'Episodes',
+      'Individual episodes watched vs. total across all TV shows and TV shorts. Each episode counts once regardless of its runtime.') +
+    sc(`${readNovels}/${novels.length}`, 'Books',
+      'Books read vs. total catalog. Includes both adult and YA novels. Audio dramas are tracked separately in Read/Listened.') +
+    sc(`${playedGames}/${games.length}`, 'Games',
+      'Games played vs. total catalog. Includes console, VR, browser, and mobile games.') +
+    sc(`${remainingPages.toLocaleString()}`, 'Pages Remaining',
+      'Total page count of all unread books — the sum of every unread novel\'s page count. Includes adult and YA novels. Audio dramas are not included.') +
+    sc(`${Math.round((totalMinutes() - totalWatchedMinutes() + totalAudioDramaMins - listenedAudioDramaMins) / 60)}h`, 'Hours Remaining',
+      'Hours of content remaining based on runtime. Covers unwatched video (movies, short films, and unfinished episodes) plus unlistened audio dramas. Books and games are not included.');
 }
 
 // ── Render catalog ───────────────────────────────────────────────────────────

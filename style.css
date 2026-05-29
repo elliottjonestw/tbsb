@@ -189,6 +189,59 @@ main {
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 16px;
+  position: relative;
+}
+
+.stat-info {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 1px solid var(--border-bright);
+  color: var(--text-dim);
+  font-size: 0.6rem;
+  font-weight: 700;
+  font-style: italic;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: default;
+  line-height: 1;
+  user-select: none;
+  transition: border-color 0.15s, color 0.15s;
+}
+
+.stat-info:hover {
+  border-color: var(--text-muted);
+  color: var(--text-muted);
+}
+
+.stat-tooltip {
+  display: none;
+  position: absolute;
+  top: calc(100% + 5px);
+  right: 0;
+  width: 220px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-bright);
+  border-radius: var(--radius-sm);
+  padding: 10px 12px;
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 400;
+  color: var(--text-muted);
+  line-height: 1.5;
+  z-index: 50;
+  box-shadow: var(--shadow);
+  pointer-events: none;
+  text-align: left;
+  white-space: normal;
+}
+
+.stat-info:hover .stat-tooltip {
+  display: block;
 }
 
 .stat-value {
@@ -923,6 +976,9 @@ html.light .episode-row.watched { border-color: rgba(22, 163, 74, 0.3); }
   .stat-card { padding: 14px; }
   .stat-value { font-size: 1.5rem; }
   .stat-label { font-size: 0.72rem; }
+
+  /* ── Stat info icons — hidden on mobile ─────────────────────────────────── */
+  .stat-info { display: none; }
 
   /* ── Filters — show dropdowns, hide pill buttons ─────────────────────────── */
   .filter-btn { display: none; }
