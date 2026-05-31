@@ -1,5 +1,6 @@
-const STORAGE_KEY = 'startracker_watched';
-const THEME_KEY   = 'startracker_theme';
+const STORAGE_KEY   = 'startracker_watched';
+const THEME_KEY     = 'startracker_theme';
+const FILTERS_KEY   = 'startracker_filters_visible';
 
 let catalog = [];
 let watched = {};
@@ -16,8 +17,14 @@ function applyTheme(theme) {
   if (btn) btn.title = theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode';
 }
 
+function applyFiltersVisible(visible) {
+  document.getElementById('filtersCol').classList.toggle('filters-hidden', !visible);
+  document.getElementById('filtersToggleBtn').classList.toggle('filters-collapsed', !visible);
+}
+
 async function init() {
   applyTheme(localStorage.getItem(THEME_KEY) || 'light');
+  applyFiltersVisible(localStorage.getItem(FILTERS_KEY) !== 'false');
   const res = await fetch('catalog.json');
   catalog = (await res.json()).content;
   watched = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
@@ -905,6 +912,12 @@ function bindEvents() {
     const next = document.documentElement.classList.contains('light') ? 'dark' : 'light';
     localStorage.setItem(THEME_KEY, next);
     applyTheme(next);
+  });
+
+  document.getElementById('filtersToggleBtn').addEventListener('click', () => {
+    const visible = document.getElementById('filtersCol').classList.contains('filters-hidden');
+    localStorage.setItem(FILTERS_KEY, visible);
+    applyFiltersVisible(visible);
   });
 
   document.getElementById('resetBtn').addEventListener('click', () => {

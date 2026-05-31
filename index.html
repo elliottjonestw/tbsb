@@ -35,7 +35,17 @@
   <main>
     <div class="stats-row" id="statsRow"></div>
     <div class="controls-row">
-      <div class="filters-col">
+      <div class="filters-wrapper">
+      <button class="filter-toggle-btn" id="filtersToggleBtn" title="Toggle filters">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/>
+        </svg>
+        Filters
+        <svg class="toggle-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="18 15 12 9 6 15"/>
+        </svg>
+      </button>
+      <div class="filters-col" id="filtersCol">
         <div class="filter-row">
           <span class="filter-row-label">Era</span>
           <select class="filter-select era-select">
@@ -103,6 +113,7 @@
           <button class="filter-btn status-btn" data-status="in-progress">In Progress</button>
           <button class="filter-btn status-btn" data-status="finished">Finished</button>
         </div>
+      </div>
       </div>
       <div class="controls-right">
         <div class="sort-bar">
