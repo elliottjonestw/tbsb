@@ -443,6 +443,10 @@ function quickToggle(item) {
 
 // ── Modal ────────────────────────────────────────────────────────────────────
 
+function wookiepediaUrl(title) {
+  return 'https://starwars.fandom.com/wiki/Special:Search?scope=internal&navigationSearch=true&query=' + encodeURIComponent(title);
+}
+
 function openModal(item) {
   document.getElementById('modalTitle').textContent = item.title;
   document.getElementById('modalBody').innerHTML =
@@ -472,7 +476,10 @@ function renderAudioDramaModal(item) {
         <span style="color:var(--text-muted);font-size:0.85rem">${formatMinutes(item.duration)}</span>
       </div>
       ${item.description ? `<p class="modal-description">${item.description}</p>` : ''}
-      ${item.audibleUrl ? `<a class="btn-audible" href="${item.audibleUrl}" target="_blank" rel="noopener noreferrer">▶ Listen on Audible</a>` : ''}
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        ${item.audibleUrl ? `<a class="btn-audible" href="${item.audibleUrl}" target="_blank" rel="noopener noreferrer">▶ Listen on Audible</a>` : ''}
+        <a class="btn-wookieepedia" href="${wookiepediaUrl(item.title)}" target="_blank" rel="noopener noreferrer">Search on Wookieepedia</a>
+      </div>
       <button class="movie-watch-toggle ${isListened ? 'active' : ''}" id="movieToggle">
         <div class="toggle-icon">${isListened ? '✓' : '○'}</div>
         <div>
@@ -494,7 +501,10 @@ function renderMovieModal(item) {
         <span style="color:var(--text-muted);font-size:0.85rem">${formatMinutes(item.duration)}</span>
       </div>
       ${item.description ? `<p class="modal-description">${item.description}</p>` : ''}
-      ${item.disneyPlusUrl ? `<a class="btn-disney" href="${item.disneyPlusUrl}" target="_blank" rel="noopener noreferrer">▶ ${item.disneyPlusUrl.includes('youtube.com') ? 'Watch on YouTube' : 'Watch on Disney+'}</a>` : ''}
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        ${item.disneyPlusUrl ? `<a class="btn-disney" href="${item.disneyPlusUrl}" target="_blank" rel="noopener noreferrer">▶ ${item.disneyPlusUrl.includes('youtube.com') ? 'Watch on YouTube' : 'Watch on Disney+'}</a>` : ''}
+        <a class="btn-wookieepedia" href="${wookiepediaUrl(item.title)}" target="_blank" rel="noopener noreferrer">Search on Wookieepedia</a>
+      </div>
       <button class="movie-watch-toggle ${isDone ? 'active' : ''}" id="movieToggle">
         <div class="toggle-icon">${isDone ? '✓' : '○'}</div>
         <div>
@@ -520,6 +530,7 @@ function renderNovelModal(item) {
       <div style="display:flex;gap:10px;flex-wrap:wrap">
         ${item.audibleUrl ? `<a class="btn-audible" href="${item.audibleUrl}" target="_blank" rel="noopener noreferrer">Listen on Audible</a>` : ''}
         ${item.amazonUrl ? `<a class="btn-amazon" href="${item.amazonUrl}" target="_blank" rel="noopener noreferrer">Buy on Amazon</a>` : ''}
+        <a class="btn-wookieepedia" href="${wookiepediaUrl(item.title)}" target="_blank" rel="noopener noreferrer">Search on Wookieepedia</a>
       </div>
       <button class="movie-watch-toggle ${isRead ? 'active' : ''}" id="movieToggle">
         <div class="toggle-icon">${isRead ? '✓' : '○'}</div>
@@ -546,7 +557,10 @@ function renderGameModal(item) {
       </div>
       ${platformsHtml}
       ${item.description ? `<p class="modal-description">${item.description}</p>` : ''}
-      ${item.amazonUrl ? `<a class="btn-amazon" href="${item.amazonUrl}" target="_blank" rel="noopener noreferrer">Buy on Amazon</a>` : ''}
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        ${item.amazonUrl ? `<a class="btn-amazon" href="${item.amazonUrl}" target="_blank" rel="noopener noreferrer">Buy on Amazon</a>` : ''}
+        <a class="btn-wookieepedia" href="${wookiepediaUrl(item.title)}" target="_blank" rel="noopener noreferrer">Search on Wookieepedia</a>
+      </div>
       <button class="movie-watch-toggle ${isPlayed ? 'active' : ''}" id="movieToggle">
         <div class="toggle-icon">${isPlayed ? '✓' : '○'}</div>
         <div>
@@ -597,6 +611,7 @@ function renderSeriesModal(item) {
     ${item.description ? `<p class="modal-description">${item.description}</p>` : ''}
     <div class="series-header-actions">
       ${item.disneyPlusUrl ? `<a class="btn-disney" href="${item.disneyPlusUrl}" target="_blank" rel="noopener noreferrer">▶ ${item.disneyPlusUrl.includes('youtube.com') ? 'Watch on YouTube' : 'Watch on Disney+'}</a>` : ''}
+      <a class="btn-wookieepedia" href="${wookiepediaUrl(item.title)}" target="_blank" rel="noopener noreferrer">Search on Wookieepedia</a>
       <button class="btn-primary" id="markAllBtn" data-id="${item.id}">Mark All Watched</button>
       <button class="btn-outline" id="unmarkAllBtn" data-id="${item.id}">Clear All</button>
       <span style="margin-left:auto;color:var(--text-muted);font-size:0.85rem;align-self:center">${pct}% · ${formatMinutes(doneMins)} / ${formatMinutes(totalMins)}</span>
@@ -655,6 +670,7 @@ function renderComicModal(item) {
     </div>
     ${item.description ? `<p class="modal-description">${item.description}</p>` : ''}
     <div class="series-header-actions">
+      <a class="btn-wookieepedia" href="${wookiepediaUrl(item.title)}" target="_blank" rel="noopener noreferrer">Search on Wookieepedia</a>
       <button class="btn-primary" id="markAllComicBtn" data-id="${item.id}">Mark All Read</button>
       <button class="btn-outline" id="unmarkAllComicBtn" data-id="${item.id}">Clear All</button>
       <span style="margin-left:auto;color:var(--text-muted);font-size:0.85rem;align-self:center">${pct}% · ${donePages.toLocaleString()} / ${totalPages.toLocaleString()} pages</span>
