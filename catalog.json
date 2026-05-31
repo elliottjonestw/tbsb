@@ -1,6 +1,38 @@
 {
   "content": [
     {
+      "id": "the-high-republic-the-blade",
+      "title": "The High Republic: The Blade",
+      "type": "comic",
+      "publisher": "Marvel Comics",
+      "year": 2022,
+      "era": "disney",
+      "description": "A Phase II character study of the legendary Jedi Porter Engle — the Blade of Bardotta — as a long-buried chapter of his past resurfaces in the early days of the High Republic.",
+      "arcs": [
+        {
+          "arc": "The Blade",
+          "issues": [
+            {
+              "issue": 1,
+              "pageCount": 32
+            },
+            {
+              "issue": 2,
+              "pageCount": 32
+            },
+            {
+              "issue": 3,
+              "pageCount": 32
+            },
+            {
+              "issue": 4,
+              "pageCount": 32
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "path-of-deceit",
       "title": "The High Republic: Path of Deceit",
       "type": "ya-novel",
@@ -57,6 +89,67 @@
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+High+Republic+Path+of+Vengeance+Scott"
     },
     {
+      "id": "the-high-republic-phase-2-comic",
+      "title": "The High Republic (2022)",
+      "type": "comic",
+      "publisher": "Marvel Comics",
+      "year": 2022,
+      "era": "disney",
+      "description": "Marvel's flagship Phase II title, set roughly 150 years before Phase I, following the Jedi of an earlier age as a new threat tests the Order.",
+      "arcs": [
+        {
+          "arc": "Balance of the Force",
+          "issues": [
+            {
+              "issue": 1,
+              "pageCount": 32
+            },
+            {
+              "issue": 2,
+              "pageCount": 32
+            },
+            {
+              "issue": 3,
+              "pageCount": 32
+            },
+            {
+              "issue": 4,
+              "pageCount": 32
+            },
+            {
+              "issue": 5,
+              "pageCount": 32
+            }
+          ]
+        },
+        {
+          "arc": "Battle for the Force",
+          "issues": [
+            {
+              "issue": 6,
+              "pageCount": 32
+            },
+            {
+              "issue": 7,
+              "pageCount": 32
+            },
+            {
+              "issue": 8,
+              "pageCount": 32
+            },
+            {
+              "issue": 9,
+              "pageCount": 32
+            },
+            {
+              "issue": 10,
+              "pageCount": 32
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "the-high-republic-light-of-the-jedi",
       "title": "The High Republic: Light of the Jedi",
       "type": "novel",
@@ -77,6 +170,262 @@
       "pageCount": 425,
       "description": "A Jedi Padawan and a crew of smugglers become stranded at a derelict space station after a hyperspace disaster — and what they find there may be more dangerous than anything waiting in the dark outside.",
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+High+Republic+Into+the+Dark+Claudia+Gray"
+    },
+    {
+      "id": "the-high-republic-phase-1-comic",
+      "title": "The High Republic (2021)",
+      "type": "comic",
+      "publisher": "Marvel Comics",
+      "year": 2021,
+      "era": "disney",
+      "description": "Marvel's flagship High Republic title, following the Jedi and the Republic as they confront a terrifying new external threat at the height of the Order's golden age.",
+      "arcs": [
+        {
+          "arc": "There Is No Fear",
+          "issues": [
+            {
+              "issue": 1,
+              "pageCount": 32
+            },
+            {
+              "issue": 2,
+              "pageCount": 32
+            },
+            {
+              "issue": 3,
+              "pageCount": 32
+            },
+            {
+              "issue": 4,
+              "pageCount": 32
+            },
+            {
+              "issue": 5,
+              "pageCount": 32
+            }
+          ]
+        },
+        {
+          "arc": "Heart of the Drengir",
+          "issues": [
+            {
+              "issue": 6,
+              "pageCount": 32
+            },
+            {
+              "issue": 7,
+              "pageCount": 32
+            },
+            {
+              "issue": 8,
+              "pageCount": 32
+            }
+          ]
+        },
+        {
+          "arc": "The Shadow of the Nihil",
+          "issues": [
+            {
+              "issue": 9,
+              "pageCount": 32
+            },
+            {
+              "issue": 10,
+              "pageCount": 32
+            }
+          ]
+        },
+        {
+          "arc": "Tears of the Nameless",
+          "issues": [
+            {
+              "issue": 11,
+              "pageCount": 32
+            },
+            {
+              "issue": 12,
+              "pageCount": 32
+            },
+            {
+              "issue": 13,
+              "pageCount": 32
+            },
+            {
+              "issue": 14,
+              "pageCount": 32
+            },
+            {
+              "issue": 15,
+              "pageCount": 32
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "the-high-republic-adventures-phase-1-comic",
+      "title": "The High Republic Adventures (2021)",
+      "type": "comic",
+      "publisher": "IDW Publishing",
+      "year": 2021,
+      "era": "disney",
+      "description": "An all-ages series following a group of young Jedi and their Padawans through the same galaxy-spanning crisis seen in the flagship Phase I titles.",
+      "arcs": [
+        {
+          "arc": "The High Republic Adventures",
+          "issues": [
+            {
+              "issue": 1,
+              "pageCount": 32
+            },
+            {
+              "issue": 2,
+              "pageCount": 32
+            },
+            {
+              "issue": 3,
+              "pageCount": 32
+            },
+            {
+              "issue": 4,
+              "pageCount": 32
+            },
+            {
+              "issue": 5,
+              "pageCount": 32
+            },
+            {
+              "issue": 6,
+              "pageCount": 32
+            },
+            {
+              "issue": 7,
+              "pageCount": 32
+            },
+            {
+              "issue": 8,
+              "pageCount": 32
+            },
+            {
+              "issue": 9,
+              "pageCount": 32
+            },
+            {
+              "issue": 10,
+              "pageCount": 32
+            },
+            {
+              "issue": 11,
+              "pageCount": 32
+            },
+            {
+              "issue": 12,
+              "pageCount": 32
+            },
+            {
+              "issue": 13,
+              "pageCount": 32
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "the-monster-of-temple-peak",
+      "title": "The High Republic Adventures: The Monster of Temple Peak",
+      "type": "comic",
+      "publisher": "IDW Publishing",
+      "year": 2021,
+      "era": "disney",
+      "description": "A bounty-hunter-and-Jedi miniseries spinning out of the all-ages Adventures line during the height of the High Republic.",
+      "arcs": [
+        {
+          "arc": "The Monster of Temple Peak",
+          "issues": [
+            {
+              "issue": 1,
+              "pageCount": 32
+            },
+            {
+              "issue": 2,
+              "pageCount": 32
+            },
+            {
+              "issue": 3,
+              "pageCount": 32
+            },
+            {
+              "issue": 4,
+              "pageCount": 32
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "the-high-republic-trail-of-shadows",
+      "title": "The High Republic: Trail of Shadows",
+      "type": "comic",
+      "publisher": "Marvel Comics",
+      "year": 2021,
+      "era": "disney",
+      "description": "A noir mystery in which a private investigator and a Jedi hunt for the truth behind a horror stalking the frontier of the galaxy.",
+      "arcs": [
+        {
+          "arc": "Trail of Shadows",
+          "issues": [
+            {
+              "issue": 1,
+              "pageCount": 32,
+              "title": "Trail of Shadows"
+            },
+            {
+              "issue": 2,
+              "pageCount": 32,
+              "title": "Way Down Deep in the Dark"
+            },
+            {
+              "issue": 3,
+              "pageCount": 32,
+              "title": "Cold Comfort"
+            },
+            {
+              "issue": 4,
+              "pageCount": 32
+            },
+            {
+              "issue": 5,
+              "pageCount": 32
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "the-high-republic-eye-of-the-storm",
+      "title": "The High Republic: Eye of the Storm",
+      "type": "comic",
+      "publisher": "Marvel Comics",
+      "year": 2022,
+      "era": "disney",
+      "description": "An origin-focused two-parter exploring the leaders behind the era's central antagonists and the events that set them on their path.",
+      "arcs": [
+        {
+          "arc": "Eye of the Storm",
+          "issues": [
+            {
+              "issue": 1,
+              "pageCount": 40,
+              "title": "Ro: The Truth. The Lie. The Kill."
+            },
+            {
+              "issue": 2,
+              "pageCount": 40,
+              "title": "Marchion: The Wreckage. The Hunt."
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "young-jedi-adventures-shorts",
@@ -654,6 +1003,38 @@
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+High+Republic+Midnight+Horizon+Older"
     },
     {
+      "id": "the-high-republic-shadows-of-starlight",
+      "title": "The High Republic: Shadows of Starlight",
+      "type": "comic",
+      "publisher": "Marvel Comics",
+      "year": 2023,
+      "era": "disney",
+      "description": "A bridging miniseries launching Phase III in the aftermath of the fall of the era's great beacon of light.",
+      "arcs": [
+        {
+          "arc": "Shadows of Starlight",
+          "issues": [
+            {
+              "issue": 1,
+              "pageCount": 32
+            },
+            {
+              "issue": 2,
+              "pageCount": 32
+            },
+            {
+              "issue": 3,
+              "pageCount": 32
+            },
+            {
+              "issue": 4,
+              "pageCount": 32
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "the-high-republic-the-eye-of-darkness",
       "title": "The High Republic: The Eye of Darkness",
       "type": "novel",
@@ -740,6 +1121,188 @@
       "duration": 255,
       "description": "In the long shadow of the Nihil's devastation, a Jedi is drawn to a remote outpost haunted by echoes of tragedy — where the line between the living and the dead grows dangerously thin, and an old evil stirs in the darkness.",
       "audibleUrl": "https://www.audible.com/pd/B0DTZM6NCR"
+    },
+    {
+      "id": "the-high-republic-adventures-dispatches",
+      "title": "The High Republic Adventures: Dispatches from the Occlusion Zone",
+      "type": "comic",
+      "publisher": "Dark Horse Comics",
+      "year": 2024,
+      "era": "disney",
+      "description": "All-ages Phase III adventures set inside the blockaded region of space sealed off during the era's darkest hour.",
+      "arcs": [
+        {
+          "arc": "Dispatches from the Occlusion Zone",
+          "issues": [
+            {
+              "issue": 1,
+              "pageCount": 32
+            },
+            {
+              "issue": 2,
+              "pageCount": 32
+            },
+            {
+              "issue": 3,
+              "pageCount": 32
+            },
+            {
+              "issue": 4,
+              "pageCount": 32
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "the-high-republic-phase-3-comic",
+      "title": "The High Republic (2023)",
+      "type": "comic",
+      "publisher": "Marvel Comics",
+      "year": 2023,
+      "era": "disney",
+      "description": "Marvel's flagship final-phase title as the High Republic era hurtles toward its devastating conclusion.",
+      "arcs": [
+        {
+          "arc": "Children of the Storm",
+          "issues": [
+            {
+              "issue": 1,
+              "pageCount": 32
+            },
+            {
+              "issue": 2,
+              "pageCount": 32
+            },
+            {
+              "issue": 3,
+              "pageCount": 32
+            },
+            {
+              "issue": 4,
+              "pageCount": 32
+            },
+            {
+              "issue": 5,
+              "pageCount": 32
+            }
+          ]
+        },
+        {
+          "arc": "The Hunted",
+          "issues": [
+            {
+              "issue": 6,
+              "pageCount": 32
+            },
+            {
+              "issue": 7,
+              "pageCount": 32
+            },
+            {
+              "issue": 8,
+              "pageCount": 32
+            },
+            {
+              "issue": 9,
+              "pageCount": 32
+            },
+            {
+              "issue": 10,
+              "pageCount": 32
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "the-high-republic-fear-of-the-jedi",
+      "title": "The High Republic: Fear of the Jedi",
+      "type": "comic",
+      "publisher": "Marvel Comics",
+      "year": 2025,
+      "era": "disney",
+      "description": "A late Phase III miniseries set as suspicion and fear of the Jedi begin to spread across a galaxy on the brink.",
+      "arcs": [
+        {
+          "arc": "Fear of the Jedi",
+          "issues": [
+            {
+              "issue": 1,
+              "pageCount": 32
+            },
+            {
+              "issue": 2,
+              "pageCount": 32
+            },
+            {
+              "issue": 3,
+              "pageCount": 32
+            },
+            {
+              "issue": 4,
+              "pageCount": 32
+            },
+            {
+              "issue": 5,
+              "pageCount": 32
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "the-high-republic-the-finale-the-beacon",
+      "title": "The High Republic — The Finale: The Beacon",
+      "type": "comic",
+      "publisher": "Marvel Comics",
+      "year": 2025,
+      "era": "disney",
+      "description": "A single-issue conclusion drawing the entire three-phase High Republic comic initiative to a close.",
+      "arcs": [
+        {
+          "arc": "The Finale: The Beacon",
+          "issues": [
+            {
+              "issue": 1,
+              "pageCount": 48,
+              "title": "The Beacon"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "the-high-republic-adventures-pathfinders",
+      "title": "The High Republic Adventures: Pathfinders",
+      "type": "comic",
+      "publisher": "Dark Horse Comics",
+      "year": 2026,
+      "era": "disney",
+      "description": "A new all-ages Adventures miniseries reviving the line for further young-Jedi tales set during the High Republic era.",
+      "arcs": [
+        {
+          "arc": "Pathfinders",
+          "issues": [
+            {
+              "issue": 1,
+              "pageCount": 32
+            },
+            {
+              "issue": 2,
+              "pageCount": 32
+            },
+            {
+              "issue": 3,
+              "pageCount": 32
+            },
+            {
+              "issue": 4,
+              "pageCount": 32
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "the-high-republic-trials-of-the-jedi",
@@ -832,6 +1395,82 @@
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Padawan+Kiersten+White"
     },
     {
+      "id": "mace-windu-comic",
+      "title": "Mace Windu",
+      "type": "comic",
+      "publisher": "Marvel Comics",
+      "year": 2024,
+      "era": "disney",
+      "description": "A young Mace Windu undertakes a defining early mission that will help shape the Jedi Master he is destined to become.",
+      "arcs": [
+        {
+          "arc": "Mace Windu",
+          "issues": [
+            {
+              "issue": 1,
+              "pageCount": 32,
+              "title": "Mace Windu"
+            },
+            {
+              "issue": 2,
+              "pageCount": 32,
+              "title": "Underground"
+            },
+            {
+              "issue": 3,
+              "pageCount": 32,
+              "title": "The Run"
+            },
+            {
+              "issue": 4,
+              "pageCount": 32,
+              "title": "Showdown"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "jedi-fallen-order-dark-temple",
+      "title": "Jedi: Fallen Order — Dark Temple",
+      "type": "comic",
+      "publisher": "Marvel Comics",
+      "year": 2019,
+      "era": "disney",
+      "description": "A prequel to the Jedi: Fallen Order video game following a Jedi Master and her Padawan on a tense diplomatic mission gone wrong.",
+      "arcs": [
+        {
+          "arc": "Dark Temple",
+          "issues": [
+            {
+              "issue": 1,
+              "pageCount": 32,
+              "title": "A Planet Divided"
+            },
+            {
+              "issue": 2,
+              "pageCount": 32,
+              "title": "Trapped in Ontotho"
+            },
+            {
+              "issue": 3,
+              "pageCount": 32,
+              "title": "A Fragile Peace"
+            },
+            {
+              "issue": 4,
+              "pageCount": 32,
+              "title": "A Truce, a Trap"
+            },
+            {
+              "issue": 5,
+              "pageCount": 32
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "master-and-apprentice",
       "title": "Master & Apprentice",
       "type": "novel",
@@ -841,6 +1480,74 @@
       "pageCount": 330,
       "description": "Qui-Gon Jinn and a young Obi-Wan Kenobi travel to a planet on the verge of civil war — where an unexpected prophecy and a difficult decision will test the bonds between master and apprentice.",
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Master+and+Apprentice+Claudia+Gray"
+    },
+    {
+      "id": "darth-maul-black-white-and-red",
+      "title": "Darth Maul — Black, White & Red",
+      "type": "comic",
+      "publisher": "Marvel Comics",
+      "year": 2024,
+      "era": "disney",
+      "description": "A stylized anthology of Darth Maul short stories rendered in stark black, white, and red.",
+      "arcs": [
+        {
+          "arc": "Black, White & Red",
+          "issues": [
+            {
+              "issue": 1,
+              "pageCount": 32,
+              "title": "Ghost Ship"
+            },
+            {
+              "issue": 2,
+              "pageCount": 32,
+              "title": "The Remainders"
+            },
+            {
+              "issue": 3,
+              "pageCount": 32,
+              "title": "The Mission"
+            },
+            {
+              "issue": 4,
+              "pageCount": 32,
+              "title": "Peace and Quiet"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "jango-fett-comic",
+      "title": "Jango Fett",
+      "type": "comic",
+      "publisher": "Marvel Comics",
+      "year": 2024,
+      "era": "disney",
+      "description": "The galaxy's deadliest bounty hunter takes on a high-stakes job in the years before the Clone Wars.",
+      "arcs": [
+        {
+          "arc": "Trail of Lost Hope",
+          "issues": [
+            {
+              "issue": 1,
+              "pageCount": 32
+            },
+            {
+              "issue": 2,
+              "pageCount": 32
+            },
+            {
+              "issue": 3,
+              "pageCount": 32
+            },
+            {
+              "issue": 4,
+              "pageCount": 32
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "the-living-force",
@@ -854,6 +1561,98 @@
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+The+Living+Force+John+Jackson+Miller"
     },
     {
+      "id": "darth-maul-2017",
+      "title": "Darth Maul (2017)",
+      "type": "comic",
+      "publisher": "Marvel Comics",
+      "year": 2017,
+      "era": "disney",
+      "description": "Maul chafes against the patience his Master demands, hungering to strike at the Jedi in the years before The Phantom Menace.",
+      "arcs": [
+        {
+          "arc": "Darth Maul",
+          "issues": [
+            {
+              "issue": 1,
+              "pageCount": 32
+            },
+            {
+              "issue": 2,
+              "pageCount": 32
+            },
+            {
+              "issue": 3,
+              "pageCount": 32
+            },
+            {
+              "issue": 4,
+              "pageCount": 32
+            },
+            {
+              "issue": 5,
+              "pageCount": 32
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "jedi-knights",
+      "title": "Jedi Knights",
+      "type": "comic",
+      "publisher": "Marvel Comics",
+      "year": 2025,
+      "era": "disney",
+      "description": "An anthology-style series spotlighting various Jedi of the late Republic across a range of standalone missions.",
+      "arcs": [
+        {
+          "arc": "Jedi Knights",
+          "issues": [
+            {
+              "issue": 1,
+              "pageCount": 32
+            },
+            {
+              "issue": 2,
+              "pageCount": 32
+            },
+            {
+              "issue": 3,
+              "pageCount": 32
+            },
+            {
+              "issue": 4,
+              "pageCount": 32
+            },
+            {
+              "issue": 5,
+              "pageCount": 32
+            },
+            {
+              "issue": 6,
+              "pageCount": 32
+            },
+            {
+              "issue": 7,
+              "pageCount": 32
+            },
+            {
+              "issue": 8,
+              "pageCount": 32
+            },
+            {
+              "issue": 9,
+              "pageCount": 32
+            },
+            {
+              "issue": 10,
+              "pageCount": 32
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "zen-grogu-and-dust-bunnies",
       "title": "Zen – Grogu and Dust Bunnies",
       "type": "short-movie",
@@ -863,6 +1662,67 @@
       "description": "A wordless, meditative short produced in collaboration with Studio Ghibli, following Grogu as he encounters playful dust bunny spirits in a moment of quiet wonder.",
       "era": "disney",
       "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-cb6dcb0d-4af7-41ef-ae1b-f4bc0fc62167"
+    },
+    {
+      "id": "age-of-republic",
+      "title": "Age of Republic",
+      "type": "comic",
+      "publisher": "Marvel Comics",
+      "year": 2018,
+      "era": "disney",
+      "description": "Character-spotlight one-shots, each focused on a single hero or villain of the Republic era — from Qui-Gon Jinn to General Grievous.",
+      "arcs": [
+        {
+          "arc": "Age of Republic",
+          "issues": [
+            {
+              "issue": 1,
+              "pageCount": 32,
+              "title": "Qui-Gon Jinn"
+            },
+            {
+              "issue": 2,
+              "pageCount": 32,
+              "title": "Obi-Wan Kenobi"
+            },
+            {
+              "issue": 3,
+              "pageCount": 32,
+              "title": "Anakin Skywalker"
+            },
+            {
+              "issue": 4,
+              "pageCount": 32,
+              "title": "Padme Amidala"
+            },
+            {
+              "issue": 5,
+              "pageCount": 32,
+              "title": "Jango Fett"
+            },
+            {
+              "issue": 6,
+              "pageCount": 32,
+              "title": "Darth Maul"
+            },
+            {
+              "issue": 7,
+              "pageCount": 32,
+              "title": "Count Dooku"
+            },
+            {
+              "issue": 8,
+              "pageCount": 32,
+              "title": "General Grievous"
+            },
+            {
+              "issue": 9,
+              "pageCount": 40,
+              "title": "Special: The Weapon"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "episode-i-the-phantom-menace",
@@ -948,6 +1808,42 @@
       "pageCount": 352,
       "description": "Padmé Amidala's reign as Queen ends, and she takes her place in the Galactic Senate — navigating a treacherous political world with the help of her loyal handmaidens as she finds her voice as a senator.",
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Queen%27s+Shadow+EK+Johnston"
+    },
+    {
+      "id": "obi-wan-and-anakin",
+      "title": "Obi-Wan & Anakin",
+      "type": "comic",
+      "publisher": "Marvel Comics",
+      "year": 2016,
+      "era": "disney",
+      "description": "A young Padawan Anakin and his master Obi-Wan are stranded on a hostile world in the years between Episodes I and II.",
+      "arcs": [
+        {
+          "arc": "Obi-Wan & Anakin",
+          "issues": [
+            {
+              "issue": 1,
+              "pageCount": 32
+            },
+            {
+              "issue": 2,
+              "pageCount": 32
+            },
+            {
+              "issue": 3,
+              "pageCount": 32
+            },
+            {
+              "issue": 4,
+              "pageCount": 32
+            },
+            {
+              "issue": 5,
+              "pageCount": 32
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "episode-ii-attack-of-the-clones",
@@ -1717,6 +2613,110 @@
       "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-314f14b4-b70a-4ec6-b634-2559f0b1f77e"
     },
     {
+      "id": "clone-wars-battle-tales",
+      "title": "The Clone Wars — Battle Tales",
+      "type": "comic",
+      "publisher": "IDW Publishing",
+      "year": 2020,
+      "era": "disney",
+      "description": "Connected Clone Wars short stories told between the front-line battles of the war.",
+      "arcs": [
+        {
+          "arc": "Battle Tales",
+          "issues": [
+            {
+              "issue": 1,
+              "pageCount": 32
+            },
+            {
+              "issue": 2,
+              "pageCount": 32
+            },
+            {
+              "issue": 3,
+              "pageCount": 32
+            },
+            {
+              "issue": 4,
+              "pageCount": 32
+            },
+            {
+              "issue": 5,
+              "pageCount": 32
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hyperspace-stories-tides-of-terror",
+      "title": "Hyperspace Stories — Tides of Terror",
+      "type": "comic",
+      "publisher": "Dark Horse Comics",
+      "year": 2025,
+      "era": "disney",
+      "description": "A Kit Fisto-led undersea horror miniseries set during the prequel era.",
+      "arcs": [
+        {
+          "arc": "Tides of Terror",
+          "issues": [
+            {
+              "issue": 1,
+              "pageCount": 32
+            },
+            {
+              "issue": 2,
+              "pageCount": 32
+            },
+            {
+              "issue": 3,
+              "pageCount": 32
+            },
+            {
+              "issue": 4,
+              "pageCount": 32
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "jedi-of-the-republic-mace-windu",
+      "title": "Jedi of the Republic — Mace Windu (2017)",
+      "type": "comic",
+      "publisher": "Marvel Comics",
+      "year": 2017,
+      "era": "disney",
+      "description": "Mace Windu leads a Jedi squad on a perilous Clone Wars battlefield mission.",
+      "arcs": [
+        {
+          "arc": "Jedi of the Republic — Mace Windu",
+          "issues": [
+            {
+              "issue": 1,
+              "pageCount": 32
+            },
+            {
+              "issue": 2,
+              "pageCount": 32
+            },
+            {
+              "issue": 3,
+              "pageCount": 32
+            },
+            {
+              "issue": 4,
+              "pageCount": 32
+            },
+            {
+              "issue": 5,
+              "pageCount": 32
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "tales-of-the-jedi",
       "title": "Tales of the Jedi",
       "type": "series",
@@ -1797,6 +2797,42 @@
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Thrawn+Ascendancy+Greater+Good+Zahn"
     },
     {
+      "id": "darth-maul-son-of-dathomir",
+      "title": "Darth Maul — Son of Dathomir",
+      "type": "comic",
+      "publisher": "Dark Horse Comics",
+      "year": 2014,
+      "era": "disney",
+      "description": "Adapts unproduced Clone Wars scripts continuing Maul's story as he wages war against his former master; brought into canon.",
+      "arcs": [
+        {
+          "arc": "Son of Dathomir",
+          "issues": [
+            {
+              "issue": 1,
+              "pageCount": 32,
+              "title": "The Enemy of My Enemy"
+            },
+            {
+              "issue": 2,
+              "pageCount": 32,
+              "title": "A Tale of Two Apprentices"
+            },
+            {
+              "issue": 3,
+              "pageCount": 32,
+              "title": "Proxy War"
+            },
+            {
+              "issue": 4,
+              "pageCount": 32,
+              "title": "Showdown"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "episode-iii-revenge-of-the-sith",
       "title": "Episode III – Revenge of the Sith",
       "type": "movie",
@@ -1806,6 +2842,152 @@
       "format": "live-action",
       "era": "lucas",
       "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-eb1e2c5f-69bf-4240-a61f-7ffc4e0311b3"
+    },
+    {
+      "id": "darth-vader-dark-lord-of-the-sith",
+      "title": "Darth Vader — Dark Lord of the Sith (2017)",
+      "type": "comic",
+      "publisher": "Marvel Comics",
+      "year": 2017,
+      "era": "disney",
+      "description": "Vader's earliest years as a Sith Lord, immediately following Revenge of the Sith.",
+      "arcs": [
+        {
+          "arc": "The Chosen One",
+          "issues": [
+            {
+              "issue": 1,
+              "pageCount": 32
+            },
+            {
+              "issue": 2,
+              "pageCount": 32
+            },
+            {
+              "issue": 3,
+              "pageCount": 32
+            },
+            {
+              "issue": 4,
+              "pageCount": 32
+            },
+            {
+              "issue": 5,
+              "pageCount": 32
+            },
+            {
+              "issue": 6,
+              "pageCount": 32
+            }
+          ]
+        },
+        {
+          "arc": "Legacy's End",
+          "issues": [
+            {
+              "issue": 7,
+              "pageCount": 32
+            },
+            {
+              "issue": 8,
+              "pageCount": 32
+            },
+            {
+              "issue": 9,
+              "pageCount": 32
+            },
+            {
+              "issue": 10,
+              "pageCount": 32
+            },
+            {
+              "issue": 11,
+              "pageCount": 32
+            },
+            {
+              "issue": 12,
+              "pageCount": 32
+            }
+          ]
+        },
+        {
+          "arc": "Burning Seas",
+          "issues": [
+            {
+              "issue": 13,
+              "pageCount": 32
+            },
+            {
+              "issue": 14,
+              "pageCount": 32
+            },
+            {
+              "issue": 15,
+              "pageCount": 32
+            },
+            {
+              "issue": 16,
+              "pageCount": 32
+            },
+            {
+              "issue": 17,
+              "pageCount": 32
+            }
+          ]
+        },
+        {
+          "arc": "The Dying Light",
+          "issues": [
+            {
+              "issue": 18,
+              "pageCount": 32
+            },
+            {
+              "issue": 19,
+              "pageCount": 32
+            }
+          ]
+        },
+        {
+          "arc": "Fortress Vader",
+          "issues": [
+            {
+              "issue": 20,
+              "pageCount": 32
+            },
+            {
+              "issue": 21,
+              "pageCount": 32
+            },
+            {
+              "issue": 22,
+              "pageCount": 32
+            },
+            {
+              "issue": 23,
+              "pageCount": 32
+            },
+            {
+              "issue": 24,
+              "pageCount": 32
+            },
+            {
+              "issue": 25,
+              "pageCount": 32
+            }
+          ]
+        },
+        {
+          "arc": "Annual",
+          "issues": [
+            {
+              "issue": 26,
+              "pageCount": 40,
+              "title": "Annual #2"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "master-of-evil",
@@ -2081,6 +3263,70 @@
       "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-c93113fb-94ec-43b6-9d38-308825f7cd94"
     },
     {
+      "id": "hyperspace-stories-ghost-agents",
+      "title": "Hyperspace Stories — The Bad Batch: Ghost Agents",
+      "type": "comic",
+      "publisher": "Dark Horse Comics",
+      "year": 2025,
+      "era": "disney",
+      "description": "The Bad Batch clone commandos take on a covert new mission during the Imperial era.",
+      "arcs": [
+        {
+          "arc": "Ghost Agents",
+          "issues": [
+            {
+              "issue": 1,
+              "pageCount": 32
+            },
+            {
+              "issue": 2,
+              "pageCount": 32
+            },
+            {
+              "issue": 3,
+              "pageCount": 32
+            },
+            {
+              "issue": 4,
+              "pageCount": 32
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bad-batch-rogue-agents",
+      "title": "The Bad Batch — Rogue Agents",
+      "type": "comic",
+      "publisher": "Dark Horse Comics",
+      "year": 2025,
+      "era": "disney",
+      "description": "A further Bad Batch miniseries following the rogue clones through the early Imperial era.",
+      "arcs": [
+        {
+          "arc": "Rogue Agents",
+          "issues": [
+            {
+              "issue": 1,
+              "pageCount": 32
+            },
+            {
+              "issue": 2,
+              "pageCount": 32
+            },
+            {
+              "issue": 3,
+              "pageCount": 32
+            },
+            {
+              "issue": 4,
+              "pageCount": 32
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "inquisitor-rise-of-the-red-blade",
       "title": "Inquisitor: Rise of the Red Blade",
       "type": "novel",
@@ -2090,6 +3336,38 @@
       "pageCount": 336,
       "description": "The secret origin of the Inquisitorius — following a Jedi who survived Order 66 and is broken, reshaped, and reforged into one of the Emperor's most dangerous dark-side hunters.",
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Inquisitor+Rise+of+the+Red+Blade+Dawson"
+    },
+    {
+      "id": "inquisitors-comic",
+      "title": "Inquisitors",
+      "type": "comic",
+      "publisher": "Marvel Comics",
+      "year": 2024,
+      "era": "disney",
+      "description": "An anthology exploring the Empire's Force-sensitive Jedi-hunters and the dark path that forged them.",
+      "arcs": [
+        {
+          "arc": "Inquisitors",
+          "issues": [
+            {
+              "issue": 1,
+              "pageCount": 32
+            },
+            {
+              "issue": 2,
+              "pageCount": 32
+            },
+            {
+              "issue": 3,
+              "pageCount": 32
+            },
+            {
+              "issue": 4,
+              "pageCount": 32
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "sanctuary-a-bad-batch-novel",
@@ -2223,6 +3501,42 @@
       "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-b9acb4dc-2c55-4829-9ecf-37d1f96ff29f"
     },
     {
+      "id": "shadow-of-maul",
+      "title": "Shadow of Maul",
+      "type": "comic",
+      "publisher": "Marvel Comics",
+      "year": 2026,
+      "era": "disney",
+      "description": "A miniseries serving as a prequel to the Maul: Shadow Lord streaming series.",
+      "arcs": [
+        {
+          "arc": "Shadow of Maul",
+          "issues": [
+            {
+              "issue": 1,
+              "pageCount": 32
+            },
+            {
+              "issue": 2,
+              "pageCount": 32
+            },
+            {
+              "issue": 3,
+              "pageCount": 32
+            },
+            {
+              "issue": 4,
+              "pageCount": 32
+            },
+            {
+              "issue": 5,
+              "pageCount": 32
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "maul-shadow-lord",
       "title": "Maul – Shadow Lord",
       "type": "series",
@@ -2337,6 +3651,42 @@
       "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-421b732e-fe78-4cfc-93e9-d3fbca13bb91"
     },
     {
+      "id": "han-solo-imperial-cadet",
+      "title": "Han Solo — Imperial Cadet",
+      "type": "comic",
+      "publisher": "Marvel Comics",
+      "year": 2018,
+      "era": "disney",
+      "description": "Han's washout from the Imperial Academy, bridging events seen in Solo.",
+      "arcs": [
+        {
+          "arc": "Imperial Cadet",
+          "issues": [
+            {
+              "issue": 1,
+              "pageCount": 32
+            },
+            {
+              "issue": 2,
+              "pageCount": 32
+            },
+            {
+              "issue": 3,
+              "pageCount": 32
+            },
+            {
+              "issue": 4,
+              "pageCount": 32
+            },
+            {
+              "issue": 5,
+              "pageCount": 32
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "most-wanted",
       "title": "Most Wanted",
       "type": "ya-novel",
@@ -2370,6 +3720,63 @@
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+A+New+Dawn+John+Jackson+Miller"
     },
     {
+      "id": "lando-double-or-nothing",
+      "title": "Lando — Double or Nothing",
+      "type": "comic",
+      "publisher": "Marvel Comics",
+      "year": 2018,
+      "era": "disney",
+      "description": "A young Lando Calrissian con job tying into the Solo film era.",
+      "arcs": [
+        {
+          "arc": "Double or Nothing",
+          "issues": [
+            {
+              "issue": 1,
+              "pageCount": 32
+            },
+            {
+              "issue": 2,
+              "pageCount": 32
+            },
+            {
+              "issue": 3,
+              "pageCount": 32
+            },
+            {
+              "issue": 4,
+              "pageCount": 32
+            },
+            {
+              "issue": 5,
+              "pageCount": 32
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "beckett-comic",
+      "title": "Beckett",
+      "type": "comic",
+      "publisher": "Marvel Comics",
+      "year": 2018,
+      "era": "disney",
+      "description": "Three short heists featuring the Solo mentor figure Tobias Beckett's crew.",
+      "arcs": [
+        {
+          "arc": "Beckett",
+          "issues": [
+            {
+              "issue": 1,
+              "pageCount": 48,
+              "title": "Beckett"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "solo-a-star-wars-story",
       "title": "Solo",
       "type": "movie",
@@ -2390,6 +3797,50 @@
       "pageCount": 282,
       "description": "The novelization of Solo: A Star Wars Story — expanding on Han's early adventures, the Kessel Run, and the crew of the Millennium Falcon with additional scenes and deeper character moments.",
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Solo+Expanded+Edition+Mur+Lafferty"
+    },
+    {
+      "id": "solo-comic",
+      "title": "Solo: A Star Wars Story",
+      "type": "comic",
+      "publisher": "Marvel Comics",
+      "year": 2018,
+      "era": "disney",
+      "description": "A comic adaptation of the Solo film, following Han's earliest adventures and heists.",
+      "arcs": [
+        {
+          "arc": "Solo",
+          "issues": [
+            {
+              "issue": 1,
+              "pageCount": 32
+            },
+            {
+              "issue": 2,
+              "pageCount": 32
+            },
+            {
+              "issue": 3,
+              "pageCount": 32
+            },
+            {
+              "issue": 4,
+              "pageCount": 32
+            },
+            {
+              "issue": 5,
+              "pageCount": 32
+            },
+            {
+              "issue": 6,
+              "pageCount": 32
+            },
+            {
+              "issue": 7,
+              "pageCount": 32
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "star-wars-beyond-victory",
@@ -2452,6 +3903,46 @@
       "format": "live-action",
       "era": "disney",
       "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-e28eab5e-5cff-4ef2-b018-d2267c750364"
+    },
+    {
+      "id": "obi-wan-kenobi-comic",
+      "title": "Obi-Wan Kenobi",
+      "type": "comic",
+      "publisher": "Marvel Comics",
+      "year": 2023,
+      "era": "disney",
+      "description": "A comic adaptation of the Obi-Wan Kenobi series during the Jedi Master's Tatooine exile.",
+      "arcs": [
+        {
+          "arc": "Obi-Wan Kenobi",
+          "issues": [
+            {
+              "issue": 1,
+              "pageCount": 32
+            },
+            {
+              "issue": 2,
+              "pageCount": 32
+            },
+            {
+              "issue": 3,
+              "pageCount": 32
+            },
+            {
+              "issue": 4,
+              "pageCount": 32
+            },
+            {
+              "issue": 5,
+              "pageCount": 32
+            },
+            {
+              "issue": 6,
+              "pageCount": 32
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "star-wars-jedi-survivor",
@@ -2610,6 +4101,75 @@
       "format": "live-action",
       "era": "disney",
       "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-faba988a-a9f5-45f2-a074-0775a7d6f67a"
+    },
+    {
+      "id": "kanan-comic",
+      "title": "Kanan",
+      "type": "comic",
+      "publisher": "Marvel Comics",
+      "year": 2015,
+      "era": "disney",
+      "description": "The backstory of Rebels' Kanan Jarrus, from Padawan survivor of Order 66 to reluctant rebel.",
+      "arcs": [
+        {
+          "arc": "The Last Padawan",
+          "issues": [
+            {
+              "issue": 1,
+              "pageCount": 32
+            },
+            {
+              "issue": 2,
+              "pageCount": 32
+            },
+            {
+              "issue": 3,
+              "pageCount": 32
+            },
+            {
+              "issue": 4,
+              "pageCount": 32
+            },
+            {
+              "issue": 5,
+              "pageCount": 32
+            },
+            {
+              "issue": 6,
+              "pageCount": 32
+            }
+          ]
+        },
+        {
+          "arc": "First Blood",
+          "issues": [
+            {
+              "issue": 7,
+              "pageCount": 32
+            },
+            {
+              "issue": 8,
+              "pageCount": 32
+            },
+            {
+              "issue": 9,
+              "pageCount": 32
+            },
+            {
+              "issue": 10,
+              "pageCount": 32
+            },
+            {
+              "issue": 11,
+              "pageCount": 32
+            },
+            {
+              "issue": 12,
+              "pageCount": 32
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "rebels-shorts",
@@ -3139,6 +4699,46 @@
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Thrawn+Timothy+Zahn+2017"
     },
     {
+      "id": "thrawn-comic",
+      "title": "Thrawn",
+      "type": "comic",
+      "publisher": "Marvel Comics",
+      "year": 2018,
+      "era": "disney",
+      "description": "A comic adaptation of Timothy Zahn's novel charting Thrawn's calculating rise through the ranks of the Imperial military.",
+      "arcs": [
+        {
+          "arc": "Thrawn",
+          "issues": [
+            {
+              "issue": 1,
+              "pageCount": 32
+            },
+            {
+              "issue": 2,
+              "pageCount": 32
+            },
+            {
+              "issue": 3,
+              "pageCount": 32
+            },
+            {
+              "issue": 4,
+              "pageCount": 32
+            },
+            {
+              "issue": 5,
+              "pageCount": 32
+            },
+            {
+              "issue": 6,
+              "pageCount": 32
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "thrawn-alliances",
       "title": "Thrawn: Alliances",
       "type": "novel",
@@ -3148,6 +4748,38 @@
       "pageCount": 368,
       "description": "Darth Vader and Thrawn are sent on a joint mission to the Unknown Regions — a mission that parallels an earlier encounter between Anakin Skywalker and Thrawn during the Clone Wars, revealing the complicated history between them.",
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Thrawn+Alliances+Timothy+Zahn"
+    },
+    {
+      "id": "thrawn-alliances-comic",
+      "title": "Thrawn — Alliances",
+      "type": "comic",
+      "publisher": "Marvel Comics",
+      "year": 2024,
+      "era": "disney",
+      "description": "A comic adaptation of Zahn's novel pairing Thrawn with Darth Vader on a secret mission.",
+      "arcs": [
+        {
+          "arc": "Alliances",
+          "issues": [
+            {
+              "issue": 1,
+              "pageCount": 32
+            },
+            {
+              "issue": 2,
+              "pageCount": 32
+            },
+            {
+              "issue": 3,
+              "pageCount": 32
+            },
+            {
+              "issue": 4,
+              "pageCount": 32
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "thrawn-treason",
@@ -3161,6 +4793,67 @@
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Thrawn+Treason+Timothy+Zahn"
     },
     {
+      "id": "han-solo-and-chewbacca",
+      "title": "Han Solo & Chewbacca",
+      "type": "comic",
+      "publisher": "Marvel Comics",
+      "year": 2022,
+      "era": "disney",
+      "description": "A Han-and-Chewie caper set during their smuggling years before the films.",
+      "arcs": [
+        {
+          "arc": "The Crystal Run",
+          "issues": [
+            {
+              "issue": 1,
+              "pageCount": 32
+            },
+            {
+              "issue": 2,
+              "pageCount": 32
+            },
+            {
+              "issue": 3,
+              "pageCount": 32
+            },
+            {
+              "issue": 4,
+              "pageCount": 32
+            },
+            {
+              "issue": 5,
+              "pageCount": 32
+            }
+          ]
+        },
+        {
+          "arc": "Dead or Alive",
+          "issues": [
+            {
+              "issue": 6,
+              "pageCount": 32
+            },
+            {
+              "issue": 7,
+              "pageCount": 32
+            },
+            {
+              "issue": 8,
+              "pageCount": 32
+            },
+            {
+              "issue": 9,
+              "pageCount": 32
+            },
+            {
+              "issue": 10,
+              "pageCount": 32
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "rebel-rising",
       "title": "Rebel Rising",
       "type": "ya-novel",
@@ -3172,6 +4865,45 @@
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Rebel+Rising+Beth+Revis"
     },
     {
+      "id": "obi-wan-2022-comic",
+      "title": "Obi-Wan (2022)",
+      "type": "comic",
+      "publisher": "Marvel Comics",
+      "year": 2022,
+      "era": "disney",
+      "description": "An aging Obi-Wan recounts memories from across his life during his lonely exile on Tatooine.",
+      "arcs": [
+        {
+          "arc": "Obi-Wan",
+          "issues": [
+            {
+              "issue": 1,
+              "pageCount": 32,
+              "title": "Youngling's Challenge"
+            },
+            {
+              "issue": 2,
+              "pageCount": 32,
+              "title": "A Shadow Falls on the Padawan"
+            },
+            {
+              "issue": 3,
+              "pageCount": 32,
+              "title": "Darkest Before the Dawn"
+            },
+            {
+              "issue": 4,
+              "pageCount": 32
+            },
+            {
+              "issue": 5,
+              "pageCount": 32
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "rogue-one-a-star-wars-story",
       "title": "Rogue One",
       "type": "movie",
@@ -3181,6 +4913,46 @@
       "format": "live-action",
       "era": "disney",
       "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-5ec74210-f970-42b7-a39f-8653c0a9eab8"
+    },
+    {
+      "id": "rogue-one-comic",
+      "title": "Rogue One: A Star Wars Story",
+      "type": "comic",
+      "publisher": "Marvel Comics",
+      "year": 2017,
+      "era": "disney",
+      "description": "A comic adaptation of Rogue One and the desperate mission to steal the Death Star plans.",
+      "arcs": [
+        {
+          "arc": "Rogue One",
+          "issues": [
+            {
+              "issue": 1,
+              "pageCount": 32
+            },
+            {
+              "issue": 2,
+              "pageCount": 32
+            },
+            {
+              "issue": 3,
+              "pageCount": 32
+            },
+            {
+              "issue": 4,
+              "pageCount": 32
+            },
+            {
+              "issue": 5,
+              "pageCount": 32
+            },
+            {
+              "issue": 6,
+              "pageCount": 32
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "rogue-one-boots-on-the-ground",
@@ -3269,6 +5041,47 @@
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Battlefront+2015+EA+DICE"
     },
     {
+      "id": "vader-dark-visions",
+      "title": "Vader — Dark Visions",
+      "type": "comic",
+      "publisher": "Marvel Comics",
+      "year": 2019,
+      "era": "disney",
+      "description": "Standalone tales viewing Darth Vader through the eyes of those who encounter him.",
+      "arcs": [
+        {
+          "arc": "Dark Visions",
+          "issues": [
+            {
+              "issue": 1,
+              "pageCount": 32,
+              "title": "Dark Visions"
+            },
+            {
+              "issue": 2,
+              "pageCount": 32,
+              "title": "Unacceptable"
+            },
+            {
+              "issue": 3,
+              "pageCount": 32,
+              "title": "Tall, Dark and Handsome"
+            },
+            {
+              "issue": 4,
+              "pageCount": 32,
+              "title": "Hotshot"
+            },
+            {
+              "issue": 5,
+              "pageCount": 32,
+              "title": "YOU CAN RUN…"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "episode-iv-a-new-hope",
       "title": "Episode IV – A New Hope",
       "type": "movie",
@@ -3278,6 +5091,1189 @@
       "format": "live-action",
       "era": "lucas",
       "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-9a280e53-fcc0-4e17-a02c-b1f40913eb0b"
+    },
+    {
+      "id": "princess-leia-comic",
+      "title": "Princess Leia",
+      "type": "comic",
+      "publisher": "Marvel Comics",
+      "year": 2015,
+      "era": "disney",
+      "description": "Immediately after the Death Star's destruction, Leia sets out to save the scattered survivors of Alderaan.",
+      "arcs": [
+        {
+          "arc": "Princess Leia",
+          "issues": [
+            {
+              "issue": 1,
+              "pageCount": 32
+            },
+            {
+              "issue": 2,
+              "pageCount": 32
+            },
+            {
+              "issue": 3,
+              "pageCount": 32
+            },
+            {
+              "issue": 4,
+              "pageCount": 32
+            },
+            {
+              "issue": 5,
+              "pageCount": 32
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "star-wars-2015-comic",
+      "title": "Star Wars (2015)",
+      "type": "comic",
+      "publisher": "Marvel Comics",
+      "year": 2015,
+      "era": "disney",
+      "description": "The flagship original-trilogy ongoing, following the Rebel heroes between Episodes IV and V.",
+      "arcs": [
+        {
+          "arc": "Skywalker Strikes",
+          "issues": [
+            {
+              "issue": 1,
+              "pageCount": 32
+            },
+            {
+              "issue": 2,
+              "pageCount": 32
+            },
+            {
+              "issue": 3,
+              "pageCount": 32
+            },
+            {
+              "issue": 4,
+              "pageCount": 32
+            },
+            {
+              "issue": 5,
+              "pageCount": 32
+            },
+            {
+              "issue": 6,
+              "pageCount": 32
+            },
+            {
+              "issue": 7,
+              "pageCount": 32
+            }
+          ]
+        },
+        {
+          "arc": "Showdown on the Smuggler's Moon",
+          "issues": [
+            {
+              "issue": 8,
+              "pageCount": 32
+            },
+            {
+              "issue": 9,
+              "pageCount": 32
+            },
+            {
+              "issue": 10,
+              "pageCount": 32
+            },
+            {
+              "issue": 11,
+              "pageCount": 32
+            },
+            {
+              "issue": 12,
+              "pageCount": 32
+            }
+          ]
+        },
+        {
+          "arc": "Vader Down (tie-in)",
+          "issues": [
+            {
+              "issue": 13,
+              "pageCount": 32
+            },
+            {
+              "issue": 14,
+              "pageCount": 32
+            },
+            {
+              "issue": 15,
+              "pageCount": 32
+            }
+          ]
+        },
+        {
+          "arc": "Rebel Jail",
+          "issues": [
+            {
+              "issue": 16,
+              "pageCount": 32
+            },
+            {
+              "issue": 17,
+              "pageCount": 32
+            },
+            {
+              "issue": 18,
+              "pageCount": 32
+            },
+            {
+              "issue": 19,
+              "pageCount": 32
+            }
+          ]
+        },
+        {
+          "arc": "The Last Flight of the Harbinger",
+          "issues": [
+            {
+              "issue": 20,
+              "pageCount": 32
+            },
+            {
+              "issue": 21,
+              "pageCount": 32
+            },
+            {
+              "issue": 22,
+              "pageCount": 32
+            },
+            {
+              "issue": 23,
+              "pageCount": 32
+            },
+            {
+              "issue": 24,
+              "pageCount": 32
+            },
+            {
+              "issue": 25,
+              "pageCount": 32
+            }
+          ]
+        },
+        {
+          "arc": "Yoda's Secret War",
+          "issues": [
+            {
+              "issue": 26,
+              "pageCount": 32
+            },
+            {
+              "issue": 27,
+              "pageCount": 32
+            },
+            {
+              "issue": 28,
+              "pageCount": 32
+            },
+            {
+              "issue": 29,
+              "pageCount": 32
+            },
+            {
+              "issue": 30,
+              "pageCount": 32
+            }
+          ]
+        },
+        {
+          "arc": "The Screaming Citadel (tie-in)",
+          "issues": [
+            {
+              "issue": 31,
+              "pageCount": 32
+            },
+            {
+              "issue": 32,
+              "pageCount": 32
+            }
+          ]
+        },
+        {
+          "arc": "Out Among the Stars",
+          "issues": [
+            {
+              "issue": 33,
+              "pageCount": 32
+            },
+            {
+              "issue": 34,
+              "pageCount": 32
+            },
+            {
+              "issue": 35,
+              "pageCount": 32
+            },
+            {
+              "issue": 36,
+              "pageCount": 32
+            },
+            {
+              "issue": 37,
+              "pageCount": 32
+            }
+          ]
+        },
+        {
+          "arc": "The Ashes of Jedha",
+          "issues": [
+            {
+              "issue": 38,
+              "pageCount": 32
+            },
+            {
+              "issue": 39,
+              "pageCount": 32
+            },
+            {
+              "issue": 40,
+              "pageCount": 32
+            },
+            {
+              "issue": 41,
+              "pageCount": 32
+            },
+            {
+              "issue": 42,
+              "pageCount": 32
+            },
+            {
+              "issue": 43,
+              "pageCount": 32
+            }
+          ]
+        },
+        {
+          "arc": "Mutiny at Mon Cala",
+          "issues": [
+            {
+              "issue": 44,
+              "pageCount": 32
+            },
+            {
+              "issue": 45,
+              "pageCount": 32
+            },
+            {
+              "issue": 46,
+              "pageCount": 32
+            },
+            {
+              "issue": 47,
+              "pageCount": 32
+            },
+            {
+              "issue": 48,
+              "pageCount": 32
+            },
+            {
+              "issue": 49,
+              "pageCount": 32
+            }
+          ]
+        },
+        {
+          "arc": "Hope Dies",
+          "issues": [
+            {
+              "issue": 50,
+              "pageCount": 32
+            },
+            {
+              "issue": 51,
+              "pageCount": 32
+            },
+            {
+              "issue": 52,
+              "pageCount": 32
+            },
+            {
+              "issue": 53,
+              "pageCount": 32
+            },
+            {
+              "issue": 54,
+              "pageCount": 32
+            },
+            {
+              "issue": 55,
+              "pageCount": 32
+            }
+          ]
+        },
+        {
+          "arc": "The Scourging of Shu-Torun",
+          "issues": [
+            {
+              "issue": 56,
+              "pageCount": 32
+            },
+            {
+              "issue": 57,
+              "pageCount": 32
+            },
+            {
+              "issue": 58,
+              "pageCount": 32
+            },
+            {
+              "issue": 59,
+              "pageCount": 32
+            },
+            {
+              "issue": 60,
+              "pageCount": 32
+            },
+            {
+              "issue": 61,
+              "pageCount": 32
+            }
+          ]
+        },
+        {
+          "arc": "The Escape",
+          "issues": [
+            {
+              "issue": 62,
+              "pageCount": 32
+            },
+            {
+              "issue": 63,
+              "pageCount": 32
+            },
+            {
+              "issue": 64,
+              "pageCount": 32
+            },
+            {
+              "issue": 65,
+              "pageCount": 32
+            },
+            {
+              "issue": 66,
+              "pageCount": 32
+            },
+            {
+              "issue": 67,
+              "pageCount": 32
+            }
+          ]
+        },
+        {
+          "arc": "Rebels and Rogues",
+          "issues": [
+            {
+              "issue": 68,
+              "pageCount": 32
+            },
+            {
+              "issue": 69,
+              "pageCount": 32
+            },
+            {
+              "issue": 70,
+              "pageCount": 32
+            },
+            {
+              "issue": 71,
+              "pageCount": 32
+            },
+            {
+              "issue": 72,
+              "pageCount": 32
+            },
+            {
+              "issue": 73,
+              "pageCount": 32
+            }
+          ]
+        },
+        {
+          "arc": "The Spark and the Flame",
+          "issues": [
+            {
+              "issue": 74,
+              "pageCount": 32
+            },
+            {
+              "issue": 75,
+              "pageCount": 32
+            }
+          ]
+        },
+        {
+          "arc": "Annuals",
+          "issues": [
+            {
+              "issue": 76,
+              "pageCount": 40,
+              "title": "Annual #1"
+            },
+            {
+              "issue": 77,
+              "pageCount": 40,
+              "title": "Annual #2"
+            },
+            {
+              "issue": 78,
+              "pageCount": 40,
+              "title": "Annual #3"
+            },
+            {
+              "issue": 79,
+              "pageCount": 40,
+              "title": "Annual #4"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "darth-vader-2015-comic",
+      "title": "Darth Vader (2015)",
+      "type": "comic",
+      "publisher": "Marvel Comics",
+      "year": 2015,
+      "era": "disney",
+      "description": "Vader investigates the Rebel pilot who destroyed the Death Star, running parallel to Star Wars (2015).",
+      "arcs": [
+        {
+          "arc": "Vader",
+          "issues": [
+            {
+              "issue": 1,
+              "pageCount": 32
+            },
+            {
+              "issue": 2,
+              "pageCount": 32
+            },
+            {
+              "issue": 3,
+              "pageCount": 32
+            },
+            {
+              "issue": 4,
+              "pageCount": 32
+            },
+            {
+              "issue": 5,
+              "pageCount": 32
+            },
+            {
+              "issue": 6,
+              "pageCount": 32
+            }
+          ]
+        },
+        {
+          "arc": "Shadows and Secrets",
+          "issues": [
+            {
+              "issue": 7,
+              "pageCount": 32
+            },
+            {
+              "issue": 8,
+              "pageCount": 32
+            },
+            {
+              "issue": 9,
+              "pageCount": 32
+            },
+            {
+              "issue": 10,
+              "pageCount": 32
+            },
+            {
+              "issue": 11,
+              "pageCount": 32
+            },
+            {
+              "issue": 12,
+              "pageCount": 32
+            }
+          ]
+        },
+        {
+          "arc": "Vader Down (tie-in)",
+          "issues": [
+            {
+              "issue": 13,
+              "pageCount": 32
+            },
+            {
+              "issue": 14,
+              "pageCount": 32
+            },
+            {
+              "issue": 15,
+              "pageCount": 32
+            }
+          ]
+        },
+        {
+          "arc": "The Shu-Torun War",
+          "issues": [
+            {
+              "issue": 16,
+              "pageCount": 32
+            },
+            {
+              "issue": 17,
+              "pageCount": 32
+            },
+            {
+              "issue": 18,
+              "pageCount": 32
+            },
+            {
+              "issue": 19,
+              "pageCount": 32
+            }
+          ]
+        },
+        {
+          "arc": "End of Games",
+          "issues": [
+            {
+              "issue": 20,
+              "pageCount": 32
+            },
+            {
+              "issue": 21,
+              "pageCount": 32
+            },
+            {
+              "issue": 22,
+              "pageCount": 32
+            },
+            {
+              "issue": 23,
+              "pageCount": 32
+            },
+            {
+              "issue": 24,
+              "pageCount": 32
+            },
+            {
+              "issue": 25,
+              "pageCount": 32
+            }
+          ]
+        },
+        {
+          "arc": "Annual",
+          "issues": [
+            {
+              "issue": 26,
+              "pageCount": 40,
+              "title": "Annual #1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vader-down",
+      "title": "Vader Down",
+      "type": "comic",
+      "publisher": "Marvel Comics",
+      "year": 2015,
+      "era": "disney",
+      "description": "The crossover event in which Darth Vader takes on the entire Rebel fleet alone.",
+      "arcs": [
+        {
+          "arc": "Vader Down",
+          "issues": [
+            {
+              "issue": 1,
+              "pageCount": 48,
+              "title": "Vader Down"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lando-comic",
+      "title": "Lando",
+      "type": "comic",
+      "publisher": "Marvel Comics",
+      "year": 2015,
+      "era": "disney",
+      "description": "Lando Calrissian pulls a daring heist on a mysterious Imperial luxury ship.",
+      "arcs": [
+        {
+          "arc": "Lando",
+          "issues": [
+            {
+              "issue": 1,
+              "pageCount": 32
+            },
+            {
+              "issue": 2,
+              "pageCount": 32
+            },
+            {
+              "issue": 3,
+              "pageCount": 32
+            },
+            {
+              "issue": 4,
+              "pageCount": 32
+            },
+            {
+              "issue": 5,
+              "pageCount": 32
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chewbacca-2015",
+      "title": "Chewbacca (2015)",
+      "type": "comic",
+      "publisher": "Marvel Comics",
+      "year": 2015,
+      "era": "disney",
+      "description": "Stranded on a backwater world, Chewbacca helps a young girl stand up against Imperial oppression.",
+      "arcs": [
+        {
+          "arc": "Chewbacca",
+          "issues": [
+            {
+              "issue": 1,
+              "pageCount": 32
+            },
+            {
+              "issue": 2,
+              "pageCount": 32
+            },
+            {
+              "issue": 3,
+              "pageCount": 32
+            },
+            {
+              "issue": 4,
+              "pageCount": 32
+            },
+            {
+              "issue": 5,
+              "pageCount": 32
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "han-solo-2016",
+      "title": "Han Solo (2016)",
+      "type": "comic",
+      "publisher": "Marvel Comics",
+      "year": 2016,
+      "era": "disney",
+      "description": "Han enters a legendary starship race while running a secret mission for the Rebellion.",
+      "arcs": [
+        {
+          "arc": "Han Solo",
+          "issues": [
+            {
+              "issue": 1,
+              "pageCount": 32
+            },
+            {
+              "issue": 2,
+              "pageCount": 32
+            },
+            {
+              "issue": 3,
+              "pageCount": 32
+            },
+            {
+              "issue": 4,
+              "pageCount": 32
+            },
+            {
+              "issue": 5,
+              "pageCount": 32
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "doctor-aphra-2016",
+      "title": "Doctor Aphra (2016)",
+      "type": "comic",
+      "publisher": "Marvel Comics",
+      "year": 2016,
+      "era": "disney",
+      "description": "The morally flexible rogue archaeologist's first solo ongoing, running parallel to Star Wars (2015).",
+      "arcs": [
+        {
+          "arc": "Aphra",
+          "issues": [
+            {
+              "issue": 1,
+              "pageCount": 32
+            },
+            {
+              "issue": 2,
+              "pageCount": 32
+            },
+            {
+              "issue": 3,
+              "pageCount": 32
+            },
+            {
+              "issue": 4,
+              "pageCount": 32
+            },
+            {
+              "issue": 5,
+              "pageCount": 32
+            },
+            {
+              "issue": 6,
+              "pageCount": 32
+            }
+          ]
+        },
+        {
+          "arc": "The Screaming Citadel (tie-in)",
+          "issues": [
+            {
+              "issue": 7,
+              "pageCount": 32
+            },
+            {
+              "issue": 8,
+              "pageCount": 32
+            }
+          ]
+        },
+        {
+          "arc": "The Enormous Profit",
+          "issues": [
+            {
+              "issue": 9,
+              "pageCount": 32
+            },
+            {
+              "issue": 10,
+              "pageCount": 32
+            },
+            {
+              "issue": 11,
+              "pageCount": 32
+            },
+            {
+              "issue": 12,
+              "pageCount": 32
+            },
+            {
+              "issue": 13,
+              "pageCount": 32
+            }
+          ]
+        },
+        {
+          "arc": "Remastered",
+          "issues": [
+            {
+              "issue": 14,
+              "pageCount": 32
+            },
+            {
+              "issue": 15,
+              "pageCount": 32
+            },
+            {
+              "issue": 16,
+              "pageCount": 32
+            },
+            {
+              "issue": 17,
+              "pageCount": 32
+            },
+            {
+              "issue": 18,
+              "pageCount": 32
+            },
+            {
+              "issue": 19,
+              "pageCount": 32
+            }
+          ]
+        },
+        {
+          "arc": "The Catastrophe Con",
+          "issues": [
+            {
+              "issue": 20,
+              "pageCount": 32
+            },
+            {
+              "issue": 21,
+              "pageCount": 32
+            },
+            {
+              "issue": 22,
+              "pageCount": 32
+            },
+            {
+              "issue": 23,
+              "pageCount": 32
+            },
+            {
+              "issue": 24,
+              "pageCount": 32
+            },
+            {
+              "issue": 25,
+              "pageCount": 32
+            }
+          ]
+        },
+        {
+          "arc": "Worst Among Equals",
+          "issues": [
+            {
+              "issue": 26,
+              "pageCount": 32
+            },
+            {
+              "issue": 27,
+              "pageCount": 32
+            },
+            {
+              "issue": 28,
+              "pageCount": 32
+            },
+            {
+              "issue": 29,
+              "pageCount": 32
+            },
+            {
+              "issue": 30,
+              "pageCount": 32
+            },
+            {
+              "issue": 31,
+              "pageCount": 32
+            }
+          ]
+        },
+        {
+          "arc": "A Rogue's End",
+          "issues": [
+            {
+              "issue": 32,
+              "pageCount": 32
+            },
+            {
+              "issue": 33,
+              "pageCount": 32
+            },
+            {
+              "issue": 34,
+              "pageCount": 32
+            },
+            {
+              "issue": 35,
+              "pageCount": 32
+            },
+            {
+              "issue": 36,
+              "pageCount": 32
+            }
+          ]
+        },
+        {
+          "arc": "Unspeakable Rebel Superweapon",
+          "issues": [
+            {
+              "issue": 37,
+              "pageCount": 32
+            },
+            {
+              "issue": 38,
+              "pageCount": 32
+            },
+            {
+              "issue": 39,
+              "pageCount": 32
+            },
+            {
+              "issue": 40,
+              "pageCount": 32
+            }
+          ]
+        },
+        {
+          "arc": "Annuals",
+          "issues": [
+            {
+              "issue": 41,
+              "pageCount": 40,
+              "title": "Annual #1"
+            },
+            {
+              "issue": 42,
+              "pageCount": 40,
+              "title": "Annual #2"
+            },
+            {
+              "issue": 43,
+              "pageCount": 40,
+              "title": "Annual #3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "the-screaming-citadel",
+      "title": "The Screaming Citadel",
+      "type": "comic",
+      "publisher": "Marvel Comics",
+      "year": 2017,
+      "era": "disney",
+      "description": "Luke Skywalker and Doctor Aphra team up at a sinister citadel ruled by a deadly queen.",
+      "arcs": [
+        {
+          "arc": "The Screaming Citadel",
+          "issues": [
+            {
+              "issue": 1,
+              "pageCount": 48,
+              "title": "The Screaming Citadel"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "target-vader",
+      "title": "Target Vader",
+      "type": "comic",
+      "publisher": "Marvel Comics",
+      "year": 2019,
+      "era": "disney",
+      "description": "A bounty-hunter syndicate is hired to take down Darth Vader once and for all.",
+      "arcs": [
+        {
+          "arc": "Target Vader",
+          "issues": [
+            {
+              "issue": 1,
+              "pageCount": 32,
+              "title": "On the Hunt"
+            },
+            {
+              "issue": 2,
+              "pageCount": 32,
+              "title": "The Plan"
+            },
+            {
+              "issue": 3,
+              "pageCount": 32,
+              "title": "The Trap"
+            },
+            {
+              "issue": 4,
+              "pageCount": 32,
+              "title": "The Shot"
+            },
+            {
+              "issue": 5,
+              "pageCount": 32,
+              "title": "The Past"
+            },
+            {
+              "issue": 6,
+              "pageCount": 32,
+              "title": "Free"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "age-of-rebellion",
+      "title": "Age of Rebellion",
+      "type": "comic",
+      "publisher": "Marvel Comics",
+      "year": 2019,
+      "era": "disney",
+      "description": "Character-spotlight one-shots for the heroes and villains of the Rebellion era.",
+      "arcs": [
+        {
+          "arc": "Age of Rebellion",
+          "issues": [
+            {
+              "issue": 1,
+              "pageCount": 32,
+              "title": "Princess Leia"
+            },
+            {
+              "issue": 2,
+              "pageCount": 32,
+              "title": "Han Solo"
+            },
+            {
+              "issue": 3,
+              "pageCount": 32,
+              "title": "Luke Skywalker"
+            },
+            {
+              "issue": 4,
+              "pageCount": 32,
+              "title": "Lando Calrissian"
+            },
+            {
+              "issue": 5,
+              "pageCount": 32,
+              "title": "Boba Fett"
+            },
+            {
+              "issue": 6,
+              "pageCount": 32,
+              "title": "Grand Moff Tarkin"
+            },
+            {
+              "issue": 7,
+              "pageCount": 32,
+              "title": "Darth Vader"
+            },
+            {
+              "issue": 8,
+              "pageCount": 32,
+              "title": "Jabba the Hutt"
+            },
+            {
+              "issue": 9,
+              "pageCount": 40,
+              "title": "Special"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tie-fighter",
+      "title": "TIE Fighter",
+      "type": "comic",
+      "publisher": "Marvel Comics",
+      "year": 2019,
+      "era": "disney",
+      "description": "An elite Imperial starfighter squadron's missions, told from the Empire's perspective.",
+      "arcs": [
+        {
+          "arc": "The Shadow Falls",
+          "issues": [
+            {
+              "issue": 1,
+              "pageCount": 32
+            },
+            {
+              "issue": 2,
+              "pageCount": 32
+            },
+            {
+              "issue": 3,
+              "pageCount": 32
+            },
+            {
+              "issue": 4,
+              "pageCount": 32
+            },
+            {
+              "issue": 5,
+              "pageCount": 32
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yoda-comic",
+      "title": "Yoda",
+      "type": "comic",
+      "publisher": "Marvel Comics",
+      "year": 2022,
+      "era": "disney",
+      "description": "An anthology of Yoda stories spanning his long life, framed during his exile on Dagobah.",
+      "arcs": [
+        {
+          "arc": "Light and Life",
+          "issues": [
+            {
+              "issue": 1,
+              "pageCount": 32
+            },
+            {
+              "issue": 2,
+              "pageCount": 32
+            },
+            {
+              "issue": 3,
+              "pageCount": 32
+            }
+          ]
+        },
+        {
+          "arc": "Students of the Force",
+          "issues": [
+            {
+              "issue": 4,
+              "pageCount": 32
+            },
+            {
+              "issue": 5,
+              "pageCount": 32
+            },
+            {
+              "issue": 6,
+              "pageCount": 32
+            }
+          ]
+        },
+        {
+          "arc": "Concluding Arc",
+          "issues": [
+            {
+              "issue": 7,
+              "pageCount": 32
+            },
+            {
+              "issue": 8,
+              "pageCount": 32
+            },
+            {
+              "issue": 9,
+              "pageCount": 32
+            },
+            {
+              "issue": 10,
+              "pageCount": 32
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "star-wars-heroes-path",
@@ -3319,6 +6315,82 @@
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Heir+to+the+Jedi+Kevin+Hearne"
     },
     {
+      "id": "destroyer-down",
+      "title": "Destroyer Down",
+      "type": "comic",
+      "publisher": "IDW Publishing",
+      "year": 2019,
+      "era": "disney",
+      "description": "An all-ages adventure aboard a crashed Imperial Star Destroyer in the days after A New Hope.",
+      "arcs": [
+        {
+          "arc": "Destroyer Down",
+          "issues": [
+            {
+              "issue": 1,
+              "pageCount": 32
+            },
+            {
+              "issue": 2,
+              "pageCount": 32
+            },
+            {
+              "issue": 3,
+              "pageCount": 32
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "smugglers-run-comic",
+      "title": "Smuggler's Run",
+      "type": "comic",
+      "publisher": "IDW Publishing",
+      "year": 2020,
+      "era": "disney",
+      "description": "A comic adaptation of the Han & Chewbacca young-reader novel, set between Episodes IV and V.",
+      "arcs": [
+        {
+          "arc": "Smuggler's Run",
+          "issues": [
+            {
+              "issue": 1,
+              "pageCount": 32
+            },
+            {
+              "issue": 2,
+              "pageCount": 32
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "weapon-of-a-jedi-comic",
+      "title": "The Weapon of a Jedi",
+      "type": "comic",
+      "publisher": "IDW Publishing",
+      "year": 2021,
+      "era": "disney",
+      "description": "A comic adaptation of the Luke Skywalker young-reader novel, set between Episodes IV and V.",
+      "arcs": [
+        {
+          "arc": "The Weapon of a Jedi",
+          "issues": [
+            {
+              "issue": 1,
+              "pageCount": 32
+            },
+            {
+              "issue": 2,
+              "pageCount": 32
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "doctor-aphra-audiobook",
       "title": "Doctor Aphra: An Audiobook Original",
       "type": "audio-drama",
@@ -3330,6 +6402,48 @@
       "audibleUrl": "https://www.audible.com/pd/B087GZ74TB"
     },
     {
+      "id": "the-last-jedi-storms-of-crait",
+      "title": "The Last Jedi — Storms of Crait",
+      "type": "comic",
+      "publisher": "Marvel Comics",
+      "year": 2017,
+      "era": "disney",
+      "description": "A Rebel mission to the remote mineral world of Crait in the years after the Battle of Yavin.",
+      "arcs": [
+        {
+          "arc": "Storms of Crait",
+          "issues": [
+            {
+              "issue": 1,
+              "pageCount": 48,
+              "title": "Storms of Crait"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "empire-ascendant",
+      "title": "Empire Ascendant",
+      "type": "comic",
+      "publisher": "Marvel Comics",
+      "year": 2019,
+      "era": "disney",
+      "description": "A bridging anthology one-shot linking the first and second waves of Marvel's original-trilogy line.",
+      "arcs": [
+        {
+          "arc": "Empire Ascendant",
+          "issues": [
+            {
+              "issue": 1,
+              "pageCount": 48,
+              "title": "Empire Ascendant"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "episode-v-the-empire-strikes-back",
       "title": "Episode V – The Empire Strikes Back",
       "type": "movie",
@@ -3339,6 +6453,1195 @@
       "format": "live-action",
       "era": "lucas",
       "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-0f5c5223-f4f6-46ef-ba8a-69cb0e17d8d3"
+    },
+    {
+      "id": "star-wars-2020-comic",
+      "title": "Star Wars (2020)",
+      "type": "comic",
+      "publisher": "Marvel Comics",
+      "year": 2020,
+      "era": "disney",
+      "description": "The second-wave flagship ongoing, picking up immediately after The Empire Strikes Back.",
+      "arcs": [
+        {
+          "arc": "The Destiny Path",
+          "issues": [
+            {
+              "issue": 1,
+              "pageCount": 32
+            },
+            {
+              "issue": 2,
+              "pageCount": 32
+            },
+            {
+              "issue": 3,
+              "pageCount": 32
+            },
+            {
+              "issue": 4,
+              "pageCount": 32
+            },
+            {
+              "issue": 5,
+              "pageCount": 32
+            },
+            {
+              "issue": 6,
+              "pageCount": 32
+            }
+          ]
+        },
+        {
+          "arc": "Operation Starlight",
+          "issues": [
+            {
+              "issue": 7,
+              "pageCount": 32
+            },
+            {
+              "issue": 8,
+              "pageCount": 32
+            },
+            {
+              "issue": 9,
+              "pageCount": 32
+            },
+            {
+              "issue": 10,
+              "pageCount": 32
+            },
+            {
+              "issue": 11,
+              "pageCount": 32
+            },
+            {
+              "issue": 12,
+              "pageCount": 32
+            }
+          ]
+        },
+        {
+          "arc": "War of the Bounty Hunters (tie-in)",
+          "issues": [
+            {
+              "issue": 13,
+              "pageCount": 32
+            },
+            {
+              "issue": 14,
+              "pageCount": 32
+            },
+            {
+              "issue": 15,
+              "pageCount": 32
+            },
+            {
+              "issue": 16,
+              "pageCount": 32
+            },
+            {
+              "issue": 17,
+              "pageCount": 32
+            },
+            {
+              "issue": 18,
+              "pageCount": 32
+            }
+          ]
+        },
+        {
+          "arc": "Crimson Reign (tie-in)",
+          "issues": [
+            {
+              "issue": 19,
+              "pageCount": 32
+            },
+            {
+              "issue": 20,
+              "pageCount": 32
+            },
+            {
+              "issue": 21,
+              "pageCount": 32
+            },
+            {
+              "issue": 22,
+              "pageCount": 32
+            },
+            {
+              "issue": 23,
+              "pageCount": 32
+            },
+            {
+              "issue": 24,
+              "pageCount": 32
+            },
+            {
+              "issue": 25,
+              "pageCount": 32
+            }
+          ]
+        },
+        {
+          "arc": "The Will of Tarkin",
+          "issues": [
+            {
+              "issue": 26,
+              "pageCount": 32
+            },
+            {
+              "issue": 27,
+              "pageCount": 32
+            },
+            {
+              "issue": 28,
+              "pageCount": 32
+            },
+            {
+              "issue": 29,
+              "pageCount": 32
+            },
+            {
+              "issue": 30,
+              "pageCount": 32
+            },
+            {
+              "issue": 31,
+              "pageCount": 32
+            },
+            {
+              "issue": 32,
+              "pageCount": 32
+            }
+          ]
+        },
+        {
+          "arc": "Hidden Empire (tie-in)",
+          "issues": [
+            {
+              "issue": 33,
+              "pageCount": 32
+            },
+            {
+              "issue": 34,
+              "pageCount": 32
+            },
+            {
+              "issue": 35,
+              "pageCount": 32
+            },
+            {
+              "issue": 36,
+              "pageCount": 32
+            },
+            {
+              "issue": 37,
+              "pageCount": 32
+            }
+          ]
+        },
+        {
+          "arc": "Dark Droids (tie-in)",
+          "issues": [
+            {
+              "issue": 38,
+              "pageCount": 32
+            },
+            {
+              "issue": 39,
+              "pageCount": 32
+            },
+            {
+              "issue": 40,
+              "pageCount": 32
+            },
+            {
+              "issue": 41,
+              "pageCount": 32
+            },
+            {
+              "issue": 42,
+              "pageCount": 32
+            },
+            {
+              "issue": 43,
+              "pageCount": 32
+            }
+          ]
+        },
+        {
+          "arc": "The Front",
+          "issues": [
+            {
+              "issue": 44,
+              "pageCount": 32
+            },
+            {
+              "issue": 45,
+              "pageCount": 32
+            },
+            {
+              "issue": 46,
+              "pageCount": 32
+            },
+            {
+              "issue": 47,
+              "pageCount": 32
+            },
+            {
+              "issue": 48,
+              "pageCount": 32
+            },
+            {
+              "issue": 49,
+              "pageCount": 32
+            }
+          ]
+        },
+        {
+          "arc": "Finale",
+          "issues": [
+            {
+              "issue": 50,
+              "pageCount": 32
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "darth-vader-2020-comic",
+      "title": "Darth Vader (2020)",
+      "type": "comic",
+      "publisher": "Marvel Comics",
+      "year": 2020,
+      "era": "disney",
+      "description": "Vader's reckoning after learning Luke is his son, pursuing the buried truth of his own past.",
+      "arcs": [
+        {
+          "arc": "Dark Heart of the Sith",
+          "issues": [
+            {
+              "issue": 1,
+              "pageCount": 32
+            },
+            {
+              "issue": 2,
+              "pageCount": 32
+            },
+            {
+              "issue": 3,
+              "pageCount": 32
+            },
+            {
+              "issue": 4,
+              "pageCount": 32
+            },
+            {
+              "issue": 5,
+              "pageCount": 32
+            }
+          ]
+        },
+        {
+          "arc": "Into the Fire",
+          "issues": [
+            {
+              "issue": 6,
+              "pageCount": 32
+            },
+            {
+              "issue": 7,
+              "pageCount": 32
+            },
+            {
+              "issue": 8,
+              "pageCount": 32
+            },
+            {
+              "issue": 9,
+              "pageCount": 32
+            },
+            {
+              "issue": 10,
+              "pageCount": 32
+            },
+            {
+              "issue": 11,
+              "pageCount": 32
+            }
+          ]
+        },
+        {
+          "arc": "War of the Bounty Hunters (tie-in)",
+          "issues": [
+            {
+              "issue": 12,
+              "pageCount": 32
+            },
+            {
+              "issue": 13,
+              "pageCount": 32
+            },
+            {
+              "issue": 14,
+              "pageCount": 32
+            },
+            {
+              "issue": 15,
+              "pageCount": 32
+            },
+            {
+              "issue": 16,
+              "pageCount": 32
+            },
+            {
+              "issue": 17,
+              "pageCount": 32
+            }
+          ]
+        },
+        {
+          "arc": "Crimson Reign (tie-in)",
+          "issues": [
+            {
+              "issue": 18,
+              "pageCount": 32
+            },
+            {
+              "issue": 19,
+              "pageCount": 32
+            },
+            {
+              "issue": 20,
+              "pageCount": 32
+            },
+            {
+              "issue": 21,
+              "pageCount": 32
+            },
+            {
+              "issue": 22,
+              "pageCount": 32
+            },
+            {
+              "issue": 23,
+              "pageCount": 32
+            }
+          ]
+        },
+        {
+          "arc": "Hidden Empire (tie-in)",
+          "issues": [
+            {
+              "issue": 24,
+              "pageCount": 32
+            },
+            {
+              "issue": 25,
+              "pageCount": 32
+            },
+            {
+              "issue": 26,
+              "pageCount": 32
+            },
+            {
+              "issue": 27,
+              "pageCount": 32
+            },
+            {
+              "issue": 28,
+              "pageCount": 32
+            },
+            {
+              "issue": 29,
+              "pageCount": 32
+            }
+          ]
+        },
+        {
+          "arc": "Unbound Force",
+          "issues": [
+            {
+              "issue": 30,
+              "pageCount": 32
+            },
+            {
+              "issue": 31,
+              "pageCount": 32
+            },
+            {
+              "issue": 32,
+              "pageCount": 32
+            },
+            {
+              "issue": 33,
+              "pageCount": 32
+            },
+            {
+              "issue": 34,
+              "pageCount": 32
+            },
+            {
+              "issue": 35,
+              "pageCount": 32
+            }
+          ]
+        },
+        {
+          "arc": "Dark Droids (tie-in)",
+          "issues": [
+            {
+              "issue": 36,
+              "pageCount": 32
+            },
+            {
+              "issue": 37,
+              "pageCount": 32
+            },
+            {
+              "issue": 38,
+              "pageCount": 32
+            },
+            {
+              "issue": 39,
+              "pageCount": 32
+            },
+            {
+              "issue": 40,
+              "pageCount": 32
+            },
+            {
+              "issue": 41,
+              "pageCount": 32
+            },
+            {
+              "issue": 42,
+              "pageCount": 32
+            },
+            {
+              "issue": 43,
+              "pageCount": 32
+            }
+          ]
+        },
+        {
+          "arc": "Concluding Arc",
+          "issues": [
+            {
+              "issue": 44,
+              "pageCount": 32
+            },
+            {
+              "issue": 45,
+              "pageCount": 32
+            },
+            {
+              "issue": 46,
+              "pageCount": 32
+            },
+            {
+              "issue": 47,
+              "pageCount": 32
+            },
+            {
+              "issue": 48,
+              "pageCount": 32
+            },
+            {
+              "issue": 49,
+              "pageCount": 32
+            },
+            {
+              "issue": 50,
+              "pageCount": 32
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "doctor-aphra-2020-comic",
+      "title": "Doctor Aphra (2020)",
+      "type": "comic",
+      "publisher": "Marvel Comics",
+      "year": 2020,
+      "era": "disney",
+      "description": "Aphra's second ongoing, chasing relics and trouble across the post-Hoth galaxy.",
+      "arcs": [
+        {
+          "arc": "Fortune and Fate",
+          "issues": [
+            {
+              "issue": 1,
+              "pageCount": 32
+            },
+            {
+              "issue": 2,
+              "pageCount": 32
+            },
+            {
+              "issue": 3,
+              "pageCount": 32
+            },
+            {
+              "issue": 4,
+              "pageCount": 32
+            },
+            {
+              "issue": 5,
+              "pageCount": 32
+            }
+          ]
+        },
+        {
+          "arc": "The Engine Job",
+          "issues": [
+            {
+              "issue": 6,
+              "pageCount": 32
+            },
+            {
+              "issue": 7,
+              "pageCount": 32
+            },
+            {
+              "issue": 8,
+              "pageCount": 32
+            },
+            {
+              "issue": 9,
+              "pageCount": 32
+            }
+          ]
+        },
+        {
+          "arc": "War of the Bounty Hunters (tie-in)",
+          "issues": [
+            {
+              "issue": 10,
+              "pageCount": 32
+            },
+            {
+              "issue": 11,
+              "pageCount": 32
+            },
+            {
+              "issue": 12,
+              "pageCount": 32
+            },
+            {
+              "issue": 13,
+              "pageCount": 32
+            },
+            {
+              "issue": 14,
+              "pageCount": 32
+            }
+          ]
+        },
+        {
+          "arc": "Crimson Reign (tie-in)",
+          "issues": [
+            {
+              "issue": 15,
+              "pageCount": 32
+            },
+            {
+              "issue": 16,
+              "pageCount": 32
+            },
+            {
+              "issue": 17,
+              "pageCount": 32
+            },
+            {
+              "issue": 18,
+              "pageCount": 32
+            },
+            {
+              "issue": 19,
+              "pageCount": 32
+            },
+            {
+              "issue": 20,
+              "pageCount": 32
+            }
+          ]
+        },
+        {
+          "arc": "Hidden Empire (tie-in)",
+          "issues": [
+            {
+              "issue": 21,
+              "pageCount": 32
+            },
+            {
+              "issue": 22,
+              "pageCount": 32
+            },
+            {
+              "issue": 23,
+              "pageCount": 32
+            },
+            {
+              "issue": 24,
+              "pageCount": 32
+            },
+            {
+              "issue": 25,
+              "pageCount": 32
+            }
+          ]
+        },
+        {
+          "arc": "Dark Droids (tie-in)",
+          "issues": [
+            {
+              "issue": 26,
+              "pageCount": 32
+            },
+            {
+              "issue": 27,
+              "pageCount": 32
+            },
+            {
+              "issue": 28,
+              "pageCount": 32
+            },
+            {
+              "issue": 29,
+              "pageCount": 32
+            },
+            {
+              "issue": 30,
+              "pageCount": 32
+            },
+            {
+              "issue": 31,
+              "pageCount": 32
+            }
+          ]
+        },
+        {
+          "arc": "Concluding Arc",
+          "issues": [
+            {
+              "issue": 32,
+              "pageCount": 32
+            },
+            {
+              "issue": 33,
+              "pageCount": 32
+            },
+            {
+              "issue": 34,
+              "pageCount": 32
+            },
+            {
+              "issue": 35,
+              "pageCount": 32
+            },
+            {
+              "issue": 36,
+              "pageCount": 32
+            },
+            {
+              "issue": 37,
+              "pageCount": 32
+            },
+            {
+              "issue": 38,
+              "pageCount": 32
+            },
+            {
+              "issue": 39,
+              "pageCount": 32
+            },
+            {
+              "issue": 40,
+              "pageCount": 32
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bounty-hunters-comic",
+      "title": "Bounty Hunters",
+      "type": "comic",
+      "publisher": "Marvel Comics",
+      "year": 2020,
+      "era": "disney",
+      "description": "Beilert Valance and a rogues' gallery of hunters chase contracts and settle old grudges.",
+      "arcs": [
+        {
+          "arc": "Galaxy's Deadliest",
+          "issues": [
+            {
+              "issue": 1,
+              "pageCount": 32
+            },
+            {
+              "issue": 2,
+              "pageCount": 32
+            },
+            {
+              "issue": 3,
+              "pageCount": 32
+            },
+            {
+              "issue": 4,
+              "pageCount": 32
+            },
+            {
+              "issue": 5,
+              "pageCount": 32
+            }
+          ]
+        },
+        {
+          "arc": "Target Valance",
+          "issues": [
+            {
+              "issue": 6,
+              "pageCount": 32
+            },
+            {
+              "issue": 7,
+              "pageCount": 32
+            }
+          ]
+        },
+        {
+          "arc": "The Terminus Gauntlet",
+          "issues": [
+            {
+              "issue": 8,
+              "pageCount": 32
+            },
+            {
+              "issue": 9,
+              "pageCount": 32
+            },
+            {
+              "issue": 10,
+              "pageCount": 32
+            }
+          ]
+        },
+        {
+          "arc": "War of the Bounty Hunters (tie-in)",
+          "issues": [
+            {
+              "issue": 11,
+              "pageCount": 32
+            },
+            {
+              "issue": 12,
+              "pageCount": 32
+            },
+            {
+              "issue": 13,
+              "pageCount": 32
+            },
+            {
+              "issue": 14,
+              "pageCount": 32
+            },
+            {
+              "issue": 15,
+              "pageCount": 32
+            },
+            {
+              "issue": 16,
+              "pageCount": 32
+            },
+            {
+              "issue": 17,
+              "pageCount": 32
+            }
+          ]
+        },
+        {
+          "arc": "Crimson Reign (tie-in)",
+          "issues": [
+            {
+              "issue": 18,
+              "pageCount": 32
+            },
+            {
+              "issue": 19,
+              "pageCount": 32
+            },
+            {
+              "issue": 20,
+              "pageCount": 32
+            },
+            {
+              "issue": 21,
+              "pageCount": 32
+            },
+            {
+              "issue": 22,
+              "pageCount": 32
+            },
+            {
+              "issue": 23,
+              "pageCount": 32
+            }
+          ]
+        },
+        {
+          "arc": "Hidden Empire (tie-in)",
+          "issues": [
+            {
+              "issue": 24,
+              "pageCount": 32
+            },
+            {
+              "issue": 25,
+              "pageCount": 32
+            },
+            {
+              "issue": 26,
+              "pageCount": 32
+            },
+            {
+              "issue": 27,
+              "pageCount": 32
+            },
+            {
+              "issue": 28,
+              "pageCount": 32
+            },
+            {
+              "issue": 29,
+              "pageCount": 32
+            }
+          ]
+        },
+        {
+          "arc": "Dark Droids (tie-in)",
+          "issues": [
+            {
+              "issue": 30,
+              "pageCount": 32
+            },
+            {
+              "issue": 31,
+              "pageCount": 32
+            },
+            {
+              "issue": 32,
+              "pageCount": 32
+            },
+            {
+              "issue": 33,
+              "pageCount": 32
+            },
+            {
+              "issue": 34,
+              "pageCount": 32
+            },
+            {
+              "issue": 35,
+              "pageCount": 32
+            },
+            {
+              "issue": 36,
+              "pageCount": 32
+            }
+          ]
+        },
+        {
+          "arc": "Concluding Arc",
+          "issues": [
+            {
+              "issue": 37,
+              "pageCount": 32
+            },
+            {
+              "issue": 38,
+              "pageCount": 32
+            },
+            {
+              "issue": 39,
+              "pageCount": 32
+            },
+            {
+              "issue": 40,
+              "pageCount": 32
+            },
+            {
+              "issue": 41,
+              "pageCount": 32
+            },
+            {
+              "issue": 42,
+              "pageCount": 32
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "war-of-the-bounty-hunters",
+      "title": "War of the Bounty Hunters",
+      "type": "comic",
+      "publisher": "Marvel Comics",
+      "year": 2021,
+      "era": "disney",
+      "description": "The hunt for Han Solo in carbonite erupts into a galaxy-spanning war between crime lords and the Empire.",
+      "arcs": [
+        {
+          "arc": "War of the Bounty Hunters",
+          "issues": [
+            {
+              "issue": 0,
+              "pageCount": 40,
+              "title": "Alpha"
+            },
+            {
+              "issue": 1,
+              "pageCount": 32
+            },
+            {
+              "issue": 2,
+              "pageCount": 32
+            },
+            {
+              "issue": 3,
+              "pageCount": 32
+            },
+            {
+              "issue": 4,
+              "pageCount": 32
+            },
+            {
+              "issue": 5,
+              "pageCount": 32
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "crimson-reign",
+      "title": "Crimson Reign",
+      "type": "comic",
+      "publisher": "Marvel Comics",
+      "year": 2021,
+      "era": "disney",
+      "description": "Crimson Dawn wages a shadow war against both the Empire and the Rebellion.",
+      "arcs": [
+        {
+          "arc": "Crimson Reign",
+          "issues": [
+            {
+              "issue": 1,
+              "pageCount": 32,
+              "title": "The Orphans"
+            },
+            {
+              "issue": 2,
+              "pageCount": 32,
+              "title": "The Assassins"
+            },
+            {
+              "issue": 3,
+              "pageCount": 32,
+              "title": "The Archivist"
+            },
+            {
+              "issue": 4,
+              "pageCount": 32,
+              "title": "The Knights"
+            },
+            {
+              "issue": 5,
+              "pageCount": 32
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hidden-empire",
+      "title": "Hidden Empire",
+      "type": "comic",
+      "publisher": "Marvel Comics",
+      "year": 2022,
+      "era": "disney",
+      "description": "The climactic conclusion of the Crimson Dawn saga.",
+      "arcs": [
+        {
+          "arc": "Hidden Empire",
+          "issues": [
+            {
+              "issue": 1,
+              "pageCount": 32,
+              "title": "A Matter of Time"
+            },
+            {
+              "issue": 2,
+              "pageCount": 32,
+              "title": "The Dawn Fleet"
+            },
+            {
+              "issue": 3,
+              "pageCount": 32,
+              "title": "I Am Chanath Cha"
+            },
+            {
+              "issue": 4,
+              "pageCount": 32,
+              "title": "Rings"
+            },
+            {
+              "issue": 5,
+              "pageCount": 32
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dark-droids",
+      "title": "Dark Droids",
+      "type": "comic",
+      "publisher": "Marvel Comics",
+      "year": 2023,
+      "era": "disney",
+      "description": "A malevolent intelligence known as the Scourge corrupts droids across the galaxy.",
+      "arcs": [
+        {
+          "arc": "Dark Droids",
+          "issues": [
+            {
+              "issue": 1,
+              "pageCount": 32
+            },
+            {
+              "issue": 2,
+              "pageCount": 32
+            },
+            {
+              "issue": 3,
+              "pageCount": 32
+            },
+            {
+              "issue": 4,
+              "pageCount": 32
+            },
+            {
+              "issue": 5,
+              "pageCount": 32
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dark-droids-d-squad",
+      "title": "Dark Droids — D-Squad",
+      "type": "comic",
+      "publisher": "Marvel Comics",
+      "year": 2023,
+      "era": "disney",
+      "description": "A companion miniseries following a band of droids fighting to survive the Dark Droids event.",
+      "arcs": [
+        {
+          "arc": "D-Squad",
+          "issues": [
+            {
+              "issue": 1,
+              "pageCount": 32
+            },
+            {
+              "issue": 2,
+              "pageCount": 32
+            },
+            {
+              "issue": 3,
+              "pageCount": 32
+            },
+            {
+              "issue": 4,
+              "pageCount": 32
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sana-starros",
+      "title": "Sana Starros",
+      "type": "comic",
+      "publisher": "Marvel Comics",
+      "year": 2023,
+      "era": "disney",
+      "description": "Han Solo's sometime-\"wife\" Sana navigates a chaotic family reunion and a job gone badly wrong.",
+      "arcs": [
+        {
+          "arc": "Family Matters",
+          "issues": [
+            {
+              "issue": 1,
+              "pageCount": 32
+            },
+            {
+              "issue": 2,
+              "pageCount": 32
+            },
+            {
+              "issue": 3,
+              "pageCount": 32
+            },
+            {
+              "issue": 4,
+              "pageCount": 32
+            },
+            {
+              "issue": 5,
+              "pageCount": 32
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "darth-vader-black-white-and-red",
+      "title": "Darth Vader — Black, White & Red",
+      "type": "comic",
+      "publisher": "Marvel Comics",
+      "year": 2023,
+      "era": "disney",
+      "description": "A stylized Darth Vader anthology rendered in black, white, and red (companion to the Maul title).",
+      "arcs": [
+        {
+          "arc": "Darth Vader — Black, White & Red",
+          "issues": [
+            {
+              "issue": 1,
+              "pageCount": 32
+            },
+            {
+              "issue": 2,
+              "pageCount": 32
+            },
+            {
+              "issue": 3,
+              "pageCount": 32
+            },
+            {
+              "issue": 4,
+              "pageCount": 32
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "star-wars-yodas-jedi-training",
@@ -3390,6 +7693,116 @@
       "format": "live-action",
       "era": "lucas",
       "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-4b6e7cda-daa5-4f2d-9b61-35bbe562c69c"
+    },
+    {
+      "id": "shattered-empire",
+      "title": "Shattered Empire",
+      "type": "comic",
+      "publisher": "Marvel Comics",
+      "year": 2015,
+      "era": "disney",
+      "description": "The immediate aftermath of Return of the Jedi as the Rebellion presses its advantage against a fractured Empire.",
+      "arcs": [
+        {
+          "arc": "Shattered Empire",
+          "issues": [
+            {
+              "issue": 1,
+              "pageCount": 32
+            },
+            {
+              "issue": 2,
+              "pageCount": 32
+            },
+            {
+              "issue": 3,
+              "pageCount": 32
+            },
+            {
+              "issue": 4,
+              "pageCount": 32
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ewoks-2024",
+      "title": "Ewoks (2024)",
+      "type": "comic",
+      "publisher": "Marvel Comics",
+      "year": 2024,
+      "era": "disney",
+      "description": "The Ewoks of Endor in fresh adventures around the climactic Battle of Endor.",
+      "arcs": [
+        {
+          "arc": "Caravan of Carnage",
+          "issues": [
+            {
+              "issue": 1,
+              "pageCount": 32
+            },
+            {
+              "issue": 2,
+              "pageCount": 32
+            },
+            {
+              "issue": 3,
+              "pageCount": 32
+            },
+            {
+              "issue": 4,
+              "pageCount": 32
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "return-of-the-jedi-40th-anniversary",
+      "title": "Return of the Jedi — 40th Anniversary",
+      "type": "comic",
+      "publisher": "Marvel Comics",
+      "year": 2023,
+      "era": "disney",
+      "description": "A set of standalone one-shots celebrating Return of the Jedi, each spotlighting a different corner of the saga.",
+      "arcs": [
+        {
+          "arc": "40th Anniversary",
+          "issues": [
+            {
+              "issue": 1,
+              "pageCount": 32,
+              "title": "Jabba's Palace"
+            },
+            {
+              "issue": 2,
+              "pageCount": 32,
+              "title": "Ewoks"
+            },
+            {
+              "issue": 3,
+              "pageCount": 32,
+              "title": "Lando"
+            },
+            {
+              "issue": 4,
+              "pageCount": 32,
+              "title": "The Empire"
+            },
+            {
+              "issue": 5,
+              "pageCount": 32,
+              "title": "The Rebellion"
+            },
+            {
+              "issue": 6,
+              "pageCount": 32,
+              "title": "Max Rebo"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "star-wars-uprising",
@@ -3529,6 +7942,226 @@
       "pageCount": 423,
       "description": "The Galactic Civil War reaches its conclusion at the Battle of Jakku — as Norra Wexley and her crew, Admiral Rae Sloane, and the last of the Imperial fleet converge for a final reckoning that will determine the galaxy's fate.",
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Aftermath+Empire%27s+End+Chuck+Wendig"
+    },
+    {
+      "id": "battle-of-jakku-insurgency-rising",
+      "title": "Battle of Jakku — Insurgency Rising",
+      "type": "comic",
+      "publisher": "Marvel Comics",
+      "year": 2024,
+      "era": "disney",
+      "description": "Part one of a trilogy depicting the climactic battle that ended the Galactic Civil War.",
+      "arcs": [
+        {
+          "arc": "Insurgency Rising",
+          "issues": [
+            {
+              "issue": 1,
+              "pageCount": 32
+            },
+            {
+              "issue": 2,
+              "pageCount": 32
+            },
+            {
+              "issue": 3,
+              "pageCount": 32
+            },
+            {
+              "issue": 4,
+              "pageCount": 32
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "battle-of-jakku-republic-under-siege",
+      "title": "Battle of Jakku — Republic Under Siege",
+      "type": "comic",
+      "publisher": "Marvel Comics",
+      "year": 2024,
+      "era": "disney",
+      "description": "The middle chapter of the Battle of Jakku trilogy as the New Republic fights to hold the line.",
+      "arcs": [
+        {
+          "arc": "Republic Under Siege",
+          "issues": [
+            {
+              "issue": 1,
+              "pageCount": 32
+            },
+            {
+              "issue": 2,
+              "pageCount": 32
+            },
+            {
+              "issue": 3,
+              "pageCount": 32
+            },
+            {
+              "issue": 4,
+              "pageCount": 32
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "battle-of-jakku-last-stand",
+      "title": "Battle of Jakku — Last Stand",
+      "type": "comic",
+      "publisher": "Marvel Comics",
+      "year": 2024,
+      "era": "disney",
+      "description": "The concluding chapter of the Battle of Jakku trilogy and the final defeat of the Empire.",
+      "arcs": [
+        {
+          "arc": "Last Stand",
+          "issues": [
+            {
+              "issue": 1,
+              "pageCount": 32
+            },
+            {
+              "issue": 2,
+              "pageCount": 32
+            },
+            {
+              "issue": 3,
+              "pageCount": 32
+            },
+            {
+              "issue": 4,
+              "pageCount": 32
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "doctor-aphra-chaos-agent",
+      "title": "Doctor Aphra — Chaos Agent",
+      "type": "comic",
+      "publisher": "Marvel Comics",
+      "year": 2025,
+      "era": "disney",
+      "description": "Aphra's New Republic-era return as the rogue archaeologist is pulled back into trouble.",
+      "arcs": [
+        {
+          "arc": "Chaos Agent",
+          "issues": [
+            {
+              "issue": 1,
+              "pageCount": 32
+            },
+            {
+              "issue": 2,
+              "pageCount": 32
+            },
+            {
+              "issue": 3,
+              "pageCount": 32
+            },
+            {
+              "issue": 4,
+              "pageCount": 32
+            },
+            {
+              "issue": 5,
+              "pageCount": 32
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "star-wars-2025-comic",
+      "title": "Star Wars (2025)",
+      "type": "comic",
+      "publisher": "Marvel Comics",
+      "year": 2025,
+      "era": "disney",
+      "description": "A new flagship set in the post-Battle of Jakku New Republic era, following Luke, Leia, Han and Valance.",
+      "arcs": [
+        {
+          "arc": "Star Wars (2025)",
+          "issues": [
+            {
+              "issue": 1,
+              "pageCount": 32
+            },
+            {
+              "issue": 2,
+              "pageCount": 32
+            },
+            {
+              "issue": 3,
+              "pageCount": 32
+            },
+            {
+              "issue": 4,
+              "pageCount": 32
+            },
+            {
+              "issue": 5,
+              "pageCount": 32
+            },
+            {
+              "issue": 6,
+              "pageCount": 32
+            },
+            {
+              "issue": 7,
+              "pageCount": 32
+            },
+            {
+              "issue": 8,
+              "pageCount": 32
+            },
+            {
+              "issue": 9,
+              "pageCount": 32
+            },
+            {
+              "issue": 10,
+              "pageCount": 32
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "han-solo-hunt-for-the-falcon",
+      "title": "Han Solo — Hunt for the Falcon",
+      "type": "comic",
+      "publisher": "Dark Horse Comics",
+      "year": 2025,
+      "era": "disney",
+      "description": "An older Han Solo chases down his stolen Millennium Falcon across the New Republic galaxy.",
+      "arcs": [
+        {
+          "arc": "Hunt for the Falcon",
+          "issues": [
+            {
+              "issue": 1,
+              "pageCount": 32
+            },
+            {
+              "issue": 2,
+              "pageCount": 32
+            },
+            {
+              "issue": 3,
+              "pageCount": 32
+            },
+            {
+              "issue": 4,
+              "pageCount": 32
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "lost-stars",
@@ -3698,6 +8331,102 @@
       "format": "live-action",
       "era": "disney",
       "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-422f6dcc-226f-44e7-98d4-22de69b31cf3"
+    },
+    {
+      "id": "mandalorian-s1-comic",
+      "title": "The Mandalorian (Season 1)",
+      "type": "comic",
+      "publisher": "Marvel Comics",
+      "year": 2022,
+      "era": "disney",
+      "description": "A comic adaptation of the first season of The Mandalorian and Din Djarin's bond with Grogu.",
+      "arcs": [
+        {
+          "arc": "Season 1",
+          "issues": [
+            {
+              "issue": 1,
+              "pageCount": 32
+            },
+            {
+              "issue": 2,
+              "pageCount": 32
+            },
+            {
+              "issue": 3,
+              "pageCount": 32
+            },
+            {
+              "issue": 4,
+              "pageCount": 32
+            },
+            {
+              "issue": 5,
+              "pageCount": 32
+            },
+            {
+              "issue": 6,
+              "pageCount": 32
+            },
+            {
+              "issue": 7,
+              "pageCount": 32
+            },
+            {
+              "issue": 8,
+              "pageCount": 32
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mandalorian-s2-comic",
+      "title": "The Mandalorian Season 2",
+      "type": "comic",
+      "publisher": "Marvel Comics",
+      "year": 2023,
+      "era": "disney",
+      "description": "A comic adaptation of the second season of The Mandalorian as Din Djarin searches for the Jedi.",
+      "arcs": [
+        {
+          "arc": "Season 2",
+          "issues": [
+            {
+              "issue": 1,
+              "pageCount": 32
+            },
+            {
+              "issue": 2,
+              "pageCount": 32
+            },
+            {
+              "issue": 3,
+              "pageCount": 32
+            },
+            {
+              "issue": 4,
+              "pageCount": 32
+            },
+            {
+              "issue": 5,
+              "pageCount": 32
+            },
+            {
+              "issue": 6,
+              "pageCount": 32
+            },
+            {
+              "issue": 7,
+              "pageCount": 32
+            },
+            {
+              "issue": 8,
+              "pageCount": 32
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "the-book-of-boba-fett",
@@ -3920,6 +8649,54 @@
       "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-e64c22fc-fc7c-4ada-bbec-ab8351b8db97"
     },
     {
+      "id": "ahsoka-comic",
+      "title": "Ahsoka",
+      "type": "comic",
+      "publisher": "Marvel Comics",
+      "year": 2024,
+      "era": "disney",
+      "description": "A comic adaptation of the Ahsoka series and the hunt to stop the return of Grand Admiral Thrawn.",
+      "arcs": [
+        {
+          "arc": "Ahsoka",
+          "issues": [
+            {
+              "issue": 1,
+              "pageCount": 32
+            },
+            {
+              "issue": 2,
+              "pageCount": 32
+            },
+            {
+              "issue": 3,
+              "pageCount": 32
+            },
+            {
+              "issue": 4,
+              "pageCount": 32
+            },
+            {
+              "issue": 5,
+              "pageCount": 32
+            },
+            {
+              "issue": 6,
+              "pageCount": 32
+            },
+            {
+              "issue": 7,
+              "pageCount": 32
+            },
+            {
+              "issue": 8,
+              "pageCount": 32
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "skeleton-crew",
       "title": "Skeleton Crew",
       "type": "series",
@@ -4009,6 +8786,38 @@
       "description": "Six years before the rise of the First Order, Senator Leia Organa navigates a fractured New Republic Senate while a conspiracy threatens to tear the galaxy apart — and forces her to confront a truth that will change everything.",
       "audibleUrl": "https://www.audible.com/pd/Star-Wars-Bloodline-New-Republic-Audiobook/B01CRMO9BE",
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Bloodline+Claudia+Gray"
+    },
+    {
+      "id": "the-rise-of-kylo-ren",
+      "title": "The Rise of Kylo Ren",
+      "type": "comic",
+      "publisher": "Marvel Comics",
+      "year": 2019,
+      "era": "disney",
+      "description": "Ben Solo's fall to the dark side and the formation of the Knights of Ren.",
+      "arcs": [
+        {
+          "arc": "The Rise of Kylo Ren",
+          "issues": [
+            {
+              "issue": 1,
+              "pageCount": 32
+            },
+            {
+              "issue": 2,
+              "pageCount": 32
+            },
+            {
+              "issue": 3,
+              "pageCount": 32
+            },
+            {
+              "issue": 4,
+              "pageCount": 32
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "force-collector",
@@ -4255,6 +9064,207 @@
       "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-01ad3367-1b24-458c-a8fb-a245226ea237"
     },
     {
+      "id": "poe-dameron",
+      "title": "Poe Dameron",
+      "type": "comic",
+      "publisher": "Marvel Comics",
+      "year": 2016,
+      "era": "disney",
+      "description": "Resistance ace Poe Dameron and Black Squadron in the run-up to and aftermath of The Force Awakens.",
+      "arcs": [
+        {
+          "arc": "Black Squadron",
+          "issues": [
+            {
+              "issue": 1,
+              "pageCount": 32
+            },
+            {
+              "issue": 2,
+              "pageCount": 32
+            },
+            {
+              "issue": 3,
+              "pageCount": 32
+            }
+          ]
+        },
+        {
+          "arc": "Lockdown",
+          "issues": [
+            {
+              "issue": 4,
+              "pageCount": 32
+            },
+            {
+              "issue": 5,
+              "pageCount": 32
+            },
+            {
+              "issue": 6,
+              "pageCount": 32
+            }
+          ]
+        },
+        {
+          "arc": "The Gathering Storm",
+          "issues": [
+            {
+              "issue": 7,
+              "pageCount": 32
+            },
+            {
+              "issue": 8,
+              "pageCount": 32
+            },
+            {
+              "issue": 9,
+              "pageCount": 32
+            },
+            {
+              "issue": 10,
+              "pageCount": 32
+            },
+            {
+              "issue": 11,
+              "pageCount": 32
+            },
+            {
+              "issue": 12,
+              "pageCount": 32
+            },
+            {
+              "issue": 13,
+              "pageCount": 32
+            }
+          ]
+        },
+        {
+          "arc": "Legend Lost",
+          "issues": [
+            {
+              "issue": 14,
+              "pageCount": 32
+            },
+            {
+              "issue": 15,
+              "pageCount": 32
+            },
+            {
+              "issue": 16,
+              "pageCount": 32
+            },
+            {
+              "issue": 17,
+              "pageCount": 32
+            },
+            {
+              "issue": 18,
+              "pageCount": 32
+            },
+            {
+              "issue": 19,
+              "pageCount": 32
+            }
+          ]
+        },
+        {
+          "arc": "Legend Found",
+          "issues": [
+            {
+              "issue": 20,
+              "pageCount": 32
+            },
+            {
+              "issue": 21,
+              "pageCount": 32
+            },
+            {
+              "issue": 22,
+              "pageCount": 32
+            },
+            {
+              "issue": 23,
+              "pageCount": 32
+            },
+            {
+              "issue": 24,
+              "pageCount": 32
+            },
+            {
+              "issue": 25,
+              "pageCount": 32
+            }
+          ]
+        },
+        {
+          "arc": "The Awakening",
+          "issues": [
+            {
+              "issue": 26,
+              "pageCount": 32
+            },
+            {
+              "issue": 27,
+              "pageCount": 32
+            },
+            {
+              "issue": 28,
+              "pageCount": 32
+            },
+            {
+              "issue": 29,
+              "pageCount": 32
+            },
+            {
+              "issue": 30,
+              "pageCount": 32
+            },
+            {
+              "issue": 31,
+              "pageCount": 32
+            }
+          ]
+        },
+        {
+          "arc": "Annuals",
+          "issues": [
+            {
+              "issue": 32,
+              "pageCount": 40,
+              "title": "Annual #1"
+            },
+            {
+              "issue": 33,
+              "pageCount": 40,
+              "title": "Annual #2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "c-3po-phantom-limb",
+      "title": "C-3PO — The Phantom Limb",
+      "type": "comic",
+      "publisher": "Marvel Comics",
+      "year": 2016,
+      "era": "disney",
+      "description": "The story behind C-3PO's mysterious red arm seen in The Force Awakens.",
+      "arcs": [
+        {
+          "arc": "The Phantom Limb",
+          "issues": [
+            {
+              "issue": 1,
+              "pageCount": 48,
+              "title": "The Phantom Limb"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "episode-vii-the-force-awakens",
       "title": "Episode VII – The Force Awakens",
       "type": "movie",
@@ -4264,6 +9274,78 @@
       "format": "live-action",
       "era": "disney",
       "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-2854a94d-3702-40bd-97a4-12d55a809188"
+    },
+    {
+      "id": "force-awakens-comic",
+      "title": "The Force Awakens",
+      "type": "comic",
+      "publisher": "Marvel Comics",
+      "year": 2016,
+      "era": "disney",
+      "description": "A comic adaptation of The Force Awakens and the search for the missing Luke Skywalker.",
+      "arcs": [
+        {
+          "arc": "The Force Awakens",
+          "issues": [
+            {
+              "issue": 1,
+              "pageCount": 32
+            },
+            {
+              "issue": 2,
+              "pageCount": 32
+            },
+            {
+              "issue": 3,
+              "pageCount": 32
+            },
+            {
+              "issue": 4,
+              "pageCount": 32
+            },
+            {
+              "issue": 5,
+              "pageCount": 32
+            },
+            {
+              "issue": 6,
+              "pageCount": 32
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "captain-phasma",
+      "title": "Captain Phasma",
+      "type": "comic",
+      "publisher": "Marvel Comics",
+      "year": 2017,
+      "era": "disney",
+      "description": "How the First Order commander escaped Starkiller Base, bridging Episodes VII and VIII.",
+      "arcs": [
+        {
+          "arc": "Captain Phasma",
+          "issues": [
+            {
+              "issue": 1,
+              "pageCount": 32
+            },
+            {
+              "issue": 2,
+              "pageCount": 32
+            },
+            {
+              "issue": 3,
+              "pageCount": 32
+            },
+            {
+              "issue": 4,
+              "pageCount": 32
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "star-wars-batuu-bounty-hunters",
@@ -4304,6 +9386,27 @@
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Canto+Bight+anthology"
     },
     {
+      "id": "dj-most-wanted",
+      "title": "The Last Jedi — DJ: Most Wanted",
+      "type": "comic",
+      "publisher": "Marvel Comics",
+      "year": 2018,
+      "era": "disney",
+      "description": "A solo story for the codebreaker DJ in the days before The Last Jedi.",
+      "arcs": [
+        {
+          "arc": "DJ: Most Wanted",
+          "issues": [
+            {
+              "issue": 1,
+              "pageCount": 48,
+              "title": "DJ: Most Wanted"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "episode-viii-the-last-jedi",
       "title": "Episode VIII – The Last Jedi",
       "type": "movie",
@@ -4313,6 +9416,110 @@
       "format": "live-action",
       "era": "disney",
       "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-50c1aff5-3051-4839-9ebf-e332c635e216"
+    },
+    {
+      "id": "last-jedi-comic",
+      "title": "The Last Jedi",
+      "type": "comic",
+      "publisher": "Marvel Comics",
+      "year": 2018,
+      "era": "disney",
+      "description": "A comic adaptation of The Last Jedi as the Resistance flees the First Order.",
+      "arcs": [
+        {
+          "arc": "The Last Jedi",
+          "issues": [
+            {
+              "issue": 1,
+              "pageCount": 32
+            },
+            {
+              "issue": 2,
+              "pageCount": 32
+            },
+            {
+              "issue": 3,
+              "pageCount": 32
+            },
+            {
+              "issue": 4,
+              "pageCount": 32
+            },
+            {
+              "issue": 5,
+              "pageCount": 32
+            },
+            {
+              "issue": 6,
+              "pageCount": 32
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "legacy-of-vader",
+      "title": "Legacy of Vader",
+      "type": "comic",
+      "publisher": "Marvel Comics",
+      "year": 2025,
+      "era": "disney",
+      "description": "Supreme Leader Kylo Ren's journey between The Last Jedi and The Rise of Skywalker.",
+      "arcs": [
+        {
+          "arc": "The Reign of Kylo Ren",
+          "issues": [
+            {
+              "issue": 1,
+              "pageCount": 32
+            },
+            {
+              "issue": 2,
+              "pageCount": 32
+            },
+            {
+              "issue": 3,
+              "pageCount": 32
+            },
+            {
+              "issue": 4,
+              "pageCount": 32
+            },
+            {
+              "issue": 5,
+              "pageCount": 32
+            },
+            {
+              "issue": 6,
+              "pageCount": 32
+            },
+            {
+              "issue": 7,
+              "pageCount": 32
+            },
+            {
+              "issue": 8,
+              "pageCount": 32
+            },
+            {
+              "issue": 9,
+              "pageCount": 32
+            },
+            {
+              "issue": 10,
+              "pageCount": 32
+            },
+            {
+              "issue": 11,
+              "pageCount": 32
+            },
+            {
+              "issue": 12,
+              "pageCount": 32
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "star-wars-droid-repair-bay",
@@ -4388,6 +9595,45 @@
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Galaxy%27s+Edge+Black+Spire+Dawson"
     },
     {
+      "id": "galaxys-edge-comic",
+      "title": "Galaxy's Edge",
+      "type": "comic",
+      "publisher": "Marvel Comics",
+      "year": 2019,
+      "era": "disney",
+      "description": "A tie-in to the theme-park land, centered on the outlaw outpost of Black Spire on Batuu.",
+      "arcs": [
+        {
+          "arc": "Galaxy's Edge",
+          "issues": [
+            {
+              "issue": 1,
+              "pageCount": 32,
+              "title": "Baiting the Hook"
+            },
+            {
+              "issue": 2,
+              "pageCount": 32,
+              "title": "Shoot First, Questions Later"
+            },
+            {
+              "issue": 3,
+              "pageCount": 32,
+              "title": "Honor Among Thieves"
+            },
+            {
+              "issue": 4,
+              "pageCount": 32
+            },
+            {
+              "issue": 5,
+              "pageCount": 32
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "galaxys-edge-a-crash-of-fate",
       "title": "Galaxy's Edge: A Crash of Fate",
       "type": "ya-novel",
@@ -4399,6 +9645,42 @@
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Galaxy%27s+Edge+A+Crash+of+Fate+Cordova"
     },
     {
+      "id": "allegiance",
+      "title": "Allegiance",
+      "type": "comic",
+      "publisher": "Marvel Comics",
+      "year": 2019,
+      "era": "disney",
+      "description": "A Rise of Skywalker prelude as the Resistance scrambles to find new allies.",
+      "arcs": [
+        {
+          "arc": "Allegiance",
+          "issues": [
+            {
+              "issue": 1,
+              "pageCount": 32,
+              "title": "An Old Hope"
+            },
+            {
+              "issue": 2,
+              "pageCount": 32,
+              "title": "Troubled Waters"
+            },
+            {
+              "issue": 3,
+              "pageCount": 32,
+              "title": "Dark Side of the Moon"
+            },
+            {
+              "issue": 4,
+              "pageCount": 32,
+              "title": "A Rising Tide"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "episode-ix-the-rise-of-skywalker",
       "title": "Episode IX – The Rise of Skywalker",
       "type": "movie",
@@ -4408,6 +9690,102 @@
       "format": "live-action",
       "era": "disney",
       "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-43f9c275-e7e8-4ab3-802d-00d06a8ad841"
+    },
+    {
+      "id": "rise-of-skywalker-comic",
+      "title": "The Rise of Skywalker",
+      "type": "comic",
+      "publisher": "Marvel Comics",
+      "year": 2025,
+      "era": "disney",
+      "description": "A comic adaptation of The Rise of Skywalker and the final confrontation with the resurrected Emperor.",
+      "arcs": [
+        {
+          "arc": "The Rise of Skywalker",
+          "issues": [
+            {
+              "issue": 1,
+              "pageCount": 32
+            },
+            {
+              "issue": 2,
+              "pageCount": 32
+            },
+            {
+              "issue": 3,
+              "pageCount": 32
+            },
+            {
+              "issue": 4,
+              "pageCount": 32
+            },
+            {
+              "issue": 5,
+              "pageCount": 32
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "halcyon-legacy",
+      "title": "Galactic Starcruiser — Halcyon Legacy",
+      "type": "comic",
+      "publisher": "Marvel Comics",
+      "year": 2022,
+      "era": "disney",
+      "description": "Tales told aboard the Halcyon starcruiser, spanning eras of galactic history.",
+      "arcs": [
+        {
+          "arc": "Halcyon Legacy",
+          "issues": [
+            {
+              "issue": 1,
+              "pageCount": 32,
+              "title": "The Storm on the Horizon"
+            },
+            {
+              "issue": 2,
+              "pageCount": 32,
+              "title": "A Most Dangerous Gamble"
+            },
+            {
+              "issue": 3,
+              "pageCount": 32,
+              "title": "A Cause Worth Fighting For"
+            },
+            {
+              "issue": 4,
+              "pageCount": 32
+            },
+            {
+              "issue": 5,
+              "pageCount": 32
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "life-day",
+      "title": "Life Day",
+      "type": "comic",
+      "publisher": "Marvel Comics",
+      "year": 2021,
+      "era": "disney",
+      "description": "A holiday anthology of stories across the timeline, framed around the Wookiee celebration of Life Day.",
+      "arcs": [
+        {
+          "arc": "Life Day",
+          "issues": [
+            {
+              "issue": 1,
+              "pageCount": 48,
+              "title": "Life Day"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "the-last-order",
@@ -4658,6 +10036,633 @@
       "format": "animated",
       "era": "disney",
       "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-158c4929-11c0-4b66-98f7-3bba207aac8a"
+    },
+    {
+      "id": "forces-of-destiny-comic",
+      "title": "Forces of Destiny",
+      "type": "comic",
+      "publisher": "Marvel Comics",
+      "year": 2018,
+      "era": "disney",
+      "description": "Hero-spotlight one-shots tied to the animated shorts, spanning heroines across the saga.",
+      "arcs": [
+        {
+          "arc": "Forces of Destiny",
+          "issues": [
+            {
+              "issue": 1,
+              "pageCount": 32,
+              "title": "Leia"
+            },
+            {
+              "issue": 2,
+              "pageCount": 32,
+              "title": "Rey"
+            },
+            {
+              "issue": 3,
+              "pageCount": 32,
+              "title": "Hera"
+            },
+            {
+              "issue": 4,
+              "pageCount": 32,
+              "title": "Ahsoka & Padme"
+            },
+            {
+              "issue": 5,
+              "pageCount": 32,
+              "title": "Rose & Paige"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "star-wars-adventures-2017",
+      "title": "Star Wars Adventures (2017)",
+      "type": "comic",
+      "publisher": "IDW Publishing",
+      "year": 2017,
+      "era": "disney",
+      "description": "The flagship all-ages anthology, two stories per issue spanning the whole saga.",
+      "arcs": [
+        {
+          "arc": "Star Wars Adventures",
+          "issues": [
+            {
+              "issue": 0,
+              "pageCount": 32
+            },
+            {
+              "issue": 1,
+              "pageCount": 32
+            },
+            {
+              "issue": 2,
+              "pageCount": 32
+            },
+            {
+              "issue": 3,
+              "pageCount": 32
+            },
+            {
+              "issue": 4,
+              "pageCount": 32
+            },
+            {
+              "issue": 5,
+              "pageCount": 32
+            },
+            {
+              "issue": 6,
+              "pageCount": 32
+            },
+            {
+              "issue": 7,
+              "pageCount": 32
+            },
+            {
+              "issue": 8,
+              "pageCount": 32
+            },
+            {
+              "issue": 9,
+              "pageCount": 32
+            },
+            {
+              "issue": 10,
+              "pageCount": 32
+            },
+            {
+              "issue": 11,
+              "pageCount": 32
+            },
+            {
+              "issue": 12,
+              "pageCount": 32
+            },
+            {
+              "issue": 13,
+              "pageCount": 32
+            },
+            {
+              "issue": 14,
+              "pageCount": 32
+            },
+            {
+              "issue": 15,
+              "pageCount": 32
+            },
+            {
+              "issue": 16,
+              "pageCount": 32
+            },
+            {
+              "issue": 17,
+              "pageCount": 32
+            },
+            {
+              "issue": 18,
+              "pageCount": 32
+            },
+            {
+              "issue": 19,
+              "pageCount": 32
+            },
+            {
+              "issue": 20,
+              "pageCount": 32
+            },
+            {
+              "issue": 21,
+              "pageCount": 32
+            },
+            {
+              "issue": 22,
+              "pageCount": 32
+            },
+            {
+              "issue": 23,
+              "pageCount": 32
+            },
+            {
+              "issue": 24,
+              "pageCount": 32
+            },
+            {
+              "issue": 25,
+              "pageCount": 32
+            },
+            {
+              "issue": 26,
+              "pageCount": 32
+            },
+            {
+              "issue": 27,
+              "pageCount": 32
+            },
+            {
+              "issue": 28,
+              "pageCount": 32
+            },
+            {
+              "issue": 29,
+              "pageCount": 32
+            },
+            {
+              "issue": 30,
+              "pageCount": 32
+            },
+            {
+              "issue": 31,
+              "pageCount": 32
+            },
+            {
+              "issue": 32,
+              "pageCount": 32
+            }
+          ]
+        },
+        {
+          "arc": "Annuals & Specials",
+          "issues": [
+            {
+              "issue": 33,
+              "pageCount": 40,
+              "title": "Annual 2018"
+            },
+            {
+              "issue": 34,
+              "pageCount": 40,
+              "title": "Annual 2019"
+            },
+            {
+              "issue": 35,
+              "pageCount": 32,
+              "title": "FCBD 2018"
+            },
+            {
+              "issue": 36,
+              "pageCount": 32,
+              "title": "FCBD 2019"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "star-wars-adventures-2020",
+      "title": "Star Wars Adventures (2020)",
+      "type": "comic",
+      "publisher": "IDW Publishing",
+      "year": 2020,
+      "era": "disney",
+      "description": "The relaunched all-ages anthology, with stories from across galactic history.",
+      "arcs": [
+        {
+          "arc": "Star Wars Adventures (2020)",
+          "issues": [
+            {
+              "issue": 1,
+              "pageCount": 32
+            },
+            {
+              "issue": 2,
+              "pageCount": 32
+            },
+            {
+              "issue": 3,
+              "pageCount": 32
+            },
+            {
+              "issue": 4,
+              "pageCount": 32
+            },
+            {
+              "issue": 5,
+              "pageCount": 32
+            },
+            {
+              "issue": 6,
+              "pageCount": 32
+            },
+            {
+              "issue": 7,
+              "pageCount": 32
+            },
+            {
+              "issue": 8,
+              "pageCount": 32
+            },
+            {
+              "issue": 9,
+              "pageCount": 32
+            },
+            {
+              "issue": 10,
+              "pageCount": 32
+            },
+            {
+              "issue": 11,
+              "pageCount": 32
+            },
+            {
+              "issue": 12,
+              "pageCount": 32
+            },
+            {
+              "issue": 13,
+              "pageCount": 32
+            },
+            {
+              "issue": 14,
+              "pageCount": 32
+            }
+          ]
+        },
+        {
+          "arc": "Annuals",
+          "issues": [
+            {
+              "issue": 15,
+              "pageCount": 40,
+              "title": "Annual 2021"
+            },
+            {
+              "issue": 16,
+              "pageCount": 40,
+              "title": "Annual 2022"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tales-from-vaders-castle",
+      "title": "Tales from Vader's Castle",
+      "type": "comic",
+      "publisher": "IDW Publishing",
+      "year": 2018,
+      "era": "disney",
+      "description": "A spooky anthology of horror tales framed around Vader's brooding Mustafar fortress.",
+      "arcs": [
+        {
+          "arc": "Tales from Vader's Castle",
+          "issues": [
+            {
+              "issue": 1,
+              "pageCount": 32
+            },
+            {
+              "issue": 2,
+              "pageCount": 32
+            },
+            {
+              "issue": 3,
+              "pageCount": 32
+            },
+            {
+              "issue": 4,
+              "pageCount": 32
+            },
+            {
+              "issue": 5,
+              "pageCount": 32
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "return-to-vaders-castle",
+      "title": "Return to Vader's Castle",
+      "type": "comic",
+      "publisher": "IDW Publishing",
+      "year": 2019,
+      "era": "disney",
+      "description": "A second horror-themed anthology miniseries returning to Vader's fortress of fear.",
+      "arcs": [
+        {
+          "arc": "Return to Vader's Castle",
+          "issues": [
+            {
+              "issue": 1,
+              "pageCount": 32
+            },
+            {
+              "issue": 2,
+              "pageCount": 32
+            },
+            {
+              "issue": 3,
+              "pageCount": 32
+            },
+            {
+              "issue": 4,
+              "pageCount": 32
+            },
+            {
+              "issue": 5,
+              "pageCount": 32
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "shadow-of-vaders-castle",
+      "title": "Shadow of Vader's Castle",
+      "type": "comic",
+      "publisher": "IDW Publishing",
+      "year": 2020,
+      "era": "disney",
+      "description": "A standalone horror follow-up to the Vader's Castle anthologies.",
+      "arcs": [
+        {
+          "arc": "Shadow of Vader's Castle",
+          "issues": [
+            {
+              "issue": 1,
+              "pageCount": 48,
+              "title": "Shadow of Vader's Castle"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ghosts-of-vaders-castle",
+      "title": "Ghosts of Vader's Castle",
+      "type": "comic",
+      "publisher": "IDW Publishing",
+      "year": 2021,
+      "era": "disney",
+      "description": "The final Vader's Castle horror-anthology miniseries.",
+      "arcs": [
+        {
+          "arc": "Ghosts of Vader's Castle",
+          "issues": [
+            {
+              "issue": 1,
+              "pageCount": 32
+            },
+            {
+              "issue": 2,
+              "pageCount": 32
+            },
+            {
+              "issue": 3,
+              "pageCount": 32
+            },
+            {
+              "issue": 4,
+              "pageCount": 32
+            },
+            {
+              "issue": 5,
+              "pageCount": 32
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hyperspace-stories",
+      "title": "Hyperspace Stories",
+      "type": "comic",
+      "publisher": "Dark Horse Comics",
+      "year": 2022,
+      "era": "disney",
+      "description": "An all-ages anthology spanning the whole timeline, with a hidden through-line across its run.",
+      "arcs": [
+        {
+          "arc": "Hyperspace Stories",
+          "issues": [
+            {
+              "issue": 1,
+              "pageCount": 32
+            },
+            {
+              "issue": 2,
+              "pageCount": 32
+            },
+            {
+              "issue": 3,
+              "pageCount": 32
+            },
+            {
+              "issue": 4,
+              "pageCount": 32
+            },
+            {
+              "issue": 5,
+              "pageCount": 32
+            },
+            {
+              "issue": 6,
+              "pageCount": 32
+            },
+            {
+              "issue": 7,
+              "pageCount": 32
+            },
+            {
+              "issue": 8,
+              "pageCount": 32
+            },
+            {
+              "issue": 9,
+              "pageCount": 32
+            },
+            {
+              "issue": 10,
+              "pageCount": 32
+            },
+            {
+              "issue": 11,
+              "pageCount": 32
+            },
+            {
+              "issue": 12,
+              "pageCount": 32
+            }
+          ]
+        },
+        {
+          "arc": "Annual",
+          "issues": [
+            {
+              "issue": 13,
+              "pageCount": 40,
+              "title": "Jaxxon 2023 Annual"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hyperspace-stories-codebreaker",
+      "title": "Hyperspace Stories — Codebreaker",
+      "type": "comic",
+      "publisher": "Dark Horse Comics",
+      "year": 2025,
+      "era": "disney",
+      "description": "A Hyperspace Stories miniseries weaving its tale across multiple eras of the galaxy.",
+      "arcs": [
+        {
+          "arc": "Codebreaker",
+          "issues": [
+            {
+              "issue": 1,
+              "pageCount": 32
+            },
+            {
+              "issue": 2,
+              "pageCount": 32
+            },
+            {
+              "issue": 3,
+              "pageCount": 32
+            },
+            {
+              "issue": 4,
+              "pageCount": 32
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tales-from-the-rancor-pit",
+      "title": "Tales from the Rancor Pit",
+      "type": "comic",
+      "publisher": "Dark Horse Comics",
+      "year": 2022,
+      "era": "disney",
+      "description": "A Halloween horror anthology set around Jabba's palace and the depths of the rancor pit.",
+      "arcs": [
+        {
+          "arc": "Tales from the Rancor Pit",
+          "issues": [
+            {
+              "issue": 1,
+              "pageCount": 48,
+              "title": "Tales from the Rancor Pit"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tales-from-the-death-star",
+      "title": "Tales from the Death Star",
+      "type": "comic",
+      "publisher": "Dark Horse Comics",
+      "year": 2023,
+      "era": "disney",
+      "description": "A horror anthology themed around the Empire's planet-killing battle station.",
+      "arcs": [
+        {
+          "arc": "Tales from the Death Star",
+          "issues": [
+            {
+              "issue": 1,
+              "pageCount": 48,
+              "title": "Tales from the Death Star"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tales-from-the-nightlands",
+      "title": "Tales from the Nightlands",
+      "type": "comic",
+      "publisher": "Dark Horse Comics",
+      "year": 2025,
+      "era": "disney",
+      "description": "A Nightsisters and dark-side-themed horror anthology miniseries.",
+      "arcs": [
+        {
+          "arc": "Tales from the Nightlands",
+          "issues": [
+            {
+              "issue": 1,
+              "pageCount": 32
+            },
+            {
+              "issue": 2,
+              "pageCount": 32
+            },
+            {
+              "issue": 3,
+              "pageCount": 32
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "revelations-comic",
+      "title": "Revelations",
+      "type": "comic",
+      "publisher": "Marvel Comics",
+      "year": 2023,
+      "era": "disney",
+      "description": "An annual-style one-shot teasing upcoming storylines across several eras of the saga.",
+      "arcs": [
+        {
+          "arc": "Revelations",
+          "issues": [
+            {
+              "issue": 1,
+              "pageCount": 48,
+              "title": "Revelations"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "star-wars-galaxy-of-creatures",
