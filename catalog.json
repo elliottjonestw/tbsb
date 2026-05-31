@@ -489,7 +489,7 @@
     },
     {
       "id": "young-jedi-adventures-shorts",
-      "title": "Young Jedi Adventures Shorts",
+      "title": "Star Wars: Young Jedi Adventures Shorts",
       "type": "tv-shorts",
       "year": 2023,
       "description": "A series of bite-sized animated shorts set in the same High Republic world as Young Jedi Adventures, following Kai, Lys, and Nubs on quick missions and fun encounters around Tenoo.",
@@ -571,7 +571,7 @@
     },
     {
       "id": "young-jedi-adventures",
-      "title": "Young Jedi Adventures",
+      "title": "Star Wars: Young Jedi Adventures",
       "type": "series",
       "year": 2023,
       "seasons": [
@@ -873,7 +873,7 @@
     },
     {
       "id": "young-jedi-adventures-galactic-training",
-      "title": "Young Jedi Adventures: Galactic Training",
+      "title": "Star Wars: Young Jedi Adventures: Galactic Training",
       "type": "mobile-game",
       "developer": "Disney Interactive",
       "publisher": "Disney Interactive",
@@ -887,7 +887,7 @@
     },
     {
       "id": "fun-with-nubs",
-      "title": "Fun with Nubs",
+      "title": "Star Wars: Fun with Nubs",
       "type": "tv-shorts",
       "year": 2024,
       "description": "A series of one-minute animated shorts following the loveable Nubs and his droid companion RJ-83 through small, charming everyday adventures on Tenoo.",
@@ -1388,7 +1388,7 @@
     },
     {
       "id": "the-acolyte",
-      "title": "The Acolyte",
+      "title": "Star Wars: The Acolyte",
       "type": "series",
       "year": 2024,
       "seasons": [
@@ -1796,7 +1796,7 @@
     },
     {
       "id": "episode-i-the-phantom-menace",
-      "title": "Episode I – The Phantom Menace",
+      "title": "Star Wars: Episode I – The Phantom Menace",
       "type": "movie",
       "year": 1999,
       "duration": 136,
@@ -1807,7 +1807,7 @@
     },
     {
       "id": "star-wars-journeys-the-phantom-menace",
-      "title": "Journeys: The Phantom Menace",
+      "title": "Star Wars Journeys: The Phantom Menace",
       "type": "mobile-game",
       "developer": "Disney Mobile",
       "publisher": "Disney Publishing Worldwide",
@@ -1820,7 +1820,7 @@
     },
     {
       "id": "star-wars-journeys-beginnings",
-      "title": "Journeys: Beginnings",
+      "title": "Star Wars Journeys: Beginnings",
       "type": [
         "browser-game",
         "mobile-game"
@@ -1917,7 +1917,7 @@
     },
     {
       "id": "episode-ii-attack-of-the-clones",
-      "title": "Episode II – Attack of the Clones",
+      "title": "Star Wars: Episode II – Attack of the Clones",
       "type": "movie",
       "year": 2002,
       "duration": 142,
@@ -1961,7 +1961,7 @@
     },
     {
       "id": "the-clone-wars-film",
-      "title": "The Clone Wars",
+      "title": "Star Wars: The Clone Wars",
       "type": "movie",
       "year": 2008,
       "duration": 98,
@@ -1972,7 +1972,7 @@
     },
     {
       "id": "the-clone-wars",
-      "title": "The Clone Wars",
+      "title": "Star Wars: The Clone Wars",
       "type": "series",
       "year": 2008,
       "seasons": [
@@ -2788,7 +2788,7 @@
     },
     {
       "id": "tales-of-the-jedi",
-      "title": "Tales of the Jedi",
+      "title": "Star Wars: Tales of the Jedi",
       "type": "series",
       "year": 2022,
       "seasons": [
@@ -2924,7 +2924,7 @@
     },
     {
       "id": "episode-iii-revenge-of-the-sith",
-      "title": "Episode III – Revenge of the Sith",
+      "title": "Star Wars: Episode III – Revenge of the Sith",
       "type": "movie",
       "year": 2005,
       "duration": 140,
@@ -3092,7 +3092,7 @@
     },
     {
       "id": "the-bad-batch",
-      "title": "The Bad Batch",
+      "title": "Star Wars: The Bad Batch",
       "type": "series",
       "year": 2021,
       "seasons": [
@@ -3537,7 +3537,7 @@
     },
     {
       "id": "star-wars-jedi-fallen-order",
-      "title": "Jedi: Fallen Order",
+      "title": "Star Wars Jedi: Fallen Order",
       "type": "console-game",
       "developer": "Respawn Entertainment",
       "publisher": "Electronic Arts",
@@ -3575,7 +3575,7 @@
     },
     {
       "id": "tales-of-the-empire",
-      "title": "Tales of the Empire",
+      "title": "Star Wars: Tales of the Empire",
       "type": "series",
       "year": 2024,
       "seasons": [
@@ -3658,7 +3658,7 @@
     },
     {
       "id": "maul-shadow-lord",
-      "title": "Maul – Shadow Lord",
+      "title": "Star Wars: Maul - Shadow Lord",
       "type": "series",
       "year": 2026,
       "seasons": [
@@ -3725,7 +3725,7 @@
     },
     {
       "id": "tales-of-the-underworld",
-      "title": "Tales of the Underworld",
+      "title": "Star Wars: Tales of the Underworld",
       "type": "series",
       "year": 2025,
       "seasons": [
@@ -3898,7 +3898,7 @@
     },
     {
       "id": "solo-a-star-wars-story",
-      "title": "Solo",
+      "title": "Solo: A Star Wars Story",
       "type": "movie",
       "year": 2018,
       "duration": 135,
@@ -3909,7 +3909,7 @@
     },
     {
       "id": "solo-a-star-wars-story-expanded-edition",
-      "title": "Solo (Expanded Edition)",
+      "title": "Solo: A Star Wars Story: Expanded Edition",
       "type": "novel",
       "author": "Mur Lafferty",
       "year": 2018,
@@ -3974,7 +3974,7 @@
     },
     {
       "id": "star-wars-beyond-victory",
-      "title": "Beyond Victory — A Mixed Reality Playset",
+      "title": "Star Wars: Beyond Victory - A Mixed Reality Playset",
       "type": "vr-game",
       "developer": "ILM Immersive",
       "publisher": "ILM Immersive",
@@ -4076,7 +4076,7 @@
     },
     {
       "id": "star-wars-jedi-survivor",
-      "title": "Jedi: Survivor",
+      "title": "Star Wars Jedi: Survivor",
       "type": "console-game",
       "developer": "Respawn Entertainment",
       "publisher": "Electronic Arts",
@@ -4092,7 +4092,7 @@
     },
     {
       "id": "andor",
-      "title": "Andor",
+      "title": "Star Wars: Andor",
       "type": "series",
       "year": 2022,
       "seasons": [
@@ -4303,7 +4303,7 @@
     },
     {
       "id": "rebels-shorts",
-      "title": "Rebels Shorts",
+      "title": "Star Wars Rebels Shorts",
       "type": "tv-shorts",
       "format": "animated",
       "year": 2014,
@@ -4340,7 +4340,7 @@
     },
     {
       "id": "star-wars-rebels",
-      "title": "Rebels",
+      "title": "Star Wars Rebels",
       "type": "series",
       "year": 2014,
       "seasons": [
@@ -4732,7 +4732,7 @@
     },
     {
       "id": "rebels-ghost-raid",
-      "title": "Rebels: Ghost Raid",
+      "title": "Star Wars Rebels: Ghost Raid",
       "type": "browser-game",
       "developer": "Disney Interactive",
       "publisher": "Disney Interactive",
@@ -4745,7 +4745,7 @@
     },
     {
       "id": "rebels-rebel-strike",
-      "title": "Rebels: Rebel Strike",
+      "title": "Star Wars Rebels: Rebel Strike",
       "type": "browser-game",
       "developer": "Disney Interactive",
       "publisher": "Disney Interactive",
@@ -4758,7 +4758,7 @@
     },
     {
       "id": "rebels-chopper-chase",
-      "title": "Rebels: Chopper Chase",
+      "title": "Star Wars Rebels: Chopper Chase",
       "type": "browser-game",
       "developer": "Disney Interactive",
       "publisher": "Disney Interactive",
@@ -4771,7 +4771,7 @@
     },
     {
       "id": "rebels-team-tactics",
-      "title": "Rebels: Team Tactics",
+      "title": "Star Wars Rebels: Team Tactics",
       "type": "browser-game",
       "developer": "Goodboy Digital",
       "publisher": "Disney Interactive",
@@ -4784,7 +4784,7 @@
     },
     {
       "id": "rebels-recon-missions",
-      "title": "Rebels: Recon Missions",
+      "title": "Star Wars Rebels: Recon Missions",
       "type": "mobile-game",
       "developer": "Gigataur",
       "publisher": "Disney Interactive",
@@ -4799,7 +4799,7 @@
     },
     {
       "id": "rebels-imperial-heist",
-      "title": "Rebels: Imperial Heist",
+      "title": "Star Wars Rebels: Imperial Heist",
       "type": "browser-game",
       "developer": "Disney Interactive",
       "publisher": "Disney Interactive",
@@ -4812,7 +4812,7 @@
     },
     {
       "id": "rebels-strike-missions",
-      "title": "Rebels: Strike Missions",
+      "title": "Star Wars Rebels: Strike Missions",
       "type": "browser-game",
       "developer": "Disney Interactive",
       "publisher": "Disney Interactive",
@@ -4825,7 +4825,7 @@
     },
     {
       "id": "rebels-special-ops",
-      "title": "Rebels: Special Ops",
+      "title": "Star Wars Rebels: Special Ops",
       "type": "browser-game",
       "developer": "Disney Interactive",
       "publisher": "Disney Interactive",
@@ -5075,7 +5075,7 @@
     },
     {
       "id": "rogue-one-a-star-wars-story",
-      "title": "Rogue One",
+      "title": "Rogue One: A Star Wars Story",
       "type": "movie",
       "year": 2016,
       "duration": 133,
@@ -5149,7 +5149,7 @@
     },
     {
       "id": "vader-immortal-episode-i",
-      "title": "Vader Immortal — Episode I",
+      "title": "Vader Immortal – Episode I",
       "type": [
         "console-game",
         "vr-game"
@@ -5168,7 +5168,7 @@
     },
     {
       "id": "vader-immortal-episode-ii",
-      "title": "Vader Immortal — Episode II",
+      "title": "Vader Immortal – Episode II",
       "type": [
         "console-game",
         "vr-game"
@@ -5187,7 +5187,7 @@
     },
     {
       "id": "vader-immortal-episode-iii",
-      "title": "Vader Immortal — Episode III",
+      "title": "Vader Immortal – Episode III",
       "type": [
         "console-game",
         "vr-game"
@@ -5206,7 +5206,7 @@
     },
     {
       "id": "star-wars-battlefront-2015",
-      "title": "Battlefront",
+      "title": "Star Wars Battlefront",
       "type": "console-game",
       "developer": "DICE",
       "publisher": "Electronic Arts",
@@ -5283,7 +5283,7 @@
     },
     {
       "id": "episode-iv-a-new-hope",
-      "title": "Episode IV – A New Hope",
+      "title": "Star Wars: Episode IV – A New Hope",
       "type": "movie",
       "year": 1977,
       "duration": 121,
@@ -6477,7 +6477,7 @@
     },
     {
       "id": "star-wars-heroes-path",
-      "title": "Heroes Path",
+      "title": "Star Wars: Heroes Path",
       "type": "mobile-game",
       "developer": "Disney Interactive",
       "publisher": "Disney Interactive",
@@ -6490,7 +6490,7 @@
     },
     {
       "id": "star-wars-commander",
-      "title": "Commander",
+      "title": "Star Wars: Commander",
       "type": "mobile-game",
       "developer": "Disney Mobile",
       "publisher": "Disney Interactive",
@@ -6645,7 +6645,7 @@
     },
     {
       "id": "episode-v-the-empire-strikes-back",
-      "title": "Episode V – The Empire Strikes Back",
+      "title": "Star Wars: Episode V – The Empire Strikes Back",
       "type": "movie",
       "year": 1980,
       "duration": 124,
@@ -7855,7 +7855,7 @@
     },
     {
       "id": "star-wars-yodas-jedi-training",
-      "title": "Yoda's Jedi Training",
+      "title": "Star Wars: Yoda's Jedi Training",
       "type": "browser-game",
       "developer": "Disney Interactive",
       "publisher": "Disney Interactive",
@@ -7879,7 +7879,7 @@
     },
     {
       "id": "star-wars-outlaws",
-      "title": "Outlaws",
+      "title": "Star Wars Outlaws",
       "type": "console-game",
       "developer": "Massive Entertainment",
       "publisher": "Ubisoft",
@@ -7895,7 +7895,7 @@
     },
     {
       "id": "episode-vi-return-of-the-jedi",
-      "title": "Episode VI – Return of the Jedi",
+      "title": "Star Wars: Episode VI – Return of the Jedi",
       "type": "movie",
       "year": 1983,
       "duration": 131,
@@ -8016,7 +8016,7 @@
     },
     {
       "id": "star-wars-uprising",
-      "title": "Uprising",
+      "title": "Star Wars: Uprising",
       "type": "mobile-game",
       "developer": "Kabam",
       "publisher": "Disney Interactive",
@@ -8030,7 +8030,7 @@
     },
     {
       "id": "star-wars-squadrons",
-      "title": "Squadrons",
+      "title": "Star Wars: Squadrons",
       "type": [
         "console-game",
         "vr-game"
@@ -8051,7 +8051,7 @@
     },
     {
       "id": "star-wars-battlefront-ii",
-      "title": "Battlefront II",
+      "title": "Star Wars Battlefront II",
       "type": "console-game",
       "developer": "DICE, Motive Studios, Criterion Games",
       "publisher": "Electronic Arts",
@@ -8078,7 +8078,7 @@
     },
     {
       "id": "squadrons-hunted",
-      "title": "Squadrons – Hunted",
+      "title": "Hunted",
       "type": "short-movie",
       "year": 2020,
       "duration": 7,
@@ -8122,7 +8122,7 @@
     },
     {
       "id": "alphabet-squadron-shadow-fall",
-      "title": "Alphabet Squadron: Shadow Fall",
+      "title": "Shadow Fall: An Alphabet Squadron Novel",
       "type": "novel",
       "author": "Alexander Freed",
       "year": 2020,
@@ -8133,7 +8133,7 @@
     },
     {
       "id": "alphabet-squadron-victorys-price",
-      "title": "Alphabet Squadron: Victory's Price",
+      "title": "Victory's Price: An Alphabet Squadron Novel",
       "type": "novel",
       "author": "Alexander Freed",
       "year": 2021,
@@ -8397,7 +8397,7 @@
     },
     {
       "id": "the-mandalorian",
-      "title": "The Mandalorian",
+      "title": "Star Wars: The Mandalorian",
       "type": "series",
       "year": 2019,
       "seasons": [
@@ -8690,7 +8690,7 @@
     },
     {
       "id": "the-book-of-boba-fett",
-      "title": "The Book of Boba Fett",
+      "title": "Star Wars: The Book of Boba Fett",
       "type": "series",
       "year": 2021,
       "seasons": [
@@ -8742,7 +8742,7 @@
     },
     {
       "id": "star-wars-hunters",
-      "title": "Hunters",
+      "title": "Star Wars: Hunters",
       "type": [
         "console-game",
         "mobile-game"
@@ -8761,7 +8761,7 @@
     },
     {
       "id": "grogu-cutest-in-the-galaxy",
-      "title": "Grogu: Cutest in the Galaxy",
+      "title": "Grogu Cutest In The Galaxy",
       "type": "tv-shorts",
       "year": 2024,
       "description": "A series of bite-sized animated shorts featuring Grogu in playful, wordless vignettes full of charm and mischief, tied to the New Republic era.",
@@ -8842,7 +8842,7 @@
     },
     {
       "id": "the-mandalorian-and-grogu",
-      "title": "The Mandalorian and Grogu",
+      "title": "Star Wars: The Mandalorian and Grogu",
       "type": "movie",
       "year": 2026,
       "duration": 132,
@@ -8853,7 +8853,7 @@
     },
     {
       "id": "ahsoka",
-      "title": "Ahsoka",
+      "title": "Star Wars: Ahsoka",
       "type": "series",
       "year": 2023,
       "seasons": [
@@ -8958,7 +8958,7 @@
     },
     {
       "id": "skeleton-crew",
-      "title": "Skeleton Crew",
+      "title": "Star Wars: Skeleton Crew",
       "type": "series",
       "year": 2024,
       "seasons": [
@@ -9103,7 +9103,7 @@
     },
     {
       "id": "star-wars-resistance",
-      "title": "Resistance",
+      "title": "Star Wars Resistance",
       "type": "series",
       "year": 2018,
       "seasons": [
@@ -9526,7 +9526,7 @@
     },
     {
       "id": "episode-vii-the-force-awakens",
-      "title": "Episode VII – The Force Awakens",
+      "title": "Star Wars: Episode VII – The Force Awakens",
       "type": "movie",
       "year": 2015,
       "duration": 138,
@@ -9619,7 +9619,7 @@
     },
     {
       "id": "star-wars-batuu-bounty-hunters",
-      "title": "Batuu Bounty Hunters",
+      "title": "Star Wars: Batuu Bounty Hunters",
       "type": "mobile-game",
       "developer": "Disney",
       "publisher": "Disney",
@@ -9633,7 +9633,7 @@
     },
     {
       "id": "star-wars-x-wing-fighter",
-      "title": "X-wing Fighter",
+      "title": "Star Wars: X-wing Fighter",
       "type": "browser-game",
       "developer": "Disney Interactive",
       "publisher": "Disney Interactive",
@@ -9678,7 +9678,7 @@
     },
     {
       "id": "episode-viii-the-last-jedi",
-      "title": "Episode VIII – The Last Jedi",
+      "title": "Star Wars: Episode VIII – The Last Jedi",
       "type": "movie",
       "year": 2017,
       "duration": 152,
@@ -9803,7 +9803,7 @@
     },
     {
       "id": "star-wars-droid-repair-bay",
-      "title": "Droid Repair Bay",
+      "title": "Star Wars: Droid Repair Bay",
       "type": "vr-game",
       "developer": "ILMxLAB",
       "publisher": "Lucasfilm",
@@ -9818,7 +9818,7 @@
     },
     {
       "id": "star-wars-tales-from-the-galaxys-edge",
-      "title": "Tales from the Galaxy's Edge",
+      "title": "Star Wars: Tales from the Galaxy's Edge",
       "type": [
         "console-game",
         "vr-game"
@@ -9836,7 +9836,7 @@
     },
     {
       "id": "star-wars-tales-from-the-galaxys-edge-last-call",
-      "title": "Tales from the Galaxy's Edge — Last Call",
+      "title": "Star Wars: Tales from the Galaxy's Edge – Last Call",
       "type": [
         "console-game",
         "vr-game"
@@ -9915,7 +9915,7 @@
     },
     {
       "id": "galaxys-edge-a-crash-of-fate",
-      "title": "Galaxy's Edge: A Crash of Fate",
+      "title": "A Crash of Fate",
       "type": "ya-novel",
       "author": "Zoraida Córdova",
       "year": 2019,
@@ -9962,7 +9962,7 @@
     },
     {
       "id": "episode-ix-the-rise-of-skywalker",
-      "title": "Episode IX – The Rise of Skywalker",
+      "title": "Star Wars: Episode IX – The Rise of Skywalker",
       "type": "movie",
       "year": 2019,
       "duration": 142,
@@ -10110,7 +10110,7 @@
     },
     {
       "id": "star-wars-droid-diaries",
-      "title": "Droid Diaries",
+      "title": "Star Wars: Droid Diaries",
       "type": "tv-shorts",
       "year": 2025,
       "description": "A short-form animated comedy series following R2-D2 and BB-8 through chaotic, laugh-out-loud misadventures during the Sequel era, from lost lightsabers to bounty hunters hot on their trail.",
@@ -10167,7 +10167,7 @@
     },
     {
       "id": "forces-of-destiny",
-      "title": "Forces of Destiny",
+      "title": "Star Wars Forces of Destiny",
       "type": "tv-shorts",
       "year": 2017,
       "description": "A collection of animated micro-shorts celebrating acts of courage and kindness from heroes across every era of the Star Wars saga, featuring Ahsoka, Padmé, Leia, Sabine, Rey, Rose, and more.",
@@ -10976,7 +10976,7 @@
     },
     {
       "id": "star-wars-galaxy-of-creatures",
-      "title": "Galaxy of Creatures",
+      "title": "Star Wars Galaxy of Creatures",
       "type": "tv-shorts",
       "year": 2021,
       "description": "An animated documentary-style shorts series following droid SF-R3 as she travels the galaxy on behalf of the Galactic Society of Creature Enthusiasts, learning about beloved Star Wars wildlife from Banthas to Rancors.",
@@ -11118,7 +11118,7 @@
     },
     {
       "id": "star-wars-galactic-pals",
-      "title": "Galactic Pals",
+      "title": "Star Wars Galactic Pals",
       "type": "tv-shorts",
       "year": 2022,
       "description": "A cheerful animated shorts series following Miree, a caretaker droid, as she nurtures younglings of different Star Wars species — from Ewoks and Wookiees to Jawas and Rancors.",
@@ -11195,7 +11195,7 @@
     },
     {
       "id": "unlock-star-wars-escape-game",
-      "title": "Unlock!",
+      "title": "Unlock!: Star Wars Escape Game",
       "type": "mobile-game",
       "developer": "Space Cowboys",
       "publisher": "Space Cowboys",
