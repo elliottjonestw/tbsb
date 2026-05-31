@@ -32,7 +32,7 @@ On every state mutation, `save()` flushes `watched` to `localStorage`, then call
 
 ## catalog.json
 
-The catalog is an array of **content items** under the top-level `"content"` key. Each item is one of: `movie`, `short-movie`, `series`, `tv-shorts`, `novel`, `ya-novel`, `comic`, `console-game`, `vr-game`, `browser-game`, `mobile-game`, or `audio-drama`.
+The catalog is an array of **content items** under the top-level `"content"` key. Each item is one of: `movie`, `short-movie`, `series`, `tv-shorts`, `novel`, `ya-novel`, `graphic-novel`, `comic`, `console-game`, `vr-game`, `browser-game`, `mobile-game`, or `audio-drama`.
 
 An item's `type` field can be a single string **or an array of strings** when it belongs to more than one type (e.g. a game released on both browser and mobile). Multi-type items appear in filter results for any of their types, and their card displays all type labels joined with ` / ` (e.g. `BROWSER GAME / MOBILE GAME`). The state model, stats, and modal routing are unaffected — they all normalise `type` through the `itemTypes(item)` helper before branching.
 
@@ -137,7 +137,7 @@ Use `"type": "tv-shorts"` for short-form series (e.g. Young Jedi Adventures Shor
 | `audibleUrl` | string | Optional. Direct URL to the audiobook on Audible. Renders a "Listen on Audible" button in the modal. |
 | `amazonUrl`  | string | Optional. URL to the book on Amazon (product page or search). Renders a "Buy on Amazon" button in the modal. |
 
-Novels do not have `format`, `duration`, `disneyPlusUrl`, or `seasons`. They are treated as binary items (read or not read) using the same flat state model as movies.
+Novels do not have `format`, `duration`, `disneyPlusUrl`, or `seasons`. They are treated as binary items (read or not read) using the same flat state model as movies. Graphic novels share this same model — see the Graphic Novel schema section.
 
 ### YA Novel schema
 
@@ -157,6 +157,34 @@ Novels do not have `format`, `duration`, `disneyPlusUrl`, or `seasons`. They are
 ```
 
 The YA Novel schema is identical to the Adult Novel schema — the only difference is `"type": "ya-novel"`. All stat calculations (Novels count, Pages Remaining, Read %) treat `novel` and `ya-novel` items identically via the `isNovel()` helper. The type filter exposes them as separate options ("Adult Novels" and "YA Novels") so users can filter to one category at a time.
+
+### Graphic Novel schema
+
+```json
+{
+  "id": "star-wars-rogue-one-graphic-novel-adaptation",
+  "title": "Rogue One: A Star Wars Story Graphic Novel Adaptation",
+  "type": "graphic-novel",
+  "author": "Alessandro Ferrari",
+  "year": 2017,
+  "era": "disney",
+  "pageCount": 80,
+  "description": "A full-colour graphic novel adaptation of Rogue One, following Jyn Erso and a band of rebels on their desperate mission to steal the Death Star plans."
+}
+```
+
+| Field        | Type   | Description                                                                 |
+|--------------|--------|-----------------------------------------------------------------------------|
+| `id`         | string | Unique stable identifier (slug). Used as localStorage key and poster filename. |
+| `title`      | string | Display title                                                               |
+| `type`       | string | `"graphic-novel"`                                                           |
+| `author`     | string | Author/adapter name. Shown in the detail modal info row.                    |
+| `year`       | number | Publication year                                                            |
+| `era`        | string | `"lucas"` or `"disney"`                                                     |
+| `pageCount`  | number | Page count of the print edition. Shown on the card and in the modal.        |
+| `description`| string | Optional. Spoiler-free summary shown in the detail modal.                   |
+
+Graphic novels are treated identically to `novel` and `ya-novel` items in every part of the system — the same flat boolean state (`read` or `not read`), the same card meta label (`N pages`), the same detail modal (`renderNovelModal`), and the same stats contributions. They do not support `audibleUrl` or `amazonUrl` (add those fields and the modal will render the buttons — they are simply absent from the current catalog entries). They have no partial state. The type filter exposes them as a dedicated "Graphic Novels" option, positioned between "YA Novels" and "Comics" in both the pill buttons and the mobile `<select>` dropdown.
 
 ### Comic schema
 
@@ -345,13 +373,14 @@ Movies, short-movies, novels, and all game types are all stored as a flat boolea
 A normaliser and four helper functions centralise type branching across the codebase:
 
 ```js
-function itemTypes(item)    { return Array.isArray(item.type) ? item.type : [item.type]; }
-function isMovie(item)      { const t = itemTypes(item); return t.includes('movie') || t.includes('short-movie'); }
-function isSeries(item)     { const t = itemTypes(item); return t.includes('series') || t.includes('tv-shorts'); }
-function isNovel(item)      { const t = itemTypes(item); return t.includes('novel') || t.includes('ya-novel'); }
-function isGame(item)       { const t = itemTypes(item); return t.includes('console-game') || t.includes('vr-game') || t.includes('browser-game') || t.includes('mobile-game'); }
-function isAudioDrama(item) { const t = itemTypes(item); return t.includes('audio-drama'); }
-function isComic(item)      { const t = itemTypes(item); return t.includes('comic'); }
+function itemTypes(item)      { return Array.isArray(item.type) ? item.type : [item.type]; }
+function isMovie(item)        { const t = itemTypes(item); return t.includes('movie') || t.includes('short-movie'); }
+function isSeries(item)       { const t = itemTypes(item); return t.includes('series') || t.includes('tv-shorts'); }
+function isNovel(item)        { const t = itemTypes(item); return t.includes('novel') || t.includes('ya-novel'); }
+function isGraphicNovel(item) { const t = itemTypes(item); return t.includes('graphic-novel'); }
+function isGame(item)         { const t = itemTypes(item); return t.includes('console-game') || t.includes('vr-game') || t.includes('browser-game') || t.includes('mobile-game'); }
+function isAudioDrama(item)   { const t = itemTypes(item); return t.includes('audio-drama'); }
+function isComic(item)        { const t = itemTypes(item); return t.includes('comic'); }
 ```
 
 `itemTypes` normalises `item.type` to an array regardless of whether it is a string or array, so every other helper and call site works correctly for both single-type and multi-type items. Every place that needs to distinguish content types calls these helpers — not `item.type` directly — so adding a new game type only requires updating `isGame()`, and adding an entirely new content category requires only a new helper plus a handful of call sites.
@@ -371,7 +400,7 @@ function isComic(item)      { const t = itemTypes(item); return t.includes('comi
 | `setArcRead`       | `(comicId, arc, val)`                          | Bulk-sets every issue in one arc                                               |
 | `setComicRead`     | `(item, val)`                                  | Bulk-sets every issue across all arcs in a comic series                        |
 
-`getMovieWatched` and `setMovieWatched` are shared by movies, short-movies, novels, games, and audio dramas — all five use the same flat boolean storage pattern. The function names are historical; they apply to all flat boolean item types.
+`getMovieWatched` and `setMovieWatched` are shared by movies, short-movies, novels, graphic novels, games, and audio dramas — all six use the same flat boolean storage pattern. The function names are historical; they apply to all flat boolean item types.
 
 Comics use their own issue-keyed accessors (`getIssueRead` / `setIssueRead` / `setArcRead` / `setComicRead`), which mirror the series accessors (`getEpWatched` / `setEpWatched` / `setSeasonWatched` / `setSeriesWatched`) but operate on a single-level issue map instead of a two-level season/episode map.
 
@@ -389,7 +418,7 @@ The percentage shown in the Watched stat tile is computed purely from **watch ti
 canonWatchedPct = totalWatchedMinutes() / totalMinutes() × 100   (rounded to nearest integer)
 ```
 
-Novels, comics, games, and audio dramas are excluded from the video minute-based calculations — `totalMinutes()` and `watchedMinutesItem()` skip items where `isNovel(item)`, `isComic(item)`, `isGame(item)`, or `isAudioDrama(item)` is true. (Omitting the `isComic` guard here causes a crash in `seriesMinutes`, since comics have no `seasons` array.)
+Novels, graphic novels, comics, games, and audio dramas are excluded from the video minute-based calculations — `totalMinutes()` and `watchedMinutesItem()` skip items where `isNovel(item)`, `isGraphicNovel(item)`, `isComic(item)`, `isGame(item)`, or `isAudioDrama(item)` is true. (Omitting the `isComic` guard here causes a crash in `seriesMinutes`, since comics have no `seasons` array.)
 
 ### Functions
 
@@ -405,13 +434,13 @@ Novels, comics, games, and audio dramas are excluded from the video minute-based
 
 ### Novel content
 
-The Read/Listened stat tile is computed from an **equal-weight item count** across novels and audio dramas combined:
+The Read/Listened stat tile is computed from an **equal-weight item count** across novels, graphic novels, comics, and audio dramas combined:
 
 ```
-readListenedPct = (readNovels + listenedAudioDramas) / (totalNovels + totalAudioDramas) × 100   (rounded to nearest integer)
+readListenedPct = (readNovels + readGraphicNovels + readComics + listenedAudioDramas) / (totalNovels + totalGraphicNovels + totalComics + totalAudioDramas) × 100   (rounded to nearest integer)
 ```
 
-Where `readNovels` is the count of all novels marked as read, `listenedAudioDramas` is the count of all audio dramas marked as listened, and the denominator is the total count of both. Both `novel` and `ya-novel` types are included via `isNovel()`; audio dramas are included via `isAudioDrama()`. An item-count approach is used (rather than page- or minute-based) to avoid mixing incompatible units across the two content types. **Comics are also folded into this percentage** — each comic series counts as one item in both the numerator (when fully read) and the denominator. See the Stats bar section for the exact combined formula.
+Where `readNovels` is the count of all novels (`novel` + `ya-novel`) marked as read, `readGraphicNovels` is the count of all graphic novels marked as read, `listenedAudioDramas` is the count of all audio dramas marked as listened, and the denominator is the total count of all four. `isNovel()` covers `novel` and `ya-novel`; `isGraphicNovel()` covers `graphic-novel`; `isAudioDrama()` covers `audio-drama`. An item-count approach is used (rather than page- or minute-based) to avoid mixing incompatible units across content types. **Comics are also folded into this percentage** — each comic series counts as one item in both the numerator (when fully read) and the denominator. See the Stats bar section for the exact combined formula.
 
 ### Comic content
 
@@ -460,11 +489,11 @@ Where `playedGames` is the count of all games marked as played, and `totalGames`
 
 | Status        | Condition                                                                  |
 |---------------|----------------------------------------------------------------------------|
-| `"unwatched"` | Movie/novel/game/audio drama not marked; or 0 minutes watched in series; or 0 pages read in comic |
+| `"unwatched"` | Movie/novel/graphic novel/game/audio drama not marked; or 0 minutes watched in series; or 0 pages read in comic |
 | `"partial"`   | 1 or more minutes watched, less than total (series); or 1 or more pages read, less than total (comic) |
-| `"watched"`   | Movie/novel/game/audio drama marked true; or watched minutes ≥ total minutes; or read pages ≥ total pages (comic) |
+| `"watched"`   | Movie/novel/graphic novel/game/audio drama marked true; or watched minutes ≥ total minutes; or read pages ≥ total pages (comic) |
 
-Movies, short-movies, novels, games, and audio dramas are always either `"unwatched"` or `"watched"` — there is no partial state for flat boolean items. **Series and comics are the only two types that can be `"partial"`** (a half-watched show, a half-read comic run). This status value drives the card border colour, the status bar fill height, the card progress bar fill, and the badge text.
+Movies, short-movies, novels, graphic novels, games, and audio dramas are always either `"unwatched"` or `"watched"` — there is no partial state for flat boolean items. **Series and comics are the only two types that can be `"partial"`** (a half-watched show, a half-read comic run). This status value drives the card border colour, the status bar fill height, the card progress bar fill, and the badge text.
 
 ### Season-level helpers
 
@@ -495,17 +524,17 @@ The ten cards are displayed in this order:
 | Card             | Value                                                                                                   | Colour class     |
 |------------------|---------------------------------------------------------------------------------------------------------|------------------|
 | Watched          | `totalWatchedMinutes / totalMinutes` as `N%` (video only)                                               | `.accent`        |
-| Read/Listened    | `(readNovels + readComics + listenedAudioDramas) / (totalNovels + totalComics + totalAudioDramas)` as `N%` | `.accent`     |
+| Read/Listened    | `(readNovels + readGraphicNovels + readComics + listenedAudioDramas) / (totalNovels + totalGraphicNovels + totalComics + totalAudioDramas)` as `N%` | `.accent`     |
 | Played           | `playedGames / totalGames` as `N%`                                                                      | `.accent`        |
 | Movies           | `watchedMovies / totalMovies` (e.g. `11/13`)                                                            | default          |
 | Short Films      | `watchedShortFilms / totalShortFilms` (e.g. `0/2`)                                                     | default          |
 | Episodes         | `watchedEps / totalEps` (e.g. `43/579`)                                                                 | default          |
-| Books/Comics     | `(readNovels + readComics) / (totalNovels + totalComics)` (e.g. `0/175`)                                | default          |
+| Books/Comics     | `(readNovels + readGraphicNovels + readComics) / (totalNovels + totalGraphicNovels + totalComics)` (e.g. `0/206`) | default     |
 | Games            | `playedGames / totalGames` (e.g. `0/33`)                                                                | default          |
-| Pages Remaining  | Total page count of all unread novels **plus all unread comic issues**                                  | default          |
+| Pages Remaining  | Total page count of all unread novels + unread graphic novels **plus all unread comic issues**          | default          |
 | Hours Remaining  | `Math.round((totalMinutes - totalWatchedMinutes + totalAudioDramaMins - listenedAudioDramaMins) / 60)` as `Nh` | default   |
 
-Movies count covers both `movie` and `short-movie` types (via `isMovie()`). Episodes count covers both `series` and `tv-shorts` types (via `isSeries()`). The **Books/Comics** count covers both novel types (`novel`, `ya-novel` via `isNovel()`) plus every comic series (via `isComic()`) — each comic series counts as one and is complete only when all its issues are read. Games count covers `console-game`, `vr-game`, `browser-game`, and `mobile-game` (via `isGame()`). As additional game types are added in the future, `isGame()` will be expanded to include them, automatically incorporating them into the Played % and Games counts. Watched is video-only; Read/Listened covers novels, comics, and audio dramas; Played is games-only. Comics contribute to the Read/Listened %, the Books/Comics count, and Pages Remaining; they have no dedicated count tile. Audio dramas have no dedicated count tile either — they appear in the Read/Listened percentage and Hours Remaining, and can be isolated using the Type filter.
+Movies count covers both `movie` and `short-movie` types (via `isMovie()`). Episodes count covers both `series` and `tv-shorts` types (via `isSeries()`). The **Books/Comics** count covers both novel types (`novel`, `ya-novel` via `isNovel()`), graphic novels (`graphic-novel` via `isGraphicNovel()`), and every comic series (via `isComic()`) — each comic series counts as one and is complete only when all its issues are read. Games count covers `console-game`, `vr-game`, `browser-game`, and `mobile-game` (via `isGame()`). As additional game types are added in the future, `isGame()` will be expanded to include them, automatically incorporating them into the Played % and Games counts. Watched is video-only; Read/Listened covers novels, graphic novels, comics, and audio dramas; Played is games-only. Comics contribute to the Read/Listened %, the Books/Comics count, and Pages Remaining; they have no dedicated count tile. Graphic novels also have no dedicated tile — they appear in Read/Listened %, Books/Comics, and Pages Remaining, and can be isolated using the Type filter. Audio dramas have no dedicated count tile either — they appear in the Read/Listened percentage and Hours Remaining, and can be isolated using the Type filter.
 
 ---
 
@@ -545,6 +574,7 @@ The card root element receives a CSS class matching its status: `.card.watched`,
 | `tv-shorts`           | TV Shorts             |
 | `novel`               | Novel                 |
 | `ya-novel`            | YA Novel              |
+| `graphic-novel`       | Graphic Novel         |
 | `console-game`        | Console Game          |
 | `vr-game`             | VR Game               |
 | `browser-game`        | Browser Game          |
@@ -559,7 +589,7 @@ The card root element receives a CSS class matching its status: `.card.watched`,
 | Movie/Short Film      | `formatMinutes(item.duration)` — e.g. `"2h 16m"`                 |
 | Audio Drama           | `formatMinutes(item.duration)` — e.g. `"6h"`                     |
 | Series/TV Shorts      | `N Season(s)` — e.g. `"3 Seasons"`                               |
-| Novel/YA Novel        | `N pages` — e.g. `"349 pages"`                                   |
+| Novel/YA Novel/Graphic Novel | `N pages` — e.g. `"349 pages"`                             |
 | Console/VR Game       | `formatPlatforms(item.platforms)` — up to 3 platforms joined by `, `; if more than 3, shows `"Platform1, Platform2 +N more"` |
 | Browser Game          | `formatPlatforms(item.platforms)` — same as above; typically just `"Browser"` |
 | Mobile Game           | `formatPlatforms(item.platforms)` — same as above; e.g. `"iOS, Android"` |
@@ -579,9 +609,9 @@ Games and audio dramas never show "In Progress" — they are always either binar
 
 - Series/TV Shorts: `watchedMinutesSeries / seriesMinutes × 100`, giving a true partial fill.
 - Comics: `readComicPages(item) / comicPages(item) × 100`, a page-weighted partial fill (the same partial-fill behaviour as series, but weighted by issue page counts rather than episode minutes).
-- All other types (movies, short-movies, novels, games): `100` if status is `"watched"`, `0` otherwise — there is no partial state for flat boolean items.
+- All other types (movies, short-movies, novels, graphic novels, games): `100` if status is `"watched"`, `0` otherwise — there is no partial state for flat boolean items.
 
-**Quick-toggle button** (`.card-watch-btn`): shows `✓` when finished/played/listened, `＋` when not. For movies/short-movies/novels/games/audio-dramas, toggles the boolean directly via `setMovieWatched`. For series/tv-shorts, checks `itemStatus` — if the series is fully `watched`, marks all episodes unwatched; otherwise marks all episodes watched. Comics work the same way via `setComicRead` — if the comic is fully `watched`, marks all issues unread; otherwise marks all issues read. After toggling, calls `renderCatalog()` to refresh the grid.
+**Quick-toggle button** (`.card-watch-btn`): shows `✓` when finished/played/listened, `＋` when not. For movies/short-movies/novels/graphic novels/games/audio-dramas, toggles the boolean directly via `setMovieWatched`. For series/tv-shorts, checks `itemStatus` — if the series is fully `watched`, marks all episodes unwatched; otherwise marks all episodes watched. Comics work the same way via `setComicRead` — if the comic is fully `watched`, marks all issues unread; otherwise marks all issues read. After toggling, calls `renderCatalog()` to refresh the grid.
 
 The button tooltip reads "Mark as Not Played" / "Mark as Played" for games, "Mark as Not Started" / "Mark as Listened" for audio dramas, and "Mark as Not Started" / "Mark as Finished" for all other flat boolean types.
 
@@ -619,7 +649,7 @@ On hover, cards lift `translateY(-2px)`, background shifts from `--bg-card` to `
 
 ### Opening and closing
 
-`openModal(item)` sets `#modalTitle` from `item.title`, fills `#modalBody` with the appropriate modal renderer based on type (`renderComicModal` → `renderGameModal` → `renderAudioDramaModal` → `renderNovelModal` → `renderMovieModal` → `renderSeriesModal`; comics are checked first via `isComic(item)`), adds the `.open` class to `#modalOverlay`, and calls `bindModalEvents`.
+`openModal(item)` sets `#modalTitle` from `item.title`, fills `#modalBody` with the appropriate modal renderer based on type (`renderComicModal` → `renderGameModal` → `renderAudioDramaModal` → `renderNovelModal` [for both `isNovel` and `isGraphicNovel`] → `renderMovieModal` → `renderSeriesModal`; comics are checked first via `isComic(item)`), adds the `.open` class to `#modalOverlay`, and calls `bindModalEvents`.
 
 `closeModal()` removes the `.open` class. The overlay is `display: none` by default and `display: flex` when `.open`. Three triggers call `closeModal`: the `×` button, clicking the backdrop (overlay but not the modal box itself, checked via `e.target === e.currentTarget`), and the `Escape` key.
 
@@ -698,7 +728,7 @@ Because comic state is a **flat issue-keyed map** (`watched[comicId][issueNumber
 
 ## Filtering and sorting
 
-Three independent filter rows, one sort control, and a live search bar sit above the catalog grid. On desktop, each filter row is a set of pill buttons that support **multi-select**: any combination of options within a row can be active simultaneously. The Type filter row is split into three intentional sub-rows: screen content (All, Movies, Short Films, TV Shows, TV Show Shorts) on the first line; text/interactive content (Adult Novels, YA Novels, Comics, Console Games, VR Games) on the second; and additional interactive/audio content (Browser Games, Mobile Games, Audio Dramas) on the third. On mobile (≤ 600 px), the pill buttons are hidden and replaced by a `<select>` dropdown for each row, which remains single-select.
+Three independent filter rows, one sort control, and a live search bar sit above the catalog grid. On desktop, each filter row is a set of pill buttons that support **multi-select**: any combination of options within a row can be active simultaneously. The Type filter row is split into three intentional sub-rows: screen content (All, Movies, Short Films, TV Shows, TV Show Shorts) on the first line; text/interactive content (Adult Novels, YA Novels, Graphic Novels, Comics, Console Games, VR Games) on the second; and additional interactive/audio content (Browser Games, Mobile Games, Audio Dramas) on the third. On mobile (≤ 600 px), the pill buttons are hidden and replaced by a `<select>` dropdown for each row, which remains single-select.
 
 ### Filter state
 
@@ -707,7 +737,7 @@ Each filter is stored as a `Set` of active values. An **empty set means "all"** 
 | Variable         | Possible values in set                                                           | Desktop (pill buttons) | Mobile (select)  | Filter row label |
 |------------------|----------------------------------------------------------------------------------|------------------------|------------------|------------------|
 | `activeEras`     | `lucas`, `disney`                                                                | `.era-btn`             | `.era-select`    | Era              |
-| `activeTypes`    | `movie`, `short-movie`, `series`, `tv-shorts`, `novel`, `ya-novel`, `comic`, `console-game`, `vr-game`, `browser-game`, `mobile-game`, `audio-drama` | `.type-btn` | `.type-select` | Type |
+| `activeTypes`    | `movie`, `short-movie`, `series`, `tv-shorts`, `novel`, `ya-novel`, `graphic-novel`, `comic`, `console-game`, `vr-game`, `browser-game`, `mobile-game`, `audio-drama` | `.type-btn` | `.type-select` | Type |
 | `activeStatuses` | `not-started`, `in-progress`, `finished`                                         | `.status-btn`          | `.status-select` | Progress         |
 | `activeSort`     | `chronological`, `release`                                                       | `.sort-btn`            | —                | Sort (separate)  |
 | `activeSortDir`  | `asc`, `desc`                                                                    | —                      | —                | (arrow on button)|
@@ -798,7 +828,7 @@ Events are bound in two places:
 - **Comic**: "Mark All Read" (`#markAllComicBtn`) → `setComicRead(item, true)`; "Clear All" (`#unmarkAllComicBtn`) → `setComicRead(item, false)`; `.season-btn` clicks → `setArcRead` toggle; `.episode-row` clicks → `setIssueRead` toggle. All re-render `renderComicModal`, re-bind, and call `renderCatalog()`. Checked first (via `isComic(item)`) before the game, audio drama, novel, movie, and series handlers.
 - **Game**: `#movieToggle` → `setMovieWatched`, re-render `renderGameModal`, re-bind, `renderCatalog()`. Checked first before audio drama, novel, and movie handlers.
 - **Audio Drama**: `#movieToggle` → `setMovieWatched`, re-render `renderAudioDramaModal`, re-bind, `renderCatalog()`. Checked after game, before novel and movie handlers.
-- **Novel**: `#movieToggle` → `setMovieWatched`, re-render `renderNovelModal`, re-bind, `renderCatalog()`
+- **Novel / Graphic Novel**: `#movieToggle` → `setMovieWatched`, re-render `renderNovelModal` (shared by both `isNovel` and `isGraphicNovel`), re-bind, `renderCatalog()`
 - **Movie**: `#movieToggle` → `setMovieWatched`, re-render `renderMovieModal`, re-bind, `renderCatalog()`
 - **Series**: "Mark All Watched" (`#markAllBtn`) → `setSeriesWatched(item, true)`; "Clear All" (`#unmarkAllBtn`) → `setSeriesWatched(item, false)`; `.season-btn` clicks → `setSeasonWatched` toggle; `.episode-row` clicks → `setEpWatched` toggle. All re-render, re-bind, and call `renderCatalog()`.
 
@@ -1024,6 +1054,16 @@ Use `"type": "novel"` for adult novels and `"type": "ya-novel"` for young adult 
 `pageCount` is an integer (print edition page count). Provide `audibleUrl` pointing directly to the audiobook product page on Audible (format: `https://www.audible.com/pd/{title}/{ASIN}`), and `amazonUrl` pointing to the product page or a search URL on Amazon.
 
 Novels are read or unread — there is no partial state. They are excluded from the Watched percentage and Hours Remaining calculations, and contribute only to Read/Listened %, the Books/Comics count, and Pages Remaining stats.
+
+### Adding graphic novels
+
+Use `"type": "graphic-novel"` and follow the Graphic Novel schema above. Provide `author` (adapter or writer credit), `year`, `era`, `pageCount`, and an optional `description`.
+
+Graphic novels are read or unread — there is no partial state. They are treated identically to `novel` and `ya-novel` items in all calculations: excluded from the Watched percentage and Hours Remaining, and counted in Read/Listened %, Books/Comics, and Pages Remaining. The detail modal is shared with novels (`renderNovelModal`) — it shows the author, year, page count, description, and the "Mark as Read" toggle.
+
+Use `"era": "lucas"` for graphic novel adaptations of the six George Lucas films (Episodes I–VI). Use `"era": "disney"` for all Disney-era publications, including adaptations of Clone Wars or Rebels content, even if those stories are set in the prequel era — era assignment follows the publication date, consistent with how the rest of the catalog marks Disney-era comics.
+
+For the `author` field on items that are screencast/screenshot adaptations without a credited writer (e.g. Screen Comix or cinestory comics), use `"Lucasfilm Ltd."` or the publisher name to avoid rendering `"by undefined"` in the modal.
 
 ### Adding games
 

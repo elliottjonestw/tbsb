@@ -105,7 +105,8 @@ function isSeries(item) { const t = itemTypes(item); return t.includes('series')
 function isNovel(item)  { const t = itemTypes(item); return t.includes('novel') || t.includes('ya-novel'); }
 function isGame(item)       { const t = itemTypes(item); return t.includes('console-game') || t.includes('vr-game') || t.includes('browser-game') || t.includes('mobile-game'); }
 function isAudioDrama(item) { const t = itemTypes(item); return t.includes('audio-drama'); }
-function isComic(item)      { const t = itemTypes(item); return t.includes('comic'); }
+function isComic(item)        { const t = itemTypes(item); return t.includes('comic'); }
+function isGraphicNovel(item) { const t = itemTypes(item); return t.includes('graphic-novel'); }
 
 // ── Progress calculations ────────────────────────────────────────────────────
 
@@ -117,7 +118,7 @@ function seriesMinutes(item) {
 
 function totalMinutes() {
   return catalog.reduce((t, item) => {
-    if (isNovel(item) || isGame(item) || isAudioDrama(item) || isComic(item)) return t;
+    if (isNovel(item) || isGraphicNovel(item) || isGame(item) || isAudioDrama(item) || isComic(item)) return t;
     return t + (isMovie(item) ? movieMinutes(item) : seriesMinutes(item));
   }, 0);
 }
@@ -137,7 +138,7 @@ function watchedMinutesSeries(item) {
 }
 
 function watchedMinutesItem(item) {
-  if (isNovel(item) || isGame(item) || isAudioDrama(item) || isComic(item)) return 0;
+  if (isNovel(item) || isGraphicNovel(item) || isGame(item) || isAudioDrama(item) || isComic(item)) return 0;
   return isMovie(item) ? watchedMinutesMovie(item) : watchedMinutesSeries(item);
 }
 
@@ -172,7 +173,7 @@ function comicArcProgress(item, arc) {
 }
 
 function itemStatus(item) {
-  if (isMovie(item) || isNovel(item) || isGame(item) || isAudioDrama(item)) return getMovieWatched(item.id) ? 'watched' : 'unwatched';
+  if (isMovie(item) || isNovel(item) || isGraphicNovel(item) || isGame(item) || isAudioDrama(item)) return getMovieWatched(item.id) ? 'watched' : 'unwatched';
   if (isComic(item)) {
     const total = comicPages(item);
     const done = readComicPages(item);
@@ -215,6 +216,7 @@ function updateStats() {
   const shortFilms = catalog.filter(i => itemTypes(i).includes('short-movie'));
   const series = catalog.filter(i => isSeries(i));
   const novels = catalog.filter(i => isNovel(i));
+  const graphicNovels = catalog.filter(i => isGraphicNovel(i));
   const comics = catalog.filter(i => isComic(i));
   const games = catalog.filter(i => isGame(i));
   const watchedFullMovies = fullMovies.filter(i => getMovieWatched(i.id)).length;
@@ -227,6 +229,9 @@ function updateStats() {
   const readNovels = novels.filter(i => getMovieWatched(i.id)).length;
   const totalNovelPages = novels.reduce((t, i) => t + i.pageCount, 0);
   const readNovelPages = novels.filter(i => getMovieWatched(i.id)).reduce((t, i) => t + i.pageCount, 0);
+  const readGraphicNovels = graphicNovels.filter(i => getMovieWatched(i.id)).length;
+  const totalGraphicNovelPages = graphicNovels.reduce((t, i) => t + i.pageCount, 0);
+  const readGraphicNovelPages = graphicNovels.filter(i => getMovieWatched(i.id)).reduce((t, i) => t + i.pageCount, 0);
   const playedGames = games.filter(i => getMovieWatched(i.id)).length;
 
   // Comics: each series counts as one item, "read" when every issue is read.
@@ -234,15 +239,15 @@ function updateStats() {
   const totalComicPages = comics.reduce((t, i) => t + comicPages(i), 0);
   const readComicPagesTotal = comics.reduce((t, i) => t + readComicPages(i), 0);
 
-  const remainingPages = (totalNovelPages - readNovelPages) + (totalComicPages - readComicPagesTotal);
+  const remainingPages = (totalNovelPages - readNovelPages) + (totalGraphicNovelPages - readGraphicNovelPages) + (totalComicPages - readComicPagesTotal);
 
   const audioDramas = catalog.filter(i => isAudioDrama(i));
   const listenedAudioDramas = audioDramas.filter(i => getMovieWatched(i.id)).length;
   const totalAudioDramaMins = audioDramas.reduce((t, i) => t + i.duration, 0);
   const listenedAudioDramaMins = audioDramas.filter(i => getMovieWatched(i.id)).reduce((t, i) => t + i.duration, 0);
 
-  const readListenedTotal = novels.length + comics.length + audioDramas.length;
-  const readListenedDone = readNovels + readComics + listenedAudioDramas;
+  const readListenedTotal = novels.length + graphicNovels.length + comics.length + audioDramas.length;
+  const readListenedDone = readNovels + readGraphicNovels + readComics + listenedAudioDramas;
   const readListenedPct = readListenedTotal > 0 ? Math.round((readListenedDone / readListenedTotal) * 100) : 0;
   const playedPct = games.length > 0 ? Math.round((playedGames / games.length) * 100) : 0;
 
@@ -257,7 +262,7 @@ function updateStats() {
     sc(`${Math.round((totalWatchedMinutes() / totalMinutes()) * 100)}%`, 'Watched',
       'Percentage of total video runtime watched, weighted by duration — a 2-hour movie contributes more than a 22-minute episode. Covers movies, short films, TV shows, and TV shorts. Books, audio dramas, and games are excluded.', true) +
     sc(`${readListenedPct}%`, 'Read/Listened',
-      'Percentage of books, comics, and audio dramas completed. Each item counts equally regardless of length — a short novella, an 800-page novel, and a 15-issue comic run each count as one. A comic series counts as complete only when every issue is read. Covers adult novels, YA novels, comics, and audio dramas.', true) +
+      'Percentage of books, graphic novels, comics, and audio dramas completed. Each item counts equally regardless of length. A comic series counts as complete only when every issue is read. Covers adult novels, YA novels, graphic novels, comics, and audio dramas.', true) +
     sc(`${playedPct}%`, 'Played',
       'Percentage of games played. Each title counts equally regardless of length. Covers console, VR, browser, and mobile games.', true) +
     sc(`${watchedFullMovies}/${fullMovies.length}`, 'Movies',
@@ -266,12 +271,12 @@ function updateStats() {
       'Short films watched vs. total. Feature-length movies are not included here.') +
     sc(`${watchedEps}/${totalEps}`, 'Episodes',
       'Individual episodes watched vs. total across all TV shows and TV shorts. Each episode counts once regardless of its runtime.') +
-    sc(`${readNovels + readComics}/${novels.length + comics.length}`, 'Books/Comics',
-      'Books and comic series completed vs. total catalog. Includes adult and YA novels and every comic series — each comic series counts as one and is complete only when all its issues are read. Audio dramas are tracked separately in Read/Listened.') +
+    sc(`${readNovels + readGraphicNovels + readComics}/${novels.length + graphicNovels.length + comics.length}`, 'Books/Comics',
+      'Books, graphic novels, and comic series completed vs. total catalog. Includes adult novels, YA novels, graphic novels, and every comic series — each comic series counts as one and is complete only when all its issues are read. Audio dramas are tracked separately in Read/Listened.') +
     sc(`${playedGames}/${games.length}`, 'Games',
       'Games played vs. total catalog. Includes console, VR, browser, and mobile games.') +
     sc(`${remainingPages.toLocaleString()}`, 'Pages Remaining',
-      'Total pages left to read — the sum of every unread novel\'s page count plus the page count of every unread comic issue. Includes adult and YA novels and comics. Audio dramas are not included.') +
+      'Total pages left to read — the sum of every unread novel or graphic novel\'s page count plus the page count of every unread comic issue. Includes adult novels, YA novels, graphic novels, and comics. Audio dramas are not included.') +
     sc(`${Math.round((totalMinutes() - totalWatchedMinutes() + totalAudioDramaMins - listenedAudioDramaMins) / 60)}h`, 'Hours Remaining',
       'Hours of content remaining based on runtime. Covers unwatched video (movies, short films, and unfinished episodes) plus unlistened audio dramas. Books and games are not included.');
 }
@@ -362,10 +367,10 @@ function renderCard(item) {
   } else {
     pct = status === 'watched' ? 100 : 0;
   }
-  const typeLabels = { movie: 'Movie', 'short-movie': 'Short Film', series: 'TV Series', 'tv-shorts': 'TV Shorts', novel: 'Novel', 'ya-novel': 'YA Novel', comic: 'Comic', 'console-game': 'Console Game', 'vr-game': 'VR Game', 'browser-game': 'Browser Game', 'mobile-game': 'Mobile Game', 'audio-drama': 'Audio Drama' };
+  const typeLabels = { movie: 'Movie', 'short-movie': 'Short Film', series: 'TV Series', 'tv-shorts': 'TV Shorts', novel: 'Novel', 'ya-novel': 'YA Novel', 'graphic-novel': 'Graphic Novel', comic: 'Comic', 'console-game': 'Console Game', 'vr-game': 'VR Game', 'browser-game': 'Browser Game', 'mobile-game': 'Mobile Game', 'audio-drama': 'Audio Drama' };
   const typeLabel = itemTypes(item).map(t => typeLabels[t] || t).join(' / ');
   let metaLabel;
-  if (isNovel(item)) {
+  if (isNovel(item) || isGraphicNovel(item)) {
     metaLabel = `${item.pageCount} pages`;
   } else if (isComic(item)) {
     const n = comicIssueCount(item);
@@ -424,7 +429,7 @@ function formatPlatforms(platforms) {
 }
 
 function quickToggle(item) {
-  if (isMovie(item) || isNovel(item) || isGame(item) || isAudioDrama(item)) {
+  if (isMovie(item) || isNovel(item) || isGraphicNovel(item) || isGame(item) || isAudioDrama(item)) {
     setMovieWatched(item.id, !getMovieWatched(item.id));
   } else if (isComic(item)) {
     const s = itemStatus(item);
@@ -441,11 +446,12 @@ function quickToggle(item) {
 function openModal(item) {
   document.getElementById('modalTitle').textContent = item.title;
   document.getElementById('modalBody').innerHTML =
-    isGame(item)       ? renderGameModal(item)       :
-    isAudioDrama(item) ? renderAudioDramaModal(item) :
-    isNovel(item)      ? renderNovelModal(item)       :
-    isComic(item)      ? renderComicModal(item)       :
-    isMovie(item)      ? renderMovieModal(item)       :
+    isGame(item)         ? renderGameModal(item)       :
+    isAudioDrama(item)   ? renderAudioDramaModal(item) :
+    isNovel(item)        ? renderNovelModal(item)       :
+    isGraphicNovel(item) ? renderNovelModal(item)       :
+    isComic(item)        ? renderComicModal(item)       :
+    isMovie(item)        ? renderMovieModal(item)       :
     renderSeriesModal(item);
   document.getElementById('modalOverlay').classList.add('open');
   bindModalEvents(item);
@@ -714,7 +720,7 @@ function bindModalEvents(item) {
     return;
   }
 
-  if (isNovel(item)) {
+  if (isNovel(item) || isGraphicNovel(item)) {
     document.getElementById('movieToggle')?.addEventListener('click', () => {
       setMovieWatched(item.id, !getMovieWatched(item.id));
       document.getElementById('modalBody').innerHTML = renderNovelModal(item);

@@ -161,6 +161,66 @@
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+High+Republic+Light+of+the+Jedi+Soule"
     },
     {
+      "id": "high-republic-edge-of-balance-vol-1",
+      "title": "The High Republic: The Edge of Balance, Vol. 1",
+      "type": "graphic-novel",
+      "author": "Shima Shinya & Justina Ireland",
+      "year": 2021,
+      "era": "disney",
+      "pageCount": 192,
+      "description": "A young Jedi Knight stationed on the peaceful moon of Banchii faces the chaos of the Great Hyperspace Disaster and must protect her community from a sinister new threat lurking at the edges of the High Republic's golden age."
+    },
+    {
+      "id": "high-republic-edge-of-balance-vol-2",
+      "title": "The High Republic: The Edge of Balance, Vol. 2",
+      "type": "graphic-novel",
+      "author": "Shima Shinya & Daniel José Older",
+      "year": 2022,
+      "era": "disney",
+      "pageCount": 192,
+      "description": "Jedi Knight Lily Tora-Asi returns to Banchii to find her community still reeling — and a deepening darkness closing in that will force her to make impossible choices about where her duty truly lies."
+    },
+    {
+      "id": "high-republic-edge-of-balance-precedent",
+      "title": "The High Republic: The Edge of Balance: Precedent",
+      "type": "graphic-novel",
+      "author": "Daniel José Older",
+      "year": 2023,
+      "era": "disney",
+      "pageCount": 64,
+      "description": "A companion story to the Edge of Balance manga exploring themes of duty and tradition among the Jedi at the height of the High Republic era."
+    },
+    {
+      "id": "high-republic-edge-of-balance-vol-3",
+      "title": "The High Republic: The Edge of Balance, Vol. 3",
+      "type": "graphic-novel",
+      "author": "Shima Shinya & Daniel José Older",
+      "year": 2024,
+      "era": "disney",
+      "pageCount": 224,
+      "description": "The conflict on Banchii deepens as Lily Tora-Asi's faith in the Force and in her own judgment is pushed to the breaking point by forces far more dangerous than anything she has faced before."
+    },
+    {
+      "id": "high-republic-edge-of-balance-premonition",
+      "title": "The High Republic: The Edge of Balance: Premonition",
+      "type": "graphic-novel",
+      "author": "Daniel José Older",
+      "year": 2025,
+      "era": "disney",
+      "pageCount": 64,
+      "description": "A companion short story to the Edge of Balance series, offering a glimpse into the futures awaiting the Jedi of Banchii as the High Republic era draws toward its close."
+    },
+    {
+      "id": "high-republic-edge-of-balance-vol-4",
+      "title": "The High Republic: The Edge of Balance, Vol. 4",
+      "type": "graphic-novel",
+      "author": "Shima Shinya & Daniel José Older",
+      "year": 2025,
+      "era": "disney",
+      "pageCount": 192,
+      "description": "The concluding volume of the Edge of Balance manga, bringing Lily Tora-Asi's High Republic journey to its emotional and action-packed close."
+    },
+    {
       "id": "the-high-republic-into-the-dark",
       "title": "The High Republic: Into the Dark",
       "type": "ya-novel",
@@ -1725,6 +1785,16 @@
       ]
     },
     {
+      "id": "star-wars-prequel-trilogy-graphic-novel",
+      "title": "Star Wars: The Prequel Trilogy – A Graphic Novel",
+      "type": "graphic-novel",
+      "author": "Alessandro Ferrari",
+      "year": 2017,
+      "era": "lucas",
+      "pageCount": 208,
+      "description": "A graphic novel adaptation of the three prequel films, following young Anakin Skywalker's journey from a slave boy on Tatooine to a Jedi Knight — and the tragic fall that brought the Republic to ruin."
+    },
+    {
       "id": "episode-i-the-phantom-menace",
       "title": "Episode I – The Phantom Menace",
       "type": "movie",
@@ -2833,6 +2903,26 @@
       ]
     },
     {
+      "id": "clone-wars-season-7-volume-1",
+      "title": "The Clone Wars: Season 7: Volume 1",
+      "type": "graphic-novel",
+      "author": "Lucasfilm Ltd.",
+      "year": 2020,
+      "era": "disney",
+      "pageCount": 96,
+      "description": "A graphic novel adaptation of the opening arc of The Clone Wars Season 7, following the Bad Batch clone commandos on a mission that tests their loyalty and raises questions about identity and purpose."
+    },
+    {
+      "id": "clone-wars-ahsoka-vs-maul",
+      "title": "The Clone Wars: Ahsoka vs. Maul",
+      "type": "graphic-novel",
+      "author": "Lucasfilm Ltd.",
+      "year": 2023,
+      "era": "disney",
+      "pageCount": 96,
+      "description": "A graphic novel adaptation of the climactic Siege of Mandalore arc from The Clone Wars Season 7, as Ahsoka Tano and Captain Rex pursue a trapped Maul while the Republic falls around them."
+    },
+    {
       "id": "episode-iii-revenge-of-the-sith",
       "title": "Episode III – Revenge of the Sith",
       "type": "movie",
@@ -3263,6 +3353,16 @@
       "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-c93113fb-94ec-43b6-9d38-308825f7cd94"
     },
     {
+      "id": "bad-batch-hunted",
+      "title": "The Bad Batch: Hunted!",
+      "type": "graphic-novel",
+      "author": "Lucasfilm Ltd.",
+      "year": 2022,
+      "era": "disney",
+      "pageCount": 96,
+      "description": "In the immediate aftermath of Order 66, the Bad Batch go rogue — hunted by the newly formed Empire while struggling to forge an identity and purpose in a galaxy that no longer wants them."
+    },
+    {
       "id": "hyperspace-stories-ghost-agents",
       "title": "Hyperspace Stories — The Bad Batch: Ghost Agents",
       "type": "comic",
@@ -3452,6 +3552,26 @@
       ],
       "description": "Set five years after Order 66, Fallen Order follows Cal Kestis, a young Padawan-turned-fugitive surviving as a scrapper on Bracca. When his Force abilities are exposed, he must outrun the Empire's Inquisitors while attempting to rebuild the Jedi Order.",
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Jedi+Fallen+Order"
+    },
+    {
+      "id": "star-wars-jedi-fallen-order-graphic-novel-vol-1",
+      "title": "Star Wars Jedi: Fallen Order, Vol. 1",
+      "type": "graphic-novel",
+      "author": "Mangado & Sideranch",
+      "year": 2026,
+      "era": "disney",
+      "pageCount": 128,
+      "description": "A graphic novel adaptation of Jedi: Fallen Order's opening act, following Cal Kestis as his hidden Force abilities are exposed and the Empire's deadly Inquisitors are dispatched to hunt him down."
+    },
+    {
+      "id": "star-wars-jedi-fallen-order-graphic-novel-vol-2",
+      "title": "Star Wars Jedi: Fallen Order, Vol. 2",
+      "type": "graphic-novel",
+      "author": "Mangado & Sideranch",
+      "year": 2026,
+      "era": "disney",
+      "pageCount": 128,
+      "description": "The second volume of the Fallen Order graphic novel adaptation, as Cal Kestis and the crew of the Mantis press their mission to restore the Jedi Order, facing Inquisitors and ancient secrets at every turn."
     },
     {
       "id": "tales-of-the-empire",
@@ -3797,6 +3917,16 @@
       "pageCount": 282,
       "description": "The novelization of Solo: A Star Wars Story — expanding on Han's early adventures, the Kessel Run, and the crew of the Millennium Falcon with additional scenes and deeper character moments.",
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Solo+Expanded+Edition+Mur+Lafferty"
+    },
+    {
+      "id": "star-wars-solo-graphic-novel-adaptation",
+      "title": "Star Wars: Solo Graphic Novel Adaptation",
+      "type": "graphic-novel",
+      "author": "Alessandro Ferrari",
+      "year": 2019,
+      "era": "disney",
+      "pageCount": 208,
+      "description": "A graphic novel adaptation of Solo: A Star Wars Story, following Han Solo's early adventures — from a desperate escape off Corellia to the legendary Kessel Run and his fateful first steps into the criminal underworld."
     },
     {
       "id": "solo-comic",
@@ -4571,6 +4701,36 @@
       "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-08249c74-0178-4861-a1e4-dfc7b168dce5"
     },
     {
+      "id": "spark-of-rebellion-cinestory-comic",
+      "title": "Spark of Rebellion: A Star Wars Rebels Cinestory Comic",
+      "type": "graphic-novel",
+      "author": "IDW Publishing",
+      "year": 2017,
+      "era": "disney",
+      "pageCount": 144,
+      "description": "A cinestory comic adaptation of the Rebels pilot, introducing the crew of the Ghost as they take in a young Force-sensitive boy and spark the beginning of a rebellion against the Empire on Lothal."
+    },
+    {
+      "id": "path-of-the-jedi-cinestory-comic",
+      "title": "Path of the Jedi: A Star Wars Rebels Cinestory Comic",
+      "type": "graphic-novel",
+      "author": "IDW Publishing",
+      "year": 2017,
+      "era": "disney",
+      "pageCount": 144,
+      "description": "A cinestory comic adaptation of a pivotal Rebels Season 2 episode, as Ezra Bridger enters a Jedi temple and must face his deepest fears in order to take his next step on the path of the Jedi."
+    },
+    {
+      "id": "maul-rebels-cinestory-comic",
+      "title": "Maul: A Star Wars Rebels Cinestory Comic",
+      "type": "graphic-novel",
+      "author": "IDW Publishing",
+      "year": 2018,
+      "era": "disney",
+      "pageCount": 144,
+      "description": "A cinestory comic adaptation of the Rebels Season 3 finale, in which the paths of Ezra Bridger, Kanan Jarrus, and the obsessed Maul all converge on the sands of Tatooine for a final reckoning."
+    },
+    {
       "id": "rebels-ghost-raid",
       "title": "Rebels: Ghost Raid",
       "type": "browser-game",
@@ -4904,6 +5064,16 @@
       ]
     },
     {
+      "id": "guardians-of-the-whills-manga",
+      "title": "Guardians of the Whills: The Manga",
+      "type": "graphic-novel",
+      "author": "Jon Tsuei",
+      "year": 2021,
+      "era": "disney",
+      "pageCount": 256,
+      "description": "A manga-style graphic novel following Chirrut Îmwe and Baze Malbus — Guardians of the Whills on the holy city of Jedha — as they protect their community under the crushing weight of Imperial occupation."
+    },
+    {
       "id": "rogue-one-a-star-wars-story",
       "title": "Rogue One",
       "type": "movie",
@@ -4953,6 +5123,16 @@
           ]
         }
       ]
+    },
+    {
+      "id": "star-wars-rogue-one-graphic-novel-adaptation",
+      "title": "Star Wars: Rogue One Graphic Novel Adaptation",
+      "type": "graphic-novel",
+      "author": "Alessandro Ferrari",
+      "year": 2017,
+      "era": "disney",
+      "pageCount": 208,
+      "description": "A graphic novel adaptation of Rogue One: A Star Wars Story, following Jyn Erso and a band of rebels on their desperate, unsanctioned mission to steal the plans for the Empire's planet-killing superweapon."
     },
     {
       "id": "rogue-one-boots-on-the-ground",
@@ -5080,6 +5260,26 @@
           ]
         }
       ]
+    },
+    {
+      "id": "star-wars-original-trilogy-graphic-novel",
+      "title": "Star Wars: The Original Trilogy – A Graphic Novel",
+      "type": "graphic-novel",
+      "author": "Alessandro Ferrari",
+      "year": 2016,
+      "era": "lucas",
+      "pageCount": 208,
+      "description": "A graphic novel adaptation of the original trilogy — A New Hope, The Empire Strikes Back, and Return of the Jedi — condensing the foundational three films of the Skywalker Saga into one illustrated volume."
+    },
+    {
+      "id": "star-wars-a-new-hope-cinestory-comic",
+      "title": "Star Wars: A New Hope Cinestory Comic",
+      "type": "graphic-novel",
+      "author": "IDW Publishing",
+      "year": 2017,
+      "era": "lucas",
+      "pageCount": 240,
+      "description": "A cinestory comic adaptation of Star Wars: A New Hope, recreating the iconic film panel by panel through full-colour illustrated artwork as a young farmboy joins the Rebellion against the Empire."
     },
     {
       "id": "episode-iv-a-new-hope",
@@ -6453,6 +6653,16 @@
       "format": "live-action",
       "era": "lucas",
       "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-0f5c5223-f4f6-46ef-ba8a-69cb0e17d8d3"
+    },
+    {
+      "id": "star-wars-empire-strikes-back-screen-comix",
+      "title": "Star Wars: The Empire Strikes Back Screen Comix",
+      "type": "graphic-novel",
+      "author": "Lucasfilm Ltd.",
+      "year": 2020,
+      "era": "lucas",
+      "pageCount": 256,
+      "description": "A screen comix adaptation of The Empire Strikes Back, presenting the film's drama through illustrated panels as the Rebel Alliance faces the Empire's devastating counter-offensive and Luke Skywalker learns a world-shattering truth."
     },
     {
       "id": "star-wars-2020-comic",
@@ -8429,6 +8639,56 @@
       ]
     },
     {
+      "id": "mandalorian-season-1-volume-1",
+      "title": "The Mandalorian: Season 1: Volume 1",
+      "type": "graphic-novel",
+      "author": "Lucasfilm Ltd.",
+      "year": 2021,
+      "era": "disney",
+      "pageCount": 96,
+      "description": "A graphic novel adaptation of the opening chapters of The Mandalorian, following the title bounty hunter as a mysterious high-value target forces him to question everything he knows about his code."
+    },
+    {
+      "id": "star-wars-mandalorian-season-one-graphic-novel",
+      "title": "Star Wars: The Mandalorian Season One Graphic Novel",
+      "type": "graphic-novel",
+      "author": "Alessandro Ferrari",
+      "year": 2022,
+      "era": "disney",
+      "pageCount": 208,
+      "description": "A graphic novel adaptation of The Mandalorian's first season, following Din Djarin's journey across the outer reaches of the galaxy as he struggles to protect his foundling charge from relentless pursuers."
+    },
+    {
+      "id": "star-wars-mandalorian-graphic-novel-season-2",
+      "title": "Star Wars: The Mandalorian – The Graphic Novel of Season 2",
+      "type": "graphic-novel",
+      "author": "Lucasfilm Ltd.",
+      "year": 2022,
+      "era": "disney",
+      "pageCount": 208,
+      "description": "A graphic novel adaptation of The Mandalorian's second season, as Din Djarin scours the galaxy for the Jedi who can reunite Grogu with his people — forging unexpected alliances along the way."
+    },
+    {
+      "id": "mandalorian-the-rescue",
+      "title": "The Mandalorian: The Rescue",
+      "type": "graphic-novel",
+      "author": "Lucasfilm Ltd.",
+      "year": 2022,
+      "era": "disney",
+      "pageCount": 96,
+      "description": "A graphic novel adaptation of The Mandalorian's Season 2 finale, as Mando and his allies launch a desperate rescue mission to recover Grogu from Moff Gideon's clutches."
+    },
+    {
+      "id": "star-wars-mandalorian-graphic-novel-season-3",
+      "title": "The Mandalorian – The Graphic Novel of Season 3",
+      "type": "graphic-novel",
+      "author": "Alessandro Ferrari",
+      "year": 2024,
+      "era": "disney",
+      "pageCount": 208,
+      "description": "A graphic novel adaptation of The Mandalorian's third season, following Din Djarin and Grogu as they seek redemption through reclaiming the shattered homeworld of Mandalore."
+    },
+    {
       "id": "the-book-of-boba-fett",
       "title": "The Book of Boba Fett",
       "type": "series",
@@ -9316,6 +9576,16 @@
       ]
     },
     {
+      "id": "star-wars-force-awakens-graphic-novel-adaptation",
+      "title": "Star Wars: The Force Awakens Graphic Novel Adaptation",
+      "type": "graphic-novel",
+      "author": "Alessandro Ferrari",
+      "year": 2017,
+      "era": "disney",
+      "pageCount": 208,
+      "description": "A graphic novel adaptation of The Force Awakens, following a young scavenger and a disillusioned stormtrooper who stumble onto a droid carrying a map to the last Jedi — and into the middle of a galaxy-defining conflict."
+    },
+    {
       "id": "captain-phasma",
       "title": "Captain Phasma",
       "type": "comic",
@@ -9456,6 +9726,16 @@
           ]
         }
       ]
+    },
+    {
+      "id": "star-wars-last-jedi-graphic-novel-adaptation",
+      "title": "Star Wars: The Last Jedi Graphic Novel Adaptation",
+      "type": "graphic-novel",
+      "author": "Alessandro Ferrari",
+      "year": 2018,
+      "era": "disney",
+      "pageCount": 208,
+      "description": "A graphic novel adaptation of The Last Jedi, following the Resistance's desperate flight from the First Order as an unlikely bond deepens between a young hero and a conflicted dark-side enforcer."
     },
     {
       "id": "legacy-of-vader",
@@ -9726,6 +10006,36 @@
           ]
         }
       ]
+    },
+    {
+      "id": "star-wars-rise-of-skywalker-graphic-novel-adaptation",
+      "title": "Star Wars: The Rise of Skywalker Graphic Novel Adaptation",
+      "type": "graphic-novel",
+      "author": "Alessandro Ferrari",
+      "year": 2020,
+      "era": "disney",
+      "pageCount": 208,
+      "description": "A graphic novel adaptation of The Rise of Skywalker, chronicling Rey's final confrontation with Palpatine and the ultimate battle between the Resistance and the Final Order."
+    },
+    {
+      "id": "star-wars-rise-of-skywalker-screen-comix",
+      "title": "Star Wars: The Rise of Skywalker — The Screenplay in Comics Form",
+      "type": "graphic-novel",
+      "author": "Lucasfilm Ltd.",
+      "year": 2020,
+      "era": "disney",
+      "pageCount": 256,
+      "description": "The complete screenplay of The Rise of Skywalker rendered as a graphic novel with full-color movie stills and dialogue."
+    },
+    {
+      "id": "path-of-the-lightsaber-vol-1",
+      "title": "Path of the Lightsaber Vol. 1",
+      "type": "graphic-novel",
+      "author": "Lucasfilm Ltd.",
+      "year": 2022,
+      "era": "disney",
+      "pageCount": 128,
+      "description": "An anthology graphic novel following Force-users across the galaxy far, far away, tracing the legacy of the lightsaber through generations of Jedi and Sith."
     },
     {
       "id": "halcyon-legacy",
