@@ -150,6 +150,28 @@
       ]
     },
     {
+      "id": "quest-for-the-hidden-city",
+      "title": "The High Republic: Quest for the Hidden City",
+      "type": "junior-novel",
+      "author": "George Mann",
+      "year": 2022,
+      "era": "disney",
+      "pageCount": 304,
+      "description": "In the earliest days of the High Republic, young Jedi Dass Leffings leads an expedition through a dangerous and uncharted world in search of a legendary hidden city — uncovering ancient Force mysteries and confronting the growing shadow of the Path of the Open Hand.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+High+Republic+Quest+for+the+Hidden+City+George+Mann"
+    },
+    {
+      "id": "quest-for-planet-x",
+      "title": "The High Republic: Quest for Planet X",
+      "type": "junior-novel",
+      "author": "Tessa Gratton",
+      "year": 2023,
+      "era": "disney",
+      "pageCount": 288,
+      "description": "When a young Jedi and the fearless Wayseeker Silandra Sho discover clues to a mysterious hidden world with a deep connection to the Force, they must race against the forces of the Path of the Open Hand to reach it first — before its secret becomes a weapon.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+High+Republic+Quest+for+Planet+X+Tessa+Gratton"
+    },
+    {
       "id": "the-high-republic-light-of-the-jedi",
       "title": "The High Republic: Light of the Jedi",
       "type": "novel",
@@ -159,6 +181,17 @@
       "pageCount": 432,
       "description": "At the height of the Republic's golden age, a catastrophic disaster in hyperspace throws the Jedi Order into a desperate rescue operation — and reveals a terrifying new threat lurking in the darkness between the stars.",
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+High+Republic+Light+of+the+Jedi+Soule"
+    },
+    {
+      "id": "the-high-republic-a-test-of-courage",
+      "title": "The High Republic: A Test of Courage",
+      "type": "junior-novel",
+      "author": "Justina Ireland",
+      "year": 2021,
+      "era": "disney",
+      "pageCount": 240,
+      "description": "When a catastrophic hyperspace disaster strands young Jedi Vernestra Rwoh and a small group of survivors on a jungle moon with no way to call for help, they must work together to survive — and discover that the disaster was no accident.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+High+Republic+A+Test+of+Courage+Justina+Ireland"
     },
     {
       "id": "high-republic-edge-of-balance-vol-1",
@@ -1019,6 +1052,17 @@
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+High+Republic+The+Rising+Storm+Cavan+Scott"
     },
     {
+      "id": "race-to-crashpoint-tower",
+      "title": "The High Republic: Race to Crashpoint Tower",
+      "type": "junior-novel",
+      "author": "Daniel José Older",
+      "year": 2021,
+      "era": "disney",
+      "pageCount": 208,
+      "description": "As thousands gather on Valo for the Republic Fair, young Jedi Lula Talisola uncovers evidence of an imminent Nihil attack — and must race across the festival grounds to reach Crashpoint Tower before it's too late to save everyone.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+High+Republic+Race+to+Crashpoint+Tower+Daniel+Jose+Older"
+    },
+    {
       "id": "the-high-republic-out-of-the-shadows",
       "title": "The High Republic: Out of the Shadows",
       "type": "ya-novel",
@@ -1028,6 +1072,17 @@
       "pageCount": 432,
       "description": "A Jedi Knight investigating a mysterious hyperspace disaster is pulled into a web of political intrigue and buried secrets — while the shadow of the Nihil continues to fall across the Outer Rim.",
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+High+Republic+Out+of+the+Shadows+Ireland"
+    },
+    {
+      "id": "mission-to-disaster",
+      "title": "The High Republic: Mission to Disaster",
+      "type": "junior-novel",
+      "author": "Justina Ireland",
+      "year": 2022,
+      "era": "disney",
+      "pageCount": 272,
+      "description": "Jedi Knight Vernestra Rwoh is dispatched to investigate a rash of disasters across Republic outposts — but as the evidence mounts, she begins to suspect that the catastrophes are being engineered by an enemy closer than anyone imagined.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+High+Republic+Mission+to+Disaster+Justina+Ireland"
     },
     {
       "id": "the-high-republic-tempest-runner",
@@ -1061,6 +1116,39 @@
       "pageCount": 490,
       "description": "Two young Jedi arrive on the cosmopolitan city-world of Corellia to investigate a Nihil plot — navigating an underworld of crime and corruption while the fate of the Republic hangs in the balance.",
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+High+Republic+Midnight+Horizon+Older"
+    },
+    {
+      "id": "escape-from-valo",
+      "title": "The High Republic: Escape from Valo",
+      "type": "junior-novel",
+      "author": "Daniel José Older & Alyssa Wong",
+      "year": 2024,
+      "era": "disney",
+      "pageCount": 384,
+      "description": "Stranded on a Nihil-occupied Valo, young heroes Zeen Mrala and Lula Talisola must evade the enemy, protect the civilians they've hidden away, and find a way to signal for rescue — all while uncovering a shocking secret about the Nihil's true plans.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+High+Republic+Escape+from+Valo+Older+Wong"
+    },
+    {
+      "id": "beware-the-nameless",
+      "title": "The High Republic: Beware the Nameless",
+      "type": "junior-novel",
+      "author": "Zoraida Córdova",
+      "year": 2024,
+      "era": "disney",
+      "pageCount": 336,
+      "description": "When a young Jedi is sent to investigate a string of attacks that have left Jedi catatonic and helpless, she must confront the terrifying truth about the Nameless — mysterious creatures that seem to feed on the Force itself.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+High+Republic+Beware+the+Nameless+Zoraida+Cordova"
+    },
+    {
+      "id": "a-valiant-vow",
+      "title": "The High Republic: A Valiant Vow",
+      "type": "junior-novel",
+      "author": "Justina Ireland",
+      "year": 2025,
+      "era": "disney",
+      "pageCount": 272,
+      "description": "As the conflict between the Jedi and the forces threatening the High Republic reaches a desperate turning point, a young hero must honor a dangerous promise — one that will test every ounce of their courage and determine the fate of those they love most.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+High+Republic+A+Valiant+Vow+Justina+Ireland"
     },
     {
       "id": "the-high-republic-shadows-of-starlight",
@@ -1914,6 +2002,17 @@
           ]
         }
       ]
+    },
+    {
+      "id": "choose-your-destiny-an-obi-wan-anakin-adventure",
+      "title": "Choose Your Destiny: An Obi-Wan & Anakin Adventure",
+      "type": "junior-novel",
+      "author": "Cavan Scott",
+      "year": 2019,
+      "era": "disney",
+      "pageCount": 144,
+      "description": "YOU are in control of the galaxy's greatest Jedi duo. When Obi-Wan Kenobi and his Padawan Anakin Skywalker face a dangerous mission, every choice is yours to make — and the fate of the mission depends on the path you choose.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Choose+Your+Destiny+Obi-Wan+Anakin+Adventure+Cavan+Scott"
     },
     {
       "id": "episode-ii-attack-of-the-clones",
@@ -3492,6 +3591,83 @@
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Thrawn+Ascendancy+Lesser+Evil+Zahn"
     },
     {
+      "id": "adventures-in-wild-space-the-escape",
+      "title": "Adventures in Wild Space: The Escape",
+      "type": "junior-novel",
+      "author": "Cavan Scott",
+      "year": 2016,
+      "era": "disney",
+      "pageCount": 96,
+      "description": "When Imperial officers board and seize the explorer vessel of the Graf family, siblings Milo and Lina manage to escape — but their parents are taken captive. Stranded in Wild Space, the children must begin a desperate search across the galaxy to rescue them.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Adventures+in+Wild+Space+The+Escape+Cavan+Scott"
+    },
+    {
+      "id": "adventures-in-wild-space-the-snare",
+      "title": "Adventures in Wild Space: The Snare",
+      "type": "junior-novel",
+      "author": "Cavan Scott",
+      "year": 2016,
+      "era": "disney",
+      "pageCount": 160,
+      "description": "Following a lead about their captured parents, Milo and Lina Graf venture deeper into Wild Space — only to walk straight into a trap laid by the Imperial officer hunting them down.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Adventures+in+Wild+Space+The+Snare+Cavan+Scott"
+    },
+    {
+      "id": "adventures-in-wild-space-the-nest",
+      "title": "Adventures in Wild Space: The Nest",
+      "type": "junior-novel",
+      "author": "Tom Huddleston",
+      "year": 2016,
+      "era": "disney",
+      "pageCount": 160,
+      "description": "Milo and Lina Graf are forced down onto a jungle world crawling with enormous and deadly creatures — and with no way to signal for help, they must survive long enough to find a way off before the Empire closes in.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Adventures+in+Wild+Space+The+Nest+Tom+Huddleston"
+    },
+    {
+      "id": "adventures-in-wild-space-the-steal",
+      "title": "Adventures in Wild Space: The Steal",
+      "type": "junior-novel",
+      "author": "Cavan Scott",
+      "year": 2016,
+      "era": "disney",
+      "pageCount": 160,
+      "description": "Milo and Lina must pull off a daring heist to steal the information they need to find their parents — right out from under the noses of the Imperial soldiers who have it.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Adventures+in+Wild+Space+The+Steal+Cavan+Scott"
+    },
+    {
+      "id": "adventures-in-wild-space-the-dark",
+      "title": "Adventures in Wild Space: The Dark",
+      "type": "junior-novel",
+      "author": "Tom Huddleston",
+      "year": 2016,
+      "era": "disney",
+      "pageCount": 160,
+      "description": "The Graf siblings follow their parents' trail into a dark and treacherous region of Wild Space — where a ruthless Imperial officer has been tracking them, and the dangers of the unexplored frontier are more terrifying than anything they have faced before.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Adventures+in+Wild+Space+The+Dark+Tom+Huddleston"
+    },
+    {
+      "id": "adventures-in-wild-space-the-cold",
+      "title": "Adventures in Wild Space: The Cold",
+      "type": "junior-novel",
+      "author": "Cavan Scott",
+      "year": 2017,
+      "era": "disney",
+      "pageCount": 160,
+      "description": "Milo and Lina arrive on a frozen world to follow a new lead about their parents' location — but the planet's extreme conditions and a dangerous Imperial presence make this their most treacherous stop yet.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Adventures+in+Wild+Space+The+Cold+Cavan+Scott"
+    },
+    {
+      "id": "adventures-in-wild-space-the-rescue",
+      "title": "Adventures in Wild Space: The Rescue",
+      "type": "junior-novel",
+      "author": "Tom Huddleston",
+      "year": 2017,
+      "era": "disney",
+      "pageCount": 176,
+      "description": "The Graf siblings' long search for their captured parents finally reaches its climax as Milo and Lina make their most daring and dangerous move yet — a desperate rescue mission into the heart of Imperial captivity.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Adventures+in+Wild+Space+The+Rescue+Tom+Huddleston"
+    },
+    {
       "id": "ahsoka-novel",
       "title": "Ahsoka",
       "type": "ya-novel",
@@ -3827,6 +4003,28 @@
       "pageCount": 368,
       "description": "After the events of Solo, Qi'ra survives within the brutal ranks of Crimson Dawn — climbing through its hierarchy with cunning and ruthlessness, shaping the woman she is becoming in the galaxy's underworld.",
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Crimson+Climb+EK+Johnston"
+    },
+    {
+      "id": "landos-luck",
+      "title": "Lando's Luck",
+      "type": "junior-novel",
+      "author": "Justina Ireland",
+      "year": 2018,
+      "era": "disney",
+      "pageCount": 176,
+      "description": "When a young girl named Rinetta Gan stows away aboard the Millennium Falcon in search of her kidnapped father, she finds herself caught up in one of Lando Calrissian's most chaotic — and profitable — schemes yet.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Lando%27s+Luck+Justina+Ireland"
+    },
+    {
+      "id": "choose-your-destiny-a-han-chewie-adventure",
+      "title": "Choose Your Destiny: A Han & Chewie Adventure",
+      "type": "junior-novel",
+      "author": "Cavan Scott",
+      "year": 2018,
+      "era": "disney",
+      "pageCount": 144,
+      "description": "YOU decide what Han Solo and Chewbacca do next — from daring heists to harrowing escapes — in this choose-your-own-path adventure that puts the fate of the Millennium Falcon's most famous crew in your hands.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Choose+Your+Destiny+Han+Chewie+Adventure+Cavan+Scott"
     },
     {
       "id": "a-new-dawn",
@@ -4231,6 +4429,61 @@
       "format": "live-action",
       "era": "disney",
       "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-faba988a-a9f5-45f2-a074-0775a7d6f67a"
+    },
+    {
+      "id": "servants-of-the-empire-edge-of-the-galaxy",
+      "title": "Servants of the Empire: Edge of the Galaxy",
+      "type": "junior-novel",
+      "author": "Jason Fry",
+      "year": 2014,
+      "era": "disney",
+      "pageCount": 172,
+      "description": "Zare Leonis has dreamed of attending the Imperial Academy on Lothal his whole life — but when his Force-sensitive sister disappears into the Empire's grip, Zare realizes the only way to find her is to enrol himself and learn the truth from the inside.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Servants+of+the+Empire+Edge+of+the+Galaxy+Jason+Fry"
+    },
+    {
+      "id": "ezras-gamble",
+      "title": "Ezra's Gamble",
+      "type": "junior-novel",
+      "author": "Ryder Windham",
+      "year": 2014,
+      "era": "disney",
+      "pageCount": 154,
+      "description": "Before joining the crew of the Ghost, teenage street kid Ezra Bridger must outwit the ruthless bounty hunter Bossk and survive a dangerous mission in the criminal underworld of Lothal.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Ezra%27s+Gamble+Ryder+Windham"
+    },
+    {
+      "id": "servants-of-the-empire-rebel-in-the-ranks",
+      "title": "Servants of the Empire: Rebel in the Ranks",
+      "type": "junior-novel",
+      "author": "Jason Fry",
+      "year": 2015,
+      "era": "disney",
+      "pageCount": 176,
+      "description": "Inside the Imperial Academy, Zare Leonis digs deeper into the Empire's sinister experiments while maintaining his cover — but as his double life grows more dangerous, he discovers the secrets he's uncovering could cost him everything.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Servants+of+the+Empire+Rebel+in+the+Ranks+Jason+Fry"
+    },
+    {
+      "id": "servants-of-the-empire-imperial-justice",
+      "title": "Servants of the Empire: Imperial Justice",
+      "type": "junior-novel",
+      "author": "Jason Fry",
+      "year": 2015,
+      "era": "disney",
+      "pageCount": 164,
+      "description": "Transferred to a new posting far from Lothal, Zare Leonis must navigate an unfamiliar environment while his connection to the Ghost crew deepens — all while the Empire tightens its grasp and his mission grows ever more perilous.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Servants+of+the+Empire+Imperial+Justice+Jason+Fry"
+    },
+    {
+      "id": "servants-of-the-empire-the-secret-academy",
+      "title": "Servants of the Empire: The Secret Academy",
+      "type": "junior-novel",
+      "author": "Jason Fry",
+      "year": 2015,
+      "era": "disney",
+      "pageCount": 182,
+      "description": "Zare Leonis's undercover mission reaches its climax at a hidden Imperial facility where the darkest secrets of the Empire's experiments are finally revealed — including the truth about what happened to his sister.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Servants+of+the+Empire+The+Secret+Academy+Jason+Fry"
     },
     {
       "id": "kanan-comic",
@@ -5062,6 +5315,17 @@
           ]
         }
       ]
+    },
+    {
+      "id": "guardians-of-the-whills",
+      "title": "Guardians of the Whills",
+      "type": "junior-novel",
+      "author": "Greg Rucka",
+      "year": 2017,
+      "era": "disney",
+      "pageCount": 234,
+      "description": "On the holy moon of Jedha under brutal Imperial occupation, temple guardians Chirrut Îmwe and Baze Malbus quietly resist the Empire while protecting the faithful — until a job for a desperate young rebel sets them on a collision course with the galaxy's fate.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Guardians+of+the+Whills+Greg+Rucka"
     },
     {
       "id": "guardians-of-the-whills-manga",
@@ -6543,6 +6807,50 @@
       ]
     },
     {
+      "id": "smugglers-run",
+      "title": "Smuggler's Run: A Han Solo & Chewbacca Adventure",
+      "type": "junior-novel",
+      "author": "Greg Rucka",
+      "year": 2015,
+      "era": "disney",
+      "pageCount": 192,
+      "description": "In the wake of the Battle of Yavin, Han Solo and Chewbacca are sent on an urgent Rebel mission to rescue a stranded spy — but the Empire has laid a deadly trap, and not everyone who flies into it comes back out.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Smuggler%27s+Run+Han+Solo+Greg+Rucka"
+    },
+    {
+      "id": "the-weapon-of-a-jedi",
+      "title": "The Weapon of a Jedi: A Luke Skywalker Adventure",
+      "type": "junior-novel",
+      "author": "Jason Fry",
+      "year": 2015,
+      "era": "disney",
+      "pageCount": 184,
+      "description": "After the Battle of Yavin, Luke Skywalker is drawn by the Force to a remote world where he discovers the ruins of an ancient Jedi temple — and must begin teaching himself the ways of the Jedi before the Empire discovers what he has found.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+The+Weapon+of+a+Jedi+Luke+Skywalker+Jason+Fry"
+    },
+    {
+      "id": "the-mighty-chewbacca-in-the-forest-of-fear",
+      "title": "The Mighty Chewbacca in the Forest of Fear!",
+      "type": "junior-novel",
+      "author": "Tom Angleberger",
+      "year": 2018,
+      "era": "disney",
+      "pageCount": 272,
+      "description": "Chewbacca is on his own on a forest moon — and the mighty Wookiee must face terrifying creatures, treacherous terrain, and his own feelings about the friend he's been sent to rescue.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+The+Mighty+Chewbacca+in+the+Forest+of+Fear+Tom+Angleberger"
+    },
+    {
+      "id": "choose-your-destiny-a-luke-leia-adventure",
+      "title": "Choose Your Destiny: A Luke & Leia Adventure",
+      "type": "junior-novel",
+      "author": "Cavan Scott",
+      "year": 2018,
+      "era": "disney",
+      "pageCount": 144,
+      "description": "The fate of the Rebellion is in YOUR hands. Luke Skywalker and Princess Leia face a dangerous mission — but every branch in the path leads somewhere different, and only the choices you make will determine if they succeed.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Choose+Your+Destiny+Luke+Leia+Adventure+Cavan+Scott"
+    },
+    {
       "id": "smugglers-run-comic",
       "title": "Star Wars: Smuggler's Run",
       "type": "comic",
@@ -7894,6 +8202,17 @@
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Outlaws+game+Ubisoft"
     },
     {
+      "id": "moving-target",
+      "title": "Moving Target: A Princess Leia Adventure",
+      "type": "junior-novel",
+      "author": "Cecil Castellucci & Jason Fry",
+      "year": 2015,
+      "era": "disney",
+      "pageCount": 240,
+      "description": "On the eve of the Battle of Endor, Princess Leia leads a small volunteer squad on a dangerous decoy mission designed to draw Imperial attention away from the Rebel fleet — knowing that not all of them will make it back, and that the price of hope is sometimes everything.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Moving+Target+Princess+Leia+Adventure+Castellucci+Fry"
+    },
+    {
       "id": "episode-vi-return-of-the-jedi",
       "title": "Star Wars: Episode VI – Return of the Jedi",
       "type": "movie",
@@ -8396,6 +8715,17 @@
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Last+Shot+Daniel+Jose+Older"
     },
     {
+      "id": "the-legends-of-luke-skywalker",
+      "title": "The Legends of Luke Skywalker",
+      "type": "junior-novel",
+      "author": "Ken Liu",
+      "year": 2017,
+      "era": "disney",
+      "pageCount": 425,
+      "description": "Traveling aboard a cargo ship bound for Canto Bight, a crew of workers swap tales they have heard about the legendary Luke Skywalker — stories of miracles and monsters, of battles and grace, some true, some myth, all of them part of the galaxy's living memory.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+The+Legends+of+Luke+Skywalker+Ken+Liu"
+    },
+    {
       "id": "the-mandalorian",
       "title": "Star Wars: The Mandalorian",
       "type": "series",
@@ -8739,6 +9069,17 @@
       "format": "live-action",
       "era": "disney",
       "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-3749c03e-8204-46c5-b102-0410e6d51758"
+    },
+    {
+      "id": "hunters-battle-for-the-arena",
+      "title": "Hunters: Battle for the Arena",
+      "type": "junior-novel",
+      "author": "Mark Oshiro",
+      "year": 2023,
+      "era": "disney",
+      "pageCount": 384,
+      "description": "In the ruins of a former Imperial arena on the planet Vespaara, warriors from across the galaxy compete in the spectacle of Star Wars: Hunters — and one young challenger must prove they have what it takes to survive among legends.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Hunters+Battle+for+the+Arena+Mark+Oshiro"
     },
     {
       "id": "star-wars-hunters",
@@ -9525,6 +9866,50 @@
       ]
     },
     {
+      "id": "before-the-awakening",
+      "title": "Before the Awakening",
+      "type": "junior-novel",
+      "author": "Greg Rucka",
+      "year": 2015,
+      "era": "disney",
+      "pageCount": 216,
+      "description": "Three stories set in the weeks before The Force Awakens: a stormtrooper named Finn who begins to question everything he has been taught, a Resistance pilot named Poe Dameron on a vital mission, and a scavenger named Rey who discovers something unexpected on Jakku.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Before+the+Awakening+Greg+Rucka"
+    },
+    {
+      "id": "join-the-resistance",
+      "title": "Join the Resistance",
+      "type": "junior-novel",
+      "author": "Ben Acker & Ben Blacker",
+      "year": 2017,
+      "era": "disney",
+      "pageCount": 224,
+      "description": "Mattis Banz has always dreamed of joining the Resistance — but when he finally gets the chance, he discovers that being a hero is a lot messier, stranger, and more dangerous than anything he imagined, especially with the misfit squad he's been assigned to.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Join+the+Resistance+Ben+Acker+Ben+Blacker"
+    },
+    {
+      "id": "join-the-resistance-escape-from-vodran",
+      "title": "Join the Resistance: Escape from Vodran",
+      "type": "junior-novel",
+      "author": "Ben Acker & Ben Blacker",
+      "year": 2017,
+      "era": "disney",
+      "pageCount": 336,
+      "description": "Captured and thrown into an Imperial-era prison on the swamp world of Vodran, Mattis and his squad must pull together to stage a daring escape — while uncovering a sinister secret the First Order has been keeping buried there.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Join+the+Resistance+Escape+from+Vodran+Ben+Acker"
+    },
+    {
+      "id": "join-the-resistance-attack-on-starkiller-base",
+      "title": "Join the Resistance: Attack on Starkiller Base",
+      "type": "junior-novel",
+      "author": "Ben Acker & Ben Blacker",
+      "year": 2018,
+      "era": "disney",
+      "pageCount": 208,
+      "description": "As the Resistance launches its desperate assault on Starkiller Base, Mattis and his squad face their most dangerous mission yet — fighting in the shadow of a weapon powerful enough to destroy entire star systems.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Join+the+Resistance+Attack+on+Starkiller+Base+Ben+Acker"
+    },
+    {
       "id": "episode-vii-the-force-awakens",
       "title": "Star Wars: Episode VII – The Force Awakens",
       "type": "movie",
@@ -9675,6 +10060,17 @@
           ]
         }
       ]
+    },
+    {
+      "id": "the-last-jedi-cobalt-squadron",
+      "title": "The Last Jedi: Cobalt Squadron",
+      "type": "junior-novel",
+      "author": "Elizabeth Wein",
+      "year": 2017,
+      "era": "disney",
+      "pageCount": 256,
+      "description": "Rose and Paige Tico and the bombers of Cobalt Squadron are on a critical mission at the edge of the galaxy when the First Order launches a devastating assault — and the two sisters must fight alongside their crew to survive and keep the Resistance's hope alive.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+The+Last+Jedi+Cobalt+Squadron+Elizabeth+Wein"
     },
     {
       "id": "episode-viii-the-last-jedi",
@@ -9959,6 +10355,39 @@
           ]
         }
       ]
+    },
+    {
+      "id": "choose-your-destiny-a-finn-poe-adventure",
+      "title": "Choose Your Destiny: A Finn & Poe Adventure",
+      "type": "junior-novel",
+      "author": "Cavan Scott",
+      "year": 2019,
+      "era": "disney",
+      "pageCount": 144,
+      "description": "YOU are in command of the Resistance's most dynamic duo. As Finn and Poe Dameron race into First Order territory on a vital mission, every decision is yours — and the wrong choice could doom them both.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Choose+Your+Destiny+Finn+Poe+Adventure+Cavan+Scott"
+    },
+    {
+      "id": "spark-of-the-resistance",
+      "title": "Spark of the Resistance",
+      "type": "junior-novel",
+      "author": "Justina Ireland",
+      "year": 2019,
+      "era": "disney",
+      "pageCount": 224,
+      "description": "Rey, Poe Dameron, and Rose Tico travel to a remote world on a secret mission to protect a community threatened by First Order forces — but the planet holds unexpected dangers, and the three heroes must decide just how far the Resistance can stretch to help those in need.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Spark+of+the+Resistance+Justina+Ireland"
+    },
+    {
+      "id": "pirates-price",
+      "title": "Pirate's Price",
+      "type": "junior-novel",
+      "author": "Lou Anders",
+      "year": 2019,
+      "era": "disney",
+      "pageCount": 240,
+      "description": "The legendary — and legendarily unreliable — pirate Hondo Ohnaka recounts his most dramatic adventures in a collection of tall tales that blend daring fact with shameless fiction, proving once again that no one tells a story quite like Hondo.",
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Pirate%27s+Price+Lou+Anders"
     },
     {
       "id": "episode-ix-the-rise-of-skywalker",

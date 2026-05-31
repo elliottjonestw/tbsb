@@ -32,7 +32,7 @@ On every state mutation, `save()` flushes `watched` to `localStorage`, then call
 
 ## catalog.json
 
-The catalog is an array of **content items** under the top-level `"content"` key. Each item is one of: `movie`, `short-movie`, `series`, `tv-shorts`, `novel`, `ya-novel`, `graphic-novel`, `comic`, `console-game`, `vr-game`, `browser-game`, `mobile-game`, or `audio-drama`.
+The catalog is an array of **content items** under the top-level `"content"` key. Each item is one of: `movie`, `short-movie`, `series`, `tv-shorts`, `novel`, `ya-novel`, `junior-novel`, `graphic-novel`, `comic`, `console-game`, `vr-game`, `browser-game`, `mobile-game`, or `audio-drama`.
 
 An item's `type` field can be a single string **or an array of strings** when it belongs to more than one type (e.g. a game released on both browser and mobile). Multi-type items appear in filter results for any of their types, and their card displays all type labels joined with ` / ` (e.g. `BROWSER GAME / MOBILE GAME`). The state model, stats, and modal routing are unaffected — they all normalise `type` through the `itemTypes(item)` helper before branching.
 
@@ -156,7 +156,38 @@ Novels do not have `format`, `duration`, `disneyPlusUrl`, or `seasons`. They are
 }
 ```
 
-The YA Novel schema is identical to the Adult Novel schema — the only difference is `"type": "ya-novel"`. All stat calculations (Novels count, Pages Remaining, Read %) treat `novel` and `ya-novel` items identically via the `isNovel()` helper. The type filter exposes them as separate options ("Adult Novels" and "YA Novels") so users can filter to one category at a time.
+The YA Novel schema is identical to the Adult Novel schema — the only difference is `"type": "ya-novel"`. All stat calculations (Novels count, Pages Remaining, Read %) treat `novel`, `ya-novel`, and `junior-novel` items identically via the `isNovel()` helper. The type filter exposes them as separate options ("Adult Novels", "YA Novels", and "Junior Novels") so users can filter to one category at a time.
+
+### Junior Novel schema
+
+```json
+{
+  "id": "the-high-republic-a-test-of-courage",
+  "title": "The High Republic: A Test of Courage",
+  "type": "junior-novel",
+  "author": "Justina Ireland",
+  "year": 2021,
+  "era": "disney",
+  "pageCount": 240,
+  "description": "When a mission to a newly-discovered planet goes wrong, Jedi Padawan Vernestra Rwoh must lead a group of young survivors through a dangerous jungle.",
+  "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+High+Republic+A+Test+of+Courage"
+}
+```
+
+The Junior Novel schema is identical to the Adult Novel and YA Novel schemas — the only difference is `"type": "junior-novel"`. All stat calculations, card rendering, modal routing, and state management treat `junior-novel` identically to `novel` and `ya-novel` via `isNovel()`. Junior novels appear in the Books/Comics count, Pages Remaining, and Read/Listened % stats alongside adult and YA novels.
+
+| Field        | Type   | Description                                                                 |
+|--------------|--------|-----------------------------------------------------------------------------|
+| `id`         | string | Unique stable identifier (slug). Used as localStorage key and poster filename. |
+| `title`      | string | Display title                                                               |
+| `type`       | string | `"junior-novel"`                                                            |
+| `author`     | string | Author name. Shown in the detail modal info row.                            |
+| `year`       | number | Publication year                                                            |
+| `era`        | string | `"lucas"` or `"disney"`                                                     |
+| `pageCount`  | number | Page count of the print edition. Shown on the card and in the modal.        |
+| `description`| string | Optional. Spoiler-free summary shown in the detail modal.                   |
+| `audibleUrl` | string | Optional. Direct URL to the audiobook on Audible. Renders a "Listen on Audible" button in the modal. |
+| `amazonUrl`  | string | Optional. URL to the book on Amazon (product page or search). Renders a "Buy on Amazon" button in the modal. |
 
 ### Graphic Novel schema
 
@@ -184,7 +215,7 @@ The YA Novel schema is identical to the Adult Novel schema — the only differen
 | `pageCount`  | number | Page count of the print edition. Shown on the card and in the modal.        |
 | `description`| string | Optional. Spoiler-free summary shown in the detail modal.                   |
 
-Graphic novels are treated identically to `novel` and `ya-novel` items in every part of the system — the same flat boolean state (`read` or `not read`), the same card meta label (`N pages`), the same detail modal (`renderNovelModal`), and the same stats contributions. They do not support `audibleUrl` or `amazonUrl` (add those fields and the modal will render the buttons — they are simply absent from the current catalog entries). They have no partial state. The type filter exposes them as a dedicated "Graphic Novels" option, positioned between "YA Novels" and "Comics" in both the pill buttons and the mobile `<select>` dropdown.
+Graphic novels are treated identically to `novel`, `ya-novel`, and `junior-novel` items in every part of the system — the same flat boolean state (`read` or `not read`), the same card meta label (`N pages`), the same detail modal (`renderNovelModal`), and the same stats contributions. They do not support `audibleUrl` or `amazonUrl` (add those fields and the modal will render the buttons — they are simply absent from the current catalog entries). They have no partial state. The type filter exposes them as a dedicated "Graphic Novels" option, positioned between "Junior Novels" and "Comics" in both the pill buttons and the mobile `<select>` dropdown.
 
 ### Comic schema
 
@@ -376,7 +407,7 @@ A normaliser and four helper functions centralise type branching across the code
 function itemTypes(item)      { return Array.isArray(item.type) ? item.type : [item.type]; }
 function isMovie(item)        { const t = itemTypes(item); return t.includes('movie') || t.includes('short-movie'); }
 function isSeries(item)       { const t = itemTypes(item); return t.includes('series') || t.includes('tv-shorts'); }
-function isNovel(item)        { const t = itemTypes(item); return t.includes('novel') || t.includes('ya-novel'); }
+function isNovel(item)        { const t = itemTypes(item); return t.includes('novel') || t.includes('ya-novel') || t.includes('junior-novel'); }
 function isGraphicNovel(item) { const t = itemTypes(item); return t.includes('graphic-novel'); }
 function isGame(item)         { const t = itemTypes(item); return t.includes('console-game') || t.includes('vr-game') || t.includes('browser-game') || t.includes('mobile-game'); }
 function isAudioDrama(item)   { const t = itemTypes(item); return t.includes('audio-drama'); }
@@ -440,7 +471,7 @@ The Read/Listened stat tile is computed from an **equal-weight item count** acro
 readListenedPct = (readNovels + readGraphicNovels + readComics + listenedAudioDramas) / (totalNovels + totalGraphicNovels + totalComics + totalAudioDramas) × 100   (rounded to nearest integer)
 ```
 
-Where `readNovels` is the count of all novels (`novel` + `ya-novel`) marked as read, `readGraphicNovels` is the count of all graphic novels marked as read, `listenedAudioDramas` is the count of all audio dramas marked as listened, and the denominator is the total count of all four. `isNovel()` covers `novel` and `ya-novel`; `isGraphicNovel()` covers `graphic-novel`; `isAudioDrama()` covers `audio-drama`. An item-count approach is used (rather than page- or minute-based) to avoid mixing incompatible units across content types. **Comics are also folded into this percentage** — each comic series counts as one item in both the numerator (when fully read) and the denominator. See the Stats bar section for the exact combined formula.
+Where `readNovels` is the count of all novels (`novel` + `ya-novel` + `junior-novel`) marked as read, `readGraphicNovels` is the count of all graphic novels marked as read, `listenedAudioDramas` is the count of all audio dramas marked as listened, and the denominator is the total count of all four. `isNovel()` covers `novel`, `ya-novel`, and `junior-novel`; `isGraphicNovel()` covers `graphic-novel`; `isAudioDrama()` covers `audio-drama`. An item-count approach is used (rather than page- or minute-based) to avoid mixing incompatible units across content types. **Comics are also folded into this percentage** — each comic series counts as one item in both the numerator (when fully read) and the denominator. See the Stats bar section for the exact combined formula.
 
 ### Comic content
 
@@ -534,7 +565,7 @@ The ten cards are displayed in this order:
 | Pages Remaining  | Total page count of all unread novels + unread graphic novels **plus all unread comic issues**          | default          |
 | Hours Remaining  | `Math.round((totalMinutes - totalWatchedMinutes + totalAudioDramaMins - listenedAudioDramaMins) / 60)` as `Nh` | default   |
 
-Movies count covers both `movie` and `short-movie` types (via `isMovie()`). Episodes count covers both `series` and `tv-shorts` types (via `isSeries()`). The **Books/Comics** count covers both novel types (`novel`, `ya-novel` via `isNovel()`), graphic novels (`graphic-novel` via `isGraphicNovel()`), and every comic series (via `isComic()`) — each comic series counts as one and is complete only when all its issues are read. Games count covers `console-game`, `vr-game`, `browser-game`, and `mobile-game` (via `isGame()`). As additional game types are added in the future, `isGame()` will be expanded to include them, automatically incorporating them into the Played % and Games counts. Watched is video-only; Read/Listened covers novels, graphic novels, comics, and audio dramas; Played is games-only. Comics contribute to the Read/Listened %, the Books/Comics count, and Pages Remaining; they have no dedicated count tile. Graphic novels also have no dedicated tile — they appear in Read/Listened %, Books/Comics, and Pages Remaining, and can be isolated using the Type filter. Audio dramas have no dedicated count tile either — they appear in the Read/Listened percentage and Hours Remaining, and can be isolated using the Type filter.
+Movies count covers both `movie` and `short-movie` types (via `isMovie()`). Episodes count covers both `series` and `tv-shorts` types (via `isSeries()`). The **Books/Comics** count covers all novel types (`novel`, `ya-novel`, `junior-novel` via `isNovel()`), graphic novels (`graphic-novel` via `isGraphicNovel()`), and every comic series (via `isComic()`) — each comic series counts as one and is complete only when all its issues are read. Games count covers `console-game`, `vr-game`, `browser-game`, and `mobile-game` (via `isGame()`). As additional game types are added in the future, `isGame()` will be expanded to include them, automatically incorporating them into the Played % and Games counts. Watched is video-only; Read/Listened covers novels, graphic novels, comics, and audio dramas; Played is games-only. Comics contribute to the Read/Listened %, the Books/Comics count, and Pages Remaining; they have no dedicated count tile. Graphic novels also have no dedicated tile — they appear in Read/Listened %, Books/Comics, and Pages Remaining, and can be isolated using the Type filter. Audio dramas have no dedicated count tile either — they appear in the Read/Listened percentage and Hours Remaining, and can be isolated using the Type filter.
 
 ---
 
@@ -574,6 +605,7 @@ The card root element receives a CSS class matching its status: `.card.watched`,
 | `tv-shorts`           | TV Shorts             |
 | `novel`               | Novel                 |
 | `ya-novel`            | YA Novel              |
+| `junior-novel`        | Junior Novel          |
 | `graphic-novel`       | Graphic Novel         |
 | `console-game`        | Console Game          |
 | `vr-game`             | VR Game               |
@@ -589,7 +621,7 @@ The card root element receives a CSS class matching its status: `.card.watched`,
 | Movie/Short Film      | `formatMinutes(item.duration)` — e.g. `"2h 16m"`                 |
 | Audio Drama           | `formatMinutes(item.duration)` — e.g. `"6h"`                     |
 | Series/TV Shorts      | `N Season(s)` — e.g. `"3 Seasons"`                               |
-| Novel/YA Novel/Graphic Novel | `N pages` — e.g. `"349 pages"`                             |
+| Novel/YA Novel/Junior Novel/Graphic Novel | `N pages` — e.g. `"349 pages"`                   |
 | Console/VR Game       | `formatPlatforms(item.platforms)` — up to 3 platforms joined by `, `; if more than 3, shows `"Platform1, Platform2 +N more"` |
 | Browser Game          | `formatPlatforms(item.platforms)` — same as above; typically just `"Browser"` |
 | Mobile Game           | `formatPlatforms(item.platforms)` — same as above; e.g. `"iOS, Android"` |
@@ -649,7 +681,7 @@ On hover, cards lift `translateY(-2px)`, background shifts from `--bg-card` to `
 
 ### Opening and closing
 
-`openModal(item)` sets `#modalTitle` from `item.title`, fills `#modalBody` with the appropriate modal renderer based on type (`renderComicModal` → `renderGameModal` → `renderAudioDramaModal` → `renderNovelModal` [for both `isNovel` and `isGraphicNovel`] → `renderMovieModal` → `renderSeriesModal`; comics are checked first via `isComic(item)`), adds the `.open` class to `#modalOverlay`, and calls `bindModalEvents`.
+`openModal(item)` sets `#modalTitle` from `item.title`, fills `#modalBody` with the appropriate modal renderer based on type (`renderComicModal` → `renderGameModal` → `renderAudioDramaModal` → `renderNovelModal` [for `isNovel` — covering `novel`, `ya-novel`, and `junior-novel` — and `isGraphicNovel`] → `renderMovieModal` → `renderSeriesModal`; comics are checked first via `isComic(item)`), adds the `.open` class to `#modalOverlay`, and calls `bindModalEvents`.
 
 `closeModal()` removes the `.open` class. The overlay is `display: none` by default and `display: flex` when `.open`. Three triggers call `closeModal`: the `×` button, clicking the backdrop (overlay but not the modal box itself, checked via `e.target === e.currentTarget`), and the `Escape` key.
 
@@ -728,7 +760,7 @@ Because comic state is a **flat issue-keyed map** (`watched[comicId][issueNumber
 
 ## Filtering and sorting
 
-Three independent filter rows, one sort control, and a live search bar sit above the catalog grid. On desktop, each filter row is a set of pill buttons that support **multi-select**: any combination of options within a row can be active simultaneously. The Type filter row is split into three intentional sub-rows: screen content (All, Movies, Short Films, TV Shows, TV Show Shorts) on the first line; text/interactive content (Adult Novels, YA Novels, Graphic Novels, Comics, Console Games, VR Games) on the second; and additional interactive/audio content (Browser Games, Mobile Games, Audio Dramas) on the third. On mobile (≤ 600 px), the pill buttons are hidden and replaced by a `<select>` dropdown for each row, which remains single-select.
+Three independent filter rows, one sort control, and a live search bar sit above the catalog grid. On desktop, each filter row is a set of pill buttons that support **multi-select**: any combination of options within a row can be active simultaneously. The Type filter row is split into three intentional sub-rows: screen content (All, Movies, Short Films, TV Shows, TV Show Shorts) on the first line; book content (Adult Novels, YA Novels, Junior Novels, Graphic Novels, Comics) on the second; and game and audio content (Console Games, VR Games, Browser Games, Mobile Games, Audio Dramas) on the third. On mobile (≤ 600 px), the pill buttons are hidden and replaced by a `<select>` dropdown for each row, which remains single-select.
 
 ### Filter state
 
@@ -737,7 +769,7 @@ Each filter is stored as a `Set` of active values. An **empty set means "all"** 
 | Variable         | Possible values in set                                                           | Desktop (pill buttons) | Mobile (select)  | Filter row label |
 |------------------|----------------------------------------------------------------------------------|------------------------|------------------|------------------|
 | `activeEras`     | `lucas`, `disney`                                                                | `.era-btn`             | `.era-select`    | Era              |
-| `activeTypes`    | `movie`, `short-movie`, `series`, `tv-shorts`, `novel`, `ya-novel`, `graphic-novel`, `comic`, `console-game`, `vr-game`, `browser-game`, `mobile-game`, `audio-drama` | `.type-btn` | `.type-select` | Type |
+| `activeTypes`    | `movie`, `short-movie`, `series`, `tv-shorts`, `novel`, `ya-novel`, `junior-novel`, `graphic-novel`, `comic`, `console-game`, `vr-game`, `browser-game`, `mobile-game`, `audio-drama` | `.type-btn` | `.type-select` | Type |
 | `activeStatuses` | `not-started`, `in-progress`, `finished`                                         | `.status-btn`          | `.status-select` | Progress         |
 | `activeSort`     | `chronological`, `release`                                                       | `.sort-btn`            | —                | Sort (separate)  |
 | `activeSortDir`  | `asc`, `desc`                                                                    | —                      | —                | (arrow on button)|
@@ -838,9 +870,9 @@ The catalog card click handler lives inside `renderCatalog()` and is re-attached
 
 ## CSS design system
 
-All colours and radii are defined as CSS custom properties on `:root`. The app supports two themes — **light** (default) and **dark** — applied by toggling the `light` class on the `<html>` element. `html.light` overrides every colour token; layout, spacing, and radius tokens are shared.
+All colours and radii are defined as CSS custom properties on `:root`. The app supports two themes — **light** (default) and **dark** — applied by toggling the `light` class on the `<html>` element. The application defaults to light mode (`localStorage.getItem(THEME_KEY) || 'light'`). Structurally, `:root` holds the dark mode token values and `html.light` overrides them with light mode values; this is a CSS implementation detail and does not make dark mode the default. Layout, spacing, and radius tokens are shared between themes.
 
-### Dark mode tokens (`:root` defaults)
+### Dark mode tokens
 
 | Variable          | Dark value                     | Usage                                        |
 |-------------------|--------------------------------|----------------------------------------------|
@@ -864,7 +896,7 @@ All colours and radii are defined as CSS custom properties on `:root`. The app s
 | `--radius-sm`     | `8px`                          | Small border radius (buttons, inputs)        |
 | `--shadow`        | `0 4px 24px rgba(0,0,0,0.4)`   | Card hover shadow                            |
 
-### Light mode tokens (`html.light` overrides)
+### Light mode tokens (default)
 
 | Variable          | Light value                      |
 |-------------------|----------------------------------|
@@ -898,7 +930,7 @@ The header is `position: sticky; top: 0; z-index: 100` with `backdrop-filter: bl
 
 Both `.filter-btn` and `.sort-btn` share the same visual treatment: `border-radius: 100px` pill shape, `--bg-card` background, `--border` border, `--text-muted` text. On hover, border brightens and text becomes `--text`. When `.active`, background becomes `--accent-dim`, border becomes `--accent`, text becomes `--accent`, font-weight 600. Filter row labels (`.filter-row-label`) are `min-width: 56px`, uppercase, `--text-dim` colour, aligned center within their row.
 
-The Type filter row uses a nested `.type-btn-rows` flex column containing three `.type-btn-subrow` divs, allowing three intentional rows of buttons to share a single "TYPE" label that vertically centres alongside them.
+The Type filter row uses a nested `.type-btn-rows` flex column containing three `.type-btn-subrow` divs, allowing three intentional rows of buttons to share a single "TYPE" label that vertically centres alongside them. Sub-row 1: All + screen types; sub-row 2: book types (Adult Novels through Comics); sub-row 3: game types + Audio Dramas.
 
 ### Platform tags
 
@@ -1047,9 +1079,9 @@ Append an object to the `"content"` array in `catalog.json` following the approp
 
 Follow the Movie or Series schema. `duration` values are in minutes. `format` is stored but no longer used for filtering — it is kept for data completeness.
 
-### Adding novels (adult or YA)
+### Adding novels (adult, YA, or junior)
 
-Use `"type": "novel"` for adult novels and `"type": "ya-novel"` for young adult novels. The schema is identical for both — the only difference is the `type` field. Both types are treated identically by all stat calculations and state management via `isNovel()`.
+Use `"type": "novel"` for adult novels, `"type": "ya-novel"` for young adult novels, and `"type": "junior-novel"` for junior novels (middle-grade). The schema is identical for all three — the only difference is the `type` field. All three types are treated identically by all stat calculations and state management via `isNovel()`.
 
 `pageCount` is an integer (print edition page count). Provide `audibleUrl` pointing directly to the audiobook product page on Audible (format: `https://www.audible.com/pd/{title}/{ASIN}`), and `amazonUrl` pointing to the product page or a search URL on Amazon.
 
