@@ -65,6 +65,7 @@ Use `"type": "short-movie"` for short films. The schema is identical — `durati
 | `format`      | string | `"live-action"` or `"animated"`. Stored but no longer used for filtering. |
 | `era`         | string | `"lucas"` or `"disney"`. Required for the Era filter.             |
 | `disneyPlusUrl` | string | Optional. Direct URL to the item's page on Disney+ or YouTube. When present, a "Watch on Disney+" (or "Watch on YouTube" for `youtube.com` links) button is shown at the top of the detail modal. |
+| `wookieepedia_override` | string | Optional. If present, used as-is for the **Wookieepedia** button URL instead of the auto-generated URL. Use when the item's title is ambiguous (e.g. *Star Wars: The Clone Wars* is both a film and a TV series). |
 
 ### Series / TV Shorts schema
 
@@ -100,6 +101,7 @@ Use `"type": "tv-shorts"` for short-form series (e.g. Young Jedi Adventures Shor
 | `format`               | string | `"live-action"` or `"animated"`. Stored but no longer used for filtering. |
 | `era`                  | string | `"lucas"` or `"disney"`                          |
 | `disneyPlusUrl`        | string | Optional. Direct link to the item's Disney+ or YouTube page. |
+| `wookieepedia_override` | string | Optional. Overrides the auto-generated Wookieepedia URL. See Movie schema for details. |
 | `seasons[]`            | array  | Ordered list of seasons                          |
 | `seasons[].season`     | number | Season number (1-indexed)                        |
 | `episodes[]`           | array  | Ordered list of episodes                         |
@@ -136,6 +138,7 @@ Use `"type": "tv-shorts"` for short-form series (e.g. Young Jedi Adventures Shor
 | `description`| string | Optional. Spoiler-free summary shown in the detail modal.                   |
 | `audibleUrl` | string | Optional. Direct URL to the audiobook on Audible. Renders a "Listen on Audible" button in the modal. |
 | `amazonUrl`  | string | Optional. URL to the book on Amazon (product page or search). Renders a "Buy on Amazon" button in the modal. |
+| `wookieepedia_override` | string | Optional. Overrides the auto-generated Wookieepedia URL. See Movie schema for details. |
 
 Novels do not have `format`, `duration`, `disneyPlusUrl`, or `seasons`. They are treated as binary items (read or not read) using the same flat state model as movies. Graphic novels share this same model — see the Graphic Novel schema section.
 
@@ -188,6 +191,7 @@ The Junior Novel schema is identical to the Adult Novel and YA Novel schemas —
 | `description`| string | Optional. Spoiler-free summary shown in the detail modal.                   |
 | `audibleUrl` | string | Optional. Direct URL to the audiobook on Audible. Renders a "Listen on Audible" button in the modal. |
 | `amazonUrl`  | string | Optional. URL to the book on Amazon (product page or search). Renders a "Buy on Amazon" button in the modal. |
+| `wookieepedia_override` | string | Optional. Overrides the auto-generated Wookieepedia URL. See Movie schema for details. |
 
 ### Graphic Novel schema
 
@@ -214,6 +218,7 @@ The Junior Novel schema is identical to the Adult Novel and YA Novel schemas —
 | `era`        | string | `"lucas"` or `"disney"`                                                     |
 | `pageCount`  | number | Page count of the print edition. Shown on the card and in the modal.        |
 | `description`| string | Optional. Spoiler-free summary shown in the detail modal.                   |
+| `wookieepedia_override` | string | Optional. Overrides the auto-generated Wookieepedia URL. See Movie schema for details. |
 
 Graphic novels are treated identically to `novel`, `ya-novel`, and `junior-novel` items in every part of the system — the same flat boolean state (`read` or `not read`), the same card meta label (`N pages`), the same detail modal (`renderNovelModal`), and the same stats contributions. They do not support `audibleUrl` or `amazonUrl` (add those fields and the modal will render the buttons — they are simply absent from the current catalog entries). They have no partial state. The type filter exposes them as a dedicated "Graphic Novels" option, positioned between "Junior Novels" and "Comics" in both the pill buttons and the mobile `<select>` dropdown.
 
@@ -264,6 +269,7 @@ Comics are the reading-medium analogue of TV series: a comic **series** groups i
 | `issues[].pageCount`  | number | Page count of the issue. Used for Pages Remaining and the page-weighted progress bar. |
 | `issues[].title`      | string | Optional. Issue title, shown beside the issue number in the modal. Most ongoings leave this blank; miniseries/anthologies/one-shots usually have titled issues. |
 | `issues[].label`      | string | Optional. Overrides the issue-number label shown in the modal (defaults to `#N`). Used for non-numeric designations like `Alpha` or `Annual #1`. |
+| `wookieepedia_override` | string | Optional. Top-level field on the comic item. Overrides the auto-generated Wookieepedia URL. See Movie schema for details. |
 
 Comics do not have `author`, `format`, `duration`, `disneyPlusUrl`, `audibleUrl`, `amazonUrl`, or `seasons`. State is stored as a **flat issue-keyed map** (`watched[comicId][issueNumber] = true`), so issue numbers must be unique within a series even across different arcs. Crossover events are modelled as their own standalone series; the tie-in issues that ran inside an ongoing stay listed under that ongoing's arcs, so no issue is double-counted. Mega-ongoings (e.g. *Star Wars (2015)*, *Doctor Aphra*) are modelled as contiguous arc groups that cover every issue (named story arcs + crossover tie-in arcs + an `Annuals` arc) so page totals stay accurate while preserving the arc-grouped UX.
 
@@ -296,6 +302,7 @@ Comics do not have `author`, `format`, `duration`, `disneyPlusUrl`, `audibleUrl`
 | `platforms`  | string[] | Ordered list of platforms the game is available on (e.g. `["PS5", "Xbox Series X/S", "PC"]`). Shown as pill tags in the detail modal and as a truncated summary on the catalog card. |
 | `description`| string   | Optional. Spoiler-free summary shown in the detail modal.                   |
 | `amazonUrl`  | string   | Optional. URL to the game on Amazon (product page or search). Renders a "Buy on Amazon" button in the modal. |
+| `wookieepedia_override` | string | Optional. Overrides the auto-generated Wookieepedia URL. See Movie schema for details. |
 
 Games do not have `duration`, `pageCount`, `disneyPlusUrl`, `audibleUrl`, or `seasons`. They are treated as binary items (played or not played) using the same flat state model as movies and novels.
 
@@ -364,6 +371,7 @@ The Mobile Game schema is identical to the Console/VR Game schema — the only d
 | `duration`   | number | Total runtime in minutes. Shown on the card and in the modal, and counted toward Hours Remaining. |
 | `description`| string | Optional. Spoiler-free summary shown in the detail modal.                   |
 | `audibleUrl` | string | Optional. Direct URL to the audio drama on Audible. Renders a "▶ Listen on Audible" button in the modal. |
+| `wookieepedia_override` | string | Optional. Overrides the auto-generated Wookieepedia URL. See Movie schema for details. |
 
 Audio dramas are treated as binary items (listened or not listened) using the same flat boolean state model as movies, novels, and games. They do not have `format`, `pageCount`, `platforms`, `disneyPlusUrl`, `amazonUrl`, or `seasons`. Audio dramas are excluded from the Watched percentage and included in the Read/Listened percentage and Hours Remaining calculations. The `audibleUrl` field uses the same `btn-audible` button style as the novel modal.
 
@@ -693,8 +701,9 @@ Layout (`.movie-detail`, vertical flex, `gap: 20px`):
 
 1. **Info row** (`.movie-info-row`): badge, year, runtime — all inline, wrapped.
 2. **Description** (`.modal-description`): rendered only if `item.description` is present.
-3. **Watch button** (`.btn-disney`): rendered only if `item.disneyPlusUrl` is present. Links to the item's Disney+ or YouTube page in a new tab. Label reads "▶ Watch on Disney+" for Disney+ URLs and "▶ Watch on YouTube" for `youtube.com` URLs. Detected via `url.includes('youtube.com')`.
-4. **Watch toggle button** (`.movie-watch-toggle`): full-width button with a circular icon on the left and two lines of text on the right. When watched, the button has class `.active`, the icon shows `✓`, main text is "Watched", sub-text is "Click to mark as not started". When unwatched, icon shows `○`, main text is "Mark as Watched", sub-text is "Click to log this movie". Clicking toggles the state, re-renders the modal body, re-binds events, and calls `renderCatalog()`.
+3. **Wookieepedia button** (`.btn-wookieepedia`): always present. Links directly to `https://starwars.fandom.com/wiki/{title_underscored}`, or to `item.wookieepedia_override` if that field is set.
+4. **Watch button** (`.btn-disney`): rendered only if `item.disneyPlusUrl` is present. Links to the item's Disney+ or YouTube page in a new tab. Label reads "▶ Watch on Disney+" for Disney+ URLs and "▶ Watch on YouTube" for `youtube.com` URLs. Detected via `url.includes('youtube.com')`.
+5. **Watch toggle button** (`.movie-watch-toggle`): full-width button with a circular icon on the left and two lines of text on the right. When watched, the button has class `.active`, the icon shows `✓`, main text is "Watched", sub-text is "Click to mark as not started". When unwatched, icon shows `○`, main text is "Mark as Watched", sub-text is "Click to log this movie". Clicking toggles the state, re-renders the modal body, re-binds events, and calls `renderCatalog()`.
 
 ### Audio drama modal
 
@@ -955,6 +964,7 @@ Fixed two-column grid: `grid-template-columns: repeat(2, 1fr)`, `gap: 16px`. No 
 | `.btn-disney`   | `#0063e5` (blue)             | Watch on Disney+ / YouTube links                |
 | `.btn-audible`  | `#ff6f00` (deep orange)      | Listen on Audible links in novel modal          |
 | `.btn-amazon`   | `#ff9900` (amber), black text| Buy on Amazon links in novel and game modals    |
+| `.btn-wookieepedia` | Transparent, ghost border | **Wookieepedia** button shown in every detail modal. URL is generated by `wookiepediaUrl(item)`: if the item has a `wookieepedia_override` field that value is used directly; otherwise the URL is `https://starwars.fandom.com/wiki/{title}` with spaces replaced by underscores. Use `wookieepedia_override` for disambiguation when two items share the same title (e.g. the *Clone Wars* film and TV series both resolve to the same auto-generated URL). |
 
 ---
 

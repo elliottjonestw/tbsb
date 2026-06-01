@@ -2067,7 +2067,8 @@
       "description": "Anakin Skywalker and his newly assigned Padawan embark on a dangerous mission behind enemy lines to rescue a young hostage, testing the new partnership before the full heat of the Clone Wars.",
       "format": "animated",
       "era": "lucas",
-      "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-24a03eff-e68a-4743-828d-32ba9ffc0c7f"
+      "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-24a03eff-e68a-4743-828d-32ba9ffc0c7f",
+      "wookieepedia_override": "https://starwars.fandom.com/wiki/Star_Wars:_The_Clone_Wars_(film)"
     },
     {
       "id": "the-clone-wars",
@@ -2779,7 +2780,8 @@
       "description": "An animated anthology series expanding the Clone Wars across seven seasons, following Anakin, Obi-Wan, Ahsoka, and countless others through the battles, politics, and moral complexities of a galaxy at war.",
       "format": "animated",
       "era": "lucas",
-      "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-314f14b4-b70a-4ec6-b634-2559f0b1f77e"
+      "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-314f14b4-b70a-4ec6-b634-2559f0b1f77e",
+      "wookieepedia_override": "https://starwars.fandom.com/wiki/Star_Wars:_The_Clone_Wars_(TV_series)"
     },
     {
       "id": "clone-wars-battle-tales",
@@ -3676,7 +3678,8 @@
       "era": "disney",
       "pageCount": 353,
       "description": "One year after Order 66, Ahsoka Tano is living in hiding — until she is drawn into a conflict on a farming moon that forces her to pick up her lightsabers again and choose what she stands for in a galaxy without the Jedi.",
-      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Ahsoka+EK+Johnston"
+      "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Ahsoka+EK+Johnston",
+      "wookieepedia_override": "https://starwars.fandom.com/wiki/Ahsoka_(novel)"
     },
     {
       "id": "catalyst-a-rogue-one-novel",
