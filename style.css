@@ -759,6 +759,7 @@ html.light .modal { box-shadow: 0 24px 80px rgba(0, 0, 0, 0.18); }
   transition: all 0.15s;
   width: 100%;
   color: var(--text);
+  text-align: left;
 }
 
 .movie-watch-toggle:hover { border-color: var(--accent); background: var(--accent-dim); }
