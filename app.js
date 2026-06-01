@@ -109,7 +109,7 @@ function save() {
 function itemTypes(item) { return Array.isArray(item.type) ? item.type : [item.type]; }
 function isMovie(item)  { const t = itemTypes(item); return t.includes('movie') || t.includes('short-movie'); }
 function isSeries(item) { const t = itemTypes(item); return t.includes('series') || t.includes('tv-shorts'); }
-function isNovel(item)  { const t = itemTypes(item); return t.includes('novel') || t.includes('ya-novel') || t.includes('junior-novel'); }
+function isNovel(item)  { const t = itemTypes(item); return t.includes('novel') || t.includes('ya-novel') || t.includes('junior-novel') || t.includes('young-reader'); }
 function isGame(item)       { const t = itemTypes(item); return t.includes('console-game') || t.includes('vr-game') || t.includes('browser-game') || t.includes('mobile-game'); }
 function isAudioDrama(item) { const t = itemTypes(item); return t.includes('audio-drama'); }
 function isComic(item)        { const t = itemTypes(item); return t.includes('comic'); }
@@ -374,11 +374,11 @@ function renderCard(item) {
   } else {
     pct = status === 'watched' ? 100 : 0;
   }
-  const typeLabels = { movie: 'Movie', 'short-movie': 'Short Film', series: 'TV Series', 'tv-shorts': 'TV Shorts', novel: 'Novel', 'ya-novel': 'YA Novel', 'junior-novel': 'Junior Novel', 'graphic-novel': 'Graphic Novel', comic: 'Comic', 'console-game': 'Console Game', 'vr-game': 'VR Game', 'browser-game': 'Browser Game', 'mobile-game': 'Mobile Game', 'audio-drama': 'Audio Drama' };
+  const typeLabels = { movie: 'Movie', 'short-movie': 'Short Film', series: 'TV Series', 'tv-shorts': 'TV Shorts', novel: 'Novel', 'ya-novel': 'YA Novel', 'junior-novel': 'Junior Novel', 'young-reader': 'Young Reader', 'graphic-novel': 'Graphic Novel', comic: 'Comic', 'console-game': 'Console Game', 'vr-game': 'VR Game', 'browser-game': 'Browser Game', 'mobile-game': 'Mobile Game', 'audio-drama': 'Audio Drama' };
   const typeLabel = itemTypes(item).map(t => typeLabels[t] || t).join(' / ');
   let metaLabel;
   if (isNovel(item) || isGraphicNovel(item)) {
-    metaLabel = `${item.pageCount} pages`;
+    metaLabel = item.pageCount ? `${item.pageCount} pages` : '—';
   } else if (isComic(item)) {
     const n = comicIssueCount(item);
     metaLabel = `${n} issue${n > 1 ? 's' : ''}`;
@@ -532,7 +532,7 @@ function renderNovelModal(item) {
         <span class="card-badge ${isRead ? 'badge-watched' : 'badge-unwatched'}">${isRead ? '✓ Read' : 'Not Started'}</span>
         <span style="color:var(--text-muted);font-size:0.85rem">${item.year}</span>
         <span style="color:var(--text-muted);font-size:0.85rem">by ${item.author}</span>
-        <span style="color:var(--text-muted);font-size:0.85rem">${item.pageCount} pages</span>
+        ${item.pageCount ? `<span style="color:var(--text-muted);font-size:0.85rem">${item.pageCount} pages</span>` : ''}
       </div>
       ${item.description ? `<p class="modal-description">${item.description}</p>` : ''}
       <div style="display:flex;gap:10px;flex-wrap:wrap">

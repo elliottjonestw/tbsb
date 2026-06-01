@@ -1041,6 +1041,87 @@
       "disneyPlusUrl": "https://www.youtube.com/playlist?list=PLXsbMnnbPpLXMUzQ0oBMxM0GnUs153EbL"
     },
     {
+      "id": "young-jedi-adventures-jedi-training",
+      "title": "Young Jedi Adventures: Jedi Training",
+      "type": "young-reader",
+      "year": 2023,
+      "era": "disney",
+      "pageCount": 40,
+      "author": "Caitlin Kennedy"
+    },
+    {
+      "id": "young-jedi-adventures-the-young-jedi",
+      "title": "Young Jedi Adventures: The Young Jedi",
+      "type": "young-reader",
+      "year": 2023,
+      "era": "disney",
+      "pageCount": 32,
+      "author": "Lucasfilm Ltd."
+    },
+    {
+      "id": "young-jedi-adventures-yodas-mission",
+      "title": "Young Jedi Adventures: Yoda's Mission",
+      "type": "young-reader",
+      "year": 2023,
+      "era": "disney",
+      "pageCount": 32,
+      "author": "Emeli Juhlin"
+    },
+    {
+      "id": "get-well-nubs-little-golden-book",
+      "title": "Get Well, Nubs! Little Golden Book",
+      "type": "young-reader",
+      "year": 2023,
+      "era": "disney",
+      "pageCount": 24,
+      "author": "Emeli Juhlin"
+    },
+    {
+      "id": "young-jedi-adventures-the-charhound-chase",
+      "title": "Young Jedi Adventures: The Charhound Chase",
+      "type": "young-reader",
+      "year": 2024,
+      "era": "disney",
+      "pageCount": 32,
+      "author": "Lucasfilm Ltd."
+    },
+    {
+      "id": "young-jedi-adventures-the-harvest-feast",
+      "title": "Young Jedi Adventures: The Harvest Feast",
+      "type": "young-reader",
+      "year": 2024,
+      "era": "disney",
+      "pageCount": 32,
+      "author": "Lucasfilm Ltd."
+    },
+    {
+      "id": "young-jedi-adventures-pop-up-peekaboo",
+      "title": "Young Jedi Adventures: Pop-Up Peekaboo!",
+      "type": "young-reader",
+      "year": 2024,
+      "era": "disney",
+      "pageCount": 12,
+      "author": "Frankie Hallam"
+    },
+    {
+      "id": "the-jellyfruit-pursuit-little-golden-book",
+      "title": "The Jellyfruit Pursuit Little Golden Book",
+      "type": "young-reader",
+      "year": 2024,
+      "era": "disney",
+      "pageCount": 24,
+      "author": "Christopher Nicholas"
+    },
+    {
+      "id": "snowy-mountain-rescue-little-golden-book",
+      "title": "Snowy Mountain Rescue Little Golden Book",
+      "type": "young-reader",
+      "year": 2024,
+      "era": "disney",
+      "pageCount": 24,
+      "author": "Lucasfilm Ltd."
+    },
+    {
       "id": "the-high-republic-the-rising-storm",
       "title": "The High Republic: The Rising Storm",
       "type": "novel",
@@ -1149,6 +1230,42 @@
       "pageCount": 272,
       "description": "As the conflict between the Jedi and the forces threatening the High Republic reaches a desperate turning point, a young hero must honor a dangerous promise — one that will test every ounce of their courage and determine the fate of those they love most.",
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+High+Republic+A+Valiant+Vow+Justina+Ireland"
+    },
+    {
+      "id": "the-high-republic-the-great-jedi-rescue",
+      "title": "The High Republic: The Great Jedi Rescue",
+      "type": "young-reader",
+      "year": 2021,
+      "era": "disney",
+      "pageCount": 24,
+      "author": "Cavan Scott"
+    },
+    {
+      "id": "the-high-republic-showdown-at-the-fair",
+      "title": "The High Republic: Showdown at the Fair",
+      "type": "young-reader",
+      "year": 2021,
+      "era": "disney",
+      "pageCount": 23,
+      "author": "George Mann"
+    },
+    {
+      "id": "the-high-republic-the-battle-for-starlight",
+      "title": "The High Republic: The Battle for Starlight",
+      "type": "young-reader",
+      "year": 2022,
+      "era": "disney",
+      "pageCount": 24,
+      "author": "George Mann"
+    },
+    {
+      "id": "the-high-republic-jedi-brave-in-every-way",
+      "title": "The High Republic: Jedi Brave in Every Way",
+      "type": "young-reader",
+      "year": 2023,
+      "era": "disney",
+      "pageCount": 48,
+      "author": "Charles Soule & Rosemary Soule"
     },
     {
       "id": "the-high-republic-shadows-of-starlight",
@@ -1894,6 +2011,34 @@
       "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-e0a9fee4-2959-4077-ad8c-8fab4fd6e4d1"
     },
     {
+      "id": "the-phantom-menace",
+      "title": "The Phantom Menace",
+      "type": "young-reader",
+      "year": 2015,
+      "era": "disney",
+      "pageCount": 24,
+      "author": "Courtney Carbone",
+      "wookieepedia_override": "https://starwars.fandom.com/wiki/The_Phantom_Menace_(Little_Golden_Book)"
+    },
+    {
+      "id": "the-phantom-menace-read-along-storybook-and-cd",
+      "title": "The Phantom Menace Read-Along Storybook and CD",
+      "type": "young-reader",
+      "year": 2017,
+      "era": "disney",
+      "pageCount": 32,
+      "author": "Elizabeth Schaefer"
+    },
+    {
+      "id": "star-wars-epic-adventures-the-phantom-menace",
+      "title": "Star Wars Epic Adventures: The Phantom Menace",
+      "type": "young-reader",
+      "year": 2019,
+      "era": "disney",
+      "pageCount": 96,
+      "author": "S.T. Bende"
+    },
+    {
       "id": "star-wars-journeys-the-phantom-menace",
       "title": "Star Wars Journeys: The Phantom Menace",
       "type": "mobile-game",
@@ -2023,7 +2168,36 @@
       "description": "A young Jedi is assigned to protect a senator whose life is under threat, while his investigation and a separate mission by his mentor reveal a conspiracy that will drag the Republic into war.",
       "format": "live-action",
       "era": "lucas",
-      "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-39cbdf17-1bbe-4de2-b4a4-8e342875c2c6"
+      "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-39cbdf17-1bbe-4de2-b4a4-8e342875c2c6",
+      "wookieepedia_override": "https://starwars.fandom.com/wiki/Attack_of_the_Clones_(Little_Golden_Book)"
+    },
+    {
+      "id": "attack-of-the-clones",
+      "title": "Attack of the Clones",
+      "type": "young-reader",
+      "year": 2015,
+      "era": "disney",
+      "pageCount": 24,
+      "author": "Geof Smith",
+      "wookieepedia_override": "https://starwars.fandom.com/wiki/Attack_of_the_Clones_(Little_Golden_Book)"
+    },
+    {
+      "id": "attack-of-the-clones-read-along-storybook-and-cd",
+      "title": "Attack of the Clones Read-Along Storybook and CD",
+      "type": "young-reader",
+      "year": 2017,
+      "era": "disney",
+      "pageCount": 32,
+      "author": "Randy Thornton"
+    },
+    {
+      "id": "star-wars-epic-adventures-attack-of-the-clones",
+      "title": "Star Wars Epic Adventures: Attack of the Clones",
+      "type": "young-reader",
+      "year": 2019,
+      "era": "disney",
+      "pageCount": 96,
+      "author": "Ivan Cohen"
     },
     {
       "id": "queens-hope",
@@ -3033,6 +3207,43 @@
       "format": "live-action",
       "era": "lucas",
       "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-eb1e2c5f-69bf-4240-a61f-7ffc4e0311b3"
+    },
+    {
+      "id": "revenge-of-the-sith",
+      "title": "Revenge of the Sith",
+      "type": "young-reader",
+      "year": 2015,
+      "era": "disney",
+      "pageCount": 24,
+      "author": "Geof Smith",
+      "wookieepedia_override": "https://starwars.fandom.com/wiki/Revenge_of_the_Sith_(Little_Golden_Book)"
+    },
+    {
+      "id": "revenge-of-the-sith-read-along-storybook-and-cd",
+      "title": "Revenge of the Sith Read-Along Storybook and CD",
+      "type": "young-reader",
+      "year": 2017,
+      "era": "disney",
+      "pageCount": 32,
+      "author": "Lucasfilm Ltd."
+    },
+    {
+      "id": "the-prequel-trilogy-read-along-storybook-and-cd-collection",
+      "title": "The Prequel Trilogy Read-Along Storybook and CD Collection",
+      "type": "young-reader",
+      "year": 2019,
+      "era": "disney",
+      "pageCount": 96,
+      "author": "Elizabeth Schaefer & Randy Thornton"
+    },
+    {
+      "id": "the-skywalker-saga",
+      "title": "The Skywalker Saga",
+      "type": "young-reader",
+      "year": 2019,
+      "era": "disney",
+      "pageCount": 397,
+      "author": "Delilah S. Dawson"
     },
     {
       "id": "darth-vader-dark-lord-of-the-sith",
@@ -4174,6 +4385,42 @@
       ]
     },
     {
+      "id": "solo-a-star-wars-story-read-along-storybook-and-cd",
+      "title": "Solo: A Star Wars Story Read-Along Storybook and CD",
+      "type": "young-reader",
+      "year": 2018,
+      "era": "disney",
+      "pageCount": 32,
+      "author": "Nate Millici"
+    },
+    {
+      "id": "solo-a-star-wars-story-golden-book",
+      "title": "Solo: A Star Wars Story Golden Book",
+      "type": "young-reader",
+      "year": 2018,
+      "era": "disney",
+      "pageCount": 24,
+      "author": "Barbara Winthrop"
+    },
+    {
+      "id": "solo-a-star-wars-story-meet-the-crew",
+      "title": "Solo: A Star Wars Story: Meet the Crew",
+      "type": "young-reader",
+      "year": 2018,
+      "era": "disney",
+      "pageCount": 32,
+      "author": "Ella Patrick"
+    },
+    {
+      "id": "solo-a-star-wars-story-train-heist",
+      "title": "Solo: A Star Wars Story: Train Heist",
+      "type": "young-reader",
+      "year": 2018,
+      "era": "disney",
+      "pageCount": 24,
+      "author": "Ella Patrick"
+    },
+    {
       "id": "star-wars-beyond-victory",
       "title": "Star Wars: Beyond Victory - A Mixed Reality Playset",
       "type": "vr-game",
@@ -4958,6 +5205,132 @@
       "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-08249c74-0178-4861-a1e4-dfc7b168dce5"
     },
     {
+      "id": "chopper-saves-the-day",
+      "title": "Chopper Saves the Day",
+      "type": "young-reader",
+      "year": 2014,
+      "era": "disney",
+      "pageCount": 24,
+      "author": "Elizabeth Schaefer"
+    },
+    {
+      "id": "zeb-to-the-rescue",
+      "title": "Zeb to the Rescue",
+      "type": "young-reader",
+      "year": 2014,
+      "era": "disney",
+      "pageCount": 32,
+      "author": "Michael Siglain"
+    },
+    {
+      "id": "ezra-and-the-pilot",
+      "title": "Ezra and the Pilot",
+      "type": "young-reader",
+      "year": 2014,
+      "era": "disney",
+      "pageCount": 32,
+      "author": "Jennifer Heddle"
+    },
+    {
+      "id": "ezras-wookiee-rescue",
+      "title": "Ezra's Wookiee Rescue",
+      "type": "young-reader",
+      "year": 2014,
+      "era": "disney",
+      "pageCount": 32,
+      "author": "Meredith Rusu"
+    },
+    {
+      "id": "the-inquisitors-trap",
+      "title": "The Inquisitor's Trap",
+      "type": "young-reader",
+      "year": 2014,
+      "era": "disney",
+      "pageCount": 24,
+      "author": "Meredith Rusu"
+    },
+    {
+      "id": "art-attack-storybook",
+      "title": "Art Attack storybook",
+      "type": "young-reader",
+      "year": 2014,
+      "era": "disney",
+      "pageCount": 32,
+      "author": "Brooke Vitale"
+    },
+    {
+      "id": "entanglement-storybook",
+      "title": "Entanglement storybook",
+      "type": "young-reader",
+      "year": 2014,
+      "era": "disney",
+      "pageCount": 32,
+      "author": "Brooke Vitale"
+    },
+    {
+      "id": "property-of-ezra-bridger-storybook",
+      "title": "Property of Ezra Bridger storybook",
+      "type": "young-reader",
+      "year": 2014,
+      "era": "disney",
+      "pageCount": 32,
+      "author": "Brooke Vitale"
+    },
+    {
+      "id": "the-secret-jedi-the-adventures-of-kanan-jarrus-rebel-leader",
+      "title": "The Secret Jedi: The Adventures of Kanan Jarrus: Rebel Leader",
+      "type": "young-reader",
+      "year": 2015,
+      "era": "disney",
+      "pageCount": 32,
+      "author": "Benjamin Harper"
+    },
+    {
+      "id": "sabines-art-attack",
+      "title": "Sabine's Art Attack",
+      "type": "young-reader",
+      "year": 2015,
+      "era": "disney",
+      "pageCount": 32,
+      "author": "Jennifer Heddle"
+    },
+    {
+      "id": "heras-phantom-flight",
+      "title": "Hera's Phantom Flight",
+      "type": "young-reader",
+      "year": 2015,
+      "era": "disney",
+      "pageCount": 32,
+      "author": "Elizabeth Schaefer"
+    },
+    {
+      "id": "tie-fighter-trouble",
+      "title": "TIE Fighter Trouble",
+      "type": "young-reader",
+      "year": 2015,
+      "era": "disney",
+      "pageCount": 32,
+      "author": "Brooke Vitale"
+    },
+    {
+      "id": "always-bet-on-chopper",
+      "title": "Always Bet on Chopper",
+      "type": "young-reader",
+      "year": 2015,
+      "era": "disney",
+      "pageCount": 32,
+      "author": "Meredith Rusu"
+    },
+    {
+      "id": "kanans-jedi-training",
+      "title": "Kanan's Jedi Training",
+      "type": "young-reader",
+      "year": 2015,
+      "era": "disney",
+      "pageCount": 32,
+      "author": "Elizabeth Schaefer"
+    },
+    {
       "id": "spark-of-rebellion-cinestory-comic",
       "title": "Spark of Rebellion: A Star Wars Rebels Cinestory Comic",
       "type": "graphic-novel",
@@ -5321,6 +5694,51 @@
       ]
     },
     {
+      "id": "escape-from-darth-vader",
+      "title": "Escape from Darth Vader",
+      "type": "young-reader",
+      "year": 2014,
+      "era": "disney",
+      "pageCount": 32,
+      "author": "Michael Siglain"
+    },
+    {
+      "id": "bounty-hunt",
+      "title": "Bounty Hunt",
+      "type": "young-reader",
+      "year": 2016,
+      "era": "disney",
+      "pageCount": 18,
+      "author": "Katrina Pallant"
+    },
+    {
+      "id": "star-wars-rogue-one-secret-mission",
+      "title": "Star Wars: Rogue One: Secret Mission",
+      "type": "young-reader",
+      "year": 2016,
+      "era": "disney",
+      "pageCount": 96,
+      "author": "Jason Fry"
+    },
+    {
+      "id": "trapped-in-the-death-star",
+      "title": "Trapped in the Death Star!",
+      "type": "young-reader",
+      "year": 2016,
+      "era": "disney",
+      "pageCount": 32,
+      "author": "Lucasfilm Ltd."
+    },
+    {
+      "id": "trouble-on-tatooine",
+      "title": "Trouble on Tatooine",
+      "type": "young-reader",
+      "year": 2017,
+      "era": "disney",
+      "pageCount": 32,
+      "author": "Lucasfilm Ltd."
+    },
+    {
       "id": "guardians-of-the-whills",
       "title": "Guardians of the Whills",
       "type": "junior-novel",
@@ -5559,6 +5977,178 @@
       "format": "live-action",
       "era": "lucas",
       "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-9a280e53-fcc0-4e17-a02c-b1f40913eb0b"
+    },
+    {
+      "id": "a-new-hope-little-golden-book",
+      "title": "A New Hope",
+      "type": "young-reader",
+      "year": 2015,
+      "era": "disney",
+      "pageCount": 24,
+      "author": "Geof Smith",
+      "wookieepedia_override": "https://starwars.fandom.com/wiki/A_New_Hope_(Little_Golden_Book)"
+    },
+    {
+      "id": "episode-iv-a-new-hope-read-along-storybook-and-cd",
+      "title": "Episode IV: A New Hope Read-Along Storybook and CD",
+      "type": "young-reader",
+      "year": 2015,
+      "era": "disney",
+      "pageCount": 32,
+      "author": "Randy Thornton"
+    },
+    {
+      "id": "the-rise-of-a-hero",
+      "title": "The Rise of a Hero",
+      "type": "young-reader",
+      "year": 2017,
+      "era": "disney",
+      "pageCount": 48,
+      "author": "Louise Simonson"
+    },
+    {
+      "id": "a-new-hope-big-golden-book",
+      "title": "A New Hope Big Golden Book",
+      "type": "young-reader",
+      "year": 2017,
+      "era": "disney",
+      "pageCount": 24,
+      "author": "Geof Smith"
+    },
+    {
+      "id": "the-adventures-of-luke-skywalker-jedi-knight",
+      "title": "The Adventures of Luke Skywalker, Jedi Knight",
+      "type": "young-reader",
+      "year": 2014,
+      "era": "disney",
+      "pageCount": 64,
+      "author": "Tony DiTerlizzi"
+    },
+    {
+      "id": "star-wars-movie-theater-storybook-lightsaber-projector",
+      "title": "Star Wars Movie Theater Storybook & Lightsaber Projector",
+      "type": "young-reader",
+      "year": 2015,
+      "era": "disney",
+      "pageCount": 40,
+      "author": "Benjamin Harper"
+    },
+    {
+      "id": "star-wars-in-pictures-the-original-trilogy",
+      "title": "Star Wars in Pictures: The Original Trilogy",
+      "type": "young-reader",
+      "year": 2015,
+      "era": "disney",
+      "pageCount": 224,
+      "author": "Ryder Windham"
+    },
+    {
+      "id": "the-power-of-the-dark-side",
+      "title": "The Power of the Dark Side",
+      "type": "young-reader",
+      "year": 2015,
+      "era": "disney",
+      "pageCount": 32,
+      "author": "Benjamin Harper"
+    },
+    {
+      "id": "youve-never-heard-of-the-millennium-falcon",
+      "title": "You've Never Heard of the Millennium Falcon?",
+      "type": "young-reader",
+      "year": 2016,
+      "era": "disney",
+      "pageCount": 12,
+      "author": "Erin Rose Wage"
+    },
+    {
+      "id": "the-chewbacca-story",
+      "title": "The Chewbacca Story",
+      "type": "young-reader",
+      "year": 2016,
+      "era": "disney",
+      "pageCount": 32,
+      "author": "Benjamin Harper"
+    },
+    {
+      "id": "death-star-battle",
+      "title": "Death Star Battle",
+      "type": "young-reader",
+      "year": 2016,
+      "era": "disney",
+      "pageCount": 32,
+      "author": "Lucasfilm Ltd."
+    },
+    {
+      "id": "luke-and-the-lost-jedi-temple",
+      "title": "Luke and the Lost Jedi Temple",
+      "type": "young-reader",
+      "year": 2016,
+      "era": "disney",
+      "pageCount": 24,
+      "author": "Jason Fry"
+    },
+    {
+      "id": "a-leader-named-leia",
+      "title": "A Leader Named Leia",
+      "type": "young-reader",
+      "year": 2017,
+      "era": "disney",
+      "pageCount": 32,
+      "author": "Lucasfilm Ltd."
+    },
+    {
+      "id": "han-and-the-rebel-rescue",
+      "title": "Han and the Rebel Rescue",
+      "type": "young-reader",
+      "year": 2017,
+      "era": "disney",
+      "pageCount": 24,
+      "author": "Lucasfilm Ltd."
+    },
+    {
+      "id": "the-original-trilogy-read-along-storybook-and-cd-collection",
+      "title": "The Original Trilogy Read-Along Storybook and CD Collection",
+      "type": "young-reader",
+      "year": 2018,
+      "era": "disney",
+      "pageCount": 96,
+      "author": "Randy Thornton"
+    },
+    {
+      "id": "chewie-and-the-courageous-kid",
+      "title": "Chewie and the Courageous Kid",
+      "type": "young-reader",
+      "year": 2018,
+      "era": "disney",
+      "pageCount": 24,
+      "author": "Lucasfilm Ltd."
+    },
+    {
+      "id": "star-wars-unfolds-the-original-trilogy",
+      "title": "Star Wars Unfolds: The Original Trilogy",
+      "type": "young-reader",
+      "year": 2020,
+      "era": "disney",
+      "pageCount": 24,
+      "author": "Lucasfilm Ltd."
+    },
+    {
+      "id": "star-wars-a-new-hope-die-cut-childrens-book",
+      "title": "Star Wars: A New Hope die-cut children's book",
+      "type": "young-reader",
+      "year": 2020,
+      "era": "disney",
+      "pageCount": 68,
+      "author": "Ryder Windham"
+    },
+    {
+      "id": "a-new-hope-a-collectors-classic-board-book",
+      "title": "A New Hope: A Collector's Classic Board Book",
+      "type": "young-reader",
+      "year": 2025,
+      "era": "disney",
+      "pageCount": 30,
+      "author": "Howard Chaykin"
     },
     {
       "id": "princess-leia-comic",
@@ -6967,6 +7557,70 @@
       "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-0f5c5223-f4f6-46ef-ba8a-69cb0e17d8d3"
     },
     {
+      "id": "use-the-force",
+      "title": "Use the Force!",
+      "type": "young-reader",
+      "year": 2015,
+      "era": "disney",
+      "pageCount": 32,
+      "author": "Michael Siglain"
+    },
+    {
+      "id": "episode-v-the-empire-strikes-back-read-along-storybook-and-cd",
+      "title": "Episode V: The Empire Strikes Back Read-Along Storybook and CD",
+      "type": "young-reader",
+      "year": 2015,
+      "era": "disney",
+      "pageCount": 32,
+      "author": "Randy Thornton"
+    },
+    {
+      "id": "the-empire-strikes-back",
+      "title": "The Empire Strikes Back",
+      "type": "young-reader",
+      "year": 2015,
+      "era": "disney",
+      "pageCount": 24,
+      "author": "Geof Smith",
+      "wookieepedia_override": "https://starwars.fandom.com/wiki/The_Empire_Strikes_Back_(Little_Golden_Book)"
+    },
+    {
+      "id": "at-at-attack",
+      "title": "AT-AT Attack!",
+      "type": "young-reader",
+      "year": 2015,
+      "era": "disney",
+      "pageCount": 32,
+      "author": "Calliope Glass"
+    },
+    {
+      "id": "captured-on-cloud-city",
+      "title": "Captured on Cloud City",
+      "type": "young-reader",
+      "year": 2017,
+      "era": "disney",
+      "pageCount": 32,
+      "author": "Nate Millici"
+    },
+    {
+      "id": "star-wars-the-empire-strikes-back-die-cut-childrens-book",
+      "title": "Star Wars: The Empire Strikes Back die-cut children's book",
+      "type": "young-reader",
+      "year": 2020,
+      "era": "disney",
+      "pageCount": 68,
+      "author": "Ryder Windham"
+    },
+    {
+      "id": "the-empire-strikes-back-a-collectors-classic-board-book",
+      "title": "The Empire Strikes Back: A Collector's Classic Board Book",
+      "type": "young-reader",
+      "year": 2024,
+      "era": "disney",
+      "pageCount": 30,
+      "author": "Al Williamson"
+    },
+    {
       "id": "star-wars-empire-strikes-back-screen-comix",
       "title": "Star Wars: The Empire Strikes Back Screen Comix",
       "type": "graphic-novel",
@@ -8228,6 +8882,88 @@
       "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-4b6e7cda-daa5-4f2d-9b61-35bbe562c69c"
     },
     {
+      "id": "rescue-from-jabbas-palace",
+      "title": "Rescue from Jabba's Palace",
+      "type": "young-reader",
+      "year": 2015,
+      "era": "disney",
+      "pageCount": 29,
+      "author": "Michael Siglain"
+    },
+    {
+      "id": "episode-vi-return-of-the-jedi-read-along-storybook-and-cd",
+      "title": "Episode VI: Return of the Jedi Read-Along Storybook and CD",
+      "type": "young-reader",
+      "year": 2015,
+      "era": "disney",
+      "pageCount": 32,
+      "author": "Randy Thornton"
+    },
+    {
+      "id": "return-of-the-jedi",
+      "title": "Return of the Jedi",
+      "type": "young-reader",
+      "year": 2015,
+      "era": "disney",
+      "pageCount": 24,
+      "author": "Geof Smith",
+      "wookieepedia_override": "https://starwars.fandom.com/wiki/Return_of_the_Jedi_(Little_Golden_Book)"
+    },
+    {
+      "id": "ewoks-join-the-fight",
+      "title": "Ewoks Join the Fight",
+      "type": "young-reader",
+      "year": 2015,
+      "era": "disney",
+      "pageCount": 32,
+      "author": "Michael Siglain"
+    },
+    {
+      "id": "leia-and-the-great-island-escape",
+      "title": "Leia and the Great Island Escape",
+      "type": "young-reader",
+      "year": 2016,
+      "era": "disney",
+      "pageCount": 24,
+      "author": "Jason Fry"
+    },
+    {
+      "id": "return-of-the-jedi-a-collectors-classic-board-book",
+      "title": "Return of the Jedi: A Collector's Classic Board Book",
+      "type": "young-reader",
+      "year": 2020,
+      "era": "disney",
+      "pageCount": 30,
+      "author": "Ryder Windham"
+    },
+    {
+      "id": "star-wars-return-of-the-jedi-die-cut-childrens-book",
+      "title": "Star Wars: Return of the Jedi die-cut children's book",
+      "type": "young-reader",
+      "year": 2023,
+      "era": "disney",
+      "pageCount": 68,
+      "author": "Al Williamson"
+    },
+    {
+      "id": "return-of-the-jedi-the-battle-of-endor",
+      "title": "Return of the Jedi: The Battle of Endor",
+      "type": "young-reader",
+      "year": 2023,
+      "era": "disney",
+      "pageCount": 32,
+      "author": "Ella Patrick"
+    },
+    {
+      "id": "someone-who-loves-you",
+      "title": "Someone Who Loves You",
+      "type": "young-reader",
+      "year": 2024,
+      "era": "disney",
+      "pageCount": 48,
+      "author": "Beth Revis"
+    },
+    {
       "id": "shattered-empire",
       "title": "Star Wars: Shattered Empire",
       "type": "comic",
@@ -9023,6 +9759,51 @@
       "description": "A graphic novel adaptation of The Mandalorian's third season, following Din Djarin and Grogu as they seek redemption through reclaiming the shattered homeworld of Mandalore."
     },
     {
+      "id": "the-mandalorian-this-is-the-way",
+      "title": "The Mandalorian: This is the Way",
+      "type": "young-reader",
+      "year": 2020,
+      "era": "disney",
+      "pageCount": 24,
+      "author": "Christopher Nichols"
+    },
+    {
+      "id": "the-mandalorian-a-clan-of-two",
+      "title": "The Mandalorian: A Clan of Two",
+      "type": "young-reader",
+      "year": 2020,
+      "era": "disney",
+      "pageCount": 24,
+      "author": "Brooke Vitale"
+    },
+    {
+      "id": "the-mandalorian-the-mandalorians-quest",
+      "title": "The Mandalorian: The Mandalorian's Quest",
+      "type": "young-reader",
+      "year": 2022,
+      "era": "disney",
+      "pageCount": 24,
+      "author": "Brooke Vitale"
+    },
+    {
+      "id": "the-mandalorian-the-path-of-the-force",
+      "title": "The Mandalorian: The Path of the Force",
+      "type": "young-reader",
+      "year": 2022,
+      "era": "disney",
+      "pageCount": 32,
+      "author": "Brooke Vitale"
+    },
+    {
+      "id": "star-wars-the-mandalorian-volume-1",
+      "title": "Star Wars: The Mandalorian: Volume 1",
+      "type": "young-reader",
+      "year": 2021,
+      "era": "disney",
+      "pageCount": 68,
+      "author": "Brooke Vitale"
+    },
+    {
       "id": "the-book-of-boba-fett",
       "title": "Star Wars: The Book of Boba Fett",
       "type": "series",
@@ -9371,6 +10152,15 @@
       "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Poe+Dameron+Free+Fall+Alex+Segura"
     },
     {
+      "id": "poe-and-the-missing-ship",
+      "title": "Poe and the Missing Ship",
+      "type": "young-reader",
+      "year": 2017,
+      "era": "disney",
+      "pageCount": 24,
+      "author": "Nate Millici"
+    },
+    {
       "id": "shadow-of-the-sith",
       "title": "Shadow of the Sith",
       "type": "novel",
@@ -9670,6 +10460,15 @@
       "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-01ad3367-1b24-458c-a8fb-a245226ea237"
     },
     {
+      "id": "star-wars-resistance-meet-the-pilots",
+      "title": "Star Wars Resistance: Meet the Pilots",
+      "type": "young-reader",
+      "year": 2019,
+      "era": "disney",
+      "pageCount": 32,
+      "author": "Ella Patrick"
+    },
+    {
       "id": "poe-dameron",
       "title": "Star Wars: Poe Dameron",
       "type": "comic",
@@ -9926,6 +10725,169 @@
       "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-2854a94d-3702-40bd-97a4-12d55a809188"
     },
     {
+      "id": "finn-the-first-order",
+      "title": "Finn & the First Order",
+      "type": "young-reader",
+      "year": 2015,
+      "era": "disney",
+      "pageCount": 32,
+      "author": "Elizabeth Schaefer"
+    },
+    {
+      "id": "bb-8-finds-a-friend",
+      "title": "BB-8 Finds a Friend",
+      "type": "young-reader",
+      "year": 2015,
+      "era": "disney",
+      "pageCount": 32,
+      "author": "Elizabeth Schaefer"
+    },
+    {
+      "id": "finn-rey-escape",
+      "title": "Finn & Rey Escape!",
+      "type": "young-reader",
+      "year": 2015,
+      "era": "disney",
+      "pageCount": 32,
+      "author": "Michael Siglain"
+    },
+    {
+      "id": "han-chewie-return",
+      "title": "Han & Chewie Return!",
+      "type": "young-reader",
+      "year": 2015,
+      "era": "disney",
+      "pageCount": 32,
+      "author": "Michael Siglain"
+    },
+    {
+      "id": "lightsaber-rescue",
+      "title": "Lightsaber Rescue",
+      "type": "young-reader",
+      "year": 2015,
+      "era": "disney",
+      "pageCount": 14,
+      "author": "Lucasfilm Ltd."
+    },
+    {
+      "id": "rolling-with-bb-8",
+      "title": "Rolling with BB-8!",
+      "type": "young-reader",
+      "year": 2016,
+      "era": "disney",
+      "pageCount": 10,
+      "author": "Benjamin Harper"
+    },
+    {
+      "id": "the-force-awakens-storybook",
+      "title": "The Force Awakens storybook",
+      "type": "young-reader",
+      "year": 2016,
+      "era": "disney",
+      "pageCount": 126,
+      "author": "Elizabeth Schaefer"
+    },
+    {
+      "id": "the-force-awakens-golden-book",
+      "title": "The Force Awakens",
+      "type": "young-reader",
+      "year": 2016,
+      "era": "disney",
+      "pageCount": 24,
+      "author": "Christopher Nicholas",
+      "wookieepedia_override": "https://starwars.fandom.com/wiki/The_Force_Awakens_(Little_Golden_Book)"
+    },
+    {
+      "id": "finn-and-poe-team-up",
+      "title": "Finn and Poe Team Up!",
+      "type": "young-reader",
+      "year": 2016,
+      "era": "disney",
+      "pageCount": 32,
+      "author": "Nate Millici"
+    },
+    {
+      "id": "rey-meets-bb-8",
+      "title": "Rey Meets BB-8",
+      "type": "young-reader",
+      "year": 2016,
+      "era": "disney",
+      "pageCount": 30,
+      "author": "Nate Millici"
+    },
+    {
+      "id": "chaos-at-the-castle",
+      "title": "Chaos at the Castle",
+      "type": "young-reader",
+      "year": 2016,
+      "era": "disney",
+      "pageCount": 32,
+      "author": "Nate Millici"
+    },
+    {
+      "id": "the-force-awakens-movie-theater-storybook-bb-8-projector",
+      "title": "The Force Awakens: Movie Theater Storybook & BB-8 Projector",
+      "type": "young-reader",
+      "year": 2016,
+      "era": "disney",
+      "pageCount": 40,
+      "author": "Benjamin Harper"
+    },
+    {
+      "id": "rey-to-the-rescue",
+      "title": "Rey to the Rescue!",
+      "type": "young-reader",
+      "year": 2017,
+      "era": "disney",
+      "pageCount": 48,
+      "author": "Lisa Stock"
+    },
+    {
+      "id": "the-fight-in-the-forest",
+      "title": "The Fight in the Forest",
+      "type": "young-reader",
+      "year": 2017,
+      "era": "disney",
+      "pageCount": 32,
+      "author": "Lucasfilm Ltd."
+    },
+    {
+      "id": "bb-8-on-the-run",
+      "title": "BB-8 on the Run",
+      "type": "young-reader",
+      "year": 2017,
+      "era": "disney",
+      "pageCount": 40,
+      "author": "Drew Daywalt"
+    },
+    {
+      "id": "the-galaxy-needs-you",
+      "title": "The Galaxy Needs You",
+      "type": "young-reader",
+      "year": 2019,
+      "era": "disney",
+      "pageCount": 48,
+      "author": "Caitlin Kennedy"
+    },
+    {
+      "id": "the-force-awakens-read-along-storybook-and-cd",
+      "title": "The Force Awakens Read-Along Storybook and CD",
+      "type": "young-reader",
+      "year": 2021,
+      "era": "disney",
+      "pageCount": 32,
+      "author": "Elizabeth Schaefer"
+    },
+    {
+      "id": "star-wars-the-force-awakens-die-cut-childrens-book",
+      "title": "Star Wars: The Force Awakens die-cut children's book",
+      "type": "young-reader",
+      "year": 2021,
+      "era": "disney",
+      "pageCount": 68,
+      "author": "Elizabeth Schaefer"
+    },
+    {
       "id": "force-awakens-comic",
       "title": "Star Wars: The Force Awakens Adaptation",
       "type": "comic",
@@ -10087,6 +11049,124 @@
       "format": "live-action",
       "era": "disney",
       "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-50c1aff5-3051-4839-9ebf-e332c635e216"
+    },
+    {
+      "id": "the-last-jedi-reys-journey",
+      "title": "The Last Jedi: Rey's Journey",
+      "type": "young-reader",
+      "year": 2017,
+      "era": "disney",
+      "pageCount": 32,
+      "author": "Ella Patrick"
+    },
+    {
+      "id": "the-last-jedi-rose-and-finns-secret-mission",
+      "title": "The Last Jedi: Rose and Finn's Secret Mission",
+      "type": "young-reader",
+      "year": 2017,
+      "era": "disney",
+      "pageCount": 24,
+      "author": "Ella Patrick"
+    },
+    {
+      "id": "chewie-and-the-porgs",
+      "title": "Chewie and the Porgs",
+      "type": "young-reader",
+      "year": 2017,
+      "era": "disney",
+      "pageCount": 48,
+      "author": "Kevin Shinick"
+    },
+    {
+      "id": "the-last-jedi-movie-theater-storybook-movie-projector",
+      "title": "The Last Jedi Movie Theater Storybook & Movie Projector",
+      "type": "young-reader",
+      "year": 2018,
+      "era": "disney",
+      "pageCount": 32,
+      "author": "Michael Kogge"
+    },
+    {
+      "id": "the-last-jedi-storybook",
+      "title": "The Last Jedi storybook",
+      "type": "young-reader",
+      "year": 2018,
+      "era": "disney",
+      "pageCount": 128,
+      "author": "Elizabeth Schaefer"
+    },
+    {
+      "id": "the-last-jedi-read-along-storybook-and-cd",
+      "title": "The Last Jedi Read-Along Storybook and CD",
+      "type": "young-reader",
+      "year": 2018,
+      "era": "disney",
+      "pageCount": 32,
+      "author": "Elizabeth Schaefer"
+    },
+    {
+      "id": "the-last-jedi-little-golden-book",
+      "title": "The Last Jedi",
+      "type": "young-reader",
+      "year": 2018,
+      "era": "disney",
+      "pageCount": 24,
+      "author": "Elizabeth Schaefer",
+      "wookieepedia_override": "https://starwars.fandom.com/wiki/The_Last_Jedi_(Little_Golden_Book)"
+    },
+    {
+      "id": "star-wars-the-last-jedi-die-cut-childrens-book",
+      "title": "Star Wars: The Last Jedi die-cut children's book",
+      "type": "young-reader",
+      "year": 2021,
+      "era": "disney",
+      "pageCount": 68,
+      "author": "Elizabeth Schaefer"
+    },
+    {
+      "id": "galaxy-of-creatures",
+      "title": "Galaxy of Creatures",
+      "type": "young-reader",
+      "year": 2022,
+      "era": "disney",
+      "pageCount": 32,
+      "author": "Kristin Baver"
+    },
+    {
+      "id": "c-3po-does-not-like-sand",
+      "title": "C-3PO Does NOT Like Sand!",
+      "type": "young-reader",
+      "year": 2019,
+      "era": "disney",
+      "pageCount": 64,
+      "author": "Caitlin Kennedy"
+    },
+    {
+      "id": "r2-d2-is-lost",
+      "title": "R2-D2 is LOST!",
+      "type": "young-reader",
+      "year": 2020,
+      "era": "disney",
+      "pageCount": 64,
+      "author": "Caitlin Kennedy"
+    },
+    {
+      "id": "elee-me",
+      "title": "Elee & Me",
+      "type": "young-reader",
+      "year": 2020,
+      "era": "disney",
+      "pageCount": 48,
+      "author": "Amy Ratcliffe"
+    },
+    {
+      "id": "star-wars-galaxys-edge-a-batuu-adventure",
+      "title": "Star Wars: Galaxy's Edge: A Batuu Adventure!",
+      "type": "young-reader",
+      "year": 2025,
+      "era": "disney",
+      "pageCount": 24,
+      "author": "Jeneanne DeBois"
     },
     {
       "id": "last-jedi-comic",
@@ -10404,6 +11484,25 @@
       "format": "live-action",
       "era": "disney",
       "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-43f9c275-e7e8-4ab3-802d-00d06a8ad841"
+    },
+    {
+      "id": "the-rise-of-skywalker-little-golden-book",
+      "title": "The Rise of Skywalker",
+      "type": "young-reader",
+      "year": 2021,
+      "era": "disney",
+      "pageCount": 24,
+      "author": "Ella Patrick",
+      "wookieepedia_override": "https://starwars.fandom.com/wiki/The_Rise_of_Skywalker_(Little_Golden_Book)"
+    },
+    {
+      "id": "star-wars-the-rise-of-skywalker-die-cut-childrens-book",
+      "title": "Star Wars: The Rise of Skywalker die-cut children's book",
+      "type": "young-reader",
+      "year": 2021,
+      "era": "disney",
+      "pageCount": 68,
+      "author": "Ella Patrick"
     },
     {
       "id": "rise-of-skywalker-comic",
