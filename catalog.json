@@ -4190,7 +4190,7 @@
     },
     {
       "id": "obi-wan-kenobi",
-      "title": "Obi-Wan Kenobi",
+      "title": "Star Wars: Obi-Wan Kenobi",
       "type": "series",
       "year": 2022,
       "seasons": [
@@ -4243,6 +4243,7 @@
       "year": 2023,
       "era": "disney",
       "description": "A comic adaptation of the Obi-Wan Kenobi series during the Jedi Master's Tatooine exile.",
+      "wookieepedia_override": "https://starwars.fandom.com/wiki/Star_Wars:_Obi-Wan_Kenobi_(comic_series)",
       "arcs": [
         {
           "arc": "Obi-Wan Kenobi",
@@ -9260,6 +9261,7 @@
       "year": 2024,
       "era": "disney",
       "description": "A comic adaptation of the Ahsoka series and the hunt to stop the return of Grand Admiral Thrawn.",
+      "wookieepedia_override": "https://starwars.fandom.com/wiki/Star_Wars:_Ahsoka_(comic_series)",
       "arcs": [
         {
           "arc": "Ahsoka",
