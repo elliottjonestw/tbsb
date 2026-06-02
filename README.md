@@ -823,7 +823,7 @@ Each filter is stored as a `Set` of active values. An **empty set means "all"** 
 | `activeSort`     | `chronological`, `release`                                                       | `.sort-btn`            | —                | Sort (separate)  |
 | `activeSortDir`  | `asc`, `desc`                                                                    | —                      | —                | (arrow on button)|
 
-All filter sets start empty (= "all") on load; sort defaults to `chronological` / `asc`; `searchQuery` starts as an empty string.
+All filter sets start empty (= "all") on load; sort defaults to `chronological` (displayed as **Default**) / `asc`; `searchQuery` starts as an empty string.
 
 **Desktop button behaviour (multi-select):**
 - Clicking a non-"All" button toggles that value in the set. "All" deactivates automatically when any value is in the set.
@@ -874,10 +874,10 @@ Each filter step is a simple `Array.filter` on the in-memory `catalog` array. A 
 
 ### Sort keys
 
-| Sort            | Key                           | Default (`asc`)        | Reversed (`desc`)       |
-|-----------------|-------------------------------|------------------------|-------------------------|
-| `chronological` | Position in `catalog.json`   | As-is (earliest first) | Reversed array          |
-| `release`       | `item.year`                   | Oldest first           | Newest first            |
+| Sort key (`activeSort`) | Display label | Key                          | Default (`asc`)        | Reversed (`desc`)  |
+|-------------------------|---------------|------------------------------|------------------------|--------------------|
+| `chronological`         | **Default**   | Position in `catalog.json`  | As-is (chronological)  | Reversed array     |
+| `release`               | Release       | `item.year`                  | Oldest first           | Newest first       |
 
 ### Sort direction
 
@@ -1125,7 +1125,7 @@ No build step, no bundler, no transpilation. The browser receives the source fil
 
 Append an object to the `"content"` array in `catalog.json` following the appropriate schema above. The `id` must be unique across all items — it is used as the localStorage key and the poster/cover filename. The app reloads the catalog on every page load, so changes take effect on refresh.
 
-Every new item should include a `timeline` field with the in-universe BBY/ABY date (e.g. `"19 BBY"`, `"4 ABY"`, `"19 BBY–4 ABY"` for ranges). Check the item's Wookieepedia article infobox (`|timeline=` or `|canon_timeline=` field) for the canonical value. Items without a known date can set `"timeline": null`. Insert the item at the correct chronological position in the array — the catalog order controls display order, and `chronological` sort mode uses array position as-is.
+Every new item should include a `timeline` field with the in-universe BBY/ABY date (e.g. `"19 BBY"`, `"4 ABY"`, `"19 BBY–4 ABY"` for ranges). Check the item's Wookieepedia article infobox (`|timeline=` or `|canon_timeline=` field) for the canonical value. Items without a known date can set `"timeline": null`. Insert the item at the correct chronological position in the array — the catalog order controls display order, and the **Default** sort mode (`chronological` internally) uses array position as-is, so the catalog is kept in in-universe chronological order as best as possible.
 
 ### Adding movies or series
 
