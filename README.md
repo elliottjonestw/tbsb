@@ -121,8 +121,6 @@ Use `"type": "tv-shorts"` for short-form series (e.g. Young Jedi Adventures Shor
   "era": "disney",
   "pageCount": 349,
   "description": "Six years before the rise of the First Order, Senator Leia Organa navigates a fractured New Republic Senate while a conspiracy threatens to tear the galaxy apart.",
-  "audibleUrl": "https://www.audible.com/pd/Star-Wars-Bloodline-New-Republic-Audiobook/B01CRMO9BE",
-  "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Bloodline+Claudia+Gray"
 }
 ```
 
@@ -136,9 +134,9 @@ Use `"type": "tv-shorts"` for short-form series (e.g. Young Jedi Adventures Shor
 | `era`        | string | `"lucas"` or `"disney"`                                                     |
 | `pageCount`  | number | Page count of the print edition. Shown on the card and in the modal.        |
 | `description`| string | Optional. Spoiler-free summary shown in the detail modal.                   |
-| `audibleUrl` | string | Optional. Direct URL to the audiobook on Audible. Renders a "Listen on Audible" button in the modal. |
-| `amazonUrl`  | string | Optional. URL to the book on Amazon (product page or search). Renders a "Buy on Amazon" button in the modal. |
 | `wookieepedia_override` | string | Explicit Wookieepedia URL for this item. See Movie schema for details. |
+
+The modal for `novel` and `ya-novel` items automatically generates **Listen on Audible** and **Buy on Amazon** buttons from the item title — no URL fields are stored in `catalog.json`. The generated URLs are `https://www.audible.com/search?keywords={title}` and `https://www.amazon.com/s?k={title}`.
 
 Novels do not have `format`, `duration`, `disneyPlusUrl`, or `seasons`. They are treated as binary items (read or not read) using the same flat state model as movies. Graphic novels share this same model — see the Graphic Novel schema section.
 
@@ -154,8 +152,6 @@ Novels do not have `format`, `duration`, `disneyPlusUrl`, or `seasons`. They are
   "era": "disney",
   "pageCount": 368,
   "description": "Set 150 years before the height of the High Republic era, a Jedi Padawan and a member of the mysterious Path of the Open Hand are thrown together on a world at the edge of the galaxy.",
-  "audibleUrl": "https://www.audible.com/pd/Star-Wars-The-High-Republic-Path-of-Deceit-Audiobook/B0F8FG4C5Z",
-  "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+High+Republic+Path+of+Deceit"
 }
 ```
 
@@ -173,7 +169,6 @@ The YA Novel schema is identical to the Adult Novel schema — the only differen
   "era": "disney",
   "pageCount": 240,
   "description": "When a mission to a newly-discovered planet goes wrong, Jedi Padawan Vernestra Rwoh must lead a group of young survivors through a dangerous jungle.",
-  "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+High+Republic+A+Test+of+Courage"
 }
 ```
 
@@ -189,9 +184,9 @@ The Junior Novel schema is identical to the Adult Novel and YA Novel schemas —
 | `era`        | string | `"lucas"` or `"disney"`                                                     |
 | `pageCount`  | number | Page count of the print edition. Shown on the card and in the modal.        |
 | `description`| string | Optional. Spoiler-free summary shown in the detail modal.                   |
-| `audibleUrl` | string | Optional. Direct URL to the audiobook on Audible. Renders a "Listen on Audible" button in the modal. |
-| `amazonUrl`  | string | Optional. URL to the book on Amazon (product page or search). Renders a "Buy on Amazon" button in the modal. |
 | `wookieepedia_override` | string | Explicit Wookieepedia URL for this item. See Movie schema for details. |
+
+Junior novels display both Audible and Amazon buttons in the modal, generated from the item title.
 
 ### Young Reader schema
 
@@ -221,7 +216,7 @@ Young readers are picture books, Little Golden Books, Read-Along Storybooks, ear
 | `description`| string | Optional. Spoiler-free summary shown in the detail modal.                   |
 | `wookieepedia_override` | string | Explicit Wookieepedia URL for this item. Every item has this field populated. Set it carefully for young readers whose titles collide with a film or other catalog item of the same name (e.g. Little Golden Book editions that share a film's title). See Movie schema for details. |
 
-The Young Reader schema is a subset of the Adult Novel schema — it lacks `audibleUrl` and `amazonUrl` because young readers are not available as audiobooks on Audible and are typically not individually linked on Amazon in the catalog. The `isNovel()` helper covers `young-reader` alongside `novel`, `ya-novel`, and `junior-novel`, so all stat calculations, card rendering, modal routing, and state management treat young readers identically to other book types. The type filter exposes them as a dedicated "Young Readers" option; the app displays the type label **Young Reader** on the card badge.
+The Young Reader schema is a subset of the Adult Novel schema. Young readers display a Buy on Amazon button in the modal, generated from the item title. No Audible button is shown. The `isNovel()` helper covers `young-reader` alongside `novel`, `ya-novel`, and `junior-novel`, so all stat calculations, card rendering, modal routing, and state management treat young readers identically to other book types. The type filter exposes them as a dedicated "Young Readers" option; the app displays the type label **Young Reader** on the card badge.
 
 Young readers are read or unread — there is no partial state. They are excluded from the Watched percentage and Hours Remaining calculations, and contribute only to Read/Listened %, the Books/Comics count, and Pages Remaining stats.
 
@@ -252,7 +247,7 @@ Young readers are read or unread — there is no partial state. They are exclude
 | `description`| string | Optional. Spoiler-free summary shown in the detail modal.                   |
 | `wookieepedia_override` | string | Explicit Wookieepedia URL for this item. See Movie schema for details. |
 
-Graphic novels are treated identically to `novel`, `ya-novel`, and `junior-novel` items in every part of the system — the same flat boolean state (`read` or `not read`), the same card meta label (`N pages`), the same detail modal (`renderNovelModal`), and the same stats contributions. They do not support `audibleUrl` or `amazonUrl` (add those fields and the modal will render the buttons — they are simply absent from the current catalog entries). They have no partial state. The type filter exposes them as a dedicated "Graphic Novels" option, positioned between "Junior Novels" and "Comics" in both the pill buttons and the mobile `<select>` dropdown.
+Graphic novels are treated identically to `novel`, `ya-novel`, and `junior-novel` items in every part of the system — the same flat boolean state (`read` or `not read`), the same card meta label (`N pages`), the same detail modal (`renderNovelModal`), and the same stats contributions. Graphic novels display a Buy on Amazon button in the modal, generated from the item title. No Audible button is shown. They have no partial state. The type filter exposes them as a dedicated "Graphic Novels" option, positioned between "Junior Novels" and "Comics" in both the pill buttons and the mobile `<select>` dropdown.
 
 ### Comic schema
 
@@ -318,7 +313,6 @@ Comics do not have `author`, `format`, `duration`, `disneyPlusUrl`, `audibleUrl`
   "era": "disney",
   "platforms": ["PS4", "PS5", "Xbox One", "Xbox Series X/S", "PC"],
   "description": "Set five years after Order 66, Fallen Order follows Cal Kestis, a young Padawan-turned-fugitive surviving as a scrapper on Bracca. When his Force abilities are exposed, he must outrun the Empire's Inquisitors while attempting to rebuild the Jedi Order.",
-  "amazonUrl": "https://www.amazon.com/s?k=Star+Wars+Jedi+Fallen+Order"
 }
 ```
 
@@ -333,8 +327,9 @@ Comics do not have `author`, `format`, `duration`, `disneyPlusUrl`, `audibleUrl`
 | `era`        | string   | `"lucas"` or `"disney"`                                                     |
 | `platforms`  | string[] | Ordered list of platforms the game is available on (e.g. `["PS5", "Xbox Series X/S", "PC"]`). Shown as pill tags in the detail modal and as a truncated summary on the catalog card. |
 | `description`| string   | Optional. Spoiler-free summary shown in the detail modal.                   |
-| `amazonUrl`  | string   | Optional. URL to the game on Amazon (product page or search). Renders a "Buy on Amazon" button in the modal. |
 | `wookieepedia_override` | string | Explicit Wookieepedia URL for this item. See Movie schema for details. |
+
+The game modal automatically generates a **Buy on Amazon** button from the item title for `console-game` and `vr-game` types — no URL field is stored in `catalog.json`. The generated URL is `https://www.amazon.com/s?k={title}`. Browser games and mobile games do not display this button.
 
 Games do not have `duration`, `pageCount`, `disneyPlusUrl`, `audibleUrl`, or `seasons`. They are treated as binary items (played or not played) using the same flat state model as movies and novels.
 
@@ -356,7 +351,7 @@ The `year` field should reflect the earliest real-world release date across all 
 }
 ```
 
-The Browser Game schema is identical to the Console/VR Game schema — the only difference is `"type": "browser-game"`. Browser games typically have `"platforms": ["Browser"]` and no `amazonUrl` (they were free web games). All stat calculations, card rendering, badge text, and modal behaviour are identical to other game types — all are covered by `isGame()`.
+The Browser Game schema is identical to the Console/VR Game schema — the only difference is `"type": "browser-game"`. Browser games typically have `"platforms": ["Browser"]`. All stat calculations, card rendering, badge text, and modal behaviour are identical to other game types — all are covered by `isGame()`.
 
 ### Mobile Game schema
 
@@ -374,7 +369,7 @@ The Browser Game schema is identical to the Console/VR Game schema — the only 
 }
 ```
 
-The Mobile Game schema is identical to the Console/VR Game schema — the only difference is `"type": "mobile-game"`. Mobile games list their target platforms in the `platforms` array (e.g. `["iOS", "Android"]`). No `amazonUrl` is needed as these were typically free or low-cost app store releases. All stat calculations, card rendering, badge text, and modal behaviour are identical to other game types — all are covered by `isGame()`.
+The Mobile Game schema is identical to the Console/VR Game schema — the only difference is `"type": "mobile-game"`. Mobile games list their target platforms in the `platforms` array (e.g. `["iOS", "Android"]`). All stat calculations, card rendering, badge text, and modal behaviour are identical to other game types — all are covered by `isGame()`.
 
 ### Audio Drama schema
 
@@ -388,7 +383,6 @@ The Mobile Game schema is identical to the Console/VR Game schema — the only d
   "era": "disney",
   "duration": 360,
   "description": "In the aftermath of a devastating Nihil raid, a young woman is captured and forced to survive within the brutal, cutthroat hierarchy of the galaxy's most feared marauders.",
-  "audibleUrl": "https://www.audible.com/pd/B091GSC6K4"
 }
 ```
 
@@ -402,10 +396,11 @@ The Mobile Game schema is identical to the Console/VR Game schema — the only d
 | `era`        | string | `"lucas"` or `"disney"`                                                     |
 | `duration`   | number | Total runtime in minutes. Shown on the card and in the modal, and counted toward Hours Remaining. |
 | `description`| string | Optional. Spoiler-free summary shown in the detail modal.                   |
-| `audibleUrl` | string | Optional. Direct URL to the audio drama on Audible. Renders a "▶ Listen on Audible" button in the modal. |
 | `wookieepedia_override` | string | Explicit Wookieepedia URL for this item. See Movie schema for details. |
 
-Audio dramas are treated as binary items (listened or not listened) using the same flat boolean state model as movies, novels, and games. They do not have `format`, `pageCount`, `platforms`, `disneyPlusUrl`, `amazonUrl`, or `seasons`. Audio dramas are excluded from the Watched percentage and included in the Read/Listened percentage and Hours Remaining calculations. The `audibleUrl` field uses the same `btn-audible` button style as the novel modal.
+The audio drama modal automatically generates a **▶ Listen on Audible** button and a **Buy on Amazon** button from the item title — no URL fields are stored in `catalog.json`. URLs: `https://www.audible.com/search?keywords={title}` and `https://www.amazon.com/s?k={title}`.
+
+Audio dramas are treated as binary items (listened or not listened) using the same flat boolean state model as movies, novels, and games. They do not have `format`, `pageCount`, `platforms`, `disneyPlusUrl`, `amazonUrl`, or `seasons`. Audio dramas are excluded from the Watched percentage and included in the Read/Listened percentage and Hours Remaining calculations.
 
 The catalog order controls default display order. Items appear in the order they appear in `catalog.json`. The user's version is ordered chronologically by in-universe timeline position.
 
@@ -744,7 +739,7 @@ Layout (`.movie-detail`, vertical flex, `gap: 20px`):
 
 1. **Info row** (`.movie-info-row`): badge, year, author (`by Name`), runtime — all inline, wrapped.
 2. **Description** (`.modal-description`): rendered only if `item.description` is present.
-3. **Listen on Audible** (`.btn-audible`): rendered only if `item.audibleUrl` is present. Links to the audio drama on Audible in a new tab. Label reads "▶ Listen on Audible".
+3. **Listen on Audible** (`.btn-audible`) and **Buy on Amazon** (`.btn-amazon`): both always rendered. URLs generated from `item.title` — `https://www.audible.com/search?keywords={title}` and `https://www.amazon.com/s?k={title}`. Audible label reads "▶ Listen on Audible".
 4. **Listen toggle button** (`.movie-watch-toggle`): same structure as the movie and novel toggles. When listened, the button has class `.active`, icon shows `✓`, main text is "Listened", sub-text is "Click to mark as not started". When not started, icon shows `○`, main text is "Mark as Listened", sub-text is "Click to log this audio drama".
 
 The audio drama modal reuses the `.movie-watch-toggle` styling and the `#movieToggle` id. `bindModalEvents` routes audio drama items to re-render via `renderAudioDramaModal`. The `btn-audible` style is shared with the novel modal's Audible button.
@@ -755,9 +750,9 @@ Layout (`.movie-detail`, vertical flex, `gap: 20px`):
 
 1. **Info row** (`.movie-info-row`): badge, year, author (`by Name`), page count — all inline, wrapped.
 2. **Description** (`.modal-description`): rendered only if `item.description` is present.
-3. **Purchase buttons**: rendered only if the respective URL fields are present.
-   - **Listen on Audible** (`.btn-audible`): links to the audiobook on Audible in a new tab.
-   - **Buy on Amazon** (`.btn-amazon`): links to the book on Amazon in a new tab.
+3. **Purchase buttons**: generated from `item.title`.
+   - **Listen on Audible** (`.btn-audible`): shown for `novel`, `ya-novel`, and `junior-novel` types only. URL: `https://www.audible.com/search?keywords={title}`.
+   - **Buy on Amazon** (`.btn-amazon`): shown for all novel types (`novel`, `ya-novel`, `junior-novel`, `young-reader`, `graphic-novel`). URL: `https://www.amazon.com/s?k={title}`.
 4. **Read toggle button** (`.movie-watch-toggle`): same structure as the movie toggle. When read, icon shows `✓`, main text is "Read", sub-text is "Click to mark as not started". When unread, icon shows `○`, main text is "Mark as Read", sub-text is "Click to log this book".
 
 ### Game modal
@@ -767,7 +762,7 @@ Layout (`.movie-detail`, vertical flex, `gap: 20px`):
 1. **Info row** (`.movie-info-row`): badge, year, developer name — all inline, wrapped.
 2. **Platform tags** (`.game-platforms`): one `.platform-tag` pill per platform in `item.platforms`. All platforms are shown here (not truncated as on the card).
 3. **Description** (`.modal-description`): rendered only if `item.description` is present.
-4. **Buy on Amazon** (`.btn-amazon`): rendered only if `item.amazonUrl` is present. Links to the game on Amazon in a new tab.
+4. **Buy on Amazon** (`.btn-amazon`): rendered only for `console-game` and `vr-game` types. URL generated from `item.title` as `https://www.amazon.com/s?k={title}`.
 5. **Play toggle button** (`.movie-watch-toggle`): same structure as the movie and novel toggles. When played, the button has class `.active`, icon shows `✓`, main text is "Played", sub-text is "Click to mark as not played". When not played, icon shows `○`, main text is "Mark as Played", sub-text is "Click to log this game". Clicking toggles the state, re-renders the modal body, re-binds events, and calls `renderCatalog()`.
 
 The game modal reuses the `.movie-watch-toggle` styling and the `#movieToggle` id. `bindModalEvents` routes game items to re-render via `renderGameModal`.
@@ -791,7 +786,7 @@ Every interactive action inside the modal re-renders the full `#modalBody` and r
 Layout:
 
 1. **Description** (`.modal-description`): rendered only if `item.description` is present.
-2. **Header actions** (`.series-header-actions`): "Mark All Read" (`.btn-primary`, id `markAllComicBtn`), "Clear All" (`.btn-outline`, id `unmarkAllComicBtn`), and a right-aligned percentage + page string (`N% · R / T pages`) computed from `readComicPages` / `comicPages`. There is no Disney+/YouTube button for comics.
+2. **Header actions** (`.series-header-actions`): **Buy on Amazon** (`.btn-amazon`, URL generated from title as `https://www.amazon.com/s?k={title}`), **Wookieepedia** (`.btn-wookieepedia`), "Mark All Read" (`.btn-primary`, id `markAllComicBtn`), "Clear All" (`.btn-outline`, id `unmarkAllComicBtn`), and a right-aligned percentage + page string (`N% · R / T pages`) computed from `readComicPages` / `comicPages`.
 3. **Arc blocks** (`.season-block`): one per arc, each containing:
    - **Arc header** (`.season-header`): arc name, `X/Y issues` progress text from `comicArcProgress(item, arc)`, and a "Mark Arc" / "✓ All Read" pill button (`.season-btn`). When every issue in the arc is read, the button gets class `.all-watched`. Clicking toggles all issues in that arc via `setArcRead` — if all are currently read, it clears them; otherwise it marks them all.
    - **Issue list** (`.episode-list`): one `.episode-row` per issue, each showing a circular check indicator (`.ep-check`), the issue number (`#1`, `#2`, …), the issue title or label if present, and the page count. Read rows have class `.watched`. Clicking any row toggles that issue via `setIssueRead`.
@@ -1126,7 +1121,7 @@ Follow the Movie or Series schema. `duration` values are in minutes. `format` is
 
 Use `"type": "novel"` for adult novels, `"type": "ya-novel"` for young adult novels, `"type": "junior-novel"` for junior novels (middle-grade), and `"type": "young-reader"` for picture books and illustrated books aimed at young children — see the dedicated Young Reader section below. The schema is identical for all four — the only difference is the `type` field. All four types are treated identically by all stat calculations and state management via `isNovel()`.
 
-`pageCount` is an integer (print edition page count). Provide `audibleUrl` pointing directly to the audiobook product page on Audible (format: `https://www.audible.com/pd/{title}/{ASIN}`), and `amazonUrl` pointing to the product page or a search URL on Amazon.
+`pageCount` is an integer (print edition page count). No URL fields are needed in `catalog.json` — the modal generates purchase links automatically from the item title. `novel`, `ya-novel`, and `junior-novel` types show both Audible and Amazon buttons; `young-reader` and `graphic-novel` types show only the Amazon button.
 
 Novels are read or unread — there is no partial state. They are excluded from the Watched percentage and Hours Remaining calculations, and contribute only to Read/Listened %, the Books/Comics count, and Pages Remaining stats.
 
@@ -1134,7 +1129,7 @@ Novels are read or unread — there is no partial state. They are excluded from 
 
 Use `"type": "young-reader"` for picture books, Little Golden Books, Read-Along Storybooks, and other illustrated books aimed at young children (ages 2–8). Provide `author` (the credited writer; use `"Lucasfilm Ltd."` for books credited only to the studio), `year`, `era`, and `pageCount`.
 
-Young readers use the same schema as junior novels but without `audibleUrl` or `amazonUrl`. They share the `renderNovelModal` detail modal and the `isNovel()` helper, so they are automatically included in all book-related stat calculations (Read/Listened %, Books/Comics count, Pages Remaining) without any code changes.
+Young readers use the same schema as junior novels. They share the `renderNovelModal` detail modal and the `isNovel()` helper, so they are automatically included in all book-related stat calculations (Read/Listened %, Books/Comics count, Pages Remaining) without any code changes.
 
 Use `wookieepedia_override` for any young reader whose title exactly matches another catalog item — most notably Little Golden Book editions of the main saga films (e.g. `"The Phantom Menace"` collides with the film entry; override to the Wookieepedia disambiguation page for the book).
 
@@ -1156,15 +1151,15 @@ For the `author` field on items that are screencast/screenshot adaptations witho
 
 If a game has both a standard release and a VR mode (e.g. a console game with an optional PSVR mode), set `"type": ["console-game", "vr-game"]`. The item will appear in both type filters.
 
-**Browser games** (`"type": "browser-game"`) are games that were playable in a web browser, typically hosted on Disney.com, StarWars.com, or similar official sites. Use `"platforms": ["Browser"]`. No `amazonUrl` is needed as these were free web games.
+**Browser games** (`"type": "browser-game"`) are games that were playable in a web browser, typically hosted on Disney.com, StarWars.com, or similar official sites. Use `"platforms": ["Browser"]`.
 
-**Mobile games** (`"type": "mobile-game"`) are games released for iOS and/or Android. List all platforms the game was available on (e.g. `["iOS", "Android"]`, `["iOS", "Android", "Windows Phone"]`). No `amazonUrl` is needed as these were typically free or low-cost app store releases.
+**Mobile games** (`"type": "mobile-game"`) are games released for iOS and/or Android. List all platforms the game was available on (e.g. `["iOS", "Android"]`, `["iOS", "Android", "Windows Phone"]`).
 
 All game types are played or not played — there is no partial state. They are excluded from all minute-based calculations (Watched %, Hours Remaining) and contribute only to Played %, Games, and the played/unplayed filter. All types share identical card rendering, badge text, and modal behaviour via `isGame()`.
 
 When additional game types are introduced in the future, add their `type` values to `isGame()` and `typeLabels` — they will automatically be picked up by all stat calculations, filtering, card rendering, and modal routing.
 
-Provide `amazonUrl` pointing to the game's Amazon product page or a search URL. No `audibleUrl` or `disneyPlusUrl` fields are used for games.
+No `amazonUrl`, `audibleUrl`, or `disneyPlusUrl` fields are used for games. Console and VR games automatically get a Buy on Amazon button generated from the item title; browser and mobile games do not.
 
 ### Adding comics
 
@@ -1178,7 +1173,7 @@ The catalog order controls default display position. Insert each comic series at
 
 ### Adding audio dramas
 
-Use `"type": "audio-drama"`. Provide `author` (writer/adapter name), `duration` (total runtime in minutes), and `audibleUrl` pointing directly to the audio drama's product page on Audible.
+Use `"type": "audio-drama"`. Provide `author` (writer/adapter name) and `duration` (total runtime in minutes). No `audibleUrl` is needed — the modal generates a Listen on Audible button automatically from the item title.
 
 Audio dramas are listened or not listened — there is no partial state. They are excluded from the Watched percentage, counted in Read/Listened percentage (equal weight alongside novels), and contribute their full runtime to Hours Remaining. They do not have `format`, `pageCount`, `platforms`, `disneyPlusUrl`, or `amazonUrl`.
 

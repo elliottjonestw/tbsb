@@ -485,7 +485,8 @@ function renderAudioDramaModal(item) {
       </div>
       ${item.description ? `<p class="modal-description">${item.description}</p>` : ''}
       <div style="display:flex;gap:10px;flex-wrap:wrap">
-        ${item.audibleUrl ? `<a class="btn-audible" href="${item.audibleUrl}" target="_blank" rel="noopener noreferrer">▶ Listen on Audible</a>` : ''}
+        <a class="btn-audible" href="https://www.audible.com/search?keywords=${encodeURIComponent(item.title)}" target="_blank" rel="noopener noreferrer">▶ Listen on Audible</a>
+        <a class="btn-amazon" href="https://www.amazon.com/s?k=${encodeURIComponent(item.title)}" target="_blank" rel="noopener noreferrer">Buy on Amazon</a>
         <a class="btn-wookieepedia" href="${wookiepediaUrl(item)}" target="_blank" rel="noopener noreferrer">Wookieepedia</a>
       </div>
       <button class="movie-watch-toggle ${isListened ? 'active' : ''}" id="movieToggle">
@@ -536,8 +537,8 @@ function renderNovelModal(item) {
       </div>
       ${item.description ? `<p class="modal-description">${item.description}</p>` : ''}
       <div style="display:flex;gap:10px;flex-wrap:wrap">
-        ${item.audibleUrl ? `<a class="btn-audible" href="${item.audibleUrl}" target="_blank" rel="noopener noreferrer">Listen on Audible</a>` : ''}
-        ${item.amazonUrl ? `<a class="btn-amazon" href="${item.amazonUrl}" target="_blank" rel="noopener noreferrer">Buy on Amazon</a>` : ''}
+        ${itemTypes(item).some(t => t === 'novel' || t === 'ya-novel' || t === 'junior-novel') ? `<a class="btn-audible" href="https://www.audible.com/search?keywords=${encodeURIComponent(item.title)}" target="_blank" rel="noopener noreferrer">Listen on Audible</a>` : ''}
+        <a class="btn-amazon" href="https://www.amazon.com/s?k=${encodeURIComponent(item.title)}" target="_blank" rel="noopener noreferrer">Buy on Amazon</a>
         <a class="btn-wookieepedia" href="${wookiepediaUrl(item)}" target="_blank" rel="noopener noreferrer">Wookieepedia</a>
       </div>
       <button class="movie-watch-toggle ${isRead ? 'active' : ''}" id="movieToggle">
@@ -566,7 +567,7 @@ function renderGameModal(item) {
       ${platformsHtml}
       ${item.description ? `<p class="modal-description">${item.description}</p>` : ''}
       <div style="display:flex;gap:10px;flex-wrap:wrap">
-        ${item.amazonUrl ? `<a class="btn-amazon" href="${item.amazonUrl}" target="_blank" rel="noopener noreferrer">Buy on Amazon</a>` : ''}
+        ${itemTypes(item).some(t => t === 'console-game' || t === 'vr-game') ? `<a class="btn-amazon" href="https://www.amazon.com/s?k=${encodeURIComponent(item.title)}" target="_blank" rel="noopener noreferrer">Buy on Amazon</a>` : ''}
         <a class="btn-wookieepedia" href="${wookiepediaUrl(item)}" target="_blank" rel="noopener noreferrer">Wookieepedia</a>
       </div>
       <button class="movie-watch-toggle ${isPlayed ? 'active' : ''}" id="movieToggle">
@@ -678,6 +679,7 @@ function renderComicModal(item) {
     </div>
     ${item.description ? `<p class="modal-description">${item.description}</p>` : ''}
     <div class="series-header-actions">
+      <a class="btn-amazon" href="https://www.amazon.com/s?k=${encodeURIComponent(item.title)}" target="_blank" rel="noopener noreferrer">Buy on Amazon</a>
       <a class="btn-wookieepedia" href="${wookiepediaUrl(item)}" target="_blank" rel="noopener noreferrer">Wookieepedia</a>
       <button class="btn-primary" id="markAllComicBtn" data-id="${item.id}">Mark All Read</button>
       <button class="btn-outline" id="unmarkAllComicBtn" data-id="${item.id}">Clear All</button>
