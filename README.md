@@ -66,6 +66,7 @@ Use `"type": "short-movie"` for short films. The schema is identical — `durati
 | `era`         | string | `"lucas"` or `"disney"`. Required for the Era filter.             |
 | `disneyPlusUrl` | string | Optional. Direct URL to the item's page on Disney+ or YouTube. When present, a "Watch on Disney+" (or "Watch on YouTube" for `youtube.com` links) button is shown at the top of the detail modal. |
 | `wookieepedia_override` | string | Explicit Wookieepedia URL for this item. When non-empty, used as-is for the **Wookieepedia** button URL instead of the auto-generated URL. Every item in the catalog has this field populated. Set it to the correct article URL whenever a title is ambiguous (e.g. a novel that shares its name with a character, a Little Golden Book edition whose title matches a film, or a comic series that redirects to the wrong page). |
+| `timeline`              | string | In-universe date string using the Star Wars BBY/ABY calendar (e.g. `"19 BBY"`, `"4 ABY"`, `"19 BBY–18 BBY"`). BBY = Before Battle of Yavin (higher = earlier); ABY = After Battle of Yavin (higher = later). Shown on the catalog card next to the release year and in the detail modal info row. Populated for every item via the Wookieepedia API `\|timeline=` / `\|canon_timeline=` infobox field. |
 
 ### Series / TV Shorts schema
 
@@ -102,6 +103,7 @@ Use `"type": "tv-shorts"` for short-form series (e.g. Young Jedi Adventures Shor
 | `era`                  | string | `"lucas"` or `"disney"`                          |
 | `disneyPlusUrl`        | string | Optional. Direct link to the item's Disney+ or YouTube page. |
 | `wookieepedia_override` | string | Explicit Wookieepedia URL for this item. See Movie schema for details. |
+| `timeline`              | string | In-universe date string (e.g. `"19 BBY"`, `"4 ABY–5 ABY"`). See Movie schema for details. |
 | `seasons[]`            | array  | Ordered list of seasons                          |
 | `seasons[].season`     | number | Season number (1-indexed)                        |
 | `episodes[]`           | array  | Ordered list of episodes                         |
@@ -135,6 +137,7 @@ Use `"type": "tv-shorts"` for short-form series (e.g. Young Jedi Adventures Shor
 | `pageCount`  | number | Page count of the print edition. Shown on the card and in the modal.        |
 | `description`| string | Optional. Spoiler-free summary shown in the detail modal.                   |
 | `wookieepedia_override` | string | Explicit Wookieepedia URL for this item. See Movie schema for details. |
+| `timeline`              | string | In-universe date string (e.g. `"19 BBY"`, `"4 ABY–5 ABY"`). See Movie schema for details. |
 
 The modal for `novel` and `ya-novel` items automatically generates **Listen on Audible** and **Buy on Amazon** buttons from the item title — no URL fields are stored in `catalog.json`. The generated URLs are `https://www.audible.com/search?keywords={title}` and `https://www.amazon.com/s?k={title}`.
 
@@ -185,6 +188,7 @@ The Junior Novel schema is identical to the Adult Novel and YA Novel schemas —
 | `pageCount`  | number | Page count of the print edition. Shown on the card and in the modal.        |
 | `description`| string | Optional. Spoiler-free summary shown in the detail modal.                   |
 | `wookieepedia_override` | string | Explicit Wookieepedia URL for this item. See Movie schema for details. |
+| `timeline`              | string | In-universe date string (e.g. `"19 BBY"`, `"4 ABY–5 ABY"`). See Movie schema for details. |
 
 Junior novels display both Audible and Amazon buttons in the modal, generated from the item title.
 
@@ -215,6 +219,7 @@ Young readers are picture books, Little Golden Books, Read-Along Storybooks, ear
 | `pageCount`  | number | Page count of the print edition. Shown on the card and in the modal.        |
 | `description`| string | Optional. Spoiler-free summary shown in the detail modal.                   |
 | `wookieepedia_override` | string | Explicit Wookieepedia URL for this item. Every item has this field populated. Set it carefully for young readers whose titles collide with a film or other catalog item of the same name (e.g. Little Golden Book editions that share a film's title). See Movie schema for details. |
+| `timeline`              | string | In-universe date string (e.g. `"19 BBY"`, `"4 ABY–5 ABY"`). See Movie schema for details. |
 
 The Young Reader schema is a subset of the Adult Novel schema. Young readers display a Buy on Amazon button in the modal, generated from the item title. No Audible button is shown. The `isNovel()` helper covers `young-reader` alongside `novel`, `ya-novel`, and `junior-novel`, so all stat calculations, card rendering, modal routing, and state management treat young readers identically to other book types. The type filter exposes them as a dedicated "Young Readers" option; the app displays the type label **Young Reader** on the card badge.
 
@@ -246,6 +251,7 @@ Young readers are read or unread — there is no partial state. They are exclude
 | `pageCount`  | number | Page count of the print edition. Shown on the card and in the modal.        |
 | `description`| string | Optional. Spoiler-free summary shown in the detail modal.                   |
 | `wookieepedia_override` | string | Explicit Wookieepedia URL for this item. See Movie schema for details. |
+| `timeline`              | string | In-universe date string (e.g. `"19 BBY"`, `"4 ABY–5 ABY"`). See Movie schema for details. |
 
 Graphic novels are treated identically to `novel`, `ya-novel`, and `junior-novel` items in every part of the system — the same flat boolean state (`read` or `not read`), the same card meta label (`N pages`), the same detail modal (`renderNovelModal`), and the same stats contributions. Graphic novels display a Buy on Amazon button in the modal, generated from the item title. No Audible button is shown. They have no partial state. The type filter exposes them as a dedicated "Graphic Novels" option, positioned between "Junior Novels" and "Comics" in both the pill buttons and the mobile `<select>` dropdown.
 
@@ -297,6 +303,7 @@ Comics are the reading-medium analogue of TV series: a comic **series** groups i
 | `issues[].title`      | string | Optional. Issue title, shown beside the issue number in the modal. Most ongoings leave this blank; miniseries/anthologies/one-shots usually have titled issues. |
 | `issues[].label`      | string | Optional. Overrides the issue-number label shown in the modal (defaults to `#N`). Used for non-numeric designations like `Alpha` or `Annual #1`. |
 | `wookieepedia_override` | string | Explicit Wookieepedia URL for this item. Top-level field on the comic item. See Movie schema for details. |
+| `timeline`              | string | In-universe date string (e.g. `"19 BBY"`, `"4 ABY–5 ABY"`). See Movie schema for details. |
 
 Comics do not have `author`, `format`, `duration`, `disneyPlusUrl`, `audibleUrl`, `amazonUrl`, or `seasons`. State is stored as a **flat issue-keyed map** (`watched[comicId][issueNumber] = true`), so issue numbers must be unique within a series even across different arcs. Crossover events are modelled as their own standalone series; the tie-in issues that ran inside an ongoing stay listed under that ongoing's arcs, so no issue is double-counted. Mega-ongoings (e.g. *Star Wars (2015)*, *Doctor Aphra*) are modelled as contiguous arc groups that cover every issue (named story arcs + crossover tie-in arcs + an `Annuals` arc) so page totals stay accurate while preserving the arc-grouped UX.
 
@@ -328,6 +335,7 @@ Comics do not have `author`, `format`, `duration`, `disneyPlusUrl`, `audibleUrl`
 | `platforms`  | string[] | Ordered list of platforms the game is available on (e.g. `["PS5", "Xbox Series X/S", "PC"]`). Shown as pill tags in the detail modal and as a truncated summary on the catalog card. |
 | `description`| string   | Optional. Spoiler-free summary shown in the detail modal.                   |
 | `wookieepedia_override` | string | Explicit Wookieepedia URL for this item. See Movie schema for details. |
+| `timeline`              | string | In-universe date string (e.g. `"19 BBY"`, `"4 ABY–5 ABY"`). See Movie schema for details. |
 
 The game modal automatically generates a **Buy on Amazon** button from the item title for `console-game` and `vr-game` types — no URL field is stored in `catalog.json`. The generated URL is `https://www.amazon.com/s?k={title}`. Browser games and mobile games do not display this button.
 
@@ -397,6 +405,7 @@ The Mobile Game schema is identical to the Console/VR Game schema — the only d
 | `duration`   | number | Total runtime in minutes. Shown on the card and in the modal, and counted toward Hours Remaining. |
 | `description`| string | Optional. Spoiler-free summary shown in the detail modal.                   |
 | `wookieepedia_override` | string | Explicit Wookieepedia URL for this item. See Movie schema for details. |
+| `timeline`              | string | In-universe date string (e.g. `"19 BBY"`, `"4 ABY–5 ABY"`). See Movie schema for details. |
 
 The audio drama modal automatically generates a **▶ Listen on Audible** button and a **Buy on Amazon** button from the item title — no URL fields are stored in `catalog.json`. URLs: `https://www.audible.com/search?keywords={title}` and `https://www.amazon.com/s?k={title}`.
 
@@ -620,13 +629,15 @@ Each card is a horizontal flex row:
 
 ```
 ┌──────────┬─────────────────────────────┐
-│          │ TYPE · YEAR                 │
+│          │ TYPE · YEAR · TIMELINE      │
 │  poster  │ Title                       │
 │          │ Duration/Pages/Platforms  BADGE │
 │          ├─────────────────────────────┤
 │          │ ══════progress bar══  [btn] │
 └──────────┴─────────────────────────────┘
 ```
+
+The type row renders as `TYPE · YEAR · TIMELINE` — e.g. `NOVEL · 2016 · 28 ABY`. The timeline segment is omitted if `item.timeline` is null.
 
 The card root element receives a CSS class matching its status: `.card.watched`, `.card.partial`, or `.card.unwatched`. This drives border colour, status bar fill colour, and progress bar fill colour entirely via CSS — no inline colour styles.
 
@@ -727,7 +738,7 @@ The modal box is `max-width: 680px`, `max-height: 85vh`, with `overflow-y: auto`
 
 Layout (`.movie-detail`, vertical flex, `gap: 20px`):
 
-1. **Info row** (`.movie-info-row`): badge, year, runtime — all inline, wrapped.
+1. **Info row** (`.movie-info-row`): badge, year, timeline (if present), runtime — all inline, wrapped.
 2. **Description** (`.modal-description`): rendered only if `item.description` is present.
 3. **Wookieepedia button** (`.btn-wookieepedia`): always present. Links directly to `https://starwars.fandom.com/wiki/{title_underscored}`, or to `item.wookieepedia_override` if that field is set.
 4. **Watch button** (`.btn-disney`): rendered only if `item.disneyPlusUrl` is present. Links to the item's Disney+ or YouTube page in a new tab. Label reads "▶ Watch on Disney+" for Disney+ URLs and "▶ Watch on YouTube" for `youtube.com` URLs. Detected via `url.includes('youtube.com')`.
@@ -737,7 +748,7 @@ Layout (`.movie-detail`, vertical flex, `gap: 20px`):
 
 Layout (`.movie-detail`, vertical flex, `gap: 20px`):
 
-1. **Info row** (`.movie-info-row`): badge, year, author (`by Name`), runtime — all inline, wrapped.
+1. **Info row** (`.movie-info-row`): badge, year, timeline (if present), author (`by Name`), runtime — all inline, wrapped.
 2. **Description** (`.modal-description`): rendered only if `item.description` is present.
 3. **Listen on Audible** (`.btn-audible`) and **Buy on Amazon** (`.btn-amazon`): both always rendered. URLs generated from `item.title` — `https://www.audible.com/search?keywords={title}` and `https://www.amazon.com/s?k={title}`. Audible label reads "▶ Listen on Audible".
 4. **Listen toggle button** (`.movie-watch-toggle`): same structure as the movie and novel toggles. When listened, the button has class `.active`, icon shows `✓`, main text is "Listened", sub-text is "Click to mark as not started". When not started, icon shows `○`, main text is "Mark as Listened", sub-text is "Click to log this audio drama".
@@ -748,7 +759,7 @@ The audio drama modal reuses the `.movie-watch-toggle` styling and the `#movieTo
 
 Layout (`.movie-detail`, vertical flex, `gap: 20px`):
 
-1. **Info row** (`.movie-info-row`): badge, year, author (`by Name`), page count — all inline, wrapped.
+1. **Info row** (`.movie-info-row`): badge, year, timeline (if present), author (`by Name`), page count — all inline, wrapped.
 2. **Description** (`.modal-description`): rendered only if `item.description` is present.
 3. **Purchase buttons**: generated from `item.title`.
    - **Listen on Audible** (`.btn-audible`): shown for `novel`, `ya-novel`, and `junior-novel` types only. URL: `https://www.audible.com/search?keywords={title}`.
@@ -759,7 +770,7 @@ Layout (`.movie-detail`, vertical flex, `gap: 20px`):
 
 Layout (`.movie-detail`, vertical flex, `gap: 20px`):
 
-1. **Info row** (`.movie-info-row`): badge, year, developer name — all inline, wrapped.
+1. **Info row** (`.movie-info-row`): badge, year, timeline (if present), developer name — all inline, wrapped.
 2. **Platform tags** (`.game-platforms`): one `.platform-tag` pill per platform in `item.platforms`. All platforms are shown here (not truncated as on the card).
 3. **Description** (`.modal-description`): rendered only if `item.description` is present.
 4. **Buy on Amazon** (`.btn-amazon`): rendered only for `console-game` and `vr-game` types. URL generated from `item.title` as `https://www.amazon.com/s?k={title}`.
@@ -785,9 +796,10 @@ Every interactive action inside the modal re-renders the full `#modalBody` and r
 
 Layout:
 
-1. **Description** (`.modal-description`): rendered only if `item.description` is present.
-2. **Header actions** (`.series-header-actions`): **Buy on Amazon** (`.btn-amazon`, URL generated from title as `https://www.amazon.com/s?k={title}`), **Wookieepedia** (`.btn-wookieepedia`), "Mark All Read" (`.btn-primary`, id `markAllComicBtn`), "Clear All" (`.btn-outline`, id `unmarkAllComicBtn`), and a right-aligned percentage + page string (`N% · R / T pages`) computed from `readComicPages` / `comicPages`.
-3. **Arc blocks** (`.season-block`): one per arc, each containing:
+1. **Info row** (`.movie-info-row`): badge, year, timeline (if present), publisher (if present), issue count — all inline, wrapped.
+2. **Description** (`.modal-description`): rendered only if `item.description` is present.
+3. **Header actions** (`.series-header-actions`): **Buy on Amazon** (`.btn-amazon`, URL generated from title as `https://www.amazon.com/s?k={title}`), **Wookieepedia** (`.btn-wookieepedia`), "Mark All Read" (`.btn-primary`, id `markAllComicBtn`), "Clear All" (`.btn-outline`, id `unmarkAllComicBtn`), and a right-aligned percentage + page string (`N% · R / T pages`) computed from `readComicPages` / `comicPages`.
+4. **Arc blocks** (`.season-block`): one per arc, each containing:
    - **Arc header** (`.season-header`): arc name, `X/Y issues` progress text from `comicArcProgress(item, arc)`, and a "Mark Arc" / "✓ All Read" pill button (`.season-btn`). When every issue in the arc is read, the button gets class `.all-watched`. Clicking toggles all issues in that arc via `setArcRead` — if all are currently read, it clears them; otherwise it marks them all.
    - **Issue list** (`.episode-list`): one `.episode-row` per issue, each showing a circular check indicator (`.ep-check`), the issue number (`#1`, `#2`, …), the issue title or label if present, and the page count. Read rows have class `.watched`. Clicking any row toggles that issue via `setIssueRead`.
 
@@ -1112,6 +1124,8 @@ No build step, no bundler, no transpilation. The browser receives the source fil
 ## Adding content to the catalog
 
 Append an object to the `"content"` array in `catalog.json` following the appropriate schema above. The `id` must be unique across all items — it is used as the localStorage key and the poster/cover filename. The app reloads the catalog on every page load, so changes take effect on refresh.
+
+Every new item should include a `timeline` field with the in-universe BBY/ABY date (e.g. `"19 BBY"`, `"4 ABY"`, `"19 BBY–4 ABY"` for ranges). Check the item's Wookieepedia article infobox (`|timeline=` or `|canon_timeline=` field) for the canonical value. Items without a known date can set `"timeline": null`. Insert the item at the correct chronological position in the array — the catalog order controls display order, and `chronological` sort mode uses array position as-is.
 
 ### Adding movies or series
 

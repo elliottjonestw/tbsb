@@ -411,7 +411,7 @@ function renderCard(item) {
       ${posterHtml}
       <div class="card-content">
         <div class="card-body">
-          <div class="card-type">${typeLabel} · ${item.year}</div>
+          <div class="card-type">${typeLabel} · ${item.year}${item.timeline ? ` · ${item.timeline}` : ''}</div>
           <div class="card-title">${item.title}</div>
           <div class="card-meta">
             <span class="card-duration">${metaLabel}</span>
@@ -480,6 +480,7 @@ function renderAudioDramaModal(item) {
       <div class="movie-info-row">
         <span class="card-badge ${isListened ? 'badge-watched' : 'badge-unwatched'}">${isListened ? '✓ Listened' : 'Not Started'}</span>
         <span style="color:var(--text-muted);font-size:0.85rem">${item.year}</span>
+        ${item.timeline ? `<span style="color:var(--text-muted);font-size:0.85rem">${item.timeline}</span>` : ''}
         <span style="color:var(--text-muted);font-size:0.85rem">by ${item.author}</span>
         <span style="color:var(--text-muted);font-size:0.85rem">${formatMinutes(item.duration)}</span>
       </div>
@@ -507,6 +508,7 @@ function renderMovieModal(item) {
       <div class="movie-info-row">
         <span class="card-badge ${isDone ? 'badge-watched' : 'badge-unwatched'}">${isDone ? '✓ Finished' : 'Not Started'}</span>
         <span style="color:var(--text-muted);font-size:0.85rem">${item.year}</span>
+        ${item.timeline ? `<span style="color:var(--text-muted);font-size:0.85rem">${item.timeline}</span>` : ''}
         <span style="color:var(--text-muted);font-size:0.85rem">${formatMinutes(item.duration)}</span>
       </div>
       ${item.description ? `<p class="modal-description">${item.description}</p>` : ''}
@@ -532,6 +534,7 @@ function renderNovelModal(item) {
       <div class="movie-info-row">
         <span class="card-badge ${isRead ? 'badge-watched' : 'badge-unwatched'}">${isRead ? '✓ Read' : 'Not Started'}</span>
         <span style="color:var(--text-muted);font-size:0.85rem">${item.year}</span>
+        ${item.timeline ? `<span style="color:var(--text-muted);font-size:0.85rem">${item.timeline}</span>` : ''}
         <span style="color:var(--text-muted);font-size:0.85rem">by ${item.author}</span>
         ${item.pageCount ? `<span style="color:var(--text-muted);font-size:0.85rem">${item.pageCount} pages</span>` : ''}
       </div>
@@ -562,6 +565,7 @@ function renderGameModal(item) {
       <div class="movie-info-row">
         <span class="card-badge ${isPlayed ? 'badge-watched' : 'badge-unwatched'}">${isPlayed ? '✓ Played' : 'Not Played'}</span>
         <span style="color:var(--text-muted);font-size:0.85rem">${item.year}</span>
+        ${item.timeline ? `<span style="color:var(--text-muted);font-size:0.85rem">${item.timeline}</span>` : ''}
         <span style="color:var(--text-muted);font-size:0.85rem">${item.developer}</span>
       </div>
       ${platformsHtml}
@@ -674,6 +678,7 @@ function renderComicModal(item) {
     <div class="movie-info-row" style="margin-bottom:16px">
       <span class="card-badge ${badgeClass}">${badgeText}</span>
       <span style="color:var(--text-muted);font-size:0.85rem">${item.year}</span>
+      ${item.timeline ? `<span style="color:var(--text-muted);font-size:0.85rem">${item.timeline}</span>` : ''}
       ${item.publisher ? `<span style="color:var(--text-muted);font-size:0.85rem">${item.publisher}</span>` : ''}
       <span style="color:var(--text-muted);font-size:0.85rem">${totalIssues} issue${totalIssues > 1 ? 's' : ''}</span>
     </div>
