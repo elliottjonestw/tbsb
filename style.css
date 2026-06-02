@@ -1117,7 +1117,7 @@ html.light .episode-row.watched { border-color: rgba(22, 163, 74, 0.3); }
   /* ── Catalog ─────────────────────────────────────────────────────────────── */
   .catalog { grid-template-columns: 1fr; gap: 10px; }
   .card-poster { width: 80px; }
-  .card-title { white-space: normal; }
+  .card-title { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
   /* ── Modal ───────────────────────────────────────────────────────────────── */
   .modal-overlay { padding: 12px; }

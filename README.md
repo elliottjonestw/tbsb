@@ -65,7 +65,7 @@ Use `"type": "short-movie"` for short films. The schema is identical — `durati
 | `format`      | string | `"live-action"` or `"animated"`. Stored but no longer used for filtering. |
 | `era`         | string | `"lucas"` or `"disney"`. Required for the Era filter.             |
 | `disneyPlusUrl` | string | Optional. Direct URL to the item's page on Disney+ or YouTube. When present, a "Watch on Disney+" (or "Watch on YouTube" for `youtube.com` links) button is shown at the top of the detail modal. |
-| `wookieepedia_override` | string | Optional. If present, used as-is for the **Wookieepedia** button URL instead of the auto-generated URL. Use when the item's title is ambiguous (e.g. *Star Wars: The Clone Wars* is both a film and a TV series). |
+| `wookieepedia_override` | string | Explicit Wookieepedia URL for this item. When non-empty, used as-is for the **Wookieepedia** button URL instead of the auto-generated URL. Every item in the catalog has this field populated. Set it to the correct article URL whenever a title is ambiguous (e.g. a novel that shares its name with a character, a Little Golden Book edition whose title matches a film, or a comic series that redirects to the wrong page). |
 
 ### Series / TV Shorts schema
 
@@ -101,7 +101,7 @@ Use `"type": "tv-shorts"` for short-form series (e.g. Young Jedi Adventures Shor
 | `format`               | string | `"live-action"` or `"animated"`. Stored but no longer used for filtering. |
 | `era`                  | string | `"lucas"` or `"disney"`                          |
 | `disneyPlusUrl`        | string | Optional. Direct link to the item's Disney+ or YouTube page. |
-| `wookieepedia_override` | string | Optional. Overrides the auto-generated Wookieepedia URL. See Movie schema for details. |
+| `wookieepedia_override` | string | Explicit Wookieepedia URL for this item. See Movie schema for details. |
 | `seasons[]`            | array  | Ordered list of seasons                          |
 | `seasons[].season`     | number | Season number (1-indexed)                        |
 | `episodes[]`           | array  | Ordered list of episodes                         |
@@ -138,7 +138,7 @@ Use `"type": "tv-shorts"` for short-form series (e.g. Young Jedi Adventures Shor
 | `description`| string | Optional. Spoiler-free summary shown in the detail modal.                   |
 | `audibleUrl` | string | Optional. Direct URL to the audiobook on Audible. Renders a "Listen on Audible" button in the modal. |
 | `amazonUrl`  | string | Optional. URL to the book on Amazon (product page or search). Renders a "Buy on Amazon" button in the modal. |
-| `wookieepedia_override` | string | Optional. Overrides the auto-generated Wookieepedia URL. See Movie schema for details. |
+| `wookieepedia_override` | string | Explicit Wookieepedia URL for this item. See Movie schema for details. |
 
 Novels do not have `format`, `duration`, `disneyPlusUrl`, or `seasons`. They are treated as binary items (read or not read) using the same flat state model as movies. Graphic novels share this same model — see the Graphic Novel schema section.
 
@@ -191,7 +191,7 @@ The Junior Novel schema is identical to the Adult Novel and YA Novel schemas —
 | `description`| string | Optional. Spoiler-free summary shown in the detail modal.                   |
 | `audibleUrl` | string | Optional. Direct URL to the audiobook on Audible. Renders a "Listen on Audible" button in the modal. |
 | `amazonUrl`  | string | Optional. URL to the book on Amazon (product page or search). Renders a "Buy on Amazon" button in the modal. |
-| `wookieepedia_override` | string | Optional. Overrides the auto-generated Wookieepedia URL. See Movie schema for details. |
+| `wookieepedia_override` | string | Explicit Wookieepedia URL for this item. See Movie schema for details. |
 
 ### Young Reader schema
 
@@ -219,7 +219,7 @@ Young readers are picture books, Little Golden Books, Read-Along Storybooks, ear
 | `era`        | string | `"lucas"` or `"disney"`                                                     |
 | `pageCount`  | number | Page count of the print edition. Shown on the card and in the modal.        |
 | `description`| string | Optional. Spoiler-free summary shown in the detail modal.                   |
-| `wookieepedia_override` | string | Optional. Overrides the auto-generated Wookieepedia URL. Required for any item whose title collides with a movie, TV series, or other catalog item of the same name (e.g. Little Golden Book editions that share a film's title). |
+| `wookieepedia_override` | string | Explicit Wookieepedia URL for this item. Every item has this field populated. Set it carefully for young readers whose titles collide with a film or other catalog item of the same name (e.g. Little Golden Book editions that share a film's title). See Movie schema for details. |
 
 The Young Reader schema is a subset of the Adult Novel schema — it lacks `audibleUrl` and `amazonUrl` because young readers are not available as audiobooks on Audible and are typically not individually linked on Amazon in the catalog. The `isNovel()` helper covers `young-reader` alongside `novel`, `ya-novel`, and `junior-novel`, so all stat calculations, card rendering, modal routing, and state management treat young readers identically to other book types. The type filter exposes them as a dedicated "Young Readers" option; the app displays the type label **Young Reader** on the card badge.
 
@@ -250,7 +250,7 @@ Young readers are read or unread — there is no partial state. They are exclude
 | `era`        | string | `"lucas"` or `"disney"`                                                     |
 | `pageCount`  | number | Page count of the print edition. Shown on the card and in the modal.        |
 | `description`| string | Optional. Spoiler-free summary shown in the detail modal.                   |
-| `wookieepedia_override` | string | Optional. Overrides the auto-generated Wookieepedia URL. See Movie schema for details. |
+| `wookieepedia_override` | string | Explicit Wookieepedia URL for this item. See Movie schema for details. |
 
 Graphic novels are treated identically to `novel`, `ya-novel`, and `junior-novel` items in every part of the system — the same flat boolean state (`read` or `not read`), the same card meta label (`N pages`), the same detail modal (`renderNovelModal`), and the same stats contributions. They do not support `audibleUrl` or `amazonUrl` (add those fields and the modal will render the buttons — they are simply absent from the current catalog entries). They have no partial state. The type filter exposes them as a dedicated "Graphic Novels" option, positioned between "Junior Novels" and "Comics" in both the pill buttons and the mobile `<select>` dropdown.
 
@@ -301,7 +301,7 @@ Comics are the reading-medium analogue of TV series: a comic **series** groups i
 | `issues[].pageCount`  | number | Page count of the issue. Used for Pages Remaining and the page-weighted progress bar. |
 | `issues[].title`      | string | Optional. Issue title, shown beside the issue number in the modal. Most ongoings leave this blank; miniseries/anthologies/one-shots usually have titled issues. |
 | `issues[].label`      | string | Optional. Overrides the issue-number label shown in the modal (defaults to `#N`). Used for non-numeric designations like `Alpha` or `Annual #1`. |
-| `wookieepedia_override` | string | Optional. Top-level field on the comic item. Overrides the auto-generated Wookieepedia URL. See Movie schema for details. |
+| `wookieepedia_override` | string | Explicit Wookieepedia URL for this item. Top-level field on the comic item. See Movie schema for details. |
 
 Comics do not have `author`, `format`, `duration`, `disneyPlusUrl`, `audibleUrl`, `amazonUrl`, or `seasons`. State is stored as a **flat issue-keyed map** (`watched[comicId][issueNumber] = true`), so issue numbers must be unique within a series even across different arcs. Crossover events are modelled as their own standalone series; the tie-in issues that ran inside an ongoing stay listed under that ongoing's arcs, so no issue is double-counted. Mega-ongoings (e.g. *Star Wars (2015)*, *Doctor Aphra*) are modelled as contiguous arc groups that cover every issue (named story arcs + crossover tie-in arcs + an `Annuals` arc) so page totals stay accurate while preserving the arc-grouped UX.
 
@@ -334,7 +334,7 @@ Comics do not have `author`, `format`, `duration`, `disneyPlusUrl`, `audibleUrl`
 | `platforms`  | string[] | Ordered list of platforms the game is available on (e.g. `["PS5", "Xbox Series X/S", "PC"]`). Shown as pill tags in the detail modal and as a truncated summary on the catalog card. |
 | `description`| string   | Optional. Spoiler-free summary shown in the detail modal.                   |
 | `amazonUrl`  | string   | Optional. URL to the game on Amazon (product page or search). Renders a "Buy on Amazon" button in the modal. |
-| `wookieepedia_override` | string | Optional. Overrides the auto-generated Wookieepedia URL. See Movie schema for details. |
+| `wookieepedia_override` | string | Explicit Wookieepedia URL for this item. See Movie schema for details. |
 
 Games do not have `duration`, `pageCount`, `disneyPlusUrl`, `audibleUrl`, or `seasons`. They are treated as binary items (played or not played) using the same flat state model as movies and novels.
 
@@ -403,7 +403,7 @@ The Mobile Game schema is identical to the Console/VR Game schema — the only d
 | `duration`   | number | Total runtime in minutes. Shown on the card and in the modal, and counted toward Hours Remaining. |
 | `description`| string | Optional. Spoiler-free summary shown in the detail modal.                   |
 | `audibleUrl` | string | Optional. Direct URL to the audio drama on Audible. Renders a "▶ Listen on Audible" button in the modal. |
-| `wookieepedia_override` | string | Optional. Overrides the auto-generated Wookieepedia URL. See Movie schema for details. |
+| `wookieepedia_override` | string | Explicit Wookieepedia URL for this item. See Movie schema for details. |
 
 Audio dramas are treated as binary items (listened or not listened) using the same flat boolean state model as movies, novels, and games. They do not have `format`, `pageCount`, `platforms`, `disneyPlusUrl`, `amazonUrl`, or `seasons`. Audio dramas are excluded from the Watched percentage and included in the Read/Listened percentage and Hours Remaining calculations. The `audibleUrl` field uses the same `btn-audible` button style as the novel modal.
 
@@ -997,7 +997,7 @@ Fixed two-column grid: `grid-template-columns: repeat(2, 1fr)`, `gap: 16px`. No 
 | `.btn-disney`   | `#0063e5` (blue)             | Watch on Disney+ / YouTube links                |
 | `.btn-audible`  | `#ff6f00` (deep orange)      | Listen on Audible links in novel modal          |
 | `.btn-amazon`   | `#ff9900` (amber), black text| Buy on Amazon links in novel and game modals    |
-| `.btn-wookieepedia` | Transparent, ghost border | **Wookieepedia** button shown in every detail modal. URL is generated by `wookiepediaUrl(item)`: if the item has a `wookieepedia_override` field that value is used directly; otherwise the URL is `https://starwars.fandom.com/wiki/{title}` with spaces replaced by underscores. Use `wookieepedia_override` for disambiguation when two items share the same title (e.g. the *Clone Wars* film and TV series both resolve to the same auto-generated URL). |
+| `.btn-wookieepedia` | Transparent, ghost border | **Wookieepedia** button shown in every detail modal. URL is generated by `wookiepediaUrl(item)`: if `wookieepedia_override` is non-empty that value is used directly; otherwise the URL is `https://starwars.fandom.com/wiki/{title}` with spaces replaced by underscores. Every catalog item now has `wookieepedia_override` explicitly populated, so the fallback auto-generation is rarely exercised. Set the override carefully for items whose title is shared with a character, film, or other entry (e.g. the *Clone Wars* film and TV series, or Little Golden Books that share a film's title). |
 
 ---
 
@@ -1084,7 +1084,7 @@ A single `@media (max-width: 600px)` block overrides desktop styles. The desktop
 **Catalog grid**
 - `.catalog` collapses to single column (`grid-template-columns: 1fr`), gap reduces to `10px`.
 - `.card-poster` narrows to `80px`.
-- `.card-title` switches to `white-space: normal`, allowing the title to wrap.
+- `.card-title` keeps `white-space: nowrap; overflow: hidden; text-overflow: ellipsis` — titles truncate with an ellipsis on mobile exactly as they do on desktop.
 
 **Modals**
 - `.modal-overlay` padding reduces to `12px`.
