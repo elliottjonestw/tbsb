@@ -445,7 +445,7 @@ Movies, short-movies, novels, and all game types are all stored as a flat boolea
 
 ### Type helpers
 
-A normaliser and four helper functions centralise type branching across the codebase:
+A normaliser and seven helper functions centralise type branching across the codebase:
 
 ```js
 function itemTypes(item)      { return Array.isArray(item.type) ? item.type : [item.type]; }
@@ -728,7 +728,7 @@ On hover, cards lift `translateY(-2px)`, background shifts from `--bg-card` to `
 
 ### Opening and closing
 
-`openModal(item)` sets `#modalTitle` from `item.title`, fills `#modalBody` with the appropriate modal renderer based on type (`renderComicModal` → `renderGameModal` → `renderAudioDramaModal` → `renderNovelModal` [for `isNovel` — covering `novel`, `ya-novel`, `junior-novel`, and `young-reader` — and `isGraphicNovel`] → `renderMovieModal` → `renderSeriesModal`; comics are checked first via `isComic(item)`), adds the `.open` class to `#modalOverlay`, and calls `bindModalEvents`.
+`openModal(item)` sets `#modalTitle` from `item.title`, fills `#modalBody` with the appropriate modal renderer based on type (`renderGameModal` → `renderAudioDramaModal` → `renderNovelModal` [for `isNovel` — covering `novel`, `ya-novel`, `junior-novel`, and `young-reader`] → `renderNovelModal` [for `isGraphicNovel`] → `renderComicModal` → `renderMovieModal` → `renderSeriesModal`; games are checked first, comics are checked after novels and graphic novels), adds the `.open` class to `#modalOverlay`, and calls `bindModalEvents`.
 
 `closeModal()` removes the `.open` class. The overlay is `display: none` by default and `display: flex` when `.open`. Three triggers call `closeModal`: the `×` button, clicking the backdrop (overlay but not the modal box itself, checked via `e.target === e.currentTarget`), and the `Escape` key.
 
@@ -740,9 +740,8 @@ Layout (`.movie-detail`, vertical flex, `gap: 20px`):
 
 1. **Info row** (`.movie-info-row`): badge, year, timeline (if present), runtime — all inline, wrapped.
 2. **Description** (`.modal-description`): rendered only if `item.description` is present.
-3. **Wookieepedia button** (`.btn-wookieepedia`): always present. Links directly to `https://starwars.fandom.com/wiki/{title_underscored}`, or to `item.wookieepedia_override` if that field is set.
-4. **Watch button** (`.btn-disney`): rendered only if `item.disneyPlusUrl` is present. Links to the item's Disney+ or YouTube page in a new tab. Label reads "▶ Watch on Disney+" for Disney+ URLs and "▶ Watch on YouTube" for `youtube.com` URLs. Detected via `url.includes('youtube.com')`.
-5. **Watch toggle button** (`.movie-watch-toggle`): full-width button with a circular icon on the left and two lines of text on the right. When watched, the button has class `.active`, the icon shows `✓`, main text is "Watched", sub-text is "Click to mark as not started". When unwatched, icon shows `○`, main text is "Mark as Watched", sub-text is "Click to log this movie". Clicking toggles the state, re-renders the modal body, re-binds events, and calls `renderCatalog()`.
+3. **Action buttons**: rendered in a flex row — **Watch button** (`.btn-disney`, rendered only if `item.disneyPlusUrl` is present) followed by **Wookieepedia button** (`.btn-wookieepedia`, always present). The Watch button links to the item's Disney+ or YouTube page in a new tab; label reads "▶ Watch on Disney+" for Disney+ URLs and "▶ Watch on YouTube" for `youtube.com` URLs, detected via `url.includes('youtube.com')`. The Wookieepedia button links to `https://starwars.fandom.com/wiki/{title_underscored}`, or to `item.wookieepedia_override` if set.
+4. **Watch toggle button** (`.movie-watch-toggle`): full-width button with a circular icon on the left and two lines of text on the right. When watched, the button has class `.active`, the icon shows `✓`, main text is "Watched", sub-text is "Click to mark as not started". When unwatched, icon shows `○`, main text is "Mark as Watched", sub-text is "Click to log this movie". Clicking toggles the state, re-renders the modal body, re-binds events, and calls `renderCatalog()`.
 
 ### Audio drama modal
 
@@ -750,7 +749,7 @@ Layout (`.movie-detail`, vertical flex, `gap: 20px`):
 
 1. **Info row** (`.movie-info-row`): badge, year, timeline (if present), author (`by Name`), runtime — all inline, wrapped.
 2. **Description** (`.modal-description`): rendered only if `item.description` is present.
-3. **Listen on Audible** (`.btn-audible`) and **Buy on Amazon** (`.btn-amazon`): both always rendered. URLs generated from `item.title` — `https://www.audible.com/search?keywords={title}` and `https://www.amazon.com/s?k={title}`. Audible label reads "▶ Listen on Audible".
+3. **Listen on Audible** (`.btn-audible`), **Buy on Amazon** (`.btn-amazon`), and **Wookieepedia** (`.btn-wookieepedia`): all three always rendered in a flex row. URLs generated from `item.title` — `https://www.audible.com/search?keywords={title}` and `https://www.amazon.com/s?k={title}`. Audible label reads "▶ Listen on Audible".
 4. **Listen toggle button** (`.movie-watch-toggle`): same structure as the movie and novel toggles. When listened, the button has class `.active`, icon shows `✓`, main text is "Listened", sub-text is "Click to mark as not started". When not started, icon shows `○`, main text is "Mark as Listened", sub-text is "Click to log this audio drama".
 
 The audio drama modal reuses the `.movie-watch-toggle` styling and the `#movieToggle` id. `bindModalEvents` routes audio drama items to re-render via `renderAudioDramaModal`. The `btn-audible` style is shared with the novel modal's Audible button.
@@ -761,9 +760,10 @@ Layout (`.movie-detail`, vertical flex, `gap: 20px`):
 
 1. **Info row** (`.movie-info-row`): badge, year, timeline (if present), author (`by Name`), page count — all inline, wrapped.
 2. **Description** (`.modal-description`): rendered only if `item.description` is present.
-3. **Purchase buttons**: generated from `item.title`.
-   - **Listen on Audible** (`.btn-audible`): shown for `novel`, `ya-novel`, and `junior-novel` types only. URL: `https://www.audible.com/search?keywords={title}`.
+3. **Purchase/reference buttons**: rendered in a flex row, generated from `item.title`.
+   - **Listen on Audible** (`.btn-audible`): shown for `novel`, `ya-novel`, and `junior-novel` types only. Label: "Listen on Audible" (no ▶ prefix). URL: `https://www.audible.com/search?keywords={title}`.
    - **Buy on Amazon** (`.btn-amazon`): shown for all novel types (`novel`, `ya-novel`, `junior-novel`, `young-reader`, `graphic-novel`). URL: `https://www.amazon.com/s?k={title}`.
+   - **Wookieepedia** (`.btn-wookieepedia`): always present for all novel and graphic novel types.
 4. **Read toggle button** (`.movie-watch-toggle`): same structure as the movie toggle. When read, icon shows `✓`, main text is "Read", sub-text is "Click to mark as not started". When unread, icon shows `○`, main text is "Mark as Read", sub-text is "Click to log this book".
 
 ### Game modal
@@ -773,7 +773,7 @@ Layout (`.movie-detail`, vertical flex, `gap: 20px`):
 1. **Info row** (`.movie-info-row`): badge, year, timeline (if present), developer name — all inline, wrapped.
 2. **Platform tags** (`.game-platforms`): one `.platform-tag` pill per platform in `item.platforms`. All platforms are shown here (not truncated as on the card).
 3. **Description** (`.modal-description`): rendered only if `item.description` is present.
-4. **Buy on Amazon** (`.btn-amazon`): rendered only for `console-game` and `vr-game` types. URL generated from `item.title` as `https://www.amazon.com/s?k={title}`.
+4. **Action buttons**: rendered in a flex row — **Buy on Amazon** (`.btn-amazon`, rendered only for `console-game` and `vr-game` types; URL generated from `item.title` as `https://www.amazon.com/s?k={title}`) followed by **Wookieepedia** (`.btn-wookieepedia`, always present).
 5. **Play toggle button** (`.movie-watch-toggle`): same structure as the movie and novel toggles. When played, the button has class `.active`, icon shows `✓`, main text is "Played", sub-text is "Click to mark as not played". When not played, icon shows `○`, main text is "Mark as Played", sub-text is "Click to log this game". Clicking toggles the state, re-renders the modal body, re-binds events, and calls `renderCatalog()`.
 
 The game modal reuses the `.movie-watch-toggle` styling and the `#movieToggle` id. `bindModalEvents` routes game items to re-render via `renderGameModal`.
@@ -783,7 +783,7 @@ The game modal reuses the `.movie-watch-toggle` styling and the `#movieToggle` i
 Layout:
 
 1. **Description** (`.modal-description`): rendered only if `item.description` is present.
-2. **Header actions** (`.series-header-actions`): "Watch on Disney+" / "Watch on YouTube" (`.btn-disney`, rendered only if `item.disneyPlusUrl` is present), "Mark All Watched" (`.btn-primary`, yellow fill), "Clear All" (`.btn-outline`, ghost), and a right-aligned percentage + time string (`N% · Xh Ym / Xh Ym`).
+2. **Header actions** (`.series-header-actions`): "Watch on Disney+" / "Watch on YouTube" (`.btn-disney`, rendered only if `item.disneyPlusUrl` is present), **Wookieepedia** (`.btn-wookieepedia`, always present), "Mark All Watched" (`.btn-primary`, yellow fill), "Clear All" (`.btn-outline`, ghost), and a right-aligned percentage + time string (`N% · Xh Ym / Xh Ym`).
 3. **Season blocks** (`.season-block`): one per season, each containing:
    - **Season header** (`.season-header`): season title, `X/Y episodes` progress text, and a "Mark Season" / "✓ All Watched" pill button (`.season-btn`). When all episodes in the season are watched, the button gets class `.all-watched` (green tint). Clicking the season button toggles all episodes in that season — if all are currently watched, it clears them; otherwise it marks them all.
    - **Episode list** (`.episode-list`): one `.episode-row` per episode, each showing a circular check indicator (`.ep-check`), episode number (`E1`, `E2`, …), episode title, and duration in minutes. Watched rows have class `.watched` (green tint background, muted title text, filled check circle). Clicking any row toggles that episode.
@@ -809,7 +809,7 @@ Because comic state is a **flat issue-keyed map** (`watched[comicId][issueNumber
 
 ## Filtering and sorting
 
-Three independent filter rows, one sort control, and a live search bar sit above the catalog grid. On desktop, each filter row is a set of pill buttons that support **multi-select**: any combination of options within a row can be active simultaneously. The Type filter row is split into three intentional sub-rows: screen content (All, Movies, Short Films, TV Shows, TV Show Shorts) on the first line; book content (Adult Novels, YA Novels, Junior Novels, Young Readers, Graphic Novels, Comics) on the second; and game and audio content (Console Games, VR Games, Browser Games, Mobile Games, Audio Dramas) on the third. On mobile (≤ 600 px), the pill buttons are hidden and replaced by a `<select>` dropdown for each row, which remains single-select.
+Three independent filter rows, one sort control, and a live search bar sit above the catalog grid. On desktop, the filter rows are enclosed in a collapsible panel (`#filtersCol`) toggled by a `#filtersToggleBtn` pill button (labelled "Filters" with a chevron that rotates when collapsed). Panel visibility is persisted to `localStorage` under `FILTERS_KEY`. Each filter row is a set of pill buttons that support **multi-select**: any combination of options within a row can be active simultaneously. The Type filter row is split into three intentional sub-rows: screen content (All, Movies, Short Films, TV Shows, TV Show Shorts) on the first line; book content (Adult Novels, YA Novels, Junior Novels, Young Readers, Graphic Novels, Comics) on the second; and game and audio content (Console Games, VR Games, Browser Games, Mobile Games, Audio Dramas) on the third. On mobile (≤ 600 px), the pill buttons are hidden and replaced by a `<select>` dropdown for each row, which remains single-select.
 
 ### Filter state
 
@@ -877,7 +877,7 @@ Each filter step is a simple `Array.filter` on the in-memory `catalog` array. A 
 | Sort key (`activeSort`) | Display label | Key                          | Default (`asc`)        | Reversed (`desc`)  |
 |-------------------------|---------------|------------------------------|------------------------|--------------------|
 | `chronological`         | **Default**   | Position in `catalog.json`  | As-is (chronological)  | Reversed array     |
-| `release`               | Release       | `item.year`                  | Oldest first           | Newest first       |
+| `release`               | Release Date  | `item.year`                  | Oldest first           | Newest first       |
 
 ### Sort direction
 
@@ -897,6 +897,7 @@ Events are bound in two places:
 - All `.era-select` / `.type-select` / `.status-select` changes → routed through `applyFilterSel(filterType, val)`, which clears the set and adds at most one value, then syncs buttons and re-renders. `getActiveSet(filterType)` is a helper that returns the correct set for a given filter type. `syncFilterButtons(filterType)` updates `.active` on all buttons in the group: the "All" button is active when the set is empty, all other buttons reflect set membership.
 - All `.sort-btn` clicks → if the clicked button is already the active sort, `activeSortDir` toggles; otherwise the clicked button becomes active, `activeSort` updates, and `activeSortDir` resets to `'asc'`. `updateSortButtons()` is called first, then `renderCatalog()`.
 - Theme toggle click (`#themeBtn`) → reads `html.classList.contains('light')`; flips to the opposite theme; persists to `localStorage` under `THEME_KEY`; calls `applyTheme(theme)`, which toggles the `light` class on `<html>` and updates the button's `title`.
+- Filters toggle click (`#filtersToggleBtn`) → reads whether `#filtersCol` has class `filters-hidden`; calls `applyFiltersVisible(visible)`, which toggles the `filters-hidden` class on `#filtersCol` and the `filters-collapsed` class on `#filtersToggleBtn` (which rotates the chevron icon via CSS); persists the new state to `localStorage` under `FILTERS_KEY`.
 - Reset button click → shows `confirm('Reset all progress? This cannot be undone.')` dialog; on confirmation sets `watched = {}`, calls `save()` and `renderCatalog()`
 - Save button click → calls `openSaveModal()`, adding `.open` to `#saveModalOverlay`
 - Save/close modal buttons → call `closeSaveModal()`
@@ -914,6 +915,8 @@ Events are bound in two places:
 - **Series**: "Mark All Watched" (`#markAllBtn`) → `setSeriesWatched(item, true)`; "Clear All" (`#unmarkAllBtn`) → `setSeriesWatched(item, false)`; `.season-btn` clicks → `setSeasonWatched` toggle; `.episode-row` clicks → `setEpWatched` toggle. All re-render, re-bind, and call `renderCatalog()`.
 
 The catalog card click handler lives inside `renderCatalog()` and is re-attached every time the catalog grid is rebuilt. Card body clicks open the modal; the quick-toggle button (`.card-watch-btn`) calls `quickToggle(item)` with `e.stopPropagation()` so the modal does not also open.
+
+`renderFooter()` — called once at the end of `init()`. Picks a random quote from `FOOTER_QUOTES` and sets `footer p`'s `innerHTML`. The footer is static after that — quotes change only on a full page reload.
 
 ---
 
@@ -979,6 +982,8 @@ The header is `position: sticky; top: 0; z-index: 100` with `backdrop-filter: bl
 
 Both `.filter-btn` and `.sort-btn` share the same visual treatment: `border-radius: 100px` pill shape, `--bg-card` background, `--border` border, `--text-muted` text. On hover, border brightens and text becomes `--text`. When `.active`, background becomes `--accent-dim`, border becomes `--accent`, text becomes `--accent`, font-weight 600. Filter row labels (`.filter-row-label`) are `min-width: 56px`, uppercase, `--text-dim` colour, aligned center within their row.
 
+The `.filter-toggle-btn` is a pill button (`.filter-toggle-btn`, `border-radius: 100px`) shown only on desktop (hidden on mobile via the default `display: none`, overridden to `display: inline-flex` at `min-width: 601px`). It contains a funnel SVG icon, the text "Filters", and a chevron SVG that rotates `180deg` when the panel is collapsed (via `.filter-toggle-btn.filters-collapsed .toggle-chevron { transform: rotate(180deg) }`). The filter rows sit inside `.filters-col`, which animates between `max-height: 600px` (expanded) and `max-height: 0` (collapsed) with a `0.3s` transition.
+
 The Type filter row uses a nested `.type-btn-rows` flex column containing three `.type-btn-subrow` divs, allowing three intentional rows of buttons to share a single "TYPE" label that vertically centres alongside them. Sub-row 1: All + screen types; sub-row 2: book types (Adult Novels through Comics); sub-row 3: game types + Audio Dramas.
 
 ### Platform tags
@@ -1012,12 +1017,13 @@ Fixed two-column grid: `grid-template-columns: repeat(2, 1fr)`, `gap: 16px`. No 
 
 `localStorage` is the only automatic persistence mechanism. Two keys are used:
 
-| Key                    | Constant       | Content                                         |
-|------------------------|----------------|-------------------------------------------------|
-| `startracker_watched`  | `STORAGE_KEY`  | Serialised `watched` object — all play/watch/read state |
-| `startracker_theme`    | `THEME_KEY`    | `"dark"` or `"light"` — user's theme preference |
+| Key                           | Constant        | Content                                         |
+|-------------------------------|-----------------|--------------------------------------------------|
+| `startracker_watched`         | `STORAGE_KEY`   | Serialised `watched` object — all play/watch/read state |
+| `startracker_theme`           | `THEME_KEY`     | `"dark"` or `"light"` — user's theme preference |
+| `startracker_filters_visible` | `FILTERS_KEY`   | `"true"` or `"false"` — whether the filter panel is expanded or collapsed |
 
-`watched` is serialised to JSON and written on every state mutation. On load, `init()` reads it back with `JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}')`. The theme preference is read at the very start of `init()` (before the catalog fetch) so the correct theme is applied before any rendering occurs. Both keys default gracefully — missing `watched` becomes `{}`, missing theme becomes `'light'`.
+`watched` is serialised to JSON and written on every state mutation. On load, `init()` reads it back with `JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}')`. The theme preference and filter panel visibility are both read at the very start of `init()` (before the catalog fetch) so the correct theme and panel state are applied before any rendering occurs. All three keys default gracefully — missing `watched` becomes `{}`, missing theme becomes `'light'`, missing filters visibility becomes `true` (expanded).
 
 Clearing browser storage or clicking the Reset button (which calls `confirm()` first) sets `watched = {}` and re-saves, returning all content state to zero. The theme preference is unaffected by Reset.
 
@@ -1068,7 +1074,7 @@ A single `@media (max-width: 600px)` block overrides desktop styles. The desktop
 
 **Header**
 - `.header-inner` gains `flex-wrap: wrap; gap: 10px; padding: 10px 16px`.
-- `.logo` font size drops to `1rem`, SVG icon to `22×22 px`.
+- `.logo` font size drops to `1rem`.
 - `.btn-secondary` padding reduces to `6px 10px`, font to `0.8rem`; `.header-actions` gap reduces to `6px`.
 
 **Main content**
