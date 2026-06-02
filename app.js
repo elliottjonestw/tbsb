@@ -269,7 +269,7 @@ function updateStats() {
     sc(`${Math.round((totalWatchedMinutes() / totalMinutes()) * 100)}%`, 'Watched',
       'Percentage of total video runtime watched, weighted by duration — a 2-hour movie contributes more than a 22-minute episode. Covers movies, short films, TV shows, and TV shorts. Books, audio dramas, and games are excluded.', true) +
     sc(`${readListenedPct}%`, 'Read/Listened',
-      'Percentage of books, graphic novels, comics, and audio dramas completed. Each item counts equally regardless of length. A comic series counts as complete only when every issue is read. Covers adult novels, YA novels, junior novels, graphic novels, comics, and audio dramas.', true) +
+      'Percentage of books, graphic novels, comics, and audio dramas completed. Each item counts equally regardless of length. A comic series counts as complete only when every issue is read. Covers adult novels, YA novels, junior novels, young readers, graphic novels, comics, and audio dramas.', true) +
     sc(`${playedPct}%`, 'Played',
       'Percentage of games played. Each title counts equally regardless of length. Covers console, VR, browser, and mobile games.', true) +
     sc(`${watchedFullMovies}/${fullMovies.length}`, 'Movies',
@@ -279,11 +279,11 @@ function updateStats() {
     sc(`${watchedEps}/${totalEps}`, 'Episodes',
       'Individual episodes watched vs. total across all TV shows and TV shorts. Each episode counts once regardless of its runtime.') +
     sc(`${readNovels + readGraphicNovels + readComics}/${novels.length + graphicNovels.length + comics.length}`, 'Books/Comics',
-      'Books, graphic novels, and comic series completed vs. total catalog. Includes adult novels, YA novels, junior novels, graphic novels, and every comic series — each comic series counts as one and is complete only when all its issues are read. Audio dramas are tracked separately in Read/Listened.') +
+      'Books, graphic novels, and comic series completed vs. total catalog. Includes adult novels, YA novels, junior novels, young readers, graphic novels, and every comic series — each comic series counts as one and is complete only when all its issues are read. Audio dramas are tracked separately in Read/Listened.') +
     sc(`${playedGames}/${games.length}`, 'Games',
       'Games played vs. total catalog. Includes console, VR, browser, and mobile games.') +
     sc(`${remainingPages.toLocaleString()}`, 'Pages Remaining',
-      'Total pages left to read — the sum of every unread novel or graphic novel\'s page count plus the page count of every unread comic issue. Includes adult novels, YA novels, junior novels, graphic novels, and comics. Audio dramas are not included.') +
+      'Total pages left to read — the sum of every unread novel or graphic novel\'s page count plus the page count of every unread comic issue. Includes adult novels, YA novels, junior novels, young readers, graphic novels, and comics. Audio dramas are not included.') +
     sc(`${Math.round((totalMinutes() - totalWatchedMinutes() + totalAudioDramaMins - listenedAudioDramaMins) / 60)}h`, 'Hours Remaining',
       'Hours of content remaining based on runtime. Covers unwatched video (movies, short films, and unfinished episodes) plus unlistened audio dramas. Books and games are not included.');
 }
