@@ -1104,6 +1104,8 @@ html.light .episode-row.watched { border-color: rgba(22, 163, 74, 0.3); }
   /* ── Filters — show dropdowns, hide pill buttons ─────────────────────────── */
   .filter-btn { display: none; }
   .filter-select { display: block; }
+  .filters-wrapper { align-items: stretch; }
+  .type-btn-rows { display: none; }
 
   /* ── Controls ────────────────────────────────────────────────────────────── */
   .controls-row { gap: 12px; margin-bottom: 20px; }
