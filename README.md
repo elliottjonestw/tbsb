@@ -892,7 +892,7 @@ Events are bound in two places:
 **`bindEvents()`** — called once on init. Handles:
 - Modal close button click
 - Modal overlay backdrop click (checks `e.target === e.currentTarget`)
-- `Escape` keydown → `closeModal()` and `closeSaveModal()`
+- `Escape` keydown → `closeModal()`, `closeSaveModal()`, and `closeShareModal()`
 - All `.era-btn` / `.type-btn` / `.status-btn` clicks → routed through `applyFilterBtn(filterType, val)`, which toggles `val` in the corresponding `Set` (or clears the set if `val === 'all'`), calls `syncFilterButtons` to update `.active` classes, syncs the mobile select, then calls `renderCatalog()`.
 - All `.era-select` / `.type-select` / `.status-select` changes → routed through `applyFilterSel(filterType, val)`, which clears the set and adds at most one value, then syncs buttons and re-renders. `getActiveSet(filterType)` is a helper that returns the correct set for a given filter type. `syncFilterButtons(filterType)` updates `.active` on all buttons in the group: the "All" button is active when the set is empty, all other buttons reflect set membership.
 - All `.sort-btn` clicks → if the clicked button is already the active sort, `activeSortDir` toggles; otherwise the clicked button becomes active, `activeSort` updates, and `activeSortDir` resets to `'asc'`. `updateSortButtons()` is called first, then `renderCatalog()`.
@@ -905,6 +905,11 @@ Events are bound in two places:
 - Download backup button click → calls `downloadWatchHistory()`
 - Load button click → programmatically triggers `#loadInput.click()`
 - `#loadInput` change → calls `loadWatchHistory(file)`, then clears the input value
+- Share button click (`#shareBtn`) → calls `generateShareImage()`, which renders a 1080×1080 Canvas progress card and passes it to `openShareModal(canvas)`, adding `.open` to `#shareModalOverlay`
+- Share modal close/Close buttons → call `closeShareModal()`
+- Share modal backdrop click → calls `closeShareModal()`
+- Download button (`#downloadImageBtn`) → calls `canvas.toBlob()` and triggers a `tbsb-progress.png` download via a temporary object URL
+- Copy Image button (`#copyImageBtn`) → writes the canvas blob to the clipboard via `navigator.clipboard.write([new ClipboardItem({ 'image/png': blob })])`; falls back to an `alert` if the Clipboard API is unavailable
 
 **`bindModalEvents(item)`** — called after every modal render. Routes to different handlers based on type:
 - **Comic**: "Mark All Read" (`#markAllComicBtn`) → `setComicRead(item, true)`; "Clear All" (`#unmarkAllComicBtn`) → `setComicRead(item, false)`; `.season-btn` clicks → `setArcRead` toggle; `.episode-row` clicks → `setIssueRead` toggle. All re-render `renderComicModal`, re-bind, and call `renderCatalog()`. Checked first (via `isComic(item)`) before the game, audio drama, novel, movie, and series handlers.
@@ -1004,7 +1009,7 @@ Fixed two-column grid: `grid-template-columns: repeat(2, 1fr)`, `gap: 16px`. No 
 |-----------------|------------------------------|-------------------------------------------------|
 | `.btn-primary`  | `--accent` (yellow) fill     | Mark All Watched in series modal                |
 | `.btn-outline`  | Transparent, ghost border    | Clear All in series modal                       |
-| `.btn-secondary`| Transparent, muted border    | Header actions (Reset, Save, Load, theme toggle)|
+| `.btn-secondary`| Transparent, muted border    | Header actions (Reset, Save, Load, Share, theme toggle)|
 | `.btn-theme`    | Inherits `.btn-secondary`    | Icon-only theme toggle; adds `display: flex` and tighter padding. Contains two SVGs (`.icon-sun`, `.icon-moon`) — CSS shows the sun in dark mode and the moon in light mode via `html.light` visibility rules. |
 | `.btn-disney`   | `#0063e5` (blue)             | Watch on Disney+ / YouTube links                |
 | `.btn-audible`  | `#ff6f00` (deep orange)      | Listen on Audible links in novel modal          |
@@ -1031,7 +1036,7 @@ Clearing browser storage or clicking the Reset button (which calls `confirm()` f
 
 ## Save / load
 
-The header exposes four action buttons — **Reset**, **Save**, **Load**, and the **theme toggle**.
+The header exposes five action buttons — **Reset**, **Save**, **Load**, **Share**, and the **theme toggle**.
 
 ### Save (export)
 
@@ -1065,6 +1070,43 @@ Clicking **Load** programmatically clicks a hidden `<input type="file" id="loadI
 `loadWatchHistory(file)` reads the file asynchronously via `FileReader`. If `JSON.parse` fails or the result is not a plain object, the user sees an `alert`. On success, `watched` is replaced with the parsed data, `save()` flushes it to localStorage, and `renderCatalog()` refreshes the grid.
 
 The backup file format is identical to the `startracker_watched` localStorage entry. Any file produced by a previous version of the app — including backups predating novel or game support — is a valid input. Game entries are stored as flat booleans just like movies, so there is no migration needed.
+
+### Share (progress image)
+
+Clicking **Share** generates a 1080×1080 PNG progress card using the Canvas 2D API (no external dependencies) and displays it in a preview modal (`#shareModalOverlay`) before the user decides to save it.
+
+**Image layout** (top to bottom):
+- Title "My Star Wars Canon Progress" in bold black, left-aligned
+- Three stat tiles (Watched %, Read/Listened %, Played %) on a uniform `#f0f0f7` background
+- Four consolidated progress rows as white cards: Movies & Short Films, TV Episodes, Books/Comics & Audio, Games
+- "Generated at The Backlog Strikes Back" footer label
+
+All elements share the same light `#f0f0f7` background — there is no two-tone or dark header section. The canvas is always rendered in the light-mode palette regardless of the user's current theme.
+
+**Color-coded progress:** Both the stat tile percentages and the progress bar fills use a shared `progressColor(ratio)` helper:
+
+| Range | Colour |
+|-------|--------|
+| 0 % | Empty bar / grey left edge |
+| 1 %–25 % | Red (`#dc2626`) |
+| 26 %–74 % | Gold (`#c8920c`) |
+| 75 %–100 % | Green (`#16a34a`) |
+
+`rr(x, y, w, h, r)` is a local helper that draws rounded rectangles via `quadraticCurveTo` for broad browser compatibility. The generated canvas is stored in the module-level `_shareCanvas` variable so the download and copy handlers can access it after the preview modal opens.
+
+**Preview modal buttons:**
+
+| Button | Behaviour |
+|--------|-----------|
+| **Close** / **×** | Calls `closeShareModal()` |
+| **Copy Image** | Writes blob to clipboard via `navigator.clipboard.write()`; shows "✓ Copied!" for 2 s; alerts on failure |
+| **Download** | Triggers a `tbsb-progress.png` download via a temporary object URL |
+
+---
+
+## Loading overlay
+
+On first visit (before catalog images load), a full-screen loading overlay (`#loadingOverlay`) covers the page. It shows a centred `border-top` spinner (`.spinner`, `@keyframes spin`) against the page background. After `init()` completes, the overlay receives the `fade-out` class (0.4 s opacity transition) and is removed from the DOM on `transitionend`. An inline `<script>` in `<head>` applies `html.light` immediately if the stored theme is light, so the overlay background colour matches the user's theme before any CSS loads.
 
 ---
 

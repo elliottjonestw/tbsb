@@ -816,6 +816,174 @@ function bindModalEvents(item) {
   });
 }
 
+// ── Share image ──────────────────────────────────────────────────────────────
+
+let _shareCanvas = null;
+
+function openShareModal(canvas) {
+  _shareCanvas = canvas;
+  document.getElementById('sharePreviewImg').src = canvas.toDataURL('image/png');
+  document.getElementById('shareModalOverlay').classList.add('open');
+}
+
+function closeShareModal() {
+  document.getElementById('shareModalOverlay').classList.remove('open');
+}
+
+function generateShareImage() {
+  const W = 1080, H = 1080;
+  const canvas = document.createElement('canvas');
+  canvas.width = W; canvas.height = H;
+  const ctx = canvas.getContext('2d');
+  const FONT = '"Helvetica Neue", Helvetica, Arial, sans-serif';
+
+  const C = {
+    bg: '#f0f0f7', card: '#ffffff',
+    border: '#dcdcea', accent: '#c8920c',
+    text: '#0f0f1a', muted: '#5c5c74', dim: '#9898b2',
+    barEmpty: '#dcdcea',
+  };
+
+  function rr(x, y, w, h, r) {
+    ctx.beginPath();
+    ctx.moveTo(x + r, y);
+    ctx.lineTo(x + w - r, y);
+    ctx.quadraticCurveTo(x + w, y, x + w, y + r);
+    ctx.lineTo(x + w, y + h - r);
+    ctx.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
+    ctx.lineTo(x + r, y + h);
+    ctx.quadraticCurveTo(x, y + h, x, y + h - r);
+    ctx.lineTo(x, y + r);
+    ctx.quadraticCurveTo(x, y, x + r, y);
+    ctx.closePath();
+  }
+
+  // ── Compute stats ─────────────────────────────────────────────────────────────
+  const fullMovies  = catalog.filter(i => itemTypes(i).includes('movie'));
+  const shortFilms  = catalog.filter(i => itemTypes(i).includes('short-movie'));
+  const seriesItems = catalog.filter(i => isSeries(i));
+  const novelItems  = catalog.filter(i => isNovel(i));
+  const gnItems     = catalog.filter(i => isGraphicNovel(i));
+  const comicItems  = catalog.filter(i => isComic(i));
+  const gameItems   = catalog.filter(i => isGame(i));
+  const dramaItems  = catalog.filter(i => isAudioDrama(i));
+
+  const wMovies  = fullMovies.filter(i => getMovieWatched(i.id)).length;
+  const wShorts  = shortFilms.filter(i => getMovieWatched(i.id)).length;
+  const totalEps = seriesItems.reduce((t, i) => t + i.seasons.reduce((s, se) => s + se.episodes.length, 0), 0);
+  const wEps     = seriesItems.reduce((t, i) => t + i.seasons.reduce((s, se) =>
+    s + se.episodes.filter(ep => getEpWatched(i.id, se.season, ep.episode)).length, 0), 0);
+  const rNovels  = novelItems.filter(i => getMovieWatched(i.id)).length;
+  const rGN      = gnItems.filter(i => getMovieWatched(i.id)).length;
+  const rComics  = comicItems.filter(i => itemStatus(i) === 'watched').length;
+  const pGames   = gameItems.filter(i => getMovieWatched(i.id)).length;
+  const lDramas  = dramaItems.filter(i => getMovieWatched(i.id)).length;
+
+  const totalBooks = novelItems.length + gnItems.length + comicItems.length;
+  const readBooks  = rNovels + rGN + rComics;
+  const watchedPct = totalMinutes() > 0 ? Math.round((totalWatchedMinutes() / totalMinutes()) * 100) : 0;
+  const rlTotal    = novelItems.length + gnItems.length + comicItems.length + dramaItems.length;
+  const readPct    = rlTotal > 0 ? Math.round(((rNovels + rGN + rComics + lDramas) / rlTotal) * 100) : 0;
+  const playPct    = gameItems.length > 0 ? Math.round((pGames / gameItems.length) * 100) : 0;
+
+  const M = 54, CW = W - M * 2;
+
+  // ── Background ────────────────────────────────────────────────────────────────
+  ctx.fillStyle = C.bg;
+  ctx.fillRect(0, 0, W, H);
+
+  // ── Header ────────────────────────────────────────────────────────────────────
+  ctx.textAlign = 'left';
+  ctx.fillStyle = C.text;
+  ctx.font = `bold 44px ${FONT}`;
+  ctx.fillText('My Star Wars Canon Progress', M, 78);
+
+  // ── Stat tiles ────────────────────────────────────────────────────────────────
+  const statsY = 126, statsH = 165, cardGap = 16;
+  const sCardW = (CW - cardGap * 2) / 3;
+
+  function progressColor(ratio) {
+    const pct = ratio * 100;
+    if (pct >= 75) return '#16a34a';
+    if (pct >= 26) return C.accent;
+    return '#dc2626';
+  }
+
+  [
+    { v: `${watchedPct}%`, l: 'WATCHED',        r: watchedPct / 100 },
+    { v: `${readPct}%`,    l: 'READ / LISTENED', r: readPct / 100   },
+    { v: `${playPct}%`,    l: 'PLAYED',          r: playPct / 100   },
+  ].forEach(({ v, l, r }, i) => {
+    const x = M + i * (sCardW + cardGap);
+    rr(x, statsY, sCardW, statsH, 12);
+    ctx.fillStyle = C.card; ctx.fill();
+    ctx.strokeStyle = C.border; ctx.lineWidth = 1; ctx.stroke();
+
+    const cx = x + sCardW / 2;
+    ctx.textAlign = 'center';
+    ctx.fillStyle = progressColor(r);
+    ctx.font = `bold 62px ${FONT}`;
+    ctx.fillText(v, cx, statsY + 96);
+
+    ctx.fillStyle = C.muted;
+    ctx.font = `600 17px ${FONT}`;
+    ctx.fillText(l, cx, statsY + 130);
+  });
+
+  // ── Progress rows ─────────────────────────────────────────────────────────────
+  const rows = [
+    { label: 'Movies & Short Films',       done: wMovies + wShorts,           total: fullMovies.length + shortFilms.length },
+    { label: 'TV Episodes',                done: wEps,                        total: totalEps                               },
+    { label: 'Books, Comics & Audio',      done: readBooks + lDramas,         total: totalBooks + dramaItems.length         },
+    { label: 'Games',                      done: pGames,                      total: gameItems.length                       },
+  ];
+
+  const rowsStartY = statsY + statsH + 26;
+  const rowsEndY   = 970;
+  const rowH       = (rowsEndY - rowsStartY) / rows.length;
+  const barH       = 28;
+
+  rows.forEach((row, i) => {
+    const y     = rowsStartY + i * rowH;
+    const ratio = row.total > 0 ? row.done / row.total : 0;
+    const midY  = y + rowH / 2;
+    const iX = M + 20, iW = CW - 40;
+    const pColor = ratio > 0 ? progressColor(ratio) : C.border;
+    rr(M, y + 4, CW, rowH - 8, 12);
+    ctx.fillStyle = C.card; ctx.fill();
+    ctx.strokeStyle = C.border; ctx.lineWidth = 1; ctx.stroke();
+
+    ctx.fillStyle = pColor;
+    ctx.fillRect(M, y + 4, 5, rowH - 8);
+
+    ctx.textAlign = 'left';
+    ctx.fillStyle = C.text;
+    ctx.font = `600 26px ${FONT}`;
+    ctx.fillText(row.label, iX + 12, midY - 10);
+
+    ctx.textAlign = 'right';
+    ctx.fillStyle = C.muted;
+    ctx.font = `22px ${FONT}`;
+    ctx.fillText(`${row.done.toLocaleString()} / ${row.total.toLocaleString()}`, iX + iW, midY - 10);
+
+    rr(iX + 12, midY + 8, iW - 12, barH, 7);
+    ctx.fillStyle = C.barEmpty; ctx.fill();
+
+    if (ratio > 0) {
+      rr(iX + 12, midY + 8, Math.max(Math.round(ratio * (iW - 12)), barH), barH, 7);
+      ctx.fillStyle = pColor; ctx.fill();
+    }
+  });
+
+  // ── Footer ────────────────────────────────────────────────────────────────────
+  ctx.textAlign = 'center';
+  ctx.fillStyle = C.dim;
+  ctx.font = `22px ${FONT}`;
+  ctx.fillText('Generated at The Backlog Strikes Back', W / 2, rowsEndY + 62);
+
+  openShareModal(canvas);
+}
+
 // ── Save / load ──────────────────────────────────────────────────────────────
 
 function openSaveModal() {
@@ -939,6 +1107,35 @@ function bindEvents() {
     }
   });
 
+  document.getElementById('shareBtn').addEventListener('click', generateShareImage);
+  document.getElementById('shareModalClose').addEventListener('click', closeShareModal);
+  document.getElementById('shareModalCloseBtn').addEventListener('click', closeShareModal);
+  document.getElementById('shareModalOverlay').addEventListener('click', e => {
+    if (e.target === e.currentTarget) closeShareModal();
+  });
+  document.getElementById('downloadImageBtn').addEventListener('click', () => {
+    if (!_shareCanvas) return;
+    _shareCanvas.toBlob(blob => {
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url; a.download = 'tbsb-progress.png';
+      a.click();
+      URL.revokeObjectURL(url);
+    });
+  });
+  document.getElementById('copyImageBtn').addEventListener('click', async () => {
+    if (!_shareCanvas) return;
+    try {
+      const blob = await new Promise(res => _shareCanvas.toBlob(res));
+      await navigator.clipboard.write([new ClipboardItem({ 'image/png': blob })]);
+      const btn = document.getElementById('copyImageBtn');
+      const orig = btn.textContent;
+      btn.textContent = '✓ Copied!';
+      setTimeout(() => { btn.textContent = orig; }, 2000);
+    } catch {
+      alert('Copy not supported in this browser. Please use Download instead.');
+    }
+  });
   document.getElementById('saveBtn').addEventListener('click', openSaveModal);
   document.getElementById('saveModalClose').addEventListener('click', closeSaveModal);
   document.getElementById('saveModalCloseBtn').addEventListener('click', closeSaveModal);
@@ -964,7 +1161,7 @@ function bindEvents() {
   });
 
   document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') { closeModal(); closeSaveModal(); }
+    if (e.key === 'Escape') { closeModal(); closeSaveModal(); closeShareModal(); }
   });
 }
 

@@ -17,6 +17,7 @@
         <button class="btn-secondary" id="resetBtn">Reset</button>
         <button class="btn-secondary" id="saveBtn">Save</button>
         <button class="btn-secondary" id="loadBtn">Load</button>
+        <button class="btn-secondary" id="shareBtn">Share</button>
         <input type="file" id="loadInput" accept=".json" style="display:none" />
         <button class="btn-secondary btn-theme" id="themeBtn" title="Switch to light mode" aria-label="Toggle theme">
           <svg class="icon-sun" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
@@ -127,6 +128,23 @@
     <div class="catalog-count-row"><span id="catalogCount" class="catalog-count"></span></div>
     <div class="catalog" id="catalog"></div>
   </main>
+
+  <div class="modal-overlay" id="shareModalOverlay">
+    <div class="modal share-preview-modal">
+      <div class="modal-header">
+        <h2>Share Your Progress</h2>
+        <button class="modal-close" id="shareModalClose">&times;</button>
+      </div>
+      <div class="modal-body share-preview-body">
+        <img id="sharePreviewImg" alt="Progress card" />
+        <div class="share-preview-actions">
+          <button class="btn-outline" id="shareModalCloseBtn">Close</button>
+          <button class="btn-outline" id="copyImageBtn">Copy Image</button>
+          <button class="btn-primary" id="downloadImageBtn">Download</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <div class="modal-overlay" id="saveModalOverlay">
     <div class="modal save-modal">
