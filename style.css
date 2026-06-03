@@ -1078,7 +1078,7 @@ html.light .episode-row.watched { border-color: rgba(22, 163, 74, 0.3); }
 @media (max-width: 600px) {
   /* ── Header ──────────────────────────────────────────────────────────────── */
   .header-inner { flex-wrap: wrap; gap: 10px; padding: 10px 16px; }
-  .logo { font-size: 1rem; gap: 7px; }
+  .logo { font-size: 1.3rem; gap: 7px; }
   .logo svg { width: 22px; height: 22px; }
   .btn-secondary { padding: 6px 10px; font-size: 0.8rem; }
   .header-actions { gap: 6px; }
