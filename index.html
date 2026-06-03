@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The Backlog Strikes Back</title>
   <link rel="stylesheet" href="style.css" />
+  <script>if((localStorage.getItem('startracker_theme')||'light')==='light')document.documentElement.classList.add('light');</script>
 </head>
 <body>
   <header>
@@ -157,6 +158,10 @@
   <footer>
     <p></p>
   </footer>
+
+  <div id="loadingOverlay">
+    <div class="spinner"></div>
+  </div>
 
   <script src="app.js"></script>
 </body>

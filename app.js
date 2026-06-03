@@ -31,6 +31,9 @@ async function init() {
   render();
   bindEvents();
   renderFooter();
+  const overlay = document.getElementById('loadingOverlay');
+  overlay.classList.add('fade-out');
+  overlay.addEventListener('transitionend', () => overlay.remove(), { once: true });
 }
 
 // ── Watched state helpers ────────────────────────────────────────────────────
