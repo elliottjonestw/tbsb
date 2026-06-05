@@ -6097,6 +6097,30 @@
       "timeline": "1 BBY"
     },
     {
+      "id": "rogue-one-a-star-wars-story-novelization",
+      "title": "Rogue One: A Star Wars Story",
+      "type": "novel",
+      "author": "Alexander Freed",
+      "year": 2016,
+      "era": "disney",
+      "pageCount": 352,
+      "description": "The novelization of Rogue One: A Star Wars Story, expanding on the desperate Rebel mission to steal the Death Star plans with deeper character perspectives and additional scenes from Jyn Erso and Cassian Andor.",
+      "wookieepedia_override": "https://starwars.fandom.com/wiki/Rogue_One:_A_Star_Wars_Story_(novelization)",
+      "timeline": "1 BBY"
+    },
+    {
+      "id": "the-odyssey-of-star-wars-an-epic-poem",
+      "title": "The Odyssey of Star Wars: An Epic Poem",
+      "type": "novel",
+      "author": "Jack Mitchell",
+      "year": 2021,
+      "era": "disney",
+      "pageCount": 224,
+      "description": "A retelling of Rogue One and the original trilogy cast in the style of a classical epic poem — dactylic hexameter — following Jyn Erso, Luke Skywalker, and the Rebel Alliance in verse.",
+      "wookieepedia_override": "https://starwars.fandom.com/wiki/The_Odyssey_of_Star_Wars:_An_Epic_Poem",
+      "timeline": "1 BBY–4 ABY"
+    },
+    {
       "id": "rogue-one-comic",
       "title": "Star Wars: Rogue One Adaptation",
       "type": "comic",
@@ -11324,6 +11348,18 @@
       "timeline": "34 ABY"
     },
     {
+      "id": "star-wars-the-force-awakens-novelization",
+      "title": "Star Wars: The Force Awakens",
+      "type": "novel",
+      "author": "Alan Dean Foster",
+      "year": 2015,
+      "era": "disney",
+      "pageCount": 272,
+      "description": "The novelization of Star Wars: Episode VII – The Force Awakens, expanding on Rey's discovery of her Force connection, Finn's break from the First Order, and Han Solo's final stand.",
+      "wookieepedia_override": "https://starwars.fandom.com/wiki/Star_Wars:_The_Force_Awakens_(novelization)",
+      "timeline": "34 ABY"
+    },
+    {
       "id": "finn-the-first-order",
       "title": "Finn & the First Order",
       "type": "young-reader",
@@ -11698,6 +11734,18 @@
       "era": "disney",
       "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-50c1aff5-3051-4839-9ebf-e332c635e216",
       "wookieepedia_override": "https://starwars.fandom.com/wiki/Star_Wars:_Episode_VIII_The_Last_Jedi",
+      "timeline": "34 ABY"
+    },
+    {
+      "id": "star-wars-the-last-jedi-expanded-edition",
+      "title": "Star Wars: The Last Jedi: Expanded Edition",
+      "type": "novel",
+      "author": "Jason Fry",
+      "year": 2018,
+      "era": "disney",
+      "pageCount": 336,
+      "description": "The expanded novelization of Star Wars: Episode VIII – The Last Jedi, with additional scenes and deeper perspectives on Rose Tico, Vice Admiral Holdo, and Luke Skywalker not seen in the film.",
+      "wookieepedia_override": "https://starwars.fandom.com/wiki/Star_Wars:_The_Last_Jedi:_Expanded_Edition",
       "timeline": "34 ABY"
     },
     {
@@ -12179,6 +12227,18 @@
       "era": "disney",
       "disneyPlusUrl": "https://www.disneyplus.com/browse/entity-43f9c275-e7e8-4ab3-802d-00d06a8ad841",
       "wookieepedia_override": "https://starwars.fandom.com/wiki/Star_Wars:_Episode_IX_The_Rise_of_Skywalker",
+      "timeline": "35 ABY"
+    },
+    {
+      "id": "star-wars-the-rise-of-skywalker-expanded-edition",
+      "title": "Star Wars: The Rise of Skywalker: Expanded Edition",
+      "type": "novel",
+      "author": "Rae Carson",
+      "year": 2020,
+      "era": "disney",
+      "pageCount": 368,
+      "description": "The expanded novelization of Star Wars: Episode IX – The Rise of Skywalker, with additional scenes, extended character moments, and revelations about Rey's origins not included in the film.",
+      "wookieepedia_override": "https://starwars.fandom.com/wiki/Star_Wars:_The_Rise_of_Skywalker:_Expanded_Edition",
       "timeline": "35 ABY"
     },
     {
